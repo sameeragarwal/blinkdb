@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/repos/asf/!svn/ver/1176713/hive/trunk/conf
+END
+hive-env.sh.template
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/conf/hive-env.sh.template
+END
+configuration.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/asf/!svn/ver/1027721/hive/trunk/conf/configuration.xsl
+END
+hive-default.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1176713/hive/trunk/conf/hive-default.xml
+END

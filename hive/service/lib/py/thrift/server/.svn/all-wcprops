@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/server
+END
+THttpServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/server/THttpServer.py
+END
+TServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/server/TServer.py
+END
+TNonblockingServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/server/TNonblockingServer.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/server/__init__.py
+END

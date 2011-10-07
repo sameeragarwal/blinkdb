@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1101770/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence
+END
+MapJoinObjectValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MapJoinObjectValue.java
+END
+HashMapWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1043843/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/HashMapWrapper.java
+END
+MRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MRU.java
+END
+MapJoinDoubleKeys.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MapJoinDoubleKeys.java
+END
+MapJoinRowContainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MapJoinRowContainer.java
+END
+MapJoinSingleKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MapJoinSingleKey.java
+END
+AbstractMapJoinKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/AbstractMapJoinKey.java
+END
+RowContainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1087154/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/RowContainer.java
+END
+DCLLItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/DCLLItem.java
+END
+MapJoinObjectKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1101770/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/MapJoinObjectKey.java
+END
+AbstractRowContainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1034276/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/exec/persistence/AbstractRowContainer.java
+END

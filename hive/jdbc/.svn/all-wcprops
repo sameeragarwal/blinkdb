@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/repos/asf/!svn/ver/1171253/hive/trunk/jdbc
+END
+ivy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/asf/!svn/ver/1165207/hive/trunk/jdbc/ivy.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/asf/!svn/ver/1027721/hive/trunk/jdbc/build.xml
+END

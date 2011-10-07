@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1171253/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors
+END
+AddResourceProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1083089/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/AddResourceProcessor.java
+END
+CommandProcessorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandProcessorFactory.java
+END
+DeleteResourceProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1043768/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/DeleteResourceProcessor.java
+END
+SetProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1171253/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/SetProcessor.java
+END
+DfsProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1043768/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/DfsProcessor.java
+END
+CommandProcessorResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1171253/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandProcessorResponse.java
+END
+CommandProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1095153/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandProcessor.java
+END

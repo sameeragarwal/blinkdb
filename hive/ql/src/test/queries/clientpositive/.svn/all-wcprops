@@ -1,0 +1,4955 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive
+END
+multi_sahooks.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1065890/hive/trunk/ql/src/test/queries/clientpositive/multi_sahooks.q
+END
+udf_field.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_field.q
+END
+udf_xpath.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath.q
+END
+index_bitmap3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap3.q
+END
+udaf_std.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_std.q
+END
+add_part_exist.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/add_part_exist.q
+END
+showparts.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/showparts.q
+END
+union20.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union20.q
+END
+input_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_limit.q
+END
+input20.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input20.q
+END
+join21.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join21.q
+END
+create_udaf.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_udaf.q
+END
+groupby7_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby7_noskew.q
+END
+stats16.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1153753/hive/trunk/ql/src/test/queries/clientpositive/stats16.q
+END
+inputddl3.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl3.q
+END
+load_dyn_part7.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part7.q
+END
+script_env_var2.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/script_env_var2.q
+END
+create_merge_compressed.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1164278/hive/trunk/ql/src/test/queries/clientpositive/create_merge_compressed.q
+END
+load_fs.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1052090/hive/trunk/ql/src/test/queries/clientpositive/load_fs.q
+END
+join_hive_626.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_hive_626.q
+END
+udf_avg.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_avg.q
+END
+notable_alias1.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/notable_alias1.q
+END
+transform_ppr2.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/transform_ppr2.q
+END
+join_reorder.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_reorder.q
+END
+ct_case_insensitive.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/ct_case_insensitive.q
+END
+ppd_random.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_random.q
+END
+input4.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input4.q
+END
+ppd_gby.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_gby.q
+END
+join_casesensitive.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1073798/hive/trunk/ql/src/test/queries/clientpositive/join_casesensitive.q
+END
+join5.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join5.q
+END
+describe_xpath.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/describe_xpath.q
+END
+authorization_5.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/test/queries/clientpositive/authorization_5.q
+END
+input_testxpath2.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_testxpath2.q
+END
+udf_sentences.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_sentences.q
+END
+stats8.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats8.q
+END
+udf_union.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_union.q
+END
+union12.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union12.q
+END
+fileformat_text.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/fileformat_text.q
+END
+select_transform_hint.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/select_transform_hint.q
+END
+transform1.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/transform1.q
+END
+udf_bitwise_xor.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bitwise_xor.q
+END
+create_genericudaf.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_genericudaf.q
+END
+exim_16_part_external.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_16_part_external.q
+END
+groupby3_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby3_map_skew.q
+END
+join30.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join30.q
+END
+exim_18_part_external.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_18_part_external.q
+END
+input12.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input12.q
+END
+join13.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join13.q
+END
+input_part3.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part3.q
+END
+ba_table2.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/ba_table2.q
+END
+nullgroup5.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullgroup5.q
+END
+binary_output_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/binary_output_format.q
+END
+udf_degrees.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_degrees.q
+END
+input2_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input2_limit.q
+END
+udf_lessthan.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lessthan.q
+END
+udf_radians.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_radians.q
+END
+exim_11_managed_external.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_11_managed_external.q
+END
+udf_atan.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_atan.q
+END
+timestamp_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/test/queries/clientpositive/timestamp_1.q
+END
+udf_isnotnull.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_isnotnull.q
+END
+join_filters.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_filters.q
+END
+index_bitmap_rc.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap_rc.q
+END
+groupby10.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1102085/hive/trunk/ql/src/test/queries/clientpositive/groupby10.q
+END
+show_describe_func_quotes.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/show_describe_func_quotes.q
+END
+union21.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union21.q
+END
+udf_sign.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_sign.q
+END
+create_view_partitioned.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1076105/hive/trunk/ql/src/test/queries/clientpositive/create_view_partitioned.q
+END
+udaf_collect_set.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_collect_set.q
+END
+udf_minute.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_minute.q
+END
+show_indexes_edge_cases.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/test/queries/clientpositive/show_indexes_edge_cases.q
+END
+input21.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input21.q
+END
+exim_04_evolved_parts.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_04_evolved_parts.q
+END
+join22.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join22.q
+END
+groupby6_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby6_map_skew.q
+END
+udf_in.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_in.q
+END
+udf_stddev_pop.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_stddev_pop.q
+END
+load_dyn_part8.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part8.q
+END
+inputddl4.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl4.q
+END
+groupby5_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby5_map.q
+END
+cast1.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/cast1.q
+END
+input16_cc.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1066979/hive/trunk/ql/src/test/queries/clientpositive/input16_cc.q
+END
+ppd_udf_case.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_udf_case.q
+END
+nullinput2.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullinput2.q
+END
+rcfile_union.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_union.q
+END
+delimiter.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1170005/hive/trunk/ql/src/test/queries/clientpositive/delimiter.q
+END
+notable_alias2.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/notable_alias2.q
+END
+udf_hash.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_hash.q
+END
+input5.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input5.q
+END
+exim_07_all_part_over_nonoverlap.q
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_07_all_part_over_nonoverlap.q
+END
+regexp_extract.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/regexp_extract.q
+END
+join6.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join6.q
+END
+authorization_6.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1075614/hive/trunk/ql/src/test/queries/clientpositive/authorization_6.q
+END
+input_testxpath3.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_testxpath3.q
+END
+describe_table.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/describe_table.q
+END
+stats9.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats9.q
+END
+udf_int.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_int.q
+END
+skewjoin.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/skewjoin.q
+END
+partition_wise_fileformat2.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat2.q
+END
+udf_get_json_object.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_get_json_object.q
+END
+union13.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union13.q
+END
+transform2.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/transform2.q
+END
+udf_ucase.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ucase.q
+END
+input30.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input30.q
+END
+join31.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join31.q
+END
+input13.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input13.q
+END
+join14.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join14.q
+END
+index_auto_file_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/test/queries/clientpositive/index_auto_file_format.q
+END
+udf_var_samp.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_var_samp.q
+END
+create_like.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1149331/hive/trunk/ql/src/test/queries/clientpositive/create_like.q
+END
+lock1.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1042920/hive/trunk/ql/src/test/queries/clientpositive/lock1.q
+END
+input_part4.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part4.q
+END
+autogen_colalias.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1158104/hive/trunk/ql/src/test/queries/clientpositive/autogen_colalias.q
+END
+udf_case.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1074393/hive/trunk/ql/src/test/queries/clientpositive/udf_case.q
+END
+udf_ceil.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ceil.q
+END
+union2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union2.q
+END
+rcfile_toleratecorruptions.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1166922/hive/trunk/ql/src/test/queries/clientpositive/rcfile_toleratecorruptions.q
+END
+udf_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_map.q
+END
+ba_table3.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/ba_table3.q
+END
+udaf_avg.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_avg.q
+END
+ppd_transform.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_transform.q
+END
+udf_div.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_div.q
+END
+exim_04_all_part.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_04_all_part.q
+END
+timestamp_2.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/test/queries/clientpositive/timestamp_2.q
+END
+insert1.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/insert1.q
+END
+udf_add.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_add.q
+END
+udf_hour_minute_second.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_hour_minute_second.q
+END
+alter1.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/alter1.q
+END
+groupby11.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby11.q
+END
+drop_multi_partitions.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1053224/hive/trunk/ql/src/test/queries/clientpositive/drop_multi_partitions.q
+END
+union22.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1068075/hive/trunk/ql/src/test/queries/clientpositive/union22.q
+END
+index_auto.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/test/queries/clientpositive/index_auto.q
+END
+input11_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input11_limit.q
+END
+index_auto_mult_tables_compact.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1150962/hive/trunk/ql/src/test/queries/clientpositive/index_auto_mult_tables_compact.q
+END
+udf_negative.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_negative.q
+END
+join40.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join40.q
+END
+input22.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input22.q
+END
+exim_01_nonpart.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_01_nonpart.q
+END
+index_bitmap.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap.q
+END
+join23.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join23.q
+END
+udf_string.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_string.q
+END
+partition_wise_fileformat.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat.q
+END
+load_dyn_part9.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part9.q
+END
+inputddl5.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl5.q
+END
+auto_join18_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join18_multi_distinct.q
+END
+load_part_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/queries/clientpositive/load_part_authsuccess.q
+END
+merge1.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/merge1.q
+END
+groupby_map_ppr_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby_map_ppr_multi_distinct.q
+END
+ppd_multi_insert.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_multi_insert.q
+END
+udf_divider.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_divider.q
+END
+input6.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input6.q
+END
+join7.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join7.q
+END
+authorization_7.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1170398/hive/trunk/ql/src/test/queries/clientpositive/authorization_7.q
+END
+udf_bitwise_and.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bitwise_and.q
+END
+udf_variance.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_variance.q
+END
+null_column.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/null_column.q
+END
+input_testxpath4.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_testxpath4.q
+END
+udtf_parse_url_tuple.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udtf_parse_url_tuple.q
+END
+udf_split.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_split.q
+END
+partition_wise_fileformat3.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat3.q
+END
+udf_10_trims.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_10_trims.q
+END
+exim_20_part_managed_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_20_part_managed_location.q
+END
+union14.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union14.q
+END
+groupby4_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby4_noskew.q
+END
+index_stale_partitioned.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1159499/hive/trunk/ql/src/test/queries/clientpositive/index_stale_partitioned.q
+END
+input31.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input31.q
+END
+join32.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join32.q
+END
+input14.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input14.q
+END
+join15.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join15.q
+END
+udf_xpath_float.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_float.q
+END
+udf_double.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_double.q
+END
+lock2.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1031914/hive/trunk/ql/src/test/queries/clientpositive/lock2.q
+END
+input_part5.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part5.q
+END
+union3.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union3.q
+END
+default_partition_name.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1102108/hive/trunk/ql/src/test/queries/clientpositive/default_partition_name.q
+END
+create_big_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_big_view.q
+END
+create_insert_outputformat.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_insert_outputformat.q
+END
+timestamp_3.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/test/queries/clientpositive/timestamp_3.q
+END
+ppr_pushdown.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1084240/hive/trunk/ql/src/test/queries/clientpositive/ppr_pushdown.q
+END
+auto_join10.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join10.q
+END
+alter2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/alter2.q
+END
+index_bitmap_auto.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap_auto.q
+END
+union23.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union23.q
+END
+bucket1.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucket1.q
+END
+init_file.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/init_file.q
+END
+sample1.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample1.q
+END
+input40.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1068075/hive/trunk/ql/src/test/queries/clientpositive/input40.q
+END
+input23.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input23.q
+END
+alter_merge_stats.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1073992/hive/trunk/ql/src/test/queries/clientpositive/alter_merge_stats.q
+END
+rcfile_merge1.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1140377/hive/trunk/ql/src/test/queries/clientpositive/rcfile_merge1.q
+END
+udf_rlike.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_rlike.q
+END
+join24.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join24.q
+END
+create_nested_type.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_nested_type.q
+END
+inputddl6.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl6.q
+END
+reduce_deduplicate.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/reduce_deduplicate.q
+END
+drop_table.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1053224/hive/trunk/ql/src/test/queries/clientpositive/drop_table.q
+END
+type_cast_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/type_cast_1.q
+END
+quote1.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/quote1.q
+END
+exim_14_managed_location_over_existing.q
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_14_managed_location_over_existing.q
+END
+exim_21_export_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_21_export_authsuccess.q
+END
+load_dyn_part10.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part10.q
+END
+exim_00_nonpart_empty.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_00_nonpart_empty.q
+END
+rcfile_default_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_default_format.q
+END
+merge2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/merge2.q
+END
+input_lazyserde.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_lazyserde.q
+END
+ddltime.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/ddltime.q
+END
+create_escape.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_escape.q
+END
+udf_from_unixtime.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_from_unixtime.q
+END
+input7.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input7.q
+END
+join8.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join8.q
+END
+count.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/count.q
+END
+udaf_covar_samp.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_covar_samp.q
+END
+ppd_constant_expr.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_constant_expr.q
+END
+index_auto_mult_tables.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1153340/hive/trunk/ql/src/test/queries/clientpositive/index_auto_mult_tables.q
+END
+partition_wise_fileformat4.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1035962/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat4.q
+END
+udf_pmod.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_pmod.q
+END
+union15.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union15.q
+END
+input.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input.q
+END
+input_testxpath.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_testxpath.q
+END
+input32.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input32.q
+END
+join33.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join33.q
+END
+input15.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input15.q
+END
+join16.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join16.q
+END
+diff_part_input_formats.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/diff_part_input_formats.q
+END
+groupby1.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1.q
+END
+lock3.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1034219/hive/trunk/ql/src/test/queries/clientpositive/lock3.q
+END
+input_part6.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part6.q
+END
+union4.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union4.q
+END
+udf_smallint.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_smallint.q
+END
+create_union_table.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_union_table.q
+END
+tablename_with_select.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/tablename_with_select.q
+END
+nestedvirtual.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1153340/hive/trunk/ql/src/test/queries/clientpositive/nestedvirtual.q
+END
+auto_join11.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join11.q
+END
+udf_space.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_space.q
+END
+ctas.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/ctas.q
+END
+alter3.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1066236/hive/trunk/ql/src/test/queries/clientpositive/alter3.q
+END
+create_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097709/hive/trunk/ql/src/test/queries/clientpositive/create_view.q
+END
+index_bitmap_auto_partitioned.q
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap_auto_partitioned.q
+END
+exim_12_external_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_12_external_location.q
+END
+bucket2.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucket2.q
+END
+multigroupby_singlemr.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1102085/hive/trunk/ql/src/test/queries/clientpositive/multigroupby_singlemr.q
+END
+join_reorder2.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_reorder2.q
+END
+exim_03_nonpart_over_compat.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_03_nonpart_over_compat.q
+END
+sample2.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample2.q
+END
+udf_pow.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_pow.q
+END
+input41.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input41.q
+END
+input24.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input24.q
+END
+implicit_cast1.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/implicit_cast1.q
+END
+rcfile_merge2.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1140377/hive/trunk/ql/src/test/queries/clientpositive/rcfile_merge2.q
+END
+show_indexes_syntax.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1034655/hive/trunk/ql/src/test/queries/clientpositive/show_indexes_syntax.q
+END
+join25.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join25.q
+END
+regex_col.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/regex_col.q
+END
+inputddl7.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl7.q
+END
+groupby6_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby6_map.q
+END
+quote2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/quote2.q
+END
+load_dyn_part11.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part11.q
+END
+merge3.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/merge3.q
+END
+udtf_explode.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1154061/hive/trunk/ql/src/test/queries/clientpositive/udtf_explode.q
+END
+disable_merge_for_bucketing.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/disable_merge_for_bucketing.q
+END
+input8.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input8.q
+END
+join9.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join9.q
+END
+auto_join20.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join20.q
+END
+udf_exp.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_exp.q
+END
+exim_19_part_external_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_19_part_external_location.q
+END
+partition_wise_fileformat5.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1068083/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat5.q
+END
+union16.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union16.q
+END
+udf_xpath_long.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_long.q
+END
+exim_24_import_nonexist_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_24_import_nonexist_authsuccess.q
+END
+ppd_gby_join.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_gby_join.q
+END
+udf_bitwise_or.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bitwise_or.q
+END
+input33.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input33.q
+END
+groupby8_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1102085/hive/trunk/ql/src/test/queries/clientpositive/groupby8_noskew.q
+END
+join34.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join34.q
+END
+input16.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input16.q
+END
+join17.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join17.q
+END
+auto_join0.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join0.q
+END
+udf_stddev_samp.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_stddev_samp.q
+END
+udf_size.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_size.q
+END
+groupby2.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/groupby2.q
+END
+binary_table_colserde.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/binary_table_colserde.q
+END
+lock4.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1095287/hive/trunk/ql/src/test/queries/clientpositive/lock4.q
+END
+join_nulls.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_nulls.q
+END
+input_part7.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1067034/hive/trunk/ql/src/test/queries/clientpositive/input_part7.q
+END
+union5.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union5.q
+END
+input3_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input3_limit.q
+END
+udf_reflect.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_reflect.q
+END
+pcr.q
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1032312/hive/trunk/ql/src/test/queries/clientpositive/pcr.q
+END
+load_overwrite.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1052742/hive/trunk/ql/src/test/queries/clientpositive/load_overwrite.q
+END
+auto_join12.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join12.q
+END
+udf_power.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_power.q
+END
+alter4.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/alter4.q
+END
+merge_dynamic_partition.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1032314/hive/trunk/ql/src/test/queries/clientpositive/merge_dynamic_partition.q
+END
+udf_xpath_int.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_int.q
+END
+ql_rewrite_gbtoidx.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/test/queries/clientpositive/ql_rewrite_gbtoidx.q
+END
+groupby1_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1_noskew.q
+END
+bucket3.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucket3.q
+END
+source.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1043849/hive/trunk/ql/src/test/queries/clientpositive/source.q
+END
+udf_divide.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_divide.q
+END
+join_reorder3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_reorder3.q
+END
+sample3.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample3.q
+END
+udf_unix_timestamp.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_unix_timestamp.q
+END
+input42.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input42.q
+END
+groupby1_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1_map.q
+END
+input25.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input25.q
+END
+rcfile_merge3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1140377/hive/trunk/ql/src/test/queries/clientpositive/rcfile_merge3.q
+END
+join26.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join26.q
+END
+show_functions.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/show_functions.q
+END
+inputddl8.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl8.q
+END
+groupby3_noskew_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby3_noskew_multi_distinct.q
+END
+filter_join_breaktask2.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/filter_join_breaktask2.q
+END
+smb_mapjoin_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_1.q
+END
+udf_substr.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_substr.q
+END
+symlink_text_input_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/symlink_text_input_format.q
+END
+udf_xpath_boolean.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_boolean.q
+END
+load_dyn_part12.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part12.q
+END
+merge4.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/merge4.q
+END
+udf_regexp_replace.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_regexp_replace.q
+END
+input9.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input9.q
+END
+auto_join21.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join21.q
+END
+ppd_union.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_union.q
+END
+rcfile_createas1.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1140377/hive/trunk/ql/src/test/queries/clientpositive/rcfile_createas1.q
+END
+show_partitions.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/show_partitions.q
+END
+partition_wise_fileformat6.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1068083/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat6.q
+END
+groupby1_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1_map_skew.q
+END
+smb_mapjoin_10.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1147364/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_10.q
+END
+udf1.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf1.q
+END
+udf_positive.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_positive.q
+END
+union17.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union17.q
+END
+groupby_map_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby_map_ppr.q
+END
+ppd_gby2.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_gby2.q
+END
+input34.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input34.q
+END
+udf_PI.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_PI.q
+END
+udf_bin.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bin.q
+END
+join35.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join35.q
+END
+input17.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input17.q
+END
+udaf_var_samp.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_var_samp.q
+END
+udf_ln.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ln.q
+END
+join18.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join18.q
+END
+auto_join1.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join1.q
+END
+groupby3.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby3.q
+END
+udf_array_contains.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_array_contains.q
+END
+input_part8.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part8.q
+END
+union6.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union6.q
+END
+udf_cos.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_cos.q
+END
+udf_hex.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_hex.q
+END
+mapreduce1.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce1.q
+END
+smb_mapjoin9.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1038410/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin9.q
+END
+udf_bitmap_empty.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/udf_bitmap_empty.q
+END
+udf_regexp.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_regexp.q
+END
+auto_join30.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1090463/hive/trunk/ql/src/test/queries/clientpositive/auto_join30.q
+END
+auto_join13.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join13.q
+END
+alter5.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1126726/hive/trunk/ql/src/test/queries/clientpositive/alter5.q
+END
+timestamp_comparison.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/test/queries/clientpositive/timestamp_comparison.q
+END
+udf_notop.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1131114/hive/trunk/ql/src/test/queries/clientpositive/udf_notop.q
+END
+drop_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1053224/hive/trunk/ql/src/test/queries/clientpositive/drop_view.q
+END
+global_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1095153/hive/trunk/ql/src/test/queries/clientpositive/global_limit.q
+END
+udf_when.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_when.q
+END
+bucket4.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/bucket4.q
+END
+ba_table_union.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/ba_table_union.q
+END
+groupby4_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby4_map_skew.q
+END
+fileformat_mix.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/fileformat_mix.q
+END
+sample4.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample4.q
+END
+input43.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input43.q
+END
+udf_dayofmonth.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_dayofmonth.q
+END
+input26.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input26.q
+END
+rcfile_merge4.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1140377/hive/trunk/ql/src/test/queries/clientpositive/rcfile_merge4.q
+END
+join27.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join27.q
+END
+index_auto_multiple.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/test/queries/clientpositive/index_auto_multiple.q
+END
+udf_array.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_array.q
+END
+udf_coalesce.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_coalesce.q
+END
+smb_mapjoin_2.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_2.q
+END
+udf_elt.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_elt.q
+END
+load_dyn_part13.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part13.q
+END
+udf_month.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_month.q
+END
+udf_lcase.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lcase.q
+END
+udf_round.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1033367/hive/trunk/ql/src/test/queries/clientpositive/udf_round.q
+END
+udf_ascii.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ascii.q
+END
+udaf_variance.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_variance.q
+END
+udf_stddev.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_stddev.q
+END
+auto_join22.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join22.q
+END
+innerjoin.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1174531/hive/trunk/ql/src/test/queries/clientpositive/innerjoin.q
+END
+partition_wise_fileformat7.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1068083/hive/trunk/ql/src/test/queries/clientpositive/partition_wise_fileformat7.q
+END
+udf2.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf2.q
+END
+exim_08_nonpart_rename.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_08_nonpart_rename.q
+END
+union18.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union18.q
+END
+groupby7_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby7_map_skew.q
+END
+alter_partition_format_loc.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/alter_partition_format_loc.q
+END
+input35.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input35.q
+END
+join36.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join36.q
+END
+input18.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input18.q
+END
+join19.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join19.q
+END
+auto_join2.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join2.q
+END
+udf_reverse.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_reverse.q
+END
+udf_bigint.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bigint.q
+END
+groupby4.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby4.q
+END
+udf_isnull_isnotnull.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_isnull_isnotnull.q
+END
+input_part9.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part9.q
+END
+rcfile_bigdata.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_bigdata.q
+END
+union7.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union7.q
+END
+udf_log10.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_log10.q
+END
+groupby3_map_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby3_map_multi_distinct.q
+END
+udf_struct.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_struct.q
+END
+udaf_ngrams.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_ngrams.q
+END
+nullgroup.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullgroup.q
+END
+mapreduce2.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce2.q
+END
+index_auto_self_join.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1153340/hive/trunk/ql/src/test/queries/clientpositive/index_auto_self_join.q
+END
+udaf_covar_pop.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_covar_pop.q
+END
+partition_vs_table_metadata.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1067034/hive/trunk/ql/src/test/queries/clientpositive/partition_vs_table_metadata.q
+END
+insertexternal1.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/insertexternal1.q
+END
+udf_parse_url.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_parse_url.q
+END
+auto_join31.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1090463/hive/trunk/ql/src/test/queries/clientpositive/auto_join31.q
+END
+auto_join14.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join14.q
+END
+ppd_outer_join1.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_outer_join1.q
+END
+groupby5_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby5_noskew.q
+END
+sample5.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample5.q
+END
+input44.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/test/queries/clientpositive/input44.q
+END
+join28.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join28.q
+END
+groupby7_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby7_map.q
+END
+having.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1052989/hive/trunk/ql/src/test/queries/clientpositive/having.q
+END
+smb_mapjoin_3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_3.q
+END
+load_dyn_part14.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part14.q
+END
+join_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1166293/hive/trunk/ql/src/test/queries/clientpositive/join_view.q
+END
+ops_comparison.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1038475/hive/trunk/ql/src/test/queries/clientpositive/ops_comparison.q
+END
+auto_join23.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join23.q
+END
+mapjoin_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1049269/hive/trunk/ql/src/test/queries/clientpositive/mapjoin_distinct.q
+END
+udf_weekofyear.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_weekofyear.q
+END
+udf3.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf3.q
+END
+union19.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union19.q
+END
+partition_serde_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1058876/hive/trunk/ql/src/test/queries/clientpositive/partition_serde_format.q
+END
+udf_conv.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_conv.q
+END
+create_default_prop.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_default_prop.q
+END
+input36.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input36.q
+END
+join37.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join37.q
+END
+input19.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/test/queries/clientpositive/input19.q
+END
+udf_trim.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_trim.q
+END
+auto_join3.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join3.q
+END
+groupby5.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby5.q
+END
+exim_09_part_spec_nonoverlap.q
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_09_part_spec_nonoverlap.q
+END
+mapjoin1.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapjoin1.q
+END
+insert_into1.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into1.q
+END
+udf_concat_ws.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_concat_ws.q
+END
+udf_testlength.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_testlength.q
+END
+union8.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union8.q
+END
+protectmode.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/protectmode.q
+END
+udf_sin.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_sin.q
+END
+udf_sqrt.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_sqrt.q
+END
+mapreduce3.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce3.q
+END
+auto_join15.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join15.q
+END
+udf_modulo.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_modulo.q
+END
+alter_index.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036999/hive/trunk/ql/src/test/queries/clientpositive/alter_index.q
+END
+udf_explode.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1154061/hive/trunk/ql/src/test/queries/clientpositive/udf_explode.q
+END
+exim_23_import_part_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_23_import_part_authsuccess.q
+END
+ppd_outer_join2.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_outer_join2.q
+END
+join_1to1.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1036685/hive/trunk/ql/src/test/queries/clientpositive/join_1to1.q
+END
+groupby2_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby2_map.q
+END
+sample6.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample6.q
+END
+input28.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input28.q
+END
+udf_second.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_second.q
+END
+join29.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join29.q
+END
+union_script.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union_script.q
+END
+stats0.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats0.q
+END
+udf_length.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_length.q
+END
+smb_mapjoin_4.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_4.q
+END
+updateAccessTime.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1041713/hive/trunk/ql/src/test/queries/clientpositive/updateAccessTime.q
+END
+ppd_join2.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_join2.q
+END
+load_dyn_part15.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part15.q
+END
+lineage1.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/lineage1.q
+END
+udf_upper.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_upper.q
+END
+auto_join24.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join24.q
+END
+groupby1_map_nomap.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1_map_nomap.q
+END
+input4_cb_delim.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input4_cb_delim.q
+END
+drop_udf.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/drop_udf.q
+END
+udf4.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf4.q
+END
+udf_equal.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_equal.q
+END
+udf_lessthanorequal.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lessthanorequal.q
+END
+input37.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input37.q
+END
+join38.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join38.q
+END
+inoutdriver.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inoutdriver.q
+END
+show_tables.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1063549/hive/trunk/ql/src/test/queries/clientpositive/show_tables.q
+END
+auto_join4.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join4.q
+END
+udf_day.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_day.q
+END
+bucketmapjoin1.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin1.q
+END
+groupby6.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby6.q
+END
+create_struct_table.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_struct_table.q
+END
+udaf_histogram_numeric.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_histogram_numeric.q
+END
+insert_into2.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into2.q
+END
+query_properties.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1173504/hive/trunk/ql/src/test/queries/clientpositive/query_properties.q
+END
+input4_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input4_limit.q
+END
+union9.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union9.q
+END
+join18_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/join18_multi_distinct.q
+END
+udf_acos.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_acos.q
+END
+udf_lower.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lower.q
+END
+mapreduce4.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce4.q
+END
+hook_context_cs.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1083981/hive/trunk/ql/src/test/queries/clientpositive/hook_context_cs.q
+END
+nullinput.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullinput.q
+END
+udf_if.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_if.q
+END
+create_genericudf.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_genericudf.q
+END
+auto_join16.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join16.q
+END
+udf_sum.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_sum.q
+END
+ppd_outer_join3.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_outer_join3.q
+END
+mi.q
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mi.q
+END
+groupby_neg_float.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby_neg_float.q
+END
+sample7.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample7.q
+END
+groupby2_noskew_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby2_noskew_multi_distinct.q
+END
+bucketmapjoin_negative.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin_negative.q
+END
+udf_to_date.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_to_date.q
+END
+stats1.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats1.q
+END
+database_properties.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1055760/hive/trunk/ql/src/test/queries/clientpositive/database_properties.q
+END
+exim_10_external_managed.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_10_external_managed.q
+END
+fileformat_sequencefile.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/fileformat_sequencefile.q
+END
+smb_mapjoin_5.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_5.q
+END
+udf_E.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_E.q
+END
+udf_date_sub.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_date_sub.q
+END
+udf_rpad.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_rpad.q
+END
+ppd_join3.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_join3.q
+END
+udf_unhex.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_unhex.q
+END
+nullgroup4_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/nullgroup4_multi_distinct.q
+END
+input_dynamicserde.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_dynamicserde.q
+END
+alter_merge.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1073992/hive/trunk/ql/src/test/queries/clientpositive/alter_merge.q
+END
+udf_count.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_count.q
+END
+udf_case_column_pruning.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_case_column_pruning.q
+END
+udf_greaterthanorequal.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_greaterthanorequal.q
+END
+index_compact_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/index_compact_1.q
+END
+auto_join25.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join25.q
+END
+groupby2_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby2_noskew.q
+END
+index_stale.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1159499/hive/trunk/ql/src/test/queries/clientpositive/index_stale.q
+END
+udf_xpath_short.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_short.q
+END
+udf5.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf5.q
+END
+exim_13_managed_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_13_managed_location.q
+END
+mapjoin_mapjoin.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapjoin_mapjoin.q
+END
+input38.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input38.q
+END
+join39.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join39.q
+END
+auto_join5.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join5.q
+END
+bucketmapjoin2.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin2.q
+END
+index_compact.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/index_compact.q
+END
+udf_boolean.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_boolean.q
+END
+groupby7.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby7.q
+END
+udf_substring.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_substring.q
+END
+insert_into3.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into3.q
+END
+lateral_view_ppd.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/lateral_view_ppd.q
+END
+touch.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/touch.q
+END
+udf_max.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_max.q
+END
+udf_named_struct.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1158446/hive/trunk/ql/src/test/queries/clientpositive/udf_named_struct.q
+END
+mapreduce5.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce5.q
+END
+auto_join17.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join17.q
+END
+stats10.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats10.q
+END
+load_dyn_part1.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part1.q
+END
+index_auto_update.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1160975/hive/trunk/ql/src/test/queries/clientpositive/index_auto_update.q
+END
+ppd_outer_join4.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_outer_join4.q
+END
+auto_join_nulls.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join_nulls.q
+END
+partition_special_char.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1058871/hive/trunk/ql/src/test/queries/clientpositive/partition_special_char.q
+END
+udaf_stddev_samp.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_stddev_samp.q
+END
+sample8.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample8.q
+END
+ppr_pushdown2.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1084240/hive/trunk/ql/src/test/queries/clientpositive/ppr_pushdown2.q
+END
+exim_17_part_managed.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_17_part_managed.q
+END
+groupby8_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby8_map.q
+END
+join_map_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_map_ppr.q
+END
+loadpart_err.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/loadpart_err.q
+END
+udf_lpad.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lpad.q
+END
+stats2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats2.q
+END
+smb_mapjoin_6.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_6.q
+END
+insert_compressed.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1149724/hive/trunk/ql/src/test/queries/clientpositive/insert_compressed.q
+END
+union.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union.q
+END
+set_processor_namespaces.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1043768/hive/trunk/ql/src/test/queries/clientpositive/set_processor_namespaces.q
+END
+index_compact_2.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/index_compact_2.q
+END
+auto_join26.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1043843/hive/trunk/ql/src/test/queries/clientpositive/auto_join26.q
+END
+exim_15_external_part.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_15_external_part.q
+END
+create_like_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1148005/hive/trunk/ql/src/test/queries/clientpositive/create_like_view.q
+END
+udf_testlength2.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_testlength2.q
+END
+udaf_sum.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_sum.q
+END
+udf6.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf6.q
+END
+udf_json.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_json.q
+END
+union_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1067034/hive/trunk/ql/src/test/queries/clientpositive/union_ppr.q
+END
+query_result_fileformat.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/query_result_fileformat.q
+END
+input39.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input39.q
+END
+udf_hour.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_hour.q
+END
+mapjoin_hook.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1040346/hive/trunk/ql/src/test/queries/clientpositive/mapjoin_hook.q
+END
+auto_join6.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join6.q
+END
+bucketmapjoin3.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin3.q
+END
+groupby8.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1102085/hive/trunk/ql/src/test/queries/clientpositive/groupby8.q
+END
+insert_into4.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into4.q
+END
+script_pipe.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/script_pipe.q
+END
+repair.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/repair.q
+END
+create_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/create_1.q
+END
+input_part10.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part10.q
+END
+index_auth.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1153926/hive/trunk/ql/src/test/queries/clientpositive/index_auth.q
+END
+index_compression.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1153569/hive/trunk/ql/src/test/queries/clientpositive/index_compression.q
+END
+udf_asin.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_asin.q
+END
+mapreduce6.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce6.q
+END
+split_sample.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/queries/clientpositive/split_sample.q
+END
+bucketmapjoin_negative2.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin_negative2.q
+END
+groupby2_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby2_map_skew.q
+END
+auto_join18.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join18.q
+END
+stats11.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats11.q
+END
+load_dyn_part2.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part2.q
+END
+index_auto_partitioned.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/test/queries/clientpositive/index_auto_partitioned.q
+END
+udf_float.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_float.q
+END
+keyword_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/test/queries/clientpositive/keyword_1.q
+END
+udtf_json_tuple.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udtf_json_tuple.q
+END
+ppd_outer_join5.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1164340/hive/trunk/ql/src/test/queries/clientpositive/ppd_outer_join5.q
+END
+groupby1_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby1_limit.q
+END
+udf_map_keys.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1154816/hive/trunk/ql/src/test/queries/clientpositive/udf_map_keys.q
+END
+groupby3_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby3_map.q
+END
+sample9.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sample9.q
+END
+ppr_pushdown3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1094861/hive/trunk/ql/src/test/queries/clientpositive/ppr_pushdown3.q
+END
+query_with_semi.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/query_with_semi.q
+END
+semijoin.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/semijoin.q
+END
+join0.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join0.q
+END
+cluster.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/cluster.q
+END
+stats3.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats3.q
+END
+index_auto_unused.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/test/queries/clientpositive/index_auto_unused.q
+END
+join_rc.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_rc.q
+END
+rename_column.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rename_column.q
+END
+smb_mapjoin_7.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_7.q
+END
+udaf_max.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_max.q
+END
+uniquejoin.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/uniquejoin.q
+END
+input_testsequencefile.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_testsequencefile.q
+END
+select_as_omitted.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/select_as_omitted.q
+END
+input_dfs.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_dfs.q
+END
+exim_06_one_part.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_06_one_part.q
+END
+index_compact_3.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/index_compact_3.q
+END
+udaf_number_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_number_format.q
+END
+auto_join27.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1084847/hive/trunk/ql/src/test/queries/clientpositive/auto_join27.q
+END
+groupby5_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby5_map_skew.q
+END
+groupby6_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby6_noskew.q
+END
+udaf_corr.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_corr.q
+END
+udf7.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf7.q
+END
+udf_locate.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_locate.q
+END
+exim_02_00_part_empty.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_02_00_part_empty.q
+END
+udf_xpath_string.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_string.q
+END
+set_variable_sub.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1164319/hive/trunk/ql/src/test/queries/clientpositive/set_variable_sub.q
+END
+udf_bitmap_or.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1096651/hive/trunk/ql/src/test/queries/clientpositive/udf_bitmap_or.q
+END
+udf_concat_insert1.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_concat_insert1.q
+END
+lateral_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1051374/hive/trunk/ql/src/test/queries/clientpositive/lateral_view.q
+END
+auto_join7.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join7.q
+END
+bucketmapjoin4.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin4.q
+END
+udf_log.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_log.q
+END
+groupby9.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1102085/hive/trunk/ql/src/test/queries/clientpositive/groupby9.q
+END
+udf_min.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_min.q
+END
+insert_into5.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into5.q
+END
+bucket_groupby.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucket_groupby.q
+END
+udf_notequal.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_notequal.q
+END
+udaf_count.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_count.q
+END
+exim_19_00_part_external_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1161516/hive/trunk/ql/src/test/queries/clientpositive/exim_19_00_part_external_location.q
+END
+mapreduce7.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce7.q
+END
+udf_instr.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_instr.q
+END
+auto_join19.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join19.q
+END
+stats12.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats12.q
+END
+ppd_join.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_join.q
+END
+load_dyn_part3.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part3.q
+END
+udf_isnull.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_isnull.q
+END
+groupby8_map_skew.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby8_map_skew.q
+END
+groupby_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby_ppr.q
+END
+cp_mj_rc.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/cp_mj_rc.q
+END
+udf_xpath_double.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_xpath_double.q
+END
+join_thrift.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join_thrift.q
+END
+input0.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input0.q
+END
+join1.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/join1.q
+END
+authorization_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/test/queries/clientpositive/authorization_1.q
+END
+groupby2_map_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby2_map_multi_distinct.q
+END
+stats4.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats4.q
+END
+udf_like.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1166941/hive/trunk/ql/src/test/queries/clientpositive/udf_like.q
+END
+smb_mapjoin_8.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/smb_mapjoin_8.q
+END
+udf_ltrim.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ltrim.q
+END
+create_or_replace_view.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1149727/hive/trunk/ql/src/test/queries/clientpositive/create_or_replace_view.q
+END
+rcfile_null_value.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_null_value.q
+END
+udaf_context_ngrams.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_context_ngrams.q
+END
+load_exist_part_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/queries/clientpositive/load_exist_part_authsuccess.q
+END
+filter_join_breaktask.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/filter_join_breaktask.q
+END
+udf_bitmap_and.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1096651/hive/trunk/ql/src/test/queries/clientpositive/udf_bitmap_and.q
+END
+udf_tinyint.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_tinyint.q
+END
+outer_join_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/outer_join_ppr.q
+END
+binarysortable_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/binarysortable_1.q
+END
+auto_join28.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1090463/hive/trunk/ql/src/test/queries/clientpositive/auto_join28.q
+END
+ppd_repeated_alias.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1163869/hive/trunk/ql/src/test/queries/clientpositive/ppd_repeated_alias.q
+END
+udf8.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf8.q
+END
+udf_concat_insert2.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_concat_insert2.q
+END
+ppd_udf_col.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1156787/hive/trunk/ql/src/test/queries/clientpositive/ppd_udf_col.q
+END
+multi_insert.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/multi_insert.q
+END
+input1_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input1_limit.q
+END
+auto_join8.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join8.q
+END
+bucketmapjoin5.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin5.q
+END
+archive.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1147366/hive/trunk/ql/src/test/queries/clientpositive/archive.q
+END
+input_columnarserde.q
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_columnarserde.q
+END
+insert_into6.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/queries/clientpositive/insert_into6.q
+END
+exim_22_import_exist_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_22_import_exist_authsuccess.q
+END
+sort.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/sort.q
+END
+udf_logic_java_boolean.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/test/queries/clientpositive/udf_logic_java_boolean.q
+END
+mapreduce8.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapreduce8.q
+END
+udf_not.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_not.q
+END
+nullscript.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullscript.q
+END
+timestamp_udf.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/test/queries/clientpositive/timestamp_udf.q
+END
+stats13.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats13.q
+END
+load_dyn_part4.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part4.q
+END
+udf_index.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_index.q
+END
+udf_ceiling.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_ceiling.q
+END
+order.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/order.q
+END
+no_hooks.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/no_hooks.q
+END
+udf_find_in_set.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_find_in_set.q
+END
+input1.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input1.q
+END
+join2.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join2.q
+END
+columnarserde_create_shortcut.q
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/columnarserde_create_shortcut.q
+END
+authorization_2.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1074361/hive/trunk/ql/src/test/queries/clientpositive/authorization_2.q
+END
+sample10.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1041713/hive/trunk/ql/src/test/queries/clientpositive/sample10.q
+END
+udaf_min.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_min.q
+END
+udaf_percentile_approx.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udaf_percentile_approx.q
+END
+num_op_type_conv.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/num_op_type_conv.q
+END
+stats5.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats5.q
+END
+udf_date_add.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_date_add.q
+END
+rand_partitionpruner1.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rand_partitionpruner1.q
+END
+combine1.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/combine1.q
+END
+bucketizedhiveinputformat.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/bucketizedhiveinputformat.q
+END
+join10.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join10.q
+END
+auto_join29.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1090463/hive/trunk/ql/src/test/queries/clientpositive/auto_join29.q
+END
+groupby_bigdata.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby_bigdata.q
+END
+virtual_column.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/virtual_column.q
+END
+print_header.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1159742/hive/trunk/ql/src/test/queries/clientpositive/print_header.q
+END
+database.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1096427/hive/trunk/ql/src/test/queries/clientpositive/database.q
+END
+binary_table_bincolserde.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/binary_table_bincolserde.q
+END
+input_part0.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part0.q
+END
+type_widening.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1139395/hive/trunk/ql/src/test/queries/clientpositive/type_widening.q
+END
+udf9.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf9.q
+END
+nullgroup2.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullgroup2.q
+END
+subq.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/subq.q
+END
+load_binary_data.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/load_binary_data.q
+END
+sample_islocalmode_hook.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1156931/hive/trunk/ql/src/test/queries/clientpositive/sample_islocalmode_hook.q
+END
+udf_repeat.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_repeat.q
+END
+ppd_clusterby.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd_clusterby.q
+END
+exim_05_some_part.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_05_some_part.q
+END
+auto_join9.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join9.q
+END
+udf_tan.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_tan.q
+END
+bucketmapjoin6.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/bucketmapjoin6.q
+END
+progress_1.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/progress_1.q
+END
+index_bitmap1.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap1.q
+END
+index_bitmap_compression.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1153569/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap_compression.q
+END
+udf_subtract.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_subtract.q
+END
+groupby_ppd.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1163437/hive/trunk/ql/src/test/queries/clientpositive/groupby_ppd.q
+END
+udf_map_values.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1154816/hive/trunk/ql/src/test/queries/clientpositive/udf_map_values.q
+END
+show_tablestatus.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/show_tablestatus.q
+END
+parallel.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/parallel.q
+END
+database_location.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1152709/hive/trunk/ql/src/test/queries/clientpositive/database_location.q
+END
+subq2.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/subq2.q
+END
+order2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/order2.q
+END
+groupby3_noskew.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby3_noskew.q
+END
+input14_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input14_limit.q
+END
+stats14.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/test/queries/clientpositive/stats14.q
+END
+udf_abs.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_abs.q
+END
+ppd1.q
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/test/queries/clientpositive/ppd1.q
+END
+load_dyn_part5.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part5.q
+END
+inputddl1.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl1.q
+END
+rcfile_columnar.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_columnar.q
+END
+udf_concat.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_concat.q
+END
+groupby4_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby4_map.q
+END
+louter_join_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/louter_join_ppr.q
+END
+merge_dynamic_partition2.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1052414/hive/trunk/ql/src/test/queries/clientpositive/merge_dynamic_partition2.q
+END
+udf_or.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_or.q
+END
+auto_join_filters.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1036128/hive/trunk/ql/src/test/queries/clientpositive/auto_join_filters.q
+END
+udf_floor.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_floor.q
+END
+router_join_ppr.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/router_join_ppr.q
+END
+input2.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input2.q
+END
+escape1.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1132778/hive/trunk/ql/src/test/queries/clientpositive/escape1.q
+END
+join3.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join3.q
+END
+authorization_3.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1074361/hive/trunk/ql/src/test/queries/clientpositive/authorization_3.q
+END
+udf_regexp_extract.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_regexp_extract.q
+END
+stats6.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats6.q
+END
+udf_bitwise_not.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_bitwise_not.q
+END
+loadpart1.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/loadpart1.q
+END
+rcfile_lazydecompress.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rcfile_lazydecompress.q
+END
+udf_std.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_std.q
+END
+udf_case_thrift.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_case_thrift.q
+END
+union10.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union10.q
+END
+load_nonpart_authsuccess.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/queries/clientpositive/load_nonpart_authsuccess.q
+END
+rand_partitionpruner2.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rand_partitionpruner2.q
+END
+udf_rtrim.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_rtrim.q
+END
+mapjoin_subquery.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/mapjoin_subquery.q
+END
+combine2.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/combine2.q
+END
+input10.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input10.q
+END
+join11.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join11.q
+END
+udf_log2.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_log2.q
+END
+udf_var_pop.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_var_pop.q
+END
+input_part1.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part1.q
+END
+drop_function.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1053224/hive/trunk/ql/src/test/queries/clientpositive/drop_function.q
+END
+nullgroup3.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullgroup3.q
+END
+udf_rand.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_rand.q
+END
+describe_function.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/describe_function.q
+END
+case_sensitivity.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/case_sensitivity.q
+END
+index_bitmap2.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/test/queries/clientpositive/index_bitmap2.q
+END
+scriptfile1.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1066713/hive/trunk/ql/src/test/queries/clientpositive/scriptfile1.q
+END
+alter_view_rename.q
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1145048/hive/trunk/ql/src/test/queries/clientpositive/alter_view_rename.q
+END
+exim_02_part.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1081930/hive/trunk/ql/src/test/queries/clientpositive/exim_02_part.q
+END
+explode_null.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1154061/hive/trunk/ql/src/test/queries/clientpositive/explode_null.q
+END
+join20.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join20.q
+END
+udf_greaterthan.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_greaterthan.q
+END
+stats15.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/test/queries/clientpositive/stats15.q
+END
+udf_datediff.q
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_datediff.q
+END
+load_dyn_part6.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/load_dyn_part6.q
+END
+inputddl2.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/inputddl2.q
+END
+script_env_var1.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/script_env_var1.q
+END
+groupby2_limit.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/groupby2_limit.q
+END
+udf_compare_java_string.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/test/queries/clientpositive/udf_compare_java_string.q
+END
+index_auto_empty.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1155059/hive/trunk/ql/src/test/queries/clientpositive/index_auto_empty.q
+END
+transform_ppr1.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/transform_ppr1.q
+END
+merge_dynamic_partition3.q
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1054856/hive/trunk/ql/src/test/queries/clientpositive/merge_dynamic_partition3.q
+END
+input3.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input3.q
+END
+alter_concatenate_indexed_table.q
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1097563/hive/trunk/ql/src/test/queries/clientpositive/alter_concatenate_indexed_table.q
+END
+join4.q
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join4.q
+END
+authorization_4.q
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/test/queries/clientpositive/authorization_4.q
+END
+groupby_ppr_multi_distinct.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1028072/hive/trunk/ql/src/test/queries/clientpositive/groupby_ppr_multi_distinct.q
+END
+udf_lpad_rpad.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/udf_lpad_rpad.q
+END
+stats7.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/stats7.q
+END
+udf_percentile.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1154089/hive/trunk/ql/src/test/queries/clientpositive/udf_percentile.q
+END
+union11.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/union11.q
+END
+drop_index.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1053224/hive/trunk/ql/src/test/queries/clientpositive/drop_index.q
+END
+index_creation.q
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1033775/hive/trunk/ql/src/test/queries/clientpositive/index_creation.q
+END
+rand_partitionpruner3.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/rand_partitionpruner3.q
+END
+combine3.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/combine3.q
+END
+noalias_subq1.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/noalias_subq1.q
+END
+input11.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input11.q
+END
+join12.q
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/join12.q
+END
+input_part2.q
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/input_part2.q
+END
+disable_file_format_check.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/disable_file_format_check.q
+END
+str_to_map.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1033605/hive/trunk/ql/src/test/queries/clientpositive/str_to_map.q
+END
+ba_table1.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/ba_table1.q
+END
+ba_table_udfs.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/queries/clientpositive/ba_table_udfs.q
+END
+nullgroup4.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/queries/clientpositive/nullgroup4.q
+END
+join_empty.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1040351/hive/trunk/ql/src/test/queries/clientpositive/join_empty.q
+END

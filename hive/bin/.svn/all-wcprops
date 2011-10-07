@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/asf/!svn/ver/1149311/hive/trunk/bin
+END
+init-hive-dfs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1067094/hive/trunk/bin/init-hive-dfs.sh
+END
+hive-config.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/hive-config.sh
+END
+hive
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/repos/asf/!svn/ver/1080430/hive/trunk/bin/hive
+END

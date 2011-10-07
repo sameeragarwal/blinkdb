@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1156480/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks
+END
+Hook.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1038450/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/Hook.java
+END
+LineageInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/LineageInfo.java
+END
+ExecuteWithHookContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1038450/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/ExecuteWithHookContext.java
+END
+UpdateInputAccessTimeHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/UpdateInputAccessTimeHook.java
+END
+HookContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1156480/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/HookContext.java
+END
+WriteEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1034219/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/WriteEntity.java
+END
+PostExecute.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1038450/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/PostExecute.java
+END
+ReadEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1089938/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/ReadEntity.java
+END
+PreExecute.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1038450/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/hooks/PreExecute.java
+END

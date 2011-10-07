@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/columnar
+END
+TestLazyBinaryColumnarSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/columnar/TestLazyBinaryColumnarSerDe.java
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1177382/hive/trunk/cli/src/java/org/apache/hadoop/hive/cli
+END
+CliDriver.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1177382/hive/trunk/cli/src/java/org/apache/hadoop/hive/cli/CliDriver.java
+END
+OptionsProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1164319/hive/trunk/cli/src/java/org/apache/hadoop/hive/cli/OptionsProcessor.java
+END
+CliSessionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1163413/hive/trunk/cli/src/java/org/apache/hadoop/hive/cli/CliSessionState.java
+END
+RCFileCat.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1157323/hive/trunk/cli/src/java/org/apache/hadoop/hive/cli/RCFileCat.java
+END

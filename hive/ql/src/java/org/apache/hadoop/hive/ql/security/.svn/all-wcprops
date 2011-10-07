@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security
+END
+HiveAuthenticationProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/HiveAuthenticationProvider.java
+END
+HadoopDefaultAuthenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/HadoopDefaultAuthenticator.java
+END

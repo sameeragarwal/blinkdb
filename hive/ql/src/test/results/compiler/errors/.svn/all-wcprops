@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/results/compiler/errors
+END
+invalid_map_index.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_map_index.q.out
+END
+invalid_create_table.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1100656/hive/trunk/ql/src/test/results/compiler/errors/invalid_create_table.q.out
+END
+quoted_string.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/results/compiler/errors/quoted_string.q.out
+END
+garbage.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1100656/hive/trunk/ql/src/test/results/compiler/errors/garbage.q.out
+END
+insert_wrong_number_columns.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/insert_wrong_number_columns.q.out
+END
+invalid_list_index2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_list_index2.q.out
+END
+invalid_dot.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_dot.q.out
+END
+invalid_map_index2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_map_index2.q.out
+END
+ambiguous_table_col.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/ambiguous_table_col.q.out
+END
+ambiguous_join_col.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/results/compiler/errors/ambiguous_join_col.q.out
+END
+nonkey_groupby.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/nonkey_groupby.q.out
+END
+invalid_index.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_index.q.out
+END
+wrong_distinct1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/wrong_distinct1.q.out
+END
+missing_overwrite.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1145411/hive/trunk/ql/src/test/results/compiler/errors/missing_overwrite.q.out
+END
+wrong_distinct2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1100656/hive/trunk/ql/src/test/results/compiler/errors/wrong_distinct2.q.out
+END
+wrong_distinct3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/results/compiler/errors/wrong_distinct3.q.out
+END
+duplicate_alias.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/duplicate_alias.q.out
+END
+unknown_function1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_function1.q.out
+END
+invalid_select.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1100656/hive/trunk/ql/src/test/results/compiler/errors/invalid_select.q.out
+END
+unknown_function2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_function2.q.out
+END
+unknown_table1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_table1.q.out
+END
+unknown_function3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_function3.q.out
+END
+unknown_table2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_table2.q.out
+END
+unknown_function4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_function4.q.out
+END
+unknown_function5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/results/compiler/errors/unknown_function5.q.out
+END
+invalid_function_param1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/results/compiler/errors/invalid_function_param1.q.out
+END
+unknown_column1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_column1.q.out
+END
+invalid_function_param2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/test/results/compiler/errors/invalid_function_param2.q.out
+END
+unknown_column2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_column2.q.out
+END
+unknown_column3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_column3.q.out
+END
+unknown_column4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1151280/hive/trunk/ql/src/test/results/compiler/errors/unknown_column4.q.out
+END
+unknown_column5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1151280/hive/trunk/ql/src/test/results/compiler/errors/unknown_column5.q.out
+END
+unknown_column6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/unknown_column6.q.out
+END
+invalid_list_index.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1103980/hive/trunk/ql/src/test/results/compiler/errors/invalid_list_index.q.out
+END

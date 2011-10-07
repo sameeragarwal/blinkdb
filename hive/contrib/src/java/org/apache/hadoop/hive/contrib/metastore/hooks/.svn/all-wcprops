@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1072517/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/metastore/hooks
+END
+TestURLHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1072517/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/metastore/hooks/TestURLHook.java
+END

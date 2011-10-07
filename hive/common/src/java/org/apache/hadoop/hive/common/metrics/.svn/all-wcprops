@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1068698/hive/trunk/common/src/java/org/apache/hadoop/hive/common/metrics
+END
+Metrics.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1068698/hive/trunk/common/src/java/org/apache/hadoop/hive/common/metrics/Metrics.java
+END
+MetricsMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1068698/hive/trunk/common/src/java/org/apache/hadoop/hive/common/metrics/MetricsMBean.java
+END
+MetricsMBeanImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1068698/hive/trunk/common/src/java/org/apache/hadoop/hive/common/metrics/MetricsMBeanImpl.java
+END

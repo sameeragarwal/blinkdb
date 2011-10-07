@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar
+END
+ColumnarStructBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/ColumnarStructBase.java
+END
+ColumnarSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/ColumnarSerDe.java
+END
+ColumnarStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/ColumnarStruct.java
+END
+LazyDecompressionCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/LazyDecompressionCallback.java
+END
+LazyBinaryColumnarSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/LazyBinaryColumnarSerDe.java
+END
+LazyBinaryColumnarStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/LazyBinaryColumnarStruct.java
+END
+BytesRefArrayWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/BytesRefArrayWritable.java
+END
+BytesRefWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/BytesRefWritable.java
+END
+ColumnarSerDeBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/columnar/ColumnarSerDeBase.java
+END

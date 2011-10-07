@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector
+END
+TestProtocolBuffersObjectInspectors.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestProtocolBuffersObjectInspectors.java
+END
+TestFullMapEqualComparer.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/asf/!svn/ver/1149027/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestFullMapEqualComparer.java
+END
+TestStandardObjectInspectors.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestStandardObjectInspectors.java
+END
+TestThriftObjectInspectors.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1044070/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestThriftObjectInspectors.java
+END
+TestCrossMapEqualComparer.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/1149027/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestCrossMapEqualComparer.java
+END
+TestObjectInspectorConverters.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestObjectInspectorConverters.java
+END
+TestSimpleMapEqualComparer.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1149027/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestSimpleMapEqualComparer.java
+END
+MyStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/MyStruct.java
+END
+TestReflectionObjectInspectors.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestReflectionObjectInspectors.java
+END
+TestUnionStructObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestUnionStructObjectInspector.java
+END
+TestObjectInspectorUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/asf/!svn/ver/1044070/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/objectinspector/TestObjectInspectorUtils.java
+END

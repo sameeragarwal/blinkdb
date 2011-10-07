@@ -1,0 +1,864 @@
+2011-10-06 15:10:56,948 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:10:57,253 INFO org.apache.hadoop.mapred.JobTracker: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting JobTracker
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:10:57,537 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-06 15:10:57,574 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-06 15:10:57,578 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-06 15:10:57,579 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: JobTracker metrics system started
+2011-10-06 15:10:57,914 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source QueueMetrics,q=default registered.
+2011-10-06 15:10:58,226 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-06 15:10:58,227 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-06 15:10:58,233 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-06 15:10:58,239 INFO org.apache.hadoop.mapred.JobTracker: Scheduler configured with (memSizeForMapSlotOnJT, memSizeForReduceSlotOnJT, limitMaxMemForMapTasks, limitMaxMemForReduceTasks) (-1, -1, -1, -1)
+2011-10-06 15:10:58,243 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Starting expired delegation token remover thread, tokenRemoverScanInterval=60 min(s)
+2011-10-06 15:10:58,243 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-06 15:10:58,244 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-06 15:10:58,267 INFO org.apache.hadoop.mapred.JobTracker: Starting jobtracker with owner as sameer
+2011-10-06 15:10:58,331 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort54311 registered.
+2011-10-06 15:10:58,332 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort54311 registered.
+2011-10-06 15:10:58,332 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-06 15:11:03,473 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-06 15:11:03,548 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-06 15:11:03,643 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50030
+2011-10-06 15:11:03,651 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50030 webServer.getConnectors()[0].getLocalPort() returned 50030
+2011-10-06 15:11:03,651 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50030
+2011-10-06 15:11:03,651 INFO org.mortbay.log: jetty-6.1.26
+2011-10-06 15:11:05,670 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50030
+2011-10-06 15:11:05,674 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-06 15:11:05,675 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source JobTrackerMetrics registered.
+2011-10-06 15:11:05,675 INFO org.apache.hadoop.mapred.JobTracker: JobTracker up at: 54311
+2011-10-06 15:11:05,675 INFO org.apache.hadoop.mapred.JobTracker: JobTracker webserver: 50030
+2011-10-06 15:11:06,785 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:07,806 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:08,807 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:09,808 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:10,810 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:11,811 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:12,811 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:13,813 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:14,814 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:15,815 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:15,817 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:11:26,820 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:27,821 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:28,822 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:29,823 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:30,823 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:31,824 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:32,825 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:33,826 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:34,827 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:35,828 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:35,829 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:11:46,832 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:47,833 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:48,834 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:49,835 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:50,836 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:51,836 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:52,837 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:53,838 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:54,839 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:55,840 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:55,841 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:12:06,844 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:07,845 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:08,847 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:09,848 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:10,849 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:11,850 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:12,851 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:13,852 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:14,853 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:15,854 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:15,855 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:12:26,859 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:27,860 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:28,861 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:29,862 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:30,863 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:31,863 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:32,864 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:33,865 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:34,866 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:35,866 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:35,867 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:12:46,870 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:47,871 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:48,872 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:49,873 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:50,874 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:51,875 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:52,876 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:53,878 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:54,878 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:55,879 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:55,880 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:13:06,883 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:07,885 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:08,886 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:09,887 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:10,888 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:11,889 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:12,890 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:13,891 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:14,892 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:15,893 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:15,894 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:13:26,906 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:27,907 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:28,907 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:29,908 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:30,909 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:31,910 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:32,911 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:33,913 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:34,913 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:35,914 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:35,914 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:13:46,917 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:47,918 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:48,919 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:49,920 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:50,921 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:51,922 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:52,923 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:53,924 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:54,925 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:55,927 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:55,927 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:14:06,930 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:07,931 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:08,932 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:09,933 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:10,934 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:11,935 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:12,936 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:13,938 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:14,939 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:15,940 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:15,940 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:14:26,943 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:27,944 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:28,945 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:29,946 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:30,947 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:31,948 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:32,948 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:33,949 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:34,951 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:35,952 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:35,952 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:14:46,955 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:47,956 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:48,957 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:49,958 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:50,958 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:51,959 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:52,960 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:53,961 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:54,965 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:55,965 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:55,966 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:15:06,969 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:07,970 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:08,971 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:09,972 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:10,973 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:11,974 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:12,976 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:13,977 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:14,978 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:15,979 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:15,979 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:15:26,982 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:27,983 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:28,985 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:29,986 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:30,987 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:31,988 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:32,989 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:33,990 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:34,991 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:35,992 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:35,993 INFO org.apache.hadoop.mapred.JobTracker: problem cleaning system directory: null
+java.net.ConnectException: Call to localhost/127.0.0.1:54310 failed on connection exception: java.net.ConnectException: Connection refused
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1057)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1033)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.getProxy(RPC.java:364)
+	at org.apache.hadoop.hdfs.DFSClient.createRPCNamenode(DFSClient.java:106)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:208)
+	at org.apache.hadoop.hdfs.DFSClient.<init>(DFSClient.java:175)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:89)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:1310)
+	at org.apache.hadoop.fs.FileSystem.access$100(FileSystem.java:65)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:1328)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:226)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:109)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2365)
+	at org.apache.hadoop.mapred.JobTracker$3.run(JobTracker.java:2363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2363)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2190)
+	at org.apache.hadoop.mapred.JobTracker.<init>(JobTracker.java:2184)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:300)
+	at org.apache.hadoop.mapred.JobTracker.startTracker(JobTracker.java:291)
+	at org.apache.hadoop.mapred.JobTracker.main(JobTracker.java:4974)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:592)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:406)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:414)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:527)
+	at org.apache.hadoop.ipc.Client$Connection.access$1800(Client.java:187)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1164)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1010)
+	... 23 more
+2011-10-06 15:15:46,075 INFO org.apache.hadoop.mapred.JobTracker: Cleaning up the system directory
+2011-10-06 15:15:46,111 INFO org.apache.hadoop.mapred.JobHistory: Creating DONE folder at file:/home/sameer/projects/fa11/hadoop-0.20.204.0/logs/history/done
+2011-10-06 15:15:46,114 INFO org.apache.hadoop.mapred.JobTracker: History server being initialized in embedded mode
+2011-10-06 15:15:46,118 INFO org.apache.hadoop.mapred.JobHistoryServer: Started job history server at: localhost:50030
+2011-10-06 15:15:46,118 INFO org.apache.hadoop.mapred.JobTracker: Job History Server web address: localhost:50030
+2011-10-06 15:15:46,121 INFO org.apache.hadoop.mapred.CompletedJobStatusStore: Completed job store is inactive
+2011-10-06 15:15:46,180 WARN org.apache.hadoop.hdfs.DFSClient: DataStreamer Exception: org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+
+2011-10-06 15:15:46,180 WARN org.apache.hadoop.hdfs.DFSClient: Error Recovery for block null bad datanode[0] nodes == null
+2011-10-06 15:15:46,180 WARN org.apache.hadoop.hdfs.DFSClient: Could not get block locations. Source file "/tmp/hadoop-sameer/mapred/system/jobtracker.info" - Aborting...
+2011-10-06 15:15:46,181 WARN org.apache.hadoop.mapred.JobTracker: Writing to file hdfs://localhost:54310/tmp/hadoop-sameer/mapred/system/jobtracker.info failed!
+2011-10-06 15:15:46,181 WARN org.apache.hadoop.mapred.JobTracker: FileSystem is not ready yet!
+2011-10-06 15:15:46,191 WARN org.apache.hadoop.mapred.JobTracker: Failed to initialize recovery manager. 
+org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+2011-10-06 15:15:56,192 WARN org.apache.hadoop.mapred.JobTracker: Retrying...
+2011-10-06 15:15:56,224 WARN org.apache.hadoop.hdfs.DFSClient: DataStreamer Exception: org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+
+2011-10-06 15:15:56,224 WARN org.apache.hadoop.hdfs.DFSClient: Error Recovery for block null bad datanode[0] nodes == null
+2011-10-06 15:15:56,224 WARN org.apache.hadoop.hdfs.DFSClient: Could not get block locations. Source file "/tmp/hadoop-sameer/mapred/system/jobtracker.info" - Aborting...
+2011-10-06 15:15:56,224 WARN org.apache.hadoop.mapred.JobTracker: Writing to file hdfs://localhost:54310/tmp/hadoop-sameer/mapred/system/jobtracker.info failed!
+2011-10-06 15:15:56,224 WARN org.apache.hadoop.mapred.JobTracker: FileSystem is not ready yet!
+2011-10-06 15:15:56,229 WARN org.apache.hadoop.mapred.JobTracker: Failed to initialize recovery manager. 
+org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+2011-10-06 15:16:06,229 WARN org.apache.hadoop.mapred.JobTracker: Retrying...
+2011-10-06 15:16:06,472 INFO org.apache.hadoop.mapred.JobTracker: Refreshing hosts information
+2011-10-06 15:16:06,495 INFO org.apache.hadoop.util.HostsFileReader: Setting the includes file to 
+2011-10-06 15:16:06,495 INFO org.apache.hadoop.util.HostsFileReader: Setting the excludes file to 
+2011-10-06 15:16:06,495 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-06 15:16:06,495 INFO org.apache.hadoop.mapred.JobTracker: Decommissioning 0 nodes
+2011-10-06 15:16:06,496 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2011-10-06 15:16:06,497 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 54311: starting
+2011-10-06 15:16:06,500 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 54311: starting
+2011-10-06 15:16:06,500 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 54311: starting
+2011-10-06 15:16:06,501 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 54311: starting
+2011-10-06 15:16:06,501 INFO org.apache.hadoop.ipc.Server: IPC Server handler 3 on 54311: starting
+2011-10-06 15:16:06,501 INFO org.apache.hadoop.ipc.Server: IPC Server handler 4 on 54311: starting
+2011-10-06 15:16:06,501 INFO org.apache.hadoop.ipc.Server: IPC Server handler 5 on 54311: starting
+2011-10-06 15:16:06,501 INFO org.apache.hadoop.ipc.Server: IPC Server handler 6 on 54311: starting
+2011-10-06 15:16:06,502 INFO org.apache.hadoop.ipc.Server: IPC Server handler 7 on 54311: starting
+2011-10-06 15:16:06,502 INFO org.apache.hadoop.ipc.Server: IPC Server handler 8 on 54311: starting
+2011-10-06 15:16:06,502 INFO org.apache.hadoop.mapred.JobTracker: Starting RUNNING
+2011-10-06 15:16:06,513 INFO org.apache.hadoop.ipc.Server: IPC Server handler 9 on 54311: starting
+2011-10-06 15:16:07,108 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/ubuntu
+2011-10-06 15:16:07,115 INFO org.apache.hadoop.mapred.JobTracker: Adding tracker tracker_ubuntu:localhost/127.0.0.1:52555 to host ubuntu

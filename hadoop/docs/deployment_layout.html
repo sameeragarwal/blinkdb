@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="Apache Forrest" name="Generator">
+<meta name="Forrest-version" content="0.8">
+<meta name="Forrest-skin-name" content="pelt">
+<title> 
+      Hadoop Deployment Layout
+    </title>
+<link type="text/css" href="skin/basic.css" rel="stylesheet">
+<link media="screen" type="text/css" href="skin/screen.css" rel="stylesheet">
+<link media="print" type="text/css" href="skin/print.css" rel="stylesheet">
+<link type="text/css" href="skin/profile.css" rel="stylesheet">
+<script src="skin/getBlank.js" language="javascript" type="text/javascript"></script><script src="skin/getMenu.js" language="javascript" type="text/javascript"></script><script src="skin/fontsize.js" language="javascript" type="text/javascript"></script>
+<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body onload="init()">
+<script type="text/javascript">ndeSetTextSize();</script>
+<div id="top">
+<!--+
+    |breadtrail
+    +-->
+<div class="breadtrail">
+<a href="http://www.apache.org/">Apache</a> &gt; <a href="http://hadoop.apache.org/">Hadoop</a> &gt; <a href="http://hadoop.apache.org/core/">Core</a><script src="skin/breadcrumbs.js" language="JavaScript" type="text/javascript"></script>
+</div>
+<!--+
+    |header
+    +-->
+<div class="header">
+<!--+
+    |start group logo
+    +-->
+<div class="grouplogo">
+<a href="http://hadoop.apache.org/"><img class="logoImage" alt="Hadoop" src="images/hadoop-logo.jpg" title="Apache Hadoop"></a>
+</div>
+<!--+
+    |end group logo
+    +-->
+<!--+
+    |start Project Logo
+    +-->
+<div class="projectlogo">
+<a href="http://hadoop.apache.org/core/"><img class="logoImage" alt="Hadoop" src="images/hadoop-logo-2.gif" title="Scalable Computing Platform"></a>
+</div>
+<!--+
+    |end Project Logo
+    +-->
+<!--+
+    |start Search
+    +-->
+<div class="searchbox">
+<form action="http://www.google.com/search" method="get" class="roundtopsmall">
+<input value="hadoop.apache.org" name="sitesearch" type="hidden"><input onFocus="getBlank (this, 'Search the site with google');" size="25" name="q" id="query" type="text" value="Search the site with google">&nbsp; 
+                    <input name="Search" value="Search" type="submit">
+</form>
+</div>
+<!--+
+    |end search
+    +-->
+<!--+
+    |start Tabs
+    +-->
+<ul id="tabs">
+<li>
+<a class="unselected" href="http://hadoop.apache.org/core/">Project</a>
+</li>
+<li>
+<a class="unselected" href="http://wiki.apache.org/hadoop">Wiki</a>
+</li>
+<li class="current">
+<a class="selected" href="index.html">Hadoop 0.20.204.0 Documentation</a>
+</li>
+</ul>
+<!--+
+    |end Tabs
+    +-->
+</div>
+</div>
+<div id="main">
+<div id="publishedStrip">
+<!--+
+    |start Subtabs
+    +-->
+<div id="level2tabs"></div>
+<!--+
+    |end Endtabs
+    +-->
+<script type="text/javascript"><!--
+document.write("Last Published: " + document.lastModified);
+//  --></script>
+</div>
+<!--+
+    |breadtrail
+    +-->
+<div class="breadtrail">
+
+             &nbsp;
+           </div>
+<!--+
+    |start Menu, mainarea
+    +-->
+<!--+
+    |start Menu
+    +-->
+<div id="menu">
+<div onclick="SwitchMenu('menu_1.1', 'skin/')" id="menu_1.1Title" class="menutitle">Getting Started</div>
+<div id="menu_1.1" class="menuitemgroup">
+<div class="menuitem">
+<a href="index.html">Overview</a>
+</div>
+<div class="menuitem">
+<a href="single_node_setup.html">Single Node Setup</a>
+</div>
+<div class="menuitem">
+<a href="cluster_setup.html">Cluster Setup</a>
+</div>
+</div>
+<div onclick="SwitchMenu('menu_1.2', 'skin/')" id="menu_1.2Title" class="menutitle">MapReduce</div>
+<div id="menu_1.2" class="menuitemgroup">
+<div class="menuitem">
+<a href="mapred_tutorial.html">MapReduce Tutorial</a>
+</div>
+<div class="menuitem">
+<a href="streaming.html">Hadoop Streaming</a>
+</div>
+<div class="menuitem">
+<a href="commands_manual.html">Hadoop Commands</a>
+</div>
+<div class="menuitem">
+<a href="distcp.html">DistCp</a>
+</div>
+<div class="menuitem">
+<a href="vaidya.html">Vaidya</a>
+</div>
+<div class="menuitem">
+<a href="hadoop_archives.html">Hadoop Archives</a>
+</div>
+<div class="menuitem">
+<a href="gridmix.html">Gridmix</a>
+</div>
+<div class="menuitem">
+<a href="capacity_scheduler.html">Capacity Scheduler</a>
+</div>
+<div class="menuitem">
+<a href="fair_scheduler.html">Fair Scheduler</a>
+</div>
+<div class="menuitem">
+<a href="hod_scheduler.html">Hod Scheduler</a>
+</div>
+</div>
+<div onclick="SwitchMenu('menu_1.3', 'skin/')" id="menu_1.3Title" class="menutitle">HDFS</div>
+<div id="menu_1.3" class="menuitemgroup">
+<div class="menuitem">
+<a href="hdfs_user_guide.html">HDFS Users </a>
+</div>
+<div class="menuitem">
+<a href="hdfs_design.html">HDFS Architecture</a>
+</div>
+<div class="menuitem">
+<a href="hdfs_permissions_guide.html">Permissions</a>
+</div>
+<div class="menuitem">
+<a href="hdfs_quota_admin_guide.html">Quotas</a>
+</div>
+<div class="menuitem">
+<a href="SLG_user_guide.html">Synthetic Load Generator</a>
+</div>
+<div class="menuitem">
+<a href="libhdfs.html">C API libhdfs</a>
+</div>
+</div>
+<div onclick="SwitchMenu('menu_selected_1.4', 'skin/')" id="menu_selected_1.4Title" class="menutitle" style="background-image: url('skin/images/chapter_open.gif');">Common</div>
+<div id="menu_selected_1.4" class="selectedmenuitemgroup" style="display: block;">
+<div class="menupage">
+<div class="menupagetitle">Deployment Layout</div>
+</div>
+<div class="menuitem">
+<a href="file_system_shell.html">File System Shell</a>
+</div>
+<div class="menuitem">
+<a href="service_level_auth.html">Service Level Authorization</a>
+</div>
+<div class="menuitem">
+<a href="native_libraries.html">Native Libraries</a>
+</div>
+</div>
+<div onclick="SwitchMenu('menu_1.5', 'skin/')" id="menu_1.5Title" class="menutitle">Miscellaneous</div>
+<div id="menu_1.5" class="menuitemgroup">
+<div class="menuitem">
+<a href="Secure_Impersonation.html">Secure Impersonation</a>
+</div>
+<div class="menuitem">
+<a href="api/index.html">API Docs</a>
+</div>
+<div class="menuitem">
+<a href="jdiff/changes.html">API Changes</a>
+</div>
+<div class="menuitem">
+<a href="http://wiki.apache.org/hadoop/">Wiki</a>
+</div>
+<div class="menuitem">
+<a href="http://wiki.apache.org/hadoop/FAQ">FAQ</a>
+</div>
+<div class="menuitem">
+<a href="releasenotes.html">Release Notes</a>
+</div>
+<div class="menuitem">
+<a href="changes.html">Change Log</a>
+</div>
+</div>
+<div id="credit"></div>
+<div id="roundbottom">
+<img style="display: none" class="corner" height="15" width="15" alt="" src="skin/images/rc-b-l-15-1body-2menu-3menu.png"></div>
+<!--+
+  |alternative credits
+  +-->
+<div id="credit2"></div>
+</div>
+<!--+
+    |end Menu
+    +-->
+<!--+
+    |start content
+    +-->
+<div id="content">
+<div title="Portable Document Format" class="pdflink">
+<a class="dida" href="deployment_layout.pdf"><img alt="PDF -icon" src="skin/images/pdfdoc.gif" class="skin"><br>
+        PDF</a>
+</div>
+<h1> 
+      Hadoop Deployment Layout
+    </h1>
+<div id="minitoc-area">
+<ul class="minitoc">
+<li>
+<a href="#Introduction"> Introduction </a>
+</li>
+<li>
+<a href="#Packages"> Packages </a>
+</li>
+<li>
+<a href="#Deployment"> Deployment </a>
+</li>
+<li>
+<a href="#Path+Configurations"> Path Configurations </a>
+</li>
+</ul>
+</div>
+    
+<a name="N1000D"></a><a name="Introduction"></a>
+<h2 class="h3"> Introduction </h2>
+<div class="section">
+<p>
+        This document describes the standard deployment layout for Hadoop.  With increased complexity and evolving Hadoop ecosystem, having standard deployment layout ensures better integration between Hadoop sub-projects.  By making the installation process easier, we can lower the barrier to entry and increase Hadoop adoption.
+      </p>
+</div>
+
+    
+<a name="N10017"></a><a name="Packages"></a>
+<h2 class="h3"> Packages </h2>
+<div class="section">
+<p>
+          We need to divide Hadoop up into packages that can be independently upgraded.  The list of packages should include:
+        </p>
+<ul>
+          
+<li>Hadoop Common - Common including the native code and required jar files.</li>
+          
+<li>HDFS Client - HDFS jars, scripts, and shared libraries.</li>
+          
+<li>HDFS Server - jsvc executable</li>
+          
+<li>Yarn Client - Yarn client jars and scripts</li>
+          
+<li>Yarn Server - Yarn server jars and scripts</li>
+          
+<li>MapReduce - MapReduce jars, scripts, and shared libraries</li>
+          
+<li>LZO - LZ0 codec from github.com/omally/hadoop-gpl-compression</li>
+          
+<li>Metrics - Plugins for Chukwa and Ganglia</li>
+        
+</ul>
+<p>Packages from other teams will include:</p>
+<ul>
+          
+<li>Pig</li>
+          
+<li>Hive</li>
+          
+<li>Oozie client</li>
+          
+<li>Oozie server</li>
+          
+<li>Howl client</li>
+          
+<li>Howl server</li>
+        
+</ul>
+<p>These packages should be deployable with RPM on RedHat.  We also need a package that depends on a version of each of these packages.  In general, we can generate tarballs in the new deployment layout.</p>
+<p>Note that some packages, like Pig, which are user facing, will have 2 versions installed in a given deployment.  This will be accomplished by modifying the package name and the associated binaries to include the version number.</p>
+<p>All of the following paths are based on a prefix directory that is the root of the installation.  Our packages must support having multiple Hadoop stack installation on a computer at the same time.  For RPMs, this means that the packages must be relocatable and honor the --prefix option.</p>
+</div>
+
+ 
+      
+<a name="N1005D"></a><a name="Deployment"></a>
+<h2 class="h3"> Deployment </h2>
+<div class="section">
+<p>It is important to have a standard deployment that results from installing the packages regardless of the package manager.  Here are the top level directories and a sample of what would be under each.  Note that all of the packages are installed "flattened" into the prefix directory.  For compatibility reasons, we should create "share/hadoop" that matches the old HADOOP_HOME and set the HADOOP_HOME variable to that.</p>
+<pre class="code">
+        $PREFIX/ bin / hadoop
+               |     | mapred
+               |     | pig -&gt; pig7
+               |     | pig6
+               |     + pig7
+               |
+               + etc / hadoop / core-site.xml
+               |              | hdfs-site.xml
+               |              + mapred-site.xml
+               |
+               + include / hadoop / Pipes.hh
+               |         |        + TemplateFactory.hh
+               |         + hdfs.h
+               |
+               + lib / jni / hadoop-common / libhadoop.so.0.20.0
+               |     |
+               |     | libhdfs.so -&gt; libhdfs.so.0.20.0
+               |     + libhdfs.so.0.20.0
+               |
+               + libexec / task-controller
+               |
+               + man / man1 / hadoop.1
+               |            | mapred.1
+               |            | pig6.1
+               |            + pig7.1
+               |
+               + share / hadoop-common 
+               |       | hadoop-hdfs
+               |       | hadoop-mapreduce
+               |       | pig6
+               |       + pig7
+               |
+               + sbin / hdfs-admin
+               |      | mapred-admin
+               |
+               + src / hadoop-common
+               |     | hadoop-hdfs
+               |     + hadoop-mapreduce
+               |
+               + var / lib / data-node
+                     |     + task-tracker
+                     |
+                     | log / hadoop-datanode
+                     |     + hadoop-tasktracker
+                     |
+                     + run / hadoop-datanode.pid
+                           + hadoop-tasktracker.pid
+        </pre>
+<p>Note that we must continue to honor HADOOP_CONF_DIR to override the configuration location, but that it should default to $prefix/etc.  User facing binaries and scripts go into bin.  Configuration files go into etc with multiple configuration files having a directory.  JNI shared libraries go into lib/jni/$tool since Java does not allow to specify the version of the library to load.  Libraries that aren't loaded via System.loadLibrary are placed directly under lib.  64 bit versions of the libraries for platforms that support them should be placed in lib64.  All of the architecture-independent pieces, including the jars for each tool will be placed in share/$tool.  The default location for all the run time information will be in var.  The storage will be in var/lib, the logs in var/log and the pid files in var/run.</p>
+</div>
+
+      
+<a name="N1006E"></a><a name="Path+Configurations"></a>
+<h2 class="h3"> Path Configurations </h2>
+<div class="section">
+<p>Path can be configured at compile phase or installation phase.  For RPM, it takes advantage of the --relocate directive to allow path reconfiguration at install phase.  For Debian package, path is configured at compile phase.
+        </p>
+<p>Build phase parameter:</p>
+<ul>
+            
+<li>package.prefix - Location of package prefix (Default /usr)</li>
+            
+<li>package.conf.dir - Location of configuration directory (Default /etc/hadoop)</li>
+            
+<li>package.log.dir - Location of log directory (Default /var/log/hadoop)</li>
+            
+<li>package.pid.dir - Location of pid directory (Default /var/run/hadoop)</li>
+          
+</ul>
+<p>Install phase parameter:</p>
+<pre class="code">
+          rpm -i hadoop-[version]-[rev].[arch].rpm \
+              --relocate /usr=/usr/local/hadoop \
+              --relocate /etc/hadoop=/usr/local/etc/hadoop \
+              --relocate /var/log/hadoop=/opt/logs/hadoop \
+              --relocate /var/run/hadoop=/opt/run/hadoop
+          </pre>
+</div>
+
+  
+</div>
+<!--+
+    |end content
+    +-->
+<div class="clearboth">&nbsp;</div>
+</div>
+<div id="footer">
+<!--+
+    |start bottomstrip
+    +-->
+<div class="lastmodified">
+<script type="text/javascript"><!--
+document.write("Last Published: " + document.lastModified);
+//  --></script>
+</div>
+<div class="copyright">
+        Copyright &copy;
+         2008 <a href="http://www.apache.org/licenses/">The Apache Software Foundation.</a>
+</div>
+<!--+
+    |end bottomstrip
+    +-->
+</div>
+</body>
+</html>

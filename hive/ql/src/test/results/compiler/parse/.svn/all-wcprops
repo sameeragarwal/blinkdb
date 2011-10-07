@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse
+END
+cast1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/cast1.q.out
+END
+join1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join1.q.out
+END
+input1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input1.q.out
+END
+join2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join2.q.out
+END
+input2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input2.q.out
+END
+join3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join3.q.out
+END
+input3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input3.q.out
+END
+join4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join4.q.out
+END
+input4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input4.q.out
+END
+join5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join5.q.out
+END
+input5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input5.q.out
+END
+join6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join6.q.out
+END
+input_testxpath2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input_testxpath2.q.out
+END
+input6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input6.q.out
+END
+join7.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join7.q.out
+END
+input7.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input7.q.out
+END
+join8.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/join8.q.out
+END
+input_testsequencefile.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input_testsequencefile.q.out
+END
+input8.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input8.q.out
+END
+input9.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input9.q.out
+END
+union.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/union.q.out
+END
+udf1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/udf1.q.out
+END
+udf4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/udf4.q.out
+END
+input_testxpath.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input_testxpath.q.out
+END
+udf6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/udf6.q.out
+END
+input_part1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input_part1.q.out
+END
+groupby1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby1.q.out
+END
+groupby2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby2.q.out
+END
+udf_case.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/udf_case.q.out
+END
+groupby3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby3.q.out
+END
+subq.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/subq.q.out
+END
+groupby4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby4.q.out
+END
+groupby5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby5.q.out
+END
+groupby6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/groupby6.q.out
+END
+case_sensitivity.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/case_sensitivity.q.out
+END
+udf_when.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/udf_when.q.out
+END
+input20.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1073623/hive/trunk/ql/src/test/results/compiler/parse/input20.q.out
+END
+sample1.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample1.q.out
+END
+sample2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample2.q.out
+END
+sample3.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample3.q.out
+END
+sample4.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample4.q.out
+END
+sample5.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample5.q.out
+END
+sample6.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample6.q.out
+END
+sample7.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1097980/hive/trunk/ql/src/test/results/compiler/parse/sample7.q.out
+END

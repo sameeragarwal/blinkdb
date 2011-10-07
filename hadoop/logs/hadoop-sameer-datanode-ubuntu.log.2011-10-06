@@ -1,0 +1,336 @@
+2011-10-06 15:10:54,238 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:10:54,310 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting DataNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:10:55,009 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-06 15:10:55,050 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-06 15:10:55,055 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-06 15:10:55,055 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: DataNode metrics system started
+2011-10-06 15:10:56,119 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-06 15:10:56,151 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-06 15:10:57,557 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:10:58,558 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:10:59,559 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:00,559 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:01,560 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:02,561 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:03,562 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:04,563 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:05,563 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:06,565 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:06,566 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:08,568 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:09,569 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:10,570 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:11,571 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:12,572 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:13,574 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:14,575 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:15,576 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:16,577 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:17,578 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:17,578 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:19,580 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:20,581 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:21,582 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:22,583 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:23,584 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:24,585 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:25,586 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:26,587 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:27,588 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:28,590 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:28,590 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:30,592 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:31,593 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:32,594 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:33,595 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:34,596 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:35,597 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:36,598 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:37,599 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:38,600 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:39,601 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:39,602 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:41,604 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:42,605 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:43,606 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:44,607 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:45,608 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:46,609 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:47,611 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:48,612 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:49,613 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:50,614 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:50,615 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:52,616 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:53,617 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:54,618 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:55,619 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:56,619 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:57,620 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:58,621 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:59,621 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:00,623 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:01,624 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:01,624 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:03,626 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:04,627 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:05,628 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:06,629 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:07,630 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:08,632 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:09,633 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:10,634 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:11,635 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:12,636 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:12,637 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:14,638 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:15,639 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:16,640 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:17,642 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:18,642 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:19,644 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:20,646 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:21,646 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:22,648 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:23,649 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:23,649 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:25,651 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:26,652 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:27,653 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:28,654 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:29,655 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:30,656 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:31,657 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:32,658 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:33,658 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:34,659 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:34,660 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:36,661 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:37,662 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:38,664 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:39,665 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:40,665 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:41,666 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:42,667 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:43,668 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:44,669 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:45,670 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:45,671 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:47,672 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:48,673 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:49,674 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:50,675 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:51,677 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:52,677 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:53,678 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:54,679 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:55,679 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:56,680 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:56,681 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:58,682 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:59,683 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:00,684 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:01,685 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:02,687 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:03,688 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:04,688 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:05,689 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:06,691 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:07,691 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:07,692 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:09,694 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:10,695 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:11,696 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:12,697 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:13,698 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:14,699 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:15,700 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:16,701 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:17,702 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:18,703 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:18,704 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:20,705 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:21,706 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:22,707 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:23,708 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:24,709 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:25,710 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:26,711 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:27,711 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:28,712 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:29,713 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:29,714 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:31,715 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:32,716 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:33,717 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:34,718 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:35,719 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:36,720 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:37,721 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:38,722 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:39,723 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:40,724 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:40,724 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:42,731 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:43,732 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:44,733 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:45,734 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:46,735 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:47,736 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:48,737 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:49,740 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:50,743 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:51,744 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:51,745 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:53,746 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:54,748 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:55,749 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:56,750 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:57,751 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:58,752 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:59,753 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:00,754 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:01,755 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:02,756 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:02,757 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:04,759 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:05,760 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:06,761 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:07,762 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:08,763 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:09,764 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:10,765 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:11,766 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:12,767 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:13,768 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:13,768 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:15,770 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:16,771 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:17,772 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:18,773 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:19,774 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:20,775 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:21,776 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:22,777 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:23,778 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:24,779 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:24,780 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:26,781 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:27,782 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:28,783 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:29,784 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:30,786 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:31,787 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:32,788 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:33,789 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:34,790 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:35,791 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:35,792 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:37,794 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:38,795 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:39,796 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:40,797 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:41,798 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:42,799 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:43,800 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:44,801 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:45,802 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:46,804 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:46,805 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:48,806 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:49,807 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:50,808 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:51,809 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:52,810 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:53,811 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:54,813 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:55,813 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:56,815 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:57,816 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:57,816 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:59,818 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:00,820 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:01,821 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:02,822 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:03,823 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:04,824 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:05,825 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:06,826 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:07,827 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:08,828 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:08,829 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:10,830 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:11,831 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:12,833 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:13,834 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:14,835 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:15,836 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:16,837 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:17,839 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:18,840 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:19,841 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:19,841 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:21,843 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:22,844 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:23,845 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:24,847 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:25,848 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:26,848 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:27,850 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:28,851 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:29,852 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:30,853 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:30,853 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:32,855 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:33,856 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:34,857 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:35,858 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:36,858 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:37,859 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:42,756 INFO org.apache.hadoop.hdfs.server.common.Storage: Storage directory /tmp/hadoop-sameer/dfs/data is not formatted.
+2011-10-06 15:15:42,756 INFO org.apache.hadoop.hdfs.server.common.Storage: Formatting ...
+2011-10-06 15:15:42,875 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Registered FSDatasetStatusMBean
+2011-10-06 15:15:42,930 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Opened info server at 50010
+2011-10-06 15:15:42,945 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Balancing bandwith is 1048576 bytes/s
+2011-10-06 15:15:48,035 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-06 15:15:48,201 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-06 15:15:48,215 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50075
+2011-10-06 15:15:48,215 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50075 webServer.getConnectors()[0].getLocalPort() returned 50075
+2011-10-06 15:15:48,215 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50075
+2011-10-06 15:15:48,215 INFO org.mortbay.log: jetty-6.1.26
+2011-10-06 15:15:49,194 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50075
+2011-10-06 15:15:49,198 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-06 15:15:49,199 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source DataNode registered.
+2011-10-06 15:15:54,299 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-06 15:15:54,299 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort50020 registered.
+2011-10-06 15:15:54,300 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort50020 registered.
+2011-10-06 15:15:54,301 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: dnRegistration = DatanodeRegistration(ubuntu:50010, storageID=, infoPort=50075, ipcPort=50020)
+2011-10-06 15:15:57,133 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: New storage id DS-1054981637-127.0.1.1-50010-1317939357101 is assigned to data-node 127.0.0.1:50010
+2011-10-06 15:15:57,133 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: DatanodeRegistration(127.0.0.1:50010, storageID=DS-1054981637-127.0.1.1-50010-1317939357101, infoPort=50075, ipcPort=50020)In DataNode.run, data = FSDataset{dirpath='/tmp/hadoop-sameer/dfs/data/current'}
+2011-10-06 15:15:57,146 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: using BLOCKREPORT_INTERVAL of 3600000msec Initial delay: 0msec
+2011-10-06 15:15:57,154 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 50020: starting
+2011-10-06 15:15:57,140 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2011-10-06 15:15:57,145 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 50020: starting
+2011-10-06 15:15:57,146 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 50020: starting
+2011-10-06 15:15:57,146 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 50020: starting
+2011-10-06 15:15:57,170 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 0 blocks took 0 msec to generate and 7 msecs for RPC and NN processing
+2011-10-06 15:15:57,171 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Starting Periodic block scanner.
+2011-10-06 15:16:06,428 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Receiving block blk_-6594288471480813649_1003 src: /127.0.0.1:44786 dest: /127.0.0.1:50010
+2011-10-06 15:16:06,463 INFO org.apache.hadoop.hdfs.server.datanode.DataNode.clienttrace: src: /127.0.0.1:44786, dest: /127.0.0.1:50010, bytes: 4, op: HDFS_WRITE, cliID: DFSClient_-955675244, offset: 0, srvID: DS-1054981637-127.0.1.1-50010-1317939357101, blockid: blk_-6594288471480813649_1003, duration: 1751440
+2011-10-06 15:16:06,471 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: PacketResponder 0 for block blk_-6594288471480813649_1003 terminating
+2011-10-06 15:18:07,248 INFO org.apache.hadoop.hdfs.server.datanode.DataBlockScanner: Verification succeeded for blk_-6594288471480813649_1003
+2011-10-06 16:02:40,303 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 3 msec to generate and 18 msecs for RPC and NN processing
+2011-10-06 17:02:43,036 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 18 msecs for RPC and NN processing
+2011-10-06 18:02:41,108 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 19 msec to generate and 103 msecs for RPC and NN processing
+2011-10-06 19:02:42,499 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 5 msecs for RPC and NN processing
+2011-10-06 20:02:40,729 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 4 msecs for RPC and NN processing
+2011-10-06 21:02:42,021 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 8 msecs for RPC and NN processing
+2011-10-06 22:02:40,535 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 1 msec to generate and 72 msecs for RPC and NN processing
+2011-10-06 23:02:40,656 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 3 msec to generate and 4 msecs for RPC and NN processing

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/test
+END
+InnerStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/test/InnerStruct.java
+END
+ThriftTestObj.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/serde/test/ThriftTestObj.java
+END

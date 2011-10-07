@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1164804/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd
+END
+ExprWalkerInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1163869/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd/ExprWalkerInfo.java
+END
+ExprWalkerProcFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1164804/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd/ExprWalkerProcFactory.java
+END
+OpWalkerInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd/OpWalkerInfo.java
+END
+PredicatePushDown.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1146129/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd/PredicatePushDown.java
+END
+OpProcFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1164804/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/ppd/OpProcFactory.java
+END

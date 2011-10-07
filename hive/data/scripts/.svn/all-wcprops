@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts
+END
+test_init_file.sql
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts/test_init_file.sql
+END
+input20_script
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts/input20_script
+END
+dumpdata_script.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts/dumpdata_script.py
+END
+error_script
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts/error_script
+END
+cat.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/asf/!svn/ver/1027721/hive/trunk/data/scripts/cat.py
+END

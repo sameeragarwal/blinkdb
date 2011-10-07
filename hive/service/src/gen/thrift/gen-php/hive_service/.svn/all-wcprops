@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-php/hive_service
+END
+ThriftHive.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-php/hive_service/ThriftHive.php
+END
+hive_service_types.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-php/hive_service/hive_service_types.php
+END

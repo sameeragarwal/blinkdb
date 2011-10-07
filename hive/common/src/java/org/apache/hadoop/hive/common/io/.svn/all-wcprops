@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/common/src/java/org/apache/hadoop/hive/common/io
+END
+NonSyncByteArrayInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1027721/hive/trunk/common/src/java/org/apache/hadoop/hive/common/io/NonSyncByteArrayInputStream.java
+END
+NonSyncByteArrayOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/common/src/java/org/apache/hadoop/hive/common/io/NonSyncByteArrayOutputStream.java
+END

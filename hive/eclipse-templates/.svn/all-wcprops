@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1178621/hive/trunk/eclipse-templates
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1178621/hive/trunk/eclipse-templates/.classpath
+END
+.classpath._hbase
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/asf/!svn/ver/1044070/hive/trunk/eclipse-templates/.classpath._hbase
+END
+TestHive.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestHive.launchtemplate
+END
+TestRemoteHiveMetaStore.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestRemoteHiveMetaStore.launchtemplate
+END
+TestMTQueries.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestMTQueries.launchtemplate
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/eclipse-templates/.project
+END
+TestJdbc.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestJdbc.launchtemplate
+END
+HiveCLI.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1163454/hive/trunk/eclipse-templates/HiveCLI.launchtemplate
+END
+TestCliDriver.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestCliDriver.launchtemplate
+END
+TestHiveMetaStoreChecker.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestHiveMetaStoreChecker.launchtemplate
+END
+TestTruncate.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestTruncate.launchtemplate
+END
+TestHBaseCliDriver.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestHBaseCliDriver.launchtemplate
+END
+TestEmbeddedHiveMetaStore.launchtemplate
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1049271/hive/trunk/eclipse-templates/TestEmbeddedHiveMetaStore.launchtemplate
+END

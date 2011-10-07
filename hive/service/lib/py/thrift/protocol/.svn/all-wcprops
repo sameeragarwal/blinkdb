@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/protocol
+END
+TBinaryProtocol.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/protocol/TBinaryProtocol.py
+END
+fastbinary.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/protocol/fastbinary.c
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/protocol/__init__.py
+END
+TProtocol.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/protocol/TProtocol.py
+END

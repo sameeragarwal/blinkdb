@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/reflection/limited
+END
+ttypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/reflection/limited/ttypes.py
+END
+constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/reflection/limited/constants.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/reflection/limited/__init__.py
+END

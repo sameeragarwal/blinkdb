@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/io
+END
+DoubleWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/io/DoubleWritable.java
+END
+ShortWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/io/ShortWritable.java
+END
+ByteWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/io/ByteWritable.java
+END
+TimestampWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/io/TimestampWritable.java
+END

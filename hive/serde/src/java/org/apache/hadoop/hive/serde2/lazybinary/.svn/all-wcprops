@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary
+END
+LazyBinaryInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryInteger.java
+END
+LazyBinaryShort.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryShort.java
+END
+LazyBinaryLong.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryLong.java
+END
+LazyBinaryUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryUtils.java
+END
+LazyBinaryVoid.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryVoid.java
+END
+LazyBinarySerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinarySerDe.java
+END
+LazyBinaryByte.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryByte.java
+END
+LazyBinaryTimestamp.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryTimestamp.java
+END
+LazyBinaryFloat.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryFloat.java
+END
+LazyBinaryString.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryString.java
+END
+LazyBinaryObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1150978/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryObject.java
+END
+LazyBinaryFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryFactory.java
+END
+LazyBinaryPrimitive.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryPrimitive.java
+END
+LazyBinaryDouble.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryDouble.java
+END
+LazyBinaryMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryMap.java
+END
+LazyBinaryArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryArray.java
+END
+LazyBinaryBoolean.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryBoolean.java
+END
+LazyBinaryNonPrimitive.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryNonPrimitive.java
+END
+LazyBinaryBinary.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryBinary.java
+END
+LazyBinaryStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1131106/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/LazyBinaryStruct.java
+END

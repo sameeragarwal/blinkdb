@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/test/queries
+END
+hbase_stats.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/test/queries/hbase_stats.q
+END
+hbase_stats2.q
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/test/queries/hbase_stats2.q
+END
+hbase_joins.q
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1057502/hive/trunk/hbase-handler/src/test/queries/hbase_joins.q
+END
+hbase_pushdown.q
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/test/queries/hbase_pushdown.q
+END
+hbase_bulk.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1068769/hive/trunk/hbase-handler/src/test/queries/hbase_bulk.m
+END
+hbase_queries.q
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/test/queries/hbase_queries.q
+END

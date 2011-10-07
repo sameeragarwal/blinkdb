@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1179784/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore
+END
+Warehouse.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1145368/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/Warehouse.java
+END
+AlterHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/AlterHandler.java
+END
+RawStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1151213/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/RawStore.java
+END
+HiveMetaHookLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaHookLoader.java
+END
+MetaStoreEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1144504/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/MetaStoreEventListener.java
+END
+IMetaStoreClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1151213/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/IMetaStoreClient.java
+END
+HiveMetaStoreClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1163681/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStoreClient.java
+END
+HiveMetaStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1170398/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+END
+HiveMetaException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaException.java
+END
+HiveAlterHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1160551/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveAlterHandler.java
+END
+ObjectStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1155573/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/ObjectStore.java
+END
+HiveMetaHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaHook.java
+END
+MetaStoreUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1179784/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/MetaStoreUtils.java
+END
+ProtectMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/ProtectMode.java
+END
+TableType.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/TableType.java
+END
+TServerSocketKeepAlive.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/TServerSocketKeepAlive.java
+END
+HiveMetaStoreFsImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1055756/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStoreFsImpl.java
+END
+MetaStoreFS.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1055756/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/MetaStoreFS.java
+END

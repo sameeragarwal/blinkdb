@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1156928/hive/trunk/ql/src/test/templates
+END
+TestCliDriver.vm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/asf/!svn/ver/1081934/hive/trunk/ql/src/test/templates/TestCliDriver.vm
+END
+TestNegativeCliDriver.vm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1156928/hive/trunk/ql/src/test/templates/TestNegativeCliDriver.vm
+END
+TestParse.vm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/templates/TestParse.vm
+END
+TestParseNegative.vm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/templates/TestParseNegative.vm
+END

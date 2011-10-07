@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr
+END
+PcrExprProcFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr/PcrExprProcFactory.java
+END
+PcrOpProcFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr/PcrOpProcFactory.java
+END
+PartitionConditionRemover.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr/PartitionConditionRemover.java
+END
+PcrExprProcCtx.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr/PcrExprProcCtx.java
+END
+PcrOpWalkerCtx.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1031676/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/pcr/PcrOpWalkerCtx.java
+END

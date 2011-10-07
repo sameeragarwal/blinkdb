@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase
+END
+HBaseStatsPublisher.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseStatsPublisher.java
+END
+HBaseStatsSetupConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseStatsSetupConstants.java
+END
+HiveHBaseTableInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1054799/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableInputFormat.java
+END
+HiveHBaseTableOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableOutputFormat.java
+END
+LazyHBaseCellMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/LazyHBaseCellMap.java
+END
+HBaseStatsUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseStatsUtils.java
+END
+HBaseStatsAggregator.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseStatsAggregator.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/package-info.java
+END
+HBaseSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1131106/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseSerDe.java
+END
+HBaseStorageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1073623/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseStorageHandler.java
+END
+LazyHBaseRow.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/LazyHBaseRow.java
+END
+HiveHFileOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHFileOutputFormat.java
+END
+HBaseSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HBaseSplit.java
+END

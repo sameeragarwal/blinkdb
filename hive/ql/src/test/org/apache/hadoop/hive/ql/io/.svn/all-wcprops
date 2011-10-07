@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1165763/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io
+END
+TestFlatFileInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/TestFlatFileInputFormat.java
+END
+TestRCFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1165763/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/TestRCFile.java
+END
+TestSymlinkTextInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1096907/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/TestSymlinkTextInputFormat.java
+END
+TestHiveFileFormatUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/TestHiveFileFormatUtils.java
+END
+TestHiveInputOutputBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/TestHiveInputOutputBuffer.java
+END
+RecordTestObj.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/RecordTestObj.java
+END
+PerformTestRCFileAndSeqFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/PerformTestRCFileAndSeqFile.java
+END
+JavaTestObjFlatFileInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/io/JavaTestObjFlatFileInputFormat.java
+END

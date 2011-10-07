@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/asf/!svn/ver/1027721/hive/trunk/testutils
+END
+build
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/asf/!svn/ver/1027721/hive/trunk/testutils/build
+END
+dump_schema
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/testutils/dump_schema
+END
+run_tests
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/asf/!svn/ver/1027721/hive/trunk/testutils/run_tests
+END
+compute_stats
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1027721/hive/trunk/testutils/compute_stats
+END

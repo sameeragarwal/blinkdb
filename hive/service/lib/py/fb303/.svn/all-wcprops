@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303
+END
+ttypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/ttypes.py
+END
+FacebookService.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/FacebookService.py
+END
+FacebookService-remote
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/FacebookService-remote
+END
+constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/constants.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/__init__.py
+END
+FacebookBase.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/fb303/FacebookBase.py
+END

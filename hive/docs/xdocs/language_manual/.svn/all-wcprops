@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1140748/hive/trunk/docs/xdocs/language_manual
+END
+joins.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/asf/!svn/ver/1140748/hive/trunk/docs/xdocs/language_manual/joins.xml
+END
+var_substitution.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1043768/hive/trunk/docs/xdocs/language_manual/var_substitution.xml
+END
+cli.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1043849/hive/trunk/docs/xdocs/language_manual/cli.xml
+END
+working_with_bucketed_tables.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/docs/xdocs/language_manual/working_with_bucketed_tables.xml
+END
+data-manipulation-statements.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/docs/xdocs/language_manual/data-manipulation-statements.xml
+END

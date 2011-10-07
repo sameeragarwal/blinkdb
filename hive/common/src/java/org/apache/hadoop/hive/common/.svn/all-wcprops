@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1174892/hive/trunk/common/src/java/org/apache/hadoop/hive/common
+END
+FileUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1137826/hive/trunk/common/src/java/org/apache/hadoop/hive/common/FileUtils.java
+END
+JavaUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/common/src/java/org/apache/hadoop/hive/common/JavaUtils.java
+END
+LogUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1149311/hive/trunk/common/src/java/org/apache/hadoop/hive/common/LogUtils.java
+END
+HiveInterruptCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1104625/hive/trunk/common/src/java/org/apache/hadoop/hive/common/HiveInterruptCallback.java
+END
+ServerUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1174892/hive/trunk/common/src/java/org/apache/hadoop/hive/common/ServerUtils.java
+END
+HiveInterruptUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1104625/hive/trunk/common/src/java/org/apache/hadoop/hive/common/HiveInterruptUtils.java
+END

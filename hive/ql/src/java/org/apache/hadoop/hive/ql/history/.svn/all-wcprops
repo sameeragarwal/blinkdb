@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1171917/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/history
+END
+HiveHistoryViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/history/HiveHistoryViewer.java
+END
+HiveHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1171917/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/history/HiveHistory.java
+END

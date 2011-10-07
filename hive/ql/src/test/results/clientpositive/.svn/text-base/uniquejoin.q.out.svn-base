@@ -1,0 +1,159 @@
+PREHOOK: query: CREATE TABLE T1(key STRING, val STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE T1(key STRING, val STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@T1
+PREHOOK: query: CREATE TABLE T2(key STRING, val STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE T2(key STRING, val STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@T2
+PREHOOK: query: CREATE TABLE T3(key STRING, val STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE T3(key STRING, val STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@T3
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T1.txt' INTO TABLE T1
+PREHOOK: type: LOAD
+PREHOOK: Output: default@t1
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T1.txt' INTO TABLE T1
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@t1
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T2.txt' INTO TABLE T2
+PREHOOK: type: LOAD
+PREHOOK: Output: default@t2
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T2.txt' INTO TABLE T2
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@t2
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T3.txt' INTO TABLE T3
+PREHOOK: type: LOAD
+PREHOOK: Output: default@t3
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/T3.txt' INTO TABLE T3
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@t3
+PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), PRESERVE T2 b (b.key), PRESERVE T3 c (c.key)
+SELECT a.key, b.key, c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Input: default@t3
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-13_337_4081807192353519439/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), PRESERVE T2 b (b.key), PRESERVE T3 c (c.key)
+SELECT a.key, b.key, c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Input: default@t3
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-13_337_4081807192353519439/-mr-10000
+1	NULL	NULL
+2	2	2
+3	3	NULL
+NULL	4	4
+NULL	5	NULL
+NULL	NULL	6
+7	NULL	7
+8	8	NULL
+8	8	NULL
+8	8	NULL
+8	8	NULL
+PREHOOK: query: FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key), T3 c (c.key)
+SELECT a.key, b.key, c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Input: default@t3
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-16_557_4617322443906282387/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key), T3 c (c.key)
+SELECT a.key, b.key, c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Input: default@t3
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-16_557_4617322443906282387/-mr-10000
+2	2	2
+PREHOOK: query: FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key-1), T3 c (c.key)
+SELECT a.key, b.key, c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Input: default@t3
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-19_724_433334614110721986/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key-1), T3 c (c.key)
+SELECT a.key, b.key, c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Input: default@t3
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-19_724_433334614110721986/-mr-10000
+2	3	2
+7	8	7
+7	8	7
+PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key, a.val), PRESERVE T2 b (b.key, b.val), PRESERVE T3 c (c.key, c.val)
+SELECT a.key, a.val, b.key, b.val, c.key, c.val
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Input: default@t3
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-22_916_6621715810097579299/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key, a.val), PRESERVE T2 b (b.key, b.val), PRESERVE T3 c (c.key, c.val)
+SELECT a.key, a.val, b.key, b.val, c.key, c.val
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Input: default@t3
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-22_916_6621715810097579299/-mr-10000
+1	11	NULL	NULL	NULL	NULL
+2	12	NULL	NULL	2	12
+NULL	NULL	2	22	NULL	NULL
+3	13	3	13	NULL	NULL
+NULL	NULL	4	14	4	14
+NULL	NULL	5	15	NULL	NULL
+NULL	NULL	NULL	NULL	6	16
+7	17	NULL	NULL	7	17
+8	18	8	18	NULL	NULL
+8	18	8	18	NULL	NULL
+8	28	NULL	NULL	NULL	NULL
+PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b (b.key), PRESERVE T3 c (c.key)
+SELECT a.key, b.key, c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Input: default@t3
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-26_126_8138040547512737593/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b (b.key), PRESERVE T3 c (c.key)
+SELECT a.key, b.key, c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Input: default@t3
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-26_126_8138040547512737593/-mr-10000
+1	NULL	NULL
+2	2	2
+3	3	NULL
+NULL	4	4
+NULL	NULL	6
+7	NULL	7
+8	8	NULL
+8	8	NULL
+8	8	NULL
+8	8	NULL
+PREHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b(b.key)
+SELECT a.key, b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@t1
+PREHOOK: Input: default@t2
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-29_411_5531154654703000136/-mr-10000
+POSTHOOK: query: FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b(b.key)
+SELECT a.key, b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@t1
+POSTHOOK: Input: default@t2
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_05-49-29_411_5531154654703000136/-mr-10000
+1	NULL
+2	2
+3	3
+7	NULL
+8	8
+8	8
+8	8
+8	8

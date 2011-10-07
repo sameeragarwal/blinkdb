@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazybinary
+END
+TestLazyBinarySerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazybinary/TestLazyBinarySerDe.java
+END
+MyTestClassBigger.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazybinary/MyTestClassBigger.java
+END
+MyTestClassSmaller.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazybinary/MyTestClassSmaller.java
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap
+END
+BitmapOuterQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapOuterQuery.java
+END
+BitmapIndexHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapIndexHandler.java
+END
+BitmapQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapQuery.java
+END
+BitmapObjectInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapObjectInput.java
+END
+BitmapObjectOutput.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapObjectOutput.java
+END
+BitmapInnerQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/bitmap/BitmapInnerQuery.java
+END

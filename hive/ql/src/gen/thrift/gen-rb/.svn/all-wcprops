@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-rb
+END
+queryplan_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-rb/queryplan_types.rb
+END
+queryplan_constants.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-rb/queryplan_constants.rb
+END

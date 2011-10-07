@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service
+END
+HiveClusterStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/HiveClusterStatus.java
+END
+HiveServerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/HiveServerException.java
+END
+JobTrackerState.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/JobTrackerState.java
+END
+ThriftHive.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/service/ThriftHive.java
+END

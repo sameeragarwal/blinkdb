@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1171253/hive/trunk/jdbc/src/test/org/apache/hadoop/hive/jdbc
+END
+TestJdbcDriver.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1171253/hive/trunk/jdbc/src/test/org/apache/hadoop/hive/jdbc/TestJdbcDriver.java
+END

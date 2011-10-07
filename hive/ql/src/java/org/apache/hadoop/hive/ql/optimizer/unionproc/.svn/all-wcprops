@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1104096/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/unionproc
+END
+UnionProcContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/unionproc/UnionProcContext.java
+END
+UnionProcFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/unionproc/UnionProcFactory.java
+END
+UnionProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1104096/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/unionproc/UnionProcessor.java
+END

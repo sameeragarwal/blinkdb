@@ -1,0 +1,175 @@
+2011-10-07 15:08:31,715 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:08:31,824 INFO org.apache.hadoop.mapred.JobTracker: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting JobTracker
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:08:31,914 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-07 15:08:31,926 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-07 15:08:31,927 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-07 15:08:31,927 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: JobTracker metrics system started
+2011-10-07 15:08:31,992 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source QueueMetrics,q=default registered.
+2011-10-07 15:08:32,068 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-07 15:08:32,068 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-07 15:08:32,069 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-07 15:08:32,083 INFO org.apache.hadoop.mapred.JobTracker: Scheduler configured with (memSizeForMapSlotOnJT, memSizeForReduceSlotOnJT, limitMaxMemForMapTasks, limitMaxMemForReduceTasks) (-1, -1, -1, -1)
+2011-10-07 15:08:32,084 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-07 15:08:32,085 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Starting expired delegation token remover thread, tokenRemoverScanInterval=60 min(s)
+2011-10-07 15:08:32,085 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-07 15:08:32,100 INFO org.apache.hadoop.mapred.JobTracker: Starting jobtracker with owner as sameer
+2011-10-07 15:08:32,124 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort54311 registered.
+2011-10-07 15:08:32,124 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort54311 registered.
+2011-10-07 15:08:32,129 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-07 15:08:37,299 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-07 15:08:37,385 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-07 15:08:37,480 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50030
+2011-10-07 15:08:37,482 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50030 webServer.getConnectors()[0].getLocalPort() returned 50030
+2011-10-07 15:08:37,482 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50030
+2011-10-07 15:08:37,482 INFO org.mortbay.log: jetty-6.1.26
+2011-10-07 15:08:37,798 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50030
+2011-10-07 15:08:37,806 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-07 15:08:37,806 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source JobTrackerMetrics registered.
+2011-10-07 15:08:37,807 INFO org.apache.hadoop.mapred.JobTracker: JobTracker up at: 54311
+2011-10-07 15:08:37,807 INFO org.apache.hadoop.mapred.JobTracker: JobTracker webserver: 50030
+2011-10-07 15:08:38,899 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-07 15:08:39,901 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-07 15:08:40,902 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-07 15:08:41,904 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-07 15:08:42,905 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-07 15:08:43,907 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-07 15:08:44,908 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-07 15:08:45,909 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-07 15:08:46,911 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-07 15:08:47,569 INFO org.apache.hadoop.mapred.JobTracker: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down JobTracker at ubuntu/127.0.1.1
+************************************************************/
+2011-10-07 15:09:16,482 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:09:16,591 INFO org.apache.hadoop.mapred.JobTracker: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting JobTracker
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:09:16,699 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-07 15:09:16,709 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-07 15:09:16,710 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-07 15:09:16,711 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: JobTracker metrics system started
+2011-10-07 15:09:16,771 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source QueueMetrics,q=default registered.
+2011-10-07 15:09:16,839 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-07 15:09:16,839 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-07 15:09:16,840 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-07 15:09:16,842 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Starting expired delegation token remover thread, tokenRemoverScanInterval=60 min(s)
+2011-10-07 15:09:16,842 INFO org.apache.hadoop.mapred.JobTracker: Scheduler configured with (memSizeForMapSlotOnJT, memSizeForReduceSlotOnJT, limitMaxMemForMapTasks, limitMaxMemForReduceTasks) (-1, -1, -1, -1)
+2011-10-07 15:09:16,842 INFO org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager: Updating the current master key for generating delegation tokens
+2011-10-07 15:09:16,843 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-07 15:09:16,854 INFO org.apache.hadoop.mapred.JobTracker: Starting jobtracker with owner as sameer
+2011-10-07 15:09:16,880 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort54311 registered.
+2011-10-07 15:09:16,881 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort54311 registered.
+2011-10-07 15:09:16,884 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-07 15:09:21,977 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-07 15:09:22,036 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-07 15:09:22,115 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50030
+2011-10-07 15:09:22,117 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50030 webServer.getConnectors()[0].getLocalPort() returned 50030
+2011-10-07 15:09:22,117 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50030
+2011-10-07 15:09:22,117 INFO org.mortbay.log: jetty-6.1.26
+2011-10-07 15:09:22,336 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50030
+2011-10-07 15:09:22,343 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-07 15:09:22,344 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source JobTrackerMetrics registered.
+2011-10-07 15:09:22,344 INFO org.apache.hadoop.mapred.JobTracker: JobTracker up at: 54311
+2011-10-07 15:09:22,344 INFO org.apache.hadoop.mapred.JobTracker: JobTracker webserver: 50030
+2011-10-07 15:09:22,513 INFO org.apache.hadoop.mapred.JobTracker: Cleaning up the system directory
+2011-10-07 15:09:22,607 INFO org.apache.hadoop.mapred.JobTracker: History server being initialized in embedded mode
+2011-10-07 15:09:22,612 INFO org.apache.hadoop.mapred.JobHistoryServer: Started job history server at: localhost:50030
+2011-10-07 15:09:22,612 INFO org.apache.hadoop.mapred.JobTracker: Job History Server web address: localhost:50030
+2011-10-07 15:09:22,617 INFO org.apache.hadoop.mapred.CompletedJobStatusStore: Completed job store is inactive
+2011-10-07 15:09:22,682 WARN org.apache.hadoop.hdfs.DFSClient: DataStreamer Exception: org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+
+2011-10-07 15:09:22,682 WARN org.apache.hadoop.hdfs.DFSClient: Error Recovery for block null bad datanode[0] nodes == null
+2011-10-07 15:09:22,682 WARN org.apache.hadoop.hdfs.DFSClient: Could not get block locations. Source file "/tmp/hadoop-sameer/mapred/system/jobtracker.info" - Aborting...
+2011-10-07 15:09:22,683 WARN org.apache.hadoop.mapred.JobTracker: Writing to file hdfs://localhost:54310/tmp/hadoop-sameer/mapred/system/jobtracker.info failed!
+2011-10-07 15:09:22,683 WARN org.apache.hadoop.mapred.JobTracker: FileSystem is not ready yet!
+2011-10-07 15:09:22,697 WARN org.apache.hadoop.mapred.JobTracker: Failed to initialize recovery manager. 
+org.apache.hadoop.ipc.RemoteException: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+
+	at org.apache.hadoop.ipc.Client.call(Client.java:1030)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:224)
+	at $Proxy5.addBlock(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:82)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:59)
+	at $Proxy5.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.locateFollowingBlock(DFSClient.java:3109)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.nextBlockOutputStream(DFSClient.java:2980)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream.access$2000(DFSClient.java:2260)
+	at org.apache.hadoop.hdfs.DFSClient$DFSOutputStream$DataStreamer.run(DFSClient.java:2451)
+2011-10-07 15:09:32,697 WARN org.apache.hadoop.mapred.JobTracker: Retrying...
+2011-10-07 15:09:32,928 INFO org.apache.hadoop.mapred.JobTracker: Refreshing hosts information
+2011-10-07 15:09:32,943 INFO org.apache.hadoop.util.HostsFileReader: Setting the includes file to 
+2011-10-07 15:09:32,943 INFO org.apache.hadoop.util.HostsFileReader: Setting the excludes file to 
+2011-10-07 15:09:32,943 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-07 15:09:32,943 INFO org.apache.hadoop.mapred.JobTracker: Decommissioning 0 nodes
+2011-10-07 15:09:32,945 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2011-10-07 15:09:32,946 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 54311: starting
+2011-10-07 15:09:32,960 INFO org.apache.hadoop.ipc.Server: IPC Server handler 9 on 54311: starting
+2011-10-07 15:09:32,960 INFO org.apache.hadoop.mapred.JobTracker: Starting RUNNING
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 8 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 7 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 6 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 5 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 4 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 3 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 54311: starting
+2011-10-07 15:09:32,963 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 54311: starting
+2011-10-07 15:09:32,964 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 54311: starting
+2011-10-07 15:09:33,393 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/ubuntu
+2011-10-07 15:09:33,394 INFO org.apache.hadoop.mapred.JobTracker: Adding tracker tracker_ubuntu:localhost/127.0.0.1:45545 to host ubuntu

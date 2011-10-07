@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE plugins [
+  <!ENTITY % links.att 'name CDATA #REQUIRED'>
+  <!ENTITY % link.att 'name CDATA #REQUIRED href CDATA #REQUIRED'>
+  <!ELEMENT plugins (plugin*)>
+  <!ATTLIST plugins type CDATA #REQUIRED>
+  <!ELEMENT plugin (description, forrestVersionInitial, forrestVersion)>
+  <!ATTLIST plugin name CDATA #REQUIRED
+                 type (input|output|internal) #REQUIRED
+                 url  CDATA #REQUIRED
+                 author CDATA #REQUIRED
+                 website CDATA #IMPLIED
+                 publish CDATA #IMPLIED
+                 version CDATA #IMPLIED>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT forrestVersionInitial (#PCDATA)>
+  <!ELEMENT forrestVersion (#PCDATA)>
+  ]>
+<plugins type="whiteboard">
+<!-- ================================================================== -->
+<!-- Input Plugins                                                      -->
+<!-- ================================================================== -->
+  <plugin name="org.apache.forrest.plugin.input.Blog"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.Blog/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Use Forrest to publish a weblog
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.citations"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.citations/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      List of citations.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.Daisy"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.Daisy/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Allow content to be included from a Daisy CMS repository.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.Database"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.Database/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Read content from a relational database.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.doac"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.doac/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Render Description-Of-A-Career (DOAC) data in forrest content objects.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.doap"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.doap/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Embed DOAP files in forrest content objects.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.foaf"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.input.foaf/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Embed FOAF files in forrest content objects.
+    </description>
+    <forrestVersionInitial>0.9</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.glossary"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.glossary/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Enable glossary: a list of technical terms and definitions.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.Lenya"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.Lenya/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Allows content to be retrieved from a Lenya repository and skinned as part of a normal Forrest Content Object.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.logo"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.logo/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Assist management of project logos and banner images.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.logs"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.input.logs"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Embed log file output in Forrest sites. If Forrest is running in a dynamic
+      environment, then pages can be updated to show recent changes in the log
+      whenever required.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="uk.ac.osswatch.forrest.input.ohloh"
+        type="input"
+        author="OSS Watch"
+        website="http://simal.osswatch.ac.uk"
+        url="http://simal.google.com/files/"
+        publish="true"
+        version="0.1">
+    <description>
+      Extracts data from OhLoh.net using their API
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.odt"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.odt"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Use OpenDocument Writer files (*.odt) as input sources.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.Resume"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.Resume"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.2">
+    <description>
+      Basic support for Resumes, renders a single resume, or allows sorting of a
+      number of resumes on skill.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.serverStatus"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.serverStatus"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Provides a list of the Cocoon cache and other server status information.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="uk.ac.osswatch.forrest.input.sourceforge"
+        type="input"
+        author="OSS Watch"
+        website="http://simal.osswatch.ac.uk"
+        url="http://simal.google.com/files/"
+        publish="true"
+        version="0.1">
+    <description>
+      Extracts data from sourceforge.net.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.skos"
+	  type="input"
+	  author="Apache Forrest Project"
+	  website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.input.skos/"
+	  url="http://forrest.apache.org/plugins/"
+          publish="false"
+	  version="0.1">
+    <description>
+       Rendering SKOS, a set of specifications to support the representation of thesauri, classification schemes, taxonomies, etc.
+    </description>
+    <forrestVersionInitial>0.9</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.baetle"
+	  type="input"
+	  author="Apache Forrest Project"
+	  website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.input.baetle/"
+	  url="http://forrest.apache.org/plugins/"
+        publish="false"
+	  version="0.1">
+    <description>
+      Rendering Baetle, the RDF vocabulary to describe the content of  bug databases.
+    </description>
+    <forrestVersionInitial>0.9</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.tei"
+        type="input"
+        author="Apache Forrest"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.tei"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Import TEI Lite documents into Forrest content objects.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+
+<plugin name="uk.ac.osswatch.forrest.input.features"
+        type="input"
+        author="OSS Watch"
+        website="http://simal.osswatch.ac.uk"
+        url="http://simal.google.com/files/"
+        publish="true"
+        version="0.1">
+    <description>
+      Allow project features to be recorded and rendered as part of a content object.
+      This plugin is particularly useful when used in conjunction with the DOAP
+      plugin.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+
+  <plugin name="org.apache.forrest.plugin.input.XDoc"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.XDoc/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Input plugin for XDoc
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  
+<!-- ================================================================== -->
+<!-- Output Plugins                                                     -->
+<!-- ================================================================== -->
+  <plugin name="org.apache.forrest.plugin.output.Anakia"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.output.Anakia/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.2">
+    <description>
+      Produce output in Anakia-like "xdoc" format. Enables use of Forrest as a
+      tool for gathering input from various sources, and export a consistent
+      set of xml output documents.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.Chart"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.output.Chart"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Charting plugin that utilises JChart.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.input.ecs"
+        type="input"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.input.ecs/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Process responses from Amazons E-Commerce System web services.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.htmlArea"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.output.htmlArea"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      WYSIWYG editing of HTML documents (requires Forrest to be running
+      dynamically).
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.Markdown"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.output.Markdown/"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Produce output in Markdown text format. Enables use of Forrest as a
+      tool for gathering input from various sources, and export a consistent
+      set of *.mdtext output documents.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.voice"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.output.voice"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.2">
+    <description>
+      Add voiceXML content to a Forrest page. This allows the page to be read by
+      a voice synthesiser and navigated with voice commands.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.solr"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.output.solr"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Generates solr documents from xdos. Further when run with the dispatcher
+      it provides a GUI to manage your project in solr and a search interface to
+      search your solr server.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.output.tei"
+        type="output"
+        author="Apache Forrest"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.output.tei/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Create TEI Lite documents from Forrest content objects.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin> 
+
+  <plugin name="org.apache.forrest.plugin.output.OOo"
+        type="output"
+        author="Apache Forrest"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.output.OOo/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Creates OpenOffice 2.4+ .odt output from forrest xdoc.
+    </description>
+    <forrestVersionInitial>0.9</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin> 
+  <plugin name="org.apache.forrest.plugin.OpenOffice.org-output"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.OpenOffice.org-output/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Generate output in RTF format.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="rtf-output"
+        type="output"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/rtf-output/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Generate output in RTF format.
+    </description>
+    <forrestVersionInitial>0.6</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+
+  <plugin name="org.apache.forrest.plugin.output.iCal"
+        type="output"
+        author="Apache Forrest"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.output.iCal/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Creates iCal .ics files from forrest xdoc.
+    </description>
+    <forrestVersionInitial>0.9</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin> 
+<!-- ================================================================== -->
+<!-- Theme Plugins                                                      -->
+<!-- ================================================================== -->
+  <plugin name="uk.ac.osswatch.forrest.themes"
+        type="output"
+        author="OSS Watch"
+        website="http://code.google.com/p/simal"
+        url="http://simal.google.com/files/"
+        publish="true"
+        version="0.1">
+    <description>
+      A theme used by the Simal project.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+<!-- ================================================================== -->
+<!-- Internal Plugins                                                   -->
+<!-- ================================================================== -->
+  <plugin name="org.apache.forrest.plugin.internal.DevTools"
+        type="internal"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.internal.DevTools/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Provides various tools that are useful during the development of your Forrest based content object.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.internal.GoogleSitemap"
+        type="internal"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.internal.GoogleSitemap/"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Generates a google-sitemap for all pages in each site.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.internal.IMSManifest"
+        type="internal"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_70/org.apache.forrest.plugin.internal.IMSManifest"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.1">
+    <description>
+      Use an IMS Manifest file to manage site structure. Generates site.xml and
+      tabs.xml from an imsmanifest.xml file when one is available. Also enables
+      content in one Content Package to be embedded in another.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.7</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.internal.NoteTaking"
+        type="internal"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.NoteTaking"
+        url="http://forrest.apache.org/plugins/"
+        publish="false"
+        version="0.1">
+    <description>
+      Provides facilities for adding notes to pages when Forrest is run in
+      dynamic mode.
+    </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.internal.dispatcher"
+        type="internal"
+        author="Apache Forrest Project"
+        website="http://forrest.apache.org/pluginDocs/plugins_0_90/org.apache.forrest.plugin.internal.dispatcher"
+        url="http://forrest.apache.org/plugins/"
+        publish="true"
+        version="0.2">
+    <description>
+      Enable Forrest to use page-specific views and contracts. Next generation
+      skinning.
+    </description>
+    <forrestVersionInitial>0.7</forrestVersionInitial>
+    <forrestVersion>0.9</forrestVersion>
+  </plugin>
+  <plugin name="org.apache.forrest.plugin.internal.xhtml2" type="internal"
+      author="Apache Forrest Project"
+      website="http://forrest.apache.org/pluginDocs/plugins_0_80/org.apache.forrest.plugin.internal.xhtml2/"
+      url="http://forrest.apache.org/plugins/"
+      publish="false"
+      version="0.1">
+    <description>
+      Forrest versions prior to 0.10 used XDoc as their internal format, versions
+      from 0.10 onwards are going to use a subset of XHTML2 instead. This plugin converts the
+      main forrest sitemaps to work with XHTML2. </description>
+    <forrestVersionInitial>0.8</forrestVersionInitial>
+    <forrestVersion>0.8</forrestVersion>
+  </plugin>
+</plugins>

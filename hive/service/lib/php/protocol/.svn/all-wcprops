@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/protocol
+END
+TBinaryProtocol.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/protocol/TBinaryProtocol.php
+END
+TProtocol.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/protocol/TProtocol.php
+END

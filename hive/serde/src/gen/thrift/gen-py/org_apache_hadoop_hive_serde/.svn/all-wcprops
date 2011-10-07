@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-py/org_apache_hadoop_hive_serde
+END
+ttypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-py/org_apache_hadoop_hive_serde/ttypes.py
+END
+constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-py/org_apache_hadoop_hive_serde/constants.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1044070/hive/trunk/serde/src/gen/thrift/gen-py/org_apache_hadoop_hive_serde/__init__.py
+END

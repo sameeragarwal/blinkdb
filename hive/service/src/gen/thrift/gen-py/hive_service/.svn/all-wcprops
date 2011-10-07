@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-py/hive_service
+END
+ttypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-py/hive_service/ttypes.py
+END
+ThriftHive.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-py/hive_service/ThriftHive.py
+END
+constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-py/hive_service/constants.py
+END
+ThriftHive-remote
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-py/hive_service/ThriftHive-remote
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1044070/hive/trunk/service/src/gen/thrift/gen-py/hive_service/__init__.py
+END

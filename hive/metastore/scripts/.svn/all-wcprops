@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts
+END
+hive.metastore_daemon
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/scripts/hive.metastore_daemon
+END
+hive.metastore_ctrl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/asf/!svn/ver/1027721/hive/trunk/metastore/scripts/hive.metastore_ctrl
+END
+start_meta_store_thrift_server.sh
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1072517/hive/trunk/metastore/scripts/start_meta_store_thrift_server.sh
+END

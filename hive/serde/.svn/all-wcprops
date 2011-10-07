@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/repos/asf/!svn/ver/1179784/hive/trunk/serde
+END
+ivy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/ivy.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/README.txt
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/asf/!svn/ver/1044070/hive/trunk/serde/build.xml
+END

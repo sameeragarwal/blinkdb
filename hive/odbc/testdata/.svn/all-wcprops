@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/testdata
+END
+dataset1.input
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/testdata/dataset1.input
+END
+dataset2.input
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/testdata/dataset2.input
+END
+dataset_types.input
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/testdata/dataset_types.input
+END

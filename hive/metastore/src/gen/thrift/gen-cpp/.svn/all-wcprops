@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp
+END
+hive_metastore_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/hive_metastore_constants.h
+END
+ThriftHiveMetastore.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/ThriftHiveMetastore.cpp
+END
+hive_metastore_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/hive_metastore_types.cpp
+END
+ThriftHiveMetastore.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/ThriftHiveMetastore.h
+END
+hive_metastore_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/hive_metastore_types.h
+END
+ThriftHiveMetastore_server.skeleton.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1151213/hive/trunk/metastore/src/gen/thrift/gen-cpp/ThriftHiveMetastore_server.skeleton.cpp
+END
+hive_metastore_constants.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-cpp/hive_metastore_constants.cpp
+END

@@ -1,0 +1,497 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic
+END
+GenericUDFTimestamp.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFTimestamp.java
+END
+GenericUDAFSum.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFSum.java
+END
+GenericUDFIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFIndex.java
+END
+GenericUDFStringToMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1034488/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFStringToMap.java
+END
+GenericUDTFJSONTuple.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDTFJSONTuple.java
+END
+GenericUDFOPNull.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPNull.java
+END
+GenericUDFMapKeys.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1154816/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapKeys.java
+END
+GenericUDFArrayContains.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFArrayContains.java
+END
+UDTFCollector.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/UDTFCollector.java
+END
+GenericUDFOPOr.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPOr.java
+END
+GenericUDAFEWAHBitmap.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1153022/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFEWAHBitmap.java
+END
+GenericUDFToUtcTimestamp.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFToUtcTimestamp.java
+END
+GenericUDFStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFStruct.java
+END
+NumericHistogram.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/NumericHistogram.java
+END
+GenericUDAFMax.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFMax.java
+END
+GenericUDFOPNotEqual.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1033792/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPNotEqual.java
+END
+GenericUDFToBinary.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1179784/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFToBinary.java
+END
+GenericUDFNamedStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1158446/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFNamedStruct.java
+END
+GenericUDAFStd.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFStd.java
+END
+GenericUDAFVarianceSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFVarianceSample.java
+END
+GenericUDFBridge.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1170721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFBridge.java
+END
+GenericUDAFBridge.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFBridge.java
+END
+GenericUDFEWAHBitmapEmpty.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFEWAHBitmapEmpty.java
+END
+GenericUDFUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFUtils.java
+END
+NGramEstimator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/NGramEstimator.java
+END
+GenericUDFOPAnd.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPAnd.java
+END
+GenericUDFFromUtcTimestamp.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFFromUtcTimestamp.java
+END
+GenericUDFOPEqual.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPEqual.java
+END
+GenericUDFCoalesce.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1139395/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFCoalesce.java
+END
+GenericUDF.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDF.java
+END
+GenericUDFOPLessThan.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPLessThan.java
+END
+GenericUDFField.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFField.java
+END
+GenericUDFElt.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFElt.java
+END
+GenericUDTFExplode.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1154061/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDTFExplode.java
+END
+GenericUDAFPercentileApprox.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFPercentileApprox.java
+END
+GenericUDFUnion.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFUnion.java
+END
+GenericUDAFVariance.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFVariance.java
+END
+Collector.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/Collector.java
+END
+GenericUDFOPEqualOrGreaterThan.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPEqualOrGreaterThan.java
+END
+GenericUDFInstr.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFInstr.java
+END
+GenericUDFWhen.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFWhen.java
+END
+GenericUDAFCollectSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFCollectSet.java
+END
+GenericUDFOPGreaterThan.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPGreaterThan.java
+END
+GenericUDTF.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1033183/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDTF.java
+END
+GenericUDFEWAHBitmapAnd.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFEWAHBitmapAnd.java
+END
+AbstractGenericUDFEWAHBitmapBop.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1096651/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/AbstractGenericUDFEWAHBitmapBop.java
+END
+GenericUDFOPEqualOrLessThan.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPEqualOrLessThan.java
+END
+GenericUDFSize.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFSize.java
+END
+GenericUDAFAverage.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFAverage.java
+END
+GenericUDAFCovarianceSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFCovarianceSample.java
+END
+GenericUDFConcatWS.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFConcatWS.java
+END
+GenericUDAFHistogramNumeric.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFHistogramNumeric.java
+END
+GenericUDFBaseCompare.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1141777/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFBaseCompare.java
+END
+GenericUDFEWAHBitmapOr.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFEWAHBitmapOr.java
+END
+GenericUDAFCorrelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFCorrelation.java
+END
+GenericUDFHash.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFHash.java
+END
+GenericUDFReflect.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFReflect.java
+END
+GenericUDAFMin.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFMin.java
+END
+GenericUDAFResolver2.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFResolver2.java
+END
+AbstractGenericUDAFResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/AbstractGenericUDAFResolver.java
+END
+GenericUDFSentences.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFSentences.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/package-info.java
+END
+GenericUDAFCount.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFCount.java
+END
+GenericUDFOPNotNull.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPNotNull.java
+END
+GenericUDFSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFSplit.java
+END
+GenericUDAFContextNGrams.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFContextNGrams.java
+END
+GenericUDFIf.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFIf.java
+END
+GenericUDFOPNot.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFOPNot.java
+END
+GenericUDAFEvaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFEvaluator.java
+END
+GenericUDFIn.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFIn.java
+END
+GenericUDFLocate.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFLocate.java
+END
+SimpleGenericUDAFParameterInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/SimpleGenericUDAFParameterInfo.java
+END
+GenericUDAFCovariance.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFCovariance.java
+END
+GenericUDFCase.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFCase.java
+END
+GenericUDFMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMap.java
+END
+GenericUDFArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFArray.java
+END
+GenericUDAFnGrams.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFnGrams.java
+END
+GenericUDTFParseUrlTuple.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDTFParseUrlTuple.java
+END
+GenericUDFMapValues.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1154816/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapValues.java
+END
+GenericUDAFParameterInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFParameterInfo.java
+END
+GenericUDAFStdSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1157222/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFStdSample.java
+END
+GenericUDAFResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDAFResolver.java
+END

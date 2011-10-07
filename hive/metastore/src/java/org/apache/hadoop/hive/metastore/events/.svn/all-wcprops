@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1144534/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events
+END
+DropPartitionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/DropPartitionEvent.java
+END
+AlterTableEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1144534/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/AlterTableEvent.java
+END
+LoadPartitionDoneEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1137561/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/LoadPartitionDoneEvent.java
+END
+AlterPartitionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1144534/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/AlterPartitionEvent.java
+END
+AddPartitionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/AddPartitionEvent.java
+END
+ListenerEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/ListenerEvent.java
+END
+CreateDatabaseEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/CreateDatabaseEvent.java
+END
+DropDatabaseEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/DropDatabaseEvent.java
+END
+CreateTableEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/CreateTableEvent.java
+END
+DropTableEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1100035/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/DropTableEvent.java
+END
+EventCleanerTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1141430/hive/trunk/metastore/src/java/org/apache/hadoop/hive/metastore/events/EventCleanerTask.java
+END

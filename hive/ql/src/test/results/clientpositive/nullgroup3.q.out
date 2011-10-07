@@ -1,0 +1,364 @@
+PREHOOK: query: CREATE TABLE tstparttbl(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE tstparttbl(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@tstparttbl
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv1.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-09')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv1.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-09')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl
+POSTHOOK: Output: default@tstparttbl@ds=2008-04-09
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-08')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-08')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl
+POSTHOOK: Output: default@tstparttbl@ds=2008-04-08
+PREHOOK: query: explain
+select count(1) from tstparttbl
+PREHOOK: type: QUERY
+POSTHOOK: query: explain
+select count(1) from tstparttbl
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME tstparttbl))) (TOK_INSERT (TOK_DESTINATION (TOK_DIR TOK_TMP_FILE)) (TOK_SELECT (TOK_SELEXPR (TOK_FUNCTION count 1)))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-0 is a root stage
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        tstparttbl 
+          TableScan
+            alias: tstparttbl
+            Select Operator
+              Group By Operator
+                aggregations:
+                      expr: count(1)
+                bucketGroup: false
+                mode: hash
+                outputColumnNames: _col0
+                Reduce Output Operator
+                  sort order: 
+                  tag: -1
+                  value expressions:
+                        expr: _col0
+                        type: bigint
+      Reduce Operator Tree:
+        Group By Operator
+          aggregations:
+                expr: count(VALUE._col0)
+          bucketGroup: false
+          mode: mergepartial
+          outputColumnNames: _col0
+          Select Operator
+            expressions:
+                  expr: _col0
+                  type: bigint
+            outputColumnNames: _col0
+            File Output Operator
+              compressed: false
+              GlobalTableId: 0
+              table:
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+
+  Stage: Stage-0
+    Fetch Operator
+      limit: -1
+
+
+PREHOOK: query: select count(1) from tstparttbl
+PREHOOK: type: QUERY
+PREHOOK: Input: default@tstparttbl@ds=2008-04-08
+PREHOOK: Input: default@tstparttbl@ds=2008-04-09
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-07_266_530503210743564414/-mr-10000
+POSTHOOK: query: select count(1) from tstparttbl
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@tstparttbl@ds=2008-04-08
+POSTHOOK: Input: default@tstparttbl@ds=2008-04-09
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-07_266_530503210743564414/-mr-10000
+500
+PREHOOK: query: CREATE TABLE tstparttbl2(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE tstparttbl2(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@tstparttbl2
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-09')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl2
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-09')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl2
+POSTHOOK: Output: default@tstparttbl2@ds=2008-04-09
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-08')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl2
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-08')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl2
+POSTHOOK: Output: default@tstparttbl2@ds=2008-04-08
+PREHOOK: query: explain
+select count(1) from tstparttbl2
+PREHOOK: type: QUERY
+POSTHOOK: query: explain
+select count(1) from tstparttbl2
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME tstparttbl2))) (TOK_INSERT (TOK_DESTINATION (TOK_DIR TOK_TMP_FILE)) (TOK_SELECT (TOK_SELEXPR (TOK_FUNCTION count 1)))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-0 is a root stage
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        tstparttbl2 
+          TableScan
+            alias: tstparttbl2
+            Select Operator
+              Group By Operator
+                aggregations:
+                      expr: count(1)
+                bucketGroup: false
+                mode: hash
+                outputColumnNames: _col0
+                Reduce Output Operator
+                  sort order: 
+                  tag: -1
+                  value expressions:
+                        expr: _col0
+                        type: bigint
+      Reduce Operator Tree:
+        Group By Operator
+          aggregations:
+                expr: count(VALUE._col0)
+          bucketGroup: false
+          mode: mergepartial
+          outputColumnNames: _col0
+          Select Operator
+            expressions:
+                  expr: _col0
+                  type: bigint
+            outputColumnNames: _col0
+            File Output Operator
+              compressed: false
+              GlobalTableId: 0
+              table:
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+
+  Stage: Stage-0
+    Fetch Operator
+      limit: -1
+
+
+PREHOOK: query: select count(1) from tstparttbl2
+PREHOOK: type: QUERY
+PREHOOK: Input: default@tstparttbl2@ds=2008-04-08
+PREHOOK: Input: default@tstparttbl2@ds=2008-04-09
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-10_685_2521681953062502433/-mr-10000
+POSTHOOK: query: select count(1) from tstparttbl2
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@tstparttbl2@ds=2008-04-08
+POSTHOOK: Input: default@tstparttbl2@ds=2008-04-09
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-10_685_2521681953062502433/-mr-10000
+0
+PREHOOK: query: DROP TABLE tstparttbl
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@tstparttbl
+PREHOOK: Output: default@tstparttbl
+POSTHOOK: query: DROP TABLE tstparttbl
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@tstparttbl
+POSTHOOK: Output: default@tstparttbl
+PREHOOK: query: CREATE TABLE tstparttbl(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE tstparttbl(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@tstparttbl
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv1.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-09')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv1.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-09')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl
+POSTHOOK: Output: default@tstparttbl@ds=2008-04-09
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-08')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl PARTITION (ds='2008-04-08')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl
+POSTHOOK: Output: default@tstparttbl@ds=2008-04-08
+PREHOOK: query: explain
+select count(1) from tstparttbl
+PREHOOK: type: QUERY
+POSTHOOK: query: explain
+select count(1) from tstparttbl
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME tstparttbl))) (TOK_INSERT (TOK_DESTINATION (TOK_DIR TOK_TMP_FILE)) (TOK_SELECT (TOK_SELEXPR (TOK_FUNCTION count 1)))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-0 is a root stage
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        tstparttbl 
+          TableScan
+            alias: tstparttbl
+            Select Operator
+              Group By Operator
+                aggregations:
+                      expr: count(1)
+                bucketGroup: false
+                mode: hash
+                outputColumnNames: _col0
+                Reduce Output Operator
+                  sort order: 
+                  tag: -1
+                  value expressions:
+                        expr: _col0
+                        type: bigint
+      Reduce Operator Tree:
+        Group By Operator
+          aggregations:
+                expr: count(VALUE._col0)
+          bucketGroup: false
+          mode: mergepartial
+          outputColumnNames: _col0
+          Select Operator
+            expressions:
+                  expr: _col0
+                  type: bigint
+            outputColumnNames: _col0
+            File Output Operator
+              compressed: false
+              GlobalTableId: 0
+              table:
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+
+  Stage: Stage-0
+    Fetch Operator
+      limit: -1
+
+
+PREHOOK: query: select count(1) from tstparttbl
+PREHOOK: type: QUERY
+PREHOOK: Input: default@tstparttbl@ds=2008-04-08
+PREHOOK: Input: default@tstparttbl@ds=2008-04-09
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-14_214_6605372656284457620/-mr-10000
+POSTHOOK: query: select count(1) from tstparttbl
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@tstparttbl@ds=2008-04-08
+POSTHOOK: Input: default@tstparttbl@ds=2008-04-09
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-14_214_6605372656284457620/-mr-10000
+500
+PREHOOK: query: DROP TABLE tstparttbl2
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@tstparttbl2
+PREHOOK: Output: default@tstparttbl2
+POSTHOOK: query: DROP TABLE tstparttbl2
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@tstparttbl2
+POSTHOOK: Output: default@tstparttbl2
+PREHOOK: query: CREATE TABLE tstparttbl2(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE tstparttbl2(KEY STRING, VALUE STRING) PARTITIONED BY(ds string) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@tstparttbl2
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-09')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl2
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-09')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl2
+POSTHOOK: Output: default@tstparttbl2@ds=2008-04-09
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-08')
+PREHOOK: type: LOAD
+PREHOOK: Output: default@tstparttbl2
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/nullfile.txt' INTO TABLE tstparttbl2 PARTITION (ds='2008-04-08')
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@tstparttbl2
+POSTHOOK: Output: default@tstparttbl2@ds=2008-04-08
+PREHOOK: query: explain
+select count(1) from tstparttbl2
+PREHOOK: type: QUERY
+POSTHOOK: query: explain
+select count(1) from tstparttbl2
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME tstparttbl2))) (TOK_INSERT (TOK_DESTINATION (TOK_DIR TOK_TMP_FILE)) (TOK_SELECT (TOK_SELEXPR (TOK_FUNCTION count 1)))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-0 is a root stage
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        tstparttbl2 
+          TableScan
+            alias: tstparttbl2
+            Select Operator
+              Group By Operator
+                aggregations:
+                      expr: count(1)
+                bucketGroup: false
+                mode: hash
+                outputColumnNames: _col0
+                Reduce Output Operator
+                  sort order: 
+                  tag: -1
+                  value expressions:
+                        expr: _col0
+                        type: bigint
+      Reduce Operator Tree:
+        Group By Operator
+          aggregations:
+                expr: count(VALUE._col0)
+          bucketGroup: false
+          mode: mergepartial
+          outputColumnNames: _col0
+          Select Operator
+            expressions:
+                  expr: _col0
+                  type: bigint
+            outputColumnNames: _col0
+            File Output Operator
+              compressed: false
+              GlobalTableId: 0
+              table:
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+
+  Stage: Stage-0
+    Fetch Operator
+      limit: -1
+
+
+PREHOOK: query: select count(1) from tstparttbl2
+PREHOOK: type: QUERY
+PREHOOK: Input: default@tstparttbl2@ds=2008-04-08
+PREHOOK: Input: default@tstparttbl2@ds=2008-04-09
+PREHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-17_713_2865331384408810906/-mr-10000
+POSTHOOK: query: select count(1) from tstparttbl2
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@tstparttbl2@ds=2008-04-08
+POSTHOOK: Input: default@tstparttbl2@ds=2008-04-09
+POSTHOOK: Output: file:/tmp/krishnak/hive_2011-03-21_04-13-17_713_2865331384408810906/-mr-10000
+0

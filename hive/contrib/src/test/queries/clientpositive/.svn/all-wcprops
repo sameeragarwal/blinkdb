@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1078906/hive/trunk/contrib/src/test/queries/clientpositive
+END
+lateral_view_explode2.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/lateral_view_explode2.q
+END
+udaf_example_avg.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_avg.q
+END
+java_mr_example.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/java_mr_example.q
+END
+udf_example_arraymapstruct.q
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udf_example_arraymapstruct.q
+END
+serde_regex.q
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_regex.q
+END
+fileformat_base64.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/fileformat_base64.q
+END
+udaf_example_group_concat.q
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_group_concat.q
+END
+udaf_example_min.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_min.q
+END
+udf_row_sequence.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1074393/hive/trunk/contrib/src/test/queries/clientpositive/udf_row_sequence.q
+END
+udaf_example_max.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_max.q
+END
+serde_typedbytes2.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes2.q
+END
+serde_typedbytes3.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes3.q
+END
+udf_example_add.q
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udf_example_add.q
+END
+udf_example_format.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udf_example_format.q
+END
+serde_typedbytes4.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes4.q
+END
+serde_typedbytes5.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes5.q
+END
+udtf_output_on_close.q
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udtf_output_on_close.q
+END
+serde_typedbytes6.q
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes6.q
+END
+udtf_explode2.q
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udtf_explode2.q
+END
+dboutput.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/dboutput.q
+END
+serde_s3.q
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_s3.q
+END
+serde_typedbytes_null.q
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes_null.q
+END
+udaf_example_min_n.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_min_n.q
+END
+udaf_example_max_n.q
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/udaf_example_max_n.q
+END
+serde_typedbytes.q
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1070198/hive/trunk/contrib/src/test/queries/clientpositive/serde_typedbytes.q
+END

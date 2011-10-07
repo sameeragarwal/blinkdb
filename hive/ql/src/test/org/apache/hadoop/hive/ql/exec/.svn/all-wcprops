@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec
+END
+TestExecDriver.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1071450/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestExecDriver.java
+END
+TestExpressionEvaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestExpressionEvaluator.java
+END
+TestHashMapWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestHashMapWrapper.java
+END
+TestStatsPublisherEnhanced.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestStatsPublisherEnhanced.java
+END
+TestPlan.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestPlan.java
+END
+sample_plan.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/sample_plan.xml
+END
+TestUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestUtilities.java
+END
+TestOperators.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/exec/TestOperators.java
+END

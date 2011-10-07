@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-cpp
+END
+serde_constants.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-cpp/serde_constants.cpp
+END
+serde_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-cpp/serde_constants.h
+END
+serde_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-cpp/serde_types.cpp
+END
+serde_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-cpp/serde_types.h
+END

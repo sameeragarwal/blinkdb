@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/asf/!svn/ver/1174892/hive/trunk/service
+END
+ivy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/asf/!svn/ver/1165207/hive/trunk/service/ivy.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1044070/hive/trunk/service/build.xml
+END

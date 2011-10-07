@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/asf/!svn/ver/1149311/hive/trunk/bin/ext
+END
+cli.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/cli.sh
+END
+hwi.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/hwi.sh
+END
+help.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/help.sh
+END
+jar.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/jar.sh
+END
+rcfilecat.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/rcfilecat.sh
+END
+hiveserver.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1149311/hive/trunk/bin/ext/hiveserver.sh
+END
+metastore.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1149311/hive/trunk/bin/ext/metastore.sh
+END
+lineage.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/bin/ext/lineage.sh
+END

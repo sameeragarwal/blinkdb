@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/asf/!svn/ver/1044070/hive/trunk/odbc/src/cpp
+END
+HiveRowSet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1044070/hive/trunk/odbc/src/cpp/HiveRowSet.cpp
+END
+hiveclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/hiveclient.h
+END
+hiveclienthelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/hiveclienthelper.h
+END
+HiveConnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveConnection.h
+END
+HiveRowSet.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveRowSet.h
+END
+HiveResultSet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveResultSet.cpp
+END
+HiveColumnDesc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveColumnDesc.cpp
+END
+thriftserverconstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/thriftserverconstants.h
+END
+hiveclient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/hiveclient.cpp
+END
+hiveclienthelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/asf/!svn/ver/1044070/hive/trunk/odbc/src/cpp/hiveclienthelper.cpp
+END
+HiveResultSet.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveResultSet.h
+END
+HiveColumnDesc.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/HiveColumnDesc.h
+END
+hiveconstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/odbc/src/cpp/hiveconstants.h
+END

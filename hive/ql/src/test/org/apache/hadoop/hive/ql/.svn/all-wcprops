@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql
+END
+TestLocationQueries.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1126726/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/TestLocationQueries.java
+END
+BaseTestQueries.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1126726/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/BaseTestQueries.java
+END
+TestMTQueries.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1126726/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/TestMTQueries.java
+END
+QTestUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1170260/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/QTestUtil.java
+END

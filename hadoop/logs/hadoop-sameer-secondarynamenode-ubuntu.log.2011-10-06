@@ -1,0 +1,486 @@
+2011-10-06 15:10:55,544 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:10:55,634 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:11:02,740 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:03,741 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:04,742 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:05,742 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:06,743 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:07,744 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:08,745 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:09,746 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:10,747 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:11,748 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:11,750 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:13,751 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:14,753 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:15,754 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:16,755 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:17,756 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:18,756 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:19,757 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:20,759 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:21,760 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:22,761 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:22,762 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:24,763 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:25,764 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:26,765 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:27,766 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:28,767 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:29,768 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:30,769 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:31,770 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:32,772 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:33,773 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:33,773 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:35,775 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:36,776 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:37,777 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:38,778 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:39,779 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:40,780 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:41,782 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:42,783 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:43,784 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:44,785 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:44,785 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:46,788 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:47,790 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:48,791 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:11:49,792 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:11:50,793 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:11:51,794 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:11:52,795 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:11:53,796 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:11:54,796 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:11:55,797 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:11:55,798 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:11:57,799 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:11:58,800 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:11:59,800 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:00,801 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:01,802 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:02,803 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:03,804 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:04,805 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:05,806 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:06,807 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:06,808 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:08,810 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:09,812 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:10,813 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:11,814 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:12,815 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:13,816 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:14,817 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:15,818 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:16,825 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:17,826 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:17,826 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:19,828 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:20,829 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:21,829 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:22,830 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:23,831 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:24,832 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:25,833 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:26,834 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:27,835 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:28,836 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:28,837 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:30,839 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:31,840 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:32,841 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:33,858 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:34,858 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:35,860 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:36,863 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:37,864 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:38,866 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:39,867 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:39,868 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:41,871 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:42,872 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:43,873 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:44,875 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:45,875 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:46,876 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:47,877 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:48,878 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:12:49,879 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:12:50,880 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:12:50,881 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:12:52,882 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:12:53,884 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:12:54,884 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:12:55,885 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:12:56,886 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:12:57,887 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:12:58,888 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:12:59,889 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:00,890 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:01,891 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:01,891 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:03,893 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:04,894 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:05,895 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:06,897 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:07,898 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:08,899 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:09,900 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:10,901 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:11,902 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:12,903 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:12,903 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:14,905 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:15,906 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:16,907 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:17,908 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:18,910 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:19,910 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:20,911 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:21,912 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:22,913 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:23,914 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:23,915 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:25,917 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:26,917 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:27,919 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:28,919 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:29,920 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:30,921 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:31,921 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:32,922 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:33,923 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:34,924 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:34,924 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:36,926 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:37,926 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:38,928 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:39,928 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:40,930 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:41,931 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:42,932 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:43,933 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:44,934 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:45,935 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:45,936 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:47,938 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:48,940 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:13:49,941 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:13:50,942 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:13:51,943 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:13:52,945 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:13:53,946 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:13:54,946 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:13:55,948 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:13:56,949 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:13:56,949 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:13:58,951 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:13:59,951 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:00,952 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:01,953 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:02,954 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:03,955 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:04,956 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:05,957 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:06,957 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:07,958 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:07,959 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:09,960 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:10,961 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:11,961 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:12,962 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:13,963 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:14,964 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:15,964 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:16,966 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:17,966 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:18,967 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:18,968 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:20,970 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:21,972 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:22,973 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:23,974 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:24,975 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:25,976 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:26,977 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:27,978 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:28,979 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:29,979 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:29,980 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:31,981 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:32,982 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:33,983 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:34,984 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:35,985 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:36,986 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:37,986 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:38,987 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:39,988 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:40,989 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:40,990 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:42,991 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:43,992 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:44,993 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:45,994 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:46,995 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:47,996 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:14:48,996 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:14:49,998 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:14:50,998 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:14:51,999 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:14:52,000 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:14:54,002 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:14:55,003 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:14:56,003 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:14:57,004 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:14:58,005 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:14:59,006 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:00,007 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:01,008 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:02,009 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:03,010 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:03,010 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:05,012 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:06,013 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:07,014 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:08,015 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:09,016 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:10,017 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:11,018 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:12,018 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:13,020 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:14,020 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:14,021 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:16,022 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:17,023 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:18,025 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:19,026 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:20,027 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:21,028 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:22,029 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:23,030 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:24,031 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:25,032 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:25,032 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:27,034 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:28,035 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-06 15:15:29,036 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-06 15:15:30,038 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-06 15:15:31,039 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-06 15:15:32,040 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-06 15:15:33,041 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-06 15:15:34,042 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-06 15:15:35,043 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-06 15:15:36,043 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-06 15:15:36,044 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-06 15:15:38,045 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-06 15:15:42,855 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Starting web server as: sameer
+2011-10-06 15:15:42,959 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-06 15:15:43,016 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-06 15:15:43,018 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50090
+2011-10-06 15:15:43,023 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50090 webServer.getConnectors()[0].getLocalPort() returned 50090
+2011-10-06 15:15:43,023 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50090
+2011-10-06 15:15:43,023 INFO org.mortbay.log: jetty-6.1.26
+2011-10-06 15:15:43,234 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50090
+2011-10-06 15:15:43,234 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2011-10-06 15:15:43,234 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Secondary Web-server up at: 0.0.0.0:50090
+2011-10-06 15:15:43,234 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Secondary image servlet up at: 0.0.0.0:50090
+2011-10-06 15:15:43,234 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2011-10-06 15:15:43,234 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :67108864 bytes (65536 KB)
+2011-10-06 15:20:43,523 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 112 bytes.
+2011-10-06 15:20:43,525 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 1585 bytes.
+2011-10-06 15:20:43,526 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 15:20:43,527 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 15:20:43,527 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 15:20:43,527 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 15:20:43,680 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 15:20:43,680 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 15:20:43,680 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 15:20:43,683 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 15:20:43,683 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 15:20:43,688 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 15:20:43,699 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 1
+2011-10-06 15:20:43,700 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 15:20:43,707 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 1585 edits # 24 loaded in 0 seconds.
+2011-10-06 15:20:43,707 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 15:20:43,717 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 15:20:43,743 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 15:20:43,757 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317939643000:1317939337139
+2011-10-06 15:20:43,855 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 16:20:44,669 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 16:20:44,943 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 16:20:44,971 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 16:20:44,971 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 16:20:44,971 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 16:20:44,973 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 16:20:44,973 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 16:20:49,541 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 16:20:49,541 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 16:20:49,547 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 16:20:49,547 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 16:20:49,548 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 16:20:49,548 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 16:20:49,872 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 16:20:49,875 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 16:20:49,875 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 16:20:49,876 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 16:20:49,908 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 16:20:50,114 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 16:20:50,352 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317943244000:1317939643831
+2011-10-06 16:20:50,616 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 17:20:51,515 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 17:20:53,780 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 17:20:53,782 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 17:20:53,817 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 17:20:53,818 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 17:20:53,818 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 17:20:53,818 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 17:21:35,372 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 17:21:35,372 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 17:21:35,372 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 17:21:35,372 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 17:21:35,372 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 17:21:35,373 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 17:21:35,375 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 17:21:35,387 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 17:21:35,395 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 17:21:35,396 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 17:21:35,435 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 17:21:37,160 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 17:21:43,255 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317946852000:1317943250476
+2011-10-06 17:21:43,609 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 18:21:45,944 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 18:21:47,021 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 18:21:47,047 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 18:21:47,048 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 18:21:47,048 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 18:21:47,048 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 18:21:47,048 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 18:22:03,344 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 18:22:03,386 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 18:22:03,386 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 18:22:03,386 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 18:22:03,386 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 18:22:03,387 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 18:22:03,973 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 18:22:03,974 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 18:22:03,974 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 18:22:03,974 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 18:22:03,982 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 18:22:04,997 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 18:22:23,340 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317950506000:1317946903312
+2011-10-06 18:22:23,509 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 19:22:23,829 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 19:22:23,970 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 19:22:23,974 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 19:22:23,975 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 19:22:23,975 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 19:22:23,975 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 19:22:23,975 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 19:22:24,136 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 19:22:24,136 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 19:22:24,136 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 19:22:24,137 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 19:22:24,137 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 19:22:24,137 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 19:22:24,187 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 19:22:24,190 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 19:22:24,191 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 19:22:24,191 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 19:22:24,195 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 19:22:24,227 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 19:22:24,461 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317954143000:1317950543437
+2011-10-06 19:22:34,416 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 20:22:34,604 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 20:22:34,674 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 20:22:34,681 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 20:22:34,681 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 20:22:34,681 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 20:22:34,681 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 20:22:34,682 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 20:22:34,875 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 20:22:34,875 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 20:22:34,875 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 20:22:34,875 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 20:22:34,875 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 20:22:34,876 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 20:22:35,415 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 20:22:35,416 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 20:22:35,416 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 20:22:35,416 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 20:22:35,419 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 20:22:35,448 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 20:22:35,465 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317957754000:1317954154394
+2011-10-06 20:22:35,495 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 21:22:36,235 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 21:22:38,626 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 21:22:38,629 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 21:22:38,629 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 21:22:38,635 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 21:22:38,635 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 21:22:38,675 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 21:22:56,281 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 21:22:56,282 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 21:22:56,282 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 21:22:56,282 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 21:22:56,282 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 21:22:56,283 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 21:22:56,775 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 21:22:56,777 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 21:22:56,777 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 21:22:56,777 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 21:22:57,964 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 21:23:02,020 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 21:23:28,611 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317961357000:1317957755481
+2011-10-06 21:23:28,917 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 22:23:29,442 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 22:23:29,727 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 22:23:29,730 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 22:23:29,730 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 22:23:29,731 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 22:23:29,731 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 22:23:29,731 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 22:23:30,242 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 22:23:30,242 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 22:23:30,242 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 22:23:30,243 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 22:23:30,243 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 22:23:30,243 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 22:23:30,252 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 22:23:30,260 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 22:23:30,260 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 22:23:30,261 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 22:23:30,277 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 22:23:30,338 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 22:23:31,066 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317965009000:1317961408662
+2011-10-06 22:23:33,036 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-06 23:23:33,224 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 23:23:33,260 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-06 23:23:33,264 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-06 23:23:33,264 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 23:23:33,265 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 23:23:33,265 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 23:23:33,265 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 23:23:33,643 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 23:23:33,643 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 23:23:33,643 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 23:23:33,644 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 23:23:33,644 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 23:23:33,645 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 23:23:34,140 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-06 23:23:38,599 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 23:23:38,599 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 23:23:38,608 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 23:23:38,676 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 23:23:38,828 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-06 23:23:38,936 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317968613000:1317965011323
+2011-10-06 23:23:39,510 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016

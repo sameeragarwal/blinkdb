@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example
+END
+UDFExampleMapConcat.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example/UDFExampleMapConcat.java
+END
+UDFExampleAdd.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example/UDFExampleAdd.java
+END
+UDFExampleFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example/UDFExampleFormat.java
+END
+UDFExampleStructPrint.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example/UDFExampleStructPrint.java
+END
+UDFExampleArraySum.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/udf/example/UDFExampleArraySum.java
+END

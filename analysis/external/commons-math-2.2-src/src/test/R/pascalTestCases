@@ -1,0 +1,135 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate Pascal distribution tests in
+# org.apache.commons.math.distribution.PascalDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# dnbinom(x, size, prob, mu, log = FALSE) <- density
+# pnbinom(q, size, prob, mu, lower.tail = TRUE, log.p = FALSE) <- distribution
+# qnbinom(p, size, prob, mu, lower.tail = TRUE, log.p = FALSE) <- quantiles
+#------------------------------------------------------------------------------
+tol <- 1E-9                       # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+# function to verify density computations
+
+verifyDensity <- function(points, expected, size, p, tol) {
+    rDensityValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDensityValues[i] <- dnbinom(point, size, p)
+    }
+    output <- c("Density test size = ", size, ", p = ", p)
+    if (assertEquals(expected,rDensityValues,tol,"Density Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify distribution computations
+
+verifyDistribution <- function(points, expected, size, p, tol) {
+    rDistValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDistValues[i] <- pnbinom(point, size, p)
+    }
+    output <- c("Distribution test size = ", size, ", p = ", p)
+    if (assertEquals(expected,rDistValues,tol,"Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+#--------------------------------------------------------------------------
+cat("Negative Binomial test cases\n")
+
+size <- 10.0
+probability <- 0.70
+
+densityPoints <- c(-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+densityValues <- c(0, 0.0282475249, 0.0847425747, 0.139825248255, 0.167790297906, 0.163595540458,
+          0.137420253985, 0.103065190489, 0.070673273478, 0.0450542118422, 0.0270325271053,
+          0.0154085404500, 0.0084046584273)
+distributionValues <- c(0, 0.0282475249, 0.1129900996, 0.252815347855, 0.420605645761, 0.584201186219,
+          0.721621440204, 0.824686630693, 0.895359904171, 0.940414116013, 0.967446643119,
+          0.982855183569, 0.991259841996)
+inverseCumPoints <- c( 0, 0.001, 0.010, 0.025, 0.050, 0.100, 0.999,
+          0.990, 0.975, 0.950, 0.900)
+inverseCumValues <- c(-1, -1, -1, -1, 0, 0, 13, 10, 9, 8, 7)
+
+verifyDensity(densityPoints,densityValues,size,probability,tol)
+verifyDistribution(densityPoints, distributionValues, size, probability, tol)
+
+i <- 0
+rInverseCumValues <- rep(0,length(inverseCumPoints))
+for (point in inverseCumPoints) {
+  i <- i + 1
+  rInverseCumValues[i] <- qnbinom(point, size, probability)
+}
+
+output <- c("Inverse Distribution test n = ", size, ", p = ", probability)
+# R defines quantiles from the right, need to subtract one
+if (assertEquals(inverseCumValues, rInverseCumValues-1, tol,
+    "Inverse Dist Values")) {
+    displayPadded(output, SUCCEEDED, 80)
+} else {
+    displayPadded(output, FAILED, 80)
+}       
+
+# Degenerate cases
+
+size <- 5
+probability <- 0.0
+
+densityPoints <- c(-1, 0, 1, 10, 11)
+# Note: commons math returns 0's below
+densityValues <- c(NaN, NaN, NaN, NaN, NaN)
+distributionPoints <- c(-1, 0, 1, 5, 10)
+# Note: commons math returns 0's below
+distributionValues <- c(NaN, NaN, NaN, NaN, NaN)
+
+output <- c("Density test n = ", size, ", p = ", probability)
+verifyDensity(densityPoints,densityValues,size,probability,tol)
+output <- c("Distribution test n = ", size, ", p = ", probability)
+verifyDistribution(distributionPoints,distributionValues,size,probability,tol)
+
+size <- 5
+probability <- 1.0
+
+densityPoints <- c(-1, 0, 1, 2, 5, 10)
+densityValues <- c(0, 1, 0, 0, 0, 0)
+distributionPoints <- c(-1, 0, 1, 2, 5, 10)
+distributionValues <- c(0, 1, 1, 1, 1, 1)
+
+output <- c("Density test n = ", size, ", p = ", probability)
+verifyDensity(densityPoints,densityValues,size,probability,tol)
+output <- c("Distribution test n = ", size, ", p = ", probability)
+verifyDistribution(distributionPoints,distributionValues,size,probability,tol)
+
+displayDashes(WIDTH)

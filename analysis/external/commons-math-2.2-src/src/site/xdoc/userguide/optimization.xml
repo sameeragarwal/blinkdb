@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 980039 $ $Date: 2010-07-28 14:48:48 +0200 (mer. 28 juil. 2010) $ -->
+<document url="optimization.html">
+
+  <properties>
+    <title>The Commons Math User Guide - Optimization</title>
+  </properties>
+
+  <body>
+    <section name="12 Optimization">
+      <subsection name="12.1 Overview" href="overview">
+        <p>
+          The optimization package provides algorithms to optimize (i.e. either minimize
+          or maximize) some objective or cost function. The package is split in several
+          sub-packages dedicated to different kind of functions or algorithms.
+          <ul>
+            <li>the univariate package handles univariate scalar functions,</li>
+            <li>the linear package handles multivariate vector linear functions
+                with linear constraints,</li>
+            <li>the direct package handles multivariate scalar functions
+            using direct search methods (i.e. not using derivatives),</li>
+            <li>the general package handles multivariate scalar or vector functions
+            using derivatives.</li>
+            <li>the fitting package handles curve fitting by univariate real functions</li>
+          </ul>
+        </p>
+        <p>
+        The top level optimization package provides common interfaces for the optimization
+        algorithms provided in sub-packages. The main interfaces defines defines optimizers
+        and convergence checkers. The functions that are optimized by the algorithms provided
+        by this package and its sub-packages are a subset of the one defined in the
+        <code>analysis</code> package, namely the real and vector valued functions. These
+        functions are called objective function here. When the goal is to minimize, the
+        functions are often called cost function, this name is not used in this package.
+        </p>
+        <p>
+        The type of goal, i.e. minimization or maximization, is defined by the enumerated
+        <a href="../apidocs/org/apache/commons/math/optimization/GoalType.html">
+        GoalType</a> which has only two values: <code>MAXIMIZE</code> and <code>MINIMIZE</code>.
+        </p>
+        <p>
+        Optimizers are the algorithms that will either minimize or maximize, the objective
+        function by changing its input variables set until an optimal set is found. There
+        are only four interfaces defining the common behavior of optimizers, one for each
+        supported type of objective function:
+        <ul>
+          <li><a href="../apidocs/org/apache/commons/math/optimization/UnivariateRealOptimizer.html">
+              UnivariateRealOptimizer</a> for <a
+              href="../apidocs/org/apache/commons/math/analysis/UnivariateRealFunction.html">
+              univariate real functions</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/optimization/MultivariateRealOptimizer.html">
+              MultivariateRealOptimizer</a> for <a
+              href="../apidocs/org/apache/commons/math/analysis/MultivariateRealFunction.html">
+              multivariate real functions</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/optimization/DifferentiableMultivariateRealOptimizer.html">
+              DifferentiableMultivariateRealOptimizer</a> for <a
+              href="../apidocs/org/apache/commons/math/analysis/DifferentiableMultivariateRealFunction.html">
+              differentiable multivariate real functions</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/optimization/DifferentiableMultivariateVectorialOptimizer.html">
+              DifferentiableMultivariateVectorialOptimizer</a> for <a
+              href="../apidocs/org/apache/commons/math/analysis/DifferentiableMultivariateVectorialFunction.html">
+              differentiable multivariate vectorial functions</a></li>
+        </ul>
+        </p>
+
+        <p>
+        Despite there are only four types of supported optimizers, it is possible to optimize
+        a transform a <a
+        href="../apidocs/org/apache/commons/math/analysis/MultivariateVectorialFunction.html">
+        non-differentiable multivariate vectorial function</a> by converting it to a <a
+        href="../apidocs/org/apache/commons/math/analysis/MultivariateRealFunction.html">
+        non-differentiable multivariate real function</a> thanks to the <a
+        href="../apidocs/org/apache/commons/math/optimization/LeastSquaresConverter.html">
+        LeastSquaresConverter</a> helper class. The transformed function can be optimized using
+        any implementation of the <a
+        href="../apidocs/org/apache/commons/math/optimization/MultivariateRealOptimizer.html">
+        MultivariateRealOptimizer</a> interface.
+        </p>
+
+        <p>
+        For each of the four types of supported optimizers, there is a special implementation
+        which wraps a classical optimizer in order to add it a multi-start feature. This feature
+        call the underlying optimizer several times in sequence with different starting points
+        and returns the best optimum found or all optima if desired. This is a classical way to
+        prevent being trapped into a local extremum when looking for a global one.
+        </p>
+      </subsection>
+      <subsection name="12.2 Univariate Functions" href="univariate">
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/optimization/UnivariateRealOptimizer.html">
+          UnivariateRealOptimizer</a> is used to find the minimal values of a univariate real-valued
+          function <code>f</code>.
+        </p>
+        <p>
+          These algorithms usage is very similar to root-finding algorithms usage explained
+          in the analysis package. The main difference is that the <code>solve</code> methods in root
+          finding algorithms is replaced by <code>optimize</code> methods.
+        </p>
+      </subsection>
+      <subsection name="12.3 Linear Programming" href="linear">
+        <p>
+          This package provides an implementation of George Dantzig's simplex algorithm
+          for solving linear optimization problems with linear equality and inequality
+          constraints.
+        </p>
+      </subsection>
+      <subsection name="12.4 Direct Methods" href="direct">
+        <p>
+          Direct search methods only use cost function values, they don't
+          need derivatives and don't either try to compute approximation of
+          the derivatives. According to a 1996 paper by Margaret H. Wright
+          (<a href="http://cm.bell-labs.com/cm/cs/doc/96/4-02.ps.gz">Direct
+          Search Methods: Once Scorned, Now Respectable</a>), they are used
+          when either the computation of the derivative is impossible (noisy
+          functions, unpredictable discontinuities) or difficult (complexity,
+          computation cost). In the first cases, rather than an optimum, a
+          <em>not too bad</em> point is desired. In the latter cases, an
+          optimum is desired but cannot be reasonably found. In all cases
+          direct search methods can be useful.
+        </p>
+        <p>
+          Simplex-based direct search methods are based on comparison of
+          the cost function values at the vertices of a simplex (which is a
+          set of n+1 points in dimension n) that is updated by the algorithms
+          steps.
+        </p>
+        <p>
+          The instances can be built either in single-start or in
+          multi-start mode. Multi-start is a traditional way to try to avoid
+          being trapped in a local minimum and miss the global minimum of a
+          function. It can also be used to verify the convergence of an
+          algorithm. In multi-start mode, the <code>minimizes</code>method
+          returns the best minimum found after all starts, and the <code>etMinima</code>
+          method can be used to retrieve all minima from all starts (including the one
+          already provided by the <code>minimizes</code> method).
+        </p>
+        <p>
+          The <code>direct</code> package provides two solvers. The first one is the classical
+          <a href="../apidocs/org/apache/commons/math/optimization/direct/NelderMead.html">
+          Nelder-Mead</a> method. The second one is Virginia Torczon's
+          <a href="../apidocs/org/apache/commons/math/optimization/direct/MultiDirectional.html">
+          multi-directional</a> method.
+        </p>
+      </subsection>
+      <subsection name="12.5 General Case" href="general">
+        <p>
+          The general package deals with non-linear vectorial optimization problems when
+          the partial derivatives of the objective function are available.
+        </p>
+        <p>
+          One important class of estimation problems is weighted least
+          squares problems. They basically consist in finding the values
+          for some parameters p<sub>k</sub> such that a cost function
+          J = sum(w<sub>i</sub>(mes<sub>i</sub> - mod<sub>i</sub>)<sup>2</sup>) is
+          minimized. The various (target<sub>i</sub> - model<sub>i</sub>(p<sub>k</sub>))
+          terms are called residuals. They represent the deviation between a set of
+          target values target<sub>i</sub> and theoretical values computed from
+          models model<sub>i</sub> depending on free parameters p<sub>k</sub>.
+          The w<sub>i</sub> factors are weights. One classical use case is when the
+          target values are experimental observations or measurements.
+        </p>
+        <p>
+          Solving a least-squares problem is finding the free parameters p<sub>k</sub>
+          of the theoretical models such that they are close to the target values, i.e.
+          when the residual are small.
+        </p>
+        <p>
+          Two optimizers are available in the general package, both devoted to least-squares
+          problems. The first one is based on the <a
+          href="../apidocs/org/apache/commons/math/optimization/general/GaussNewtonOptimizer.html">
+          Gauss-Newton</a> method. The second one is the <a
+          href="../apidocs/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.html">
+          Levenberg-Marquardt</a> method.
+        </p>
+        <p>
+          In order to solve a vectorial optimization problem, the user must provide it as
+          an object implementing the <a
+          href="../apidocs/org/apache/commons/math/analysis/DifferentiableMultivariateVectorialFunction.html">
+          DifferentiableMultivariateVectorialFunction</a> interface. The object will be provided to
+          the <code>estimate</code> method of the optimizer, along with the target and weight arrays,
+          thus allowing the optimizer to compute the residuals at will. The last parameter to the
+          <code>estimate</code> method is the point from which the optimizer will start its
+          search for the optimal point.
+        </p>
+        <p>
+          In addition to least squares solving, the <a
+          href="../apidocs/org/apache/commons/math/optimization/general/NonLinearConjugateGradientOptimizer.html">
+          NonLinearConjugateGradientOptimizer</a> class provides a non-linear conjugate gradient algorithm
+          to optimize <a
+          href="../apidocs/org/apache/commons/math/optimization/DifferentiableMultivariateRealFunction.html">
+          DifferentiableMultivariateRealFunction</a>. Both the Fletcher-Reeves and the Polak-Ribi&#232;re
+          search direction update methods are supported. It is also possible to set up a preconditioner
+          or to change the line-search algorithm of the inner loop if desired (the default one is a Brent
+          solver).
+        </p>
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/optimization/general/PowellOptimizer.html">
+          PowellOptimizer</a> provides an optimization method for non-differentiable functions.
+        </p>
+      </subsection>
+      <subsection name="12.6 Curve Fitting" href="fitting">
+        <p>
+          The fitting package deals with curve fitting for univariate real functions.
+          When a univariate real function y = f(x) does depend on some unknown parameters
+          p<sub>0</sub>, p<sub>1</sub> ... p<sub>n-1</sub>, curve fitting can be used to
+          find these parameters. It does this by <em>fitting</em> the curve so it remains
+          very close to a set of observed points (x<sub>0</sub>, y<sub>0</sub>),
+          (x<sub>1</sub>, y<sub>1</sub>) ... (x<sub>k-1</sub>, y<sub>k-1</sub>). This
+          fitting is done by finding the parameters values that minimizes the objective
+          function sum(y<sub>i</sub>-f(x<sub>i</sub>))<sup>2</sup>. This is really a least
+          squares problem.
+        </p>
+        <p>
+          For all provided curve fitters, the operating principle is the same. Users must first
+          create an instance of the fitter, then add the observed points and once the complete
+          sample of observed points has been added they must call the <code>fit</code> method
+          which will compute the parameters that best fit the sample. A weight is associated
+          with each observed point, this allows to take into account uncertainty on some points
+          when they come from loosy measurements for example. If no such information exist and
+          all points should be treated the same, it is safe to put 1.0 as the weight for all points.
+        </p>
+        <p>
+          The <a
+          href="../apidocs/org/apache/commons/math/optimization/fitting/CurveFitter.html">
+          CurveFitter</a> class provides curve fitting for general curves. Users must
+          provide their own implementation of the curve template as a class implementing
+          the <a
+          href="../apidocs/org/apache/commons/math/optimization/fitting/ParametricRealFunction.html">
+          ParametricRealFunction</a> interface and they must provide the initial guess of the
+          parameters. The more specialized <a
+          href="../apidocs/org/apache/commons/math/optimization/fitting/PolynomialFitter.html">
+          PolynomialFitter</a> and <a
+          href="../apidocs/org/apache/commons/math/optimization/fitting/HarmonicFitter.html">
+          HarmonicFitter</a> classes require neither an implementation of the parametric real function
+          not an initial guess as they are able to compute them by themselves.
+        </p>
+        <p>
+          An example of fitting a polynomial is given here:
+        </p>
+        <source>PolynomialFitter fitter = new PolynomialFitter(degree, new LevenbergMarquardtOptimizer());
+fitter.addObservedPoint(-1.00,  2.021170021833143);
+fitter.addObservedPoint(-0.99   2.221135431136975);
+fitter.addObservedPoint(-0.98   2.09985277659314);
+fitter.addObservedPoint(-0.97   2.0211192647627025);
+// lots of lines ommitted
+fitter.addObservedPoint( 0.99, -2.4345814727089854);
+PolynomialFunction fitted = fitter.fit();
+        </source>
+      </subsection>
+     </section>
+  </body>
+</document>

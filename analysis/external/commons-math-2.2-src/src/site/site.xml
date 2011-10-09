@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<project name="Math">
+  <bannerRight>
+    <name>Commons Math</name>
+    <src>/images/math.gif</src>
+    <href>/index.html</href>
+  </bannerRight>
+
+  <body>
+    <menu name="Math">
+      <item name="Overview" href="/index.html"/>
+      <item name="Proposal" href="/proposal.html"/>
+      <item name="Developers Guide" href="/developers.html"/>
+      <item name="Javadoc (3.0-SNAPSHOT)" href="apidocs/index.html"/>
+      <item name="Javadoc (2.2 release)"
+         href="http://commons.apache.org/math/api-2.2/index.html"/>
+      <item name="Javadoc (2.1 release)"
+         href="http://commons.apache.org/math/api-2.1/index.html"/>
+      <item name="Javadoc (2.0 release)"
+         href="http://commons.apache.org/math/api-2.0/index.html"/>
+      <item name="Javadoc (1.2 release)"   
+         href="http://commons.apache.org/math/api-1.2/index.html"/>
+      <item name="Javadoc (1.1 release)"   
+         href="http://commons.apache.org/math/api-1.1/index.html"/>
+      <item name="Javadoc (1.0 release)"
+         href="http://commons.apache.org/math/api-1.0/index.html"/>
+      <item name="Issue Tracking" href="/issue-tracking.html"/>
+      <item name="Source Repository (current)" 
+         href="http://svn.apache.org/viewvc/commons/proper/math/trunk"/>
+      <item name="Downloads" href="http://commons.apache.org/math/download_math.cgi"/>
+      <item name="Wiki"  
+            href="http://wiki.apache.org/commons/Math"/>
+    </menu>
+    
+    <menu name="User Guide">
+      <item name="Contents"                href="/userguide/index.html"/>
+      <item name="Overview"                href="/userguide/overview.html"/>
+      <item name="Statistics"              href="/userguide/stat.html"/>
+      <item name="Data Generation"         href="/userguide/random.html"/>
+      <item name="Linear Algebra"          href="/userguide/linear.html"/>
+      <item name="Numerical Analysis"      href="/userguide/analysis.html"/>
+      <item name="Special Functions"       href="/userguide/special.html"/>
+      <item name="Utilities"               href="/userguide/utilities.html"/>
+      <item name="Complex Numbers"         href="/userguide/complex.html"/>
+      <item name="Distributions"           href="/userguide/distribution.html"/>
+      <item name="Fractions"               href="/userguide/fraction.html"/>
+      <item name="Transform Methods"       href="/userguide/transform.html"/>
+      <item name="3D Geometry"             href="/userguide/geometry.html"/>
+      <item name="Optimization"            href="/userguide/optimization.html"/>
+      <item name="Ordinary Differential Equations" href="/userguide/ode.html"/>
+      <item name="Genetic Algorithms"      href="/userguide/genetics.html"/>
+    </menu>
+
+  </body>
+</project>

@@ -15,7 +15,7 @@ public class BlbMean {
         int[] division = SamplingUtilities.ShuffledIndexes(sample.length);
         int bagsize = sample.length / nbags;
         Mean[] bagMeanGenerator = new Mean[bootstraps];
-        long cummulativeTime[] = new long[bootstraps];
+        cummulativeTime = new long[bootstraps];
         for (int i = 0; i < bagMeanGenerator.length; i++) {
             bagMeanGenerator[i] = new Mean();
         }

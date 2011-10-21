@@ -7,7 +7,6 @@ import org.apache.commons.math.MathException;
 import org.apache.commons.math.distribution.AbstractContinuousDistribution;
 import org.apache.commons.math.distribution.GammaDistributionImpl;
 import org.apache.commons.math.distribution.BinomialDistributionImpl;
-import org.apache.commons.math.random.MersenneTwister;
 import org.apache.commons.math.stat.descriptive.moment.Mean;
 import org.apache.commons.math.stat.descriptive.moment.Variance;
 
@@ -54,8 +53,10 @@ public class ConvergenceTest {
         final int MEAN_ESTIMATES = 2000;
         final int START_SAMPLE_SIZE = 200;
         final int END_SAMPLE_SIZE = 10000;
+        final int NUMBER_OF_BAGS = 200;
+        final int NUMBER_OF_BLB_BOOTSTRAPS = 50;
         double[] baseSample = generateSample(POPULATION_SIZE);
-        FileWriter file = new FileWriter(String.format("converge.dat"));
+        FileWriter file = new FileWriter(String.format("converge.smallerbag.dat"));
         file.write("size,truth,truth_time,bootstrap,per_bootstrap_time,bootstrap_total_time,blb,per_bootstrap_blb_time,per_bag_time,sem,sem_time\n");
         for (int i = START_SAMPLE_SIZE; i < END_SAMPLE_SIZE; i+= 10) {
             Variance var = new Variance();
@@ -85,7 +86,8 @@ public class ConvergenceTest {
                         bootstrapTotalTime);
                 
                 semExperiment(sample, trueVariance, semDistanceMean, semTime);
-                blbExperiment(sample, 0.5, NUMBER_OF_BOOTSTRAPS,
+                blbExperiment(sample, 0.5, NUMBER_OF_BAGS,
+                        NUMBER_OF_BLB_BOOTSTRAPS,
                         trueVariance, blbDistanceMean, perbootstrapBlbTime,
                         perbagTime, blbTotalTime);
             }
@@ -133,6 +135,7 @@ public class ConvergenceTest {
     
     private static void blbExperiment(double[] sample, 
             double bagExp,
+            final int numberOfBags,
             final int numberOfBootstraps, 
             double trueVariance,
             Mean bootstrapDistanceMean, 
@@ -144,16 +147,17 @@ public class ConvergenceTest {
         for (int ii = 0; ii < sample.length; ii++) {
             index[ii] = ii;
         }
-        SamplingUtilities.KnuthShuffle(index);
+        
         Mean varianceBagMean = new Mean();
         long bootstrapTime = 0;
-        int bagNumber = 0;
-        for (int ii = 0; ii < index.length; ii += bag_size) {
-            System.out.println(String.format("Starting bag %1$s of %2$s (size = %3$s)",bagNumber++, 
-                    sample.length / bag_size, bag_size));
-            double[] sampleBag = new double[FastMath.min(ii + bag_size, index.length) - ii];
-            for (int jj = ii; jj < FastMath.min(ii + bag_size, index.length); jj++) {
-                sampleBag[jj - ii] = sample[index[jj]];
+        for (int ii = 0; ii < numberOfBags; ii ++) {
+            
+            System.out.println(String.format("Starting bag %1$s of %2$s (size = %3$s)",ii, 
+                    numberOfBags, bag_size));
+            SamplingUtilities.KnuthShuffle(index);
+            double[] sampleBag = new double[bag_size];
+            for (int jj = 0; jj < bag_size; jj++) {
+                sampleBag[jj] = sample[index[jj]];
             }
             BootstrapMean mean = new BootstrapMean(sampleBag, numberOfBootstraps);
             Variance bootstrapVarianceObj = new Variance();

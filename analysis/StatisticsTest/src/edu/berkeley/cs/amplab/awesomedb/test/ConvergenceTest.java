@@ -22,7 +22,6 @@ public class ConvergenceTest {
     private static double s_alpha;
     private static double s_beta;
     static double[] generateSample(int sampleSize) throws MathException {
-        MersenneTwister rng = new MersenneTwister();
         s_alpha = 9; // shape
         s_beta = 0.8; //scale;
         GammaDistributionImpl normalDistribution = new GammaDistributionImpl(s_alpha, s_beta);
@@ -90,19 +89,21 @@ public class ConvergenceTest {
                         trueVariance, blbDistanceMean, perbootstrapBlbTime,
                         perbagTime, blbTotalTime);
             }
-            file.write(String.format("%1$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s,%11$s\n", 
-                    i, 
-                    trueVariance, 
-                    accurateTime,
-                    bootstrapDistanceMean.getResult(),
-                    perbootstrapTime.getResult(),
-                    bootstrapTotalTime.getResult(),
-                    blbDistanceMean.getResult(),
-                    perbootstrapBlbTime.getResult(),
-                    perbagTime.getResult(),
-                    blbTotalTime.getResult(),
-                    semDistanceMean.getResult(),
-                    semTime.getResult()));
+            System.out.println(String.format("sem = %1$s, blb = %2$s, boot = %3$s", semDistanceMean.getResult(),
+                    blbDistanceMean.getResult(), bootstrapDistanceMean.getResult()));
+            file.write(String.format("%1$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s,%11$s,%12$s\n", 
+                    i, //1
+                    trueVariance, //2
+                    accurateTime,//3
+                    bootstrapDistanceMean.getResult(),//4
+                    perbootstrapTime.getResult(),//5
+                    bootstrapTotalTime.getResult(),//6
+                    blbDistanceMean.getResult(),//7
+                    perbootstrapBlbTime.getResult(),//8
+                    perbagTime.getResult(),//9
+                    blbTotalTime.getResult(),//10
+                    semDistanceMean.getResult(),//11
+                    semTime.getResult())); //12
             file.flush();
             System.out.println(String.format("Explored %1$s of %2$s", i, END_SAMPLE_SIZE));
         }

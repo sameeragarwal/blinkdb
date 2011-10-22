@@ -20,7 +20,7 @@ import edu.berkeley.cs.amplab.awesomedb.StatisticalMean;
 public class ConvergenceTest {
     private static double s_alpha;
     private static double s_beta;
-    static double[] generateSample(int sampleSize) throws MathException {
+    public static double[] generateSample(int sampleSize) throws MathException {
         s_alpha = 9; // shape
         s_beta = 0.8; //scale;
         GammaDistributionImpl normalDistribution = new GammaDistributionImpl(s_alpha, s_beta);

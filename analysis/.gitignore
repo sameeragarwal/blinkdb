@@ -2,6 +2,11 @@
 *.class
 
 #netbeans ignore personal stuff 
+data/*
+graphs/*
+*.dat
+*.csv
+*.png
 nbproject/private/
 .settings
 

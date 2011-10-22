@@ -14,12 +14,11 @@ import org.apache.commons.math.stat.descriptive.moment.Mean;
 import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
 import org.apache.commons.math.util.FastMath;
 
-
 import edu.berkeley.cs.amplab.awesomedb.BootstrapMean;
 import edu.berkeley.cs.amplab.awesomedb.StatisticalMean;
 
-public class BootstrapPerfomanceKMeansTest {
-    
+public class SampleSizeTest {
+
     static double[] GenerateNormalSample(int sampleSize) throws MathException {
         MersenneTwister rng = new MersenneTwister();
         double mean = rng.nextDouble() * 100;
@@ -29,39 +28,34 @@ public class BootstrapPerfomanceKMeansTest {
         AbstractContinuousDistribution distribution = normalDistribution;
         return distribution.sample(sampleSize);
     }
+
     public static void main(String[] args) throws MathException, IOException {
-        final long TESTS = 500;
+        final int NUMBER_OF_BOOTSTRAPS = 150; // Picked at random
         final int SMOOTHING = 1000;
-        final int SampleSize = 10000;
-        double[] samples = GenerateNormalSample(SampleSize);
-        double closedFormError = StatisticalMean.StandardError(samples);
-        System.out.println("Start computing bootstraps");
-        BootstrapMean bootstraps[] = new BootstrapMean[SMOOTHING];
-        for(int i = 0; i < bootstraps.length; i++) {
-            bootstraps[i] = new BootstrapMean(samples, (int)(TESTS*100));
-        }
+        final int SampleSizeBegin = 8;
+        final int SampleSizeEnd = Integer.MAX_VALUE / 256;
         System.out.println("Done computing bootstraps");
-        FileWriter file = new FileWriter(String.format("bootstrap.dat"));
-        file.write("bootstraps,time,original,computed,difference\n");
-        for(int i = 2; i < TESTS * 100; i+=100) {
+        FileWriter file = new FileWriter(String.format("sample.dat"));
+        file.write("samples,time,deviation\n");
+        for (int sampleSize = SampleSizeBegin; sampleSize < SampleSizeEnd; sampleSize *= 2) {
             Mean meanDeviation = new Mean();
             Mean meanTime = new Mean();
-            for (int j = 0; j < bootstraps.length; j++) {
+            for (int i = 0; i < SMOOTHING; i++) {
+                double[] samples = GenerateNormalSample(sampleSize);
+                double closedFormError = StatisticalMean.StandardError(samples);
+                BootstrapMean bootstrap = new BootstrapMean(samples, NUMBER_OF_BOOTSTRAPS);
                 StandardDeviation stdev = new StandardDeviation();
-                double deviation = stdev.evaluate(bootstraps[j].getMeans(), 0, i);
-                meanDeviation.increment(deviation);
-                meanTime.increment(bootstraps[j].getTimes()[i]);
+                double deviation = stdev.evaluate(bootstrap.getMeans());
+                meanTime.increment(bootstrap.getTimes()[NUMBER_OF_BOOTSTRAPS - 1]);
+                meanDeviation.increment(FastMath.abs(deviation - closedFormError) / 
+                        closedFormError);
             }
-            double normalizedDifference = FastMath.abs(meanDeviation.getResult() - closedFormError) 
-                    / closedFormError;
-            file.write(String.format("%1$s,%2$s,%3$s,%4$s,%5$s\n",
-                    i,
+            file.write(String.format("%1$s,%2$s,%3$s\n", 
+                    sampleSize, 
                     meanTime.getResult(),
-                    closedFormError,
-                    meanDeviation.getResult(),
-                    normalizedDifference));
+                    meanDeviation.getResult()));
             file.flush();
-            System.out.println(String.format("Done with %1$s", i));
+            System.out.println(String.format("Done computing for %1$s", sampleSize));
         }
     }
 

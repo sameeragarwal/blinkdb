@@ -31,7 +31,7 @@ public class BootstrapPerformanceTest {
     public static void main(String[] args) throws MathException, IOException {
         final long TESTS = 500;
         final int SMOOTHING = 1000;
-        final int SampleSize = 10000;
+        final int SampleSize = 10000000;
         double[] samples = GenerateNormalSample(SampleSize);
         double closedFormError = StatisticalMean.StandardError(samples);
         System.out.println("Start computing bootstraps");
@@ -42,7 +42,7 @@ public class BootstrapPerformanceTest {
         System.out.println("Done computing bootstraps");
         FileWriter file = new FileWriter(String.format("bootstrap.dat"));
         file.write("bootstraps,time,original,computed,difference\n");
-        for(int i = 2; i < TESTS * 100; i+=100) {
+        for(int i = 2; i < TESTS * 100; i++) {
             Mean meanDeviation = new Mean();
             Mean meanTime = new Mean();
             for (int j = 0; j < bootstraps.length; j++) {

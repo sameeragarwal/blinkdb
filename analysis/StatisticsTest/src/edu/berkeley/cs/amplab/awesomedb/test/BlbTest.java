@@ -39,7 +39,7 @@ public class BlbTest {
         System.out.println("Start computing bootstraps");
         BlbMean bootstraps[] = new BlbMean[SMOOTHING];
         for(int i = 0; i < bootstraps.length; i++) {
-            bootstraps[i] = new BlbMean(samples, 1000,(int)(TESTS / 10));
+            bootstraps[i] = new BlbMean(samples, 1000,(int)(TESTS * 100));
             System.out.println("Computed BLB mean");
         }
         System.out.println("Done computing bootstraps");

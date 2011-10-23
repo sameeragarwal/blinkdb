@@ -26,7 +26,6 @@ class Database():
             exit()
         
         self.country_dict = self.load_country_dict()    
-        
         self.os_dict = self.load_os_dictionary()
         self.os_version_dict = self.load_os_version_dictionary()
         self.browser_dict = self.load_browser_dictionary()

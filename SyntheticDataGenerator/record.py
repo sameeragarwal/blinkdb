@@ -32,7 +32,7 @@ class Record:
     
     def to_string(self):
         """ Convert the record to string """
-        record_string = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (
+        record_string = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
                     self.session_id, self.session_start, self.session_end, 
                     self.session_state, self.error_code, self.user_id, 
                     self.content_id, self.ip_address, self.provider,

@@ -44,9 +44,11 @@ def main():
     for idx in range(0, args.record_count):
         session_id = args.start_session_id + idx
         record = generator.generate(session_id)
-        if (idx % 1000):
+        if (idx % 10 == 0):
             logger.info("Generated %d records."%(idx))
         print record.to_string()
+    
+    logger.info("Complete!")
     
 if __name__ == '__main__':
     main()

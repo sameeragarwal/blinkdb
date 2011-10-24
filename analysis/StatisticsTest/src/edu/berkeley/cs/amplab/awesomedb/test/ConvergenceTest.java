@@ -56,8 +56,8 @@ public class ConvergenceTest {
         final int NUMBER_OF_BAGS = 200;
         final int NUMBER_OF_BLB_BOOTSTRAPS = 50;
         double[] baseSample = generateSample(POPULATION_SIZE);
-        FileWriter file = new FileWriter(String.format("converge.smallerbag.dat"));
-        file.write("size,truth,truth_time,bootstrap,per_bootstrap_time,bootstrap_total_time,blb,per_bootstrap_blb_time,per_bag_time,sem,sem_time\n");
+        FileWriter file = new FileWriter(String.format("converge.hugerbag.dat"));
+        file.write("size,truth,truth_time,bootstrap,per_bootstrap_time,bootstrap_total_time,blb,per_bootstrap_blb_time,per_bag_time,total_blb_time,sem,sem_time\n");
         for (int i = START_SAMPLE_SIZE; i < END_SAMPLE_SIZE; i+= 10) {
             Variance var = new Variance();
             long startAccurate = System.nanoTime();
@@ -86,12 +86,12 @@ public class ConvergenceTest {
                         bootstrapTotalTime);
                 
                 semExperiment(sample, trueVariance, semDistanceMean, semTime);
-                blbExperiment(sample, 0.5, NUMBER_OF_BAGS,
+                blbExperiment(sample, 0.9, NUMBER_OF_BAGS,
                         NUMBER_OF_BLB_BOOTSTRAPS,
                         trueVariance, blbDistanceMean, perbootstrapBlbTime,
                         perbagTime, blbTotalTime);
             }
-            System.out.println(String.format("sem = %1$s, blb = %2$s, boot = %3$s", semDistanceMean.getResult(),
+            System.out.println(String.format("huge bag sem = %1$s, blb = %2$s, boot = %3$s", semDistanceMean.getResult(),
                     blbDistanceMean.getResult(), bootstrapDistanceMean.getResult()));
             file.write(String.format("%1$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s,%11$s,%12$s\n", 
                     i, //1
@@ -147,25 +147,23 @@ public class ConvergenceTest {
         for (int ii = 0; ii < sample.length; ii++) {
             index[ii] = ii;
         }
-        
+        int[] origIndex = index.clone();
         Mean varianceBagMean = new Mean();
         long bootstrapTime = 0;
         for (int ii = 0; ii < numberOfBags; ii ++) {
-            
-            System.out.println(String.format("Starting bag %1$s of %2$s (size = %3$s)",ii, 
-                    numberOfBags, bag_size));
             SamplingUtilities.KnuthShuffle(index);
             double[] sampleBag = new double[bag_size];
             for (int jj = 0; jj < bag_size; jj++) {
                 sampleBag[jj] = sample[index[jj]];
             }
-            BootstrapMean mean = new BootstrapMean(sampleBag, numberOfBootstraps);
+            BootstrapMean mean = new BootstrapMean(sampleBag, numberOfBootstraps, sample.length);
             Variance bootstrapVarianceObj = new Variance();
             double bootstrapVariance = bootstrapVarianceObj.evaluate(mean.getMeans());
             varianceBagMean.increment(bootstrapVariance);
             perbootstrapTime.increment(mean.getMeanTime());
             bootstrapTime += mean.getTimes()[mean.getTimes().length - 1];
             perbagTime.increment(mean.getTimes()[mean.getTimes().length - 1]);
+            index = origIndex.clone();
         }
         bootstrapDistanceMean.increment(FastMath.abs(varianceBagMean.getResult() - 
                 trueVariance));

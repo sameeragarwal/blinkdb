@@ -1,0 +1,24 @@
+From cb96f8ebaad0a1557f7d84011206735e68c904af Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Sun, 6 Mar 2011 18:42:38 -0800
+Subject: [PATCH 16/51] CLOUDERA-BUILD. Adding relativePath to cloudera-pom.xml.
+
+---
+ cloudera-pom.xml |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/cloudera-pom.xml b/cloudera-pom.xml
+index 79d05ae..57090e5 100644
+--- a/cloudera-pom.xml
++++ b/cloudera-pom.xml
+@@ -22,6 +22,7 @@
+         <groupId>com.cloudera.cdh</groupId>
+         <artifactId>hive-root</artifactId>
+         <version>3.0-SNAPSHOT</version>
++        <relativePath>cloudera/maven-packaging/pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>com.cloudera.cdh</groupId>
+-- 
+1.7.0.4
+

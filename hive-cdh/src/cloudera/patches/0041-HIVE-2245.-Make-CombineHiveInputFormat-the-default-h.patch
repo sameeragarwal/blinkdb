@@ -1,0 +1,44 @@
+From d4c99e7c896530fb158ec3f9bafb90e75aa05e61 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Mon, 4 Jul 2011 22:31:37 -0700
+Subject: [PATCH 41/51] HIVE-2245. Make CombineHiveInputFormat the default hive.input.format
+
+Reason: Improvement
+Author: Carl Steinbach
+Ref: CDH-3311
+---
+ .../java/org/apache/hadoop/hive/conf/HiveConf.java |    2 +-
+ conf/hive-default.xml                              |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java b/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+index fa90c16..daea038 100644
+--- a/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
++++ b/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+@@ -330,7 +330,7 @@ public class HiveConf extends Configuration {
+ 
+     HIVEJOBPROGRESS("hive.task.progress", false),
+ 
+-    HIVEINPUTFORMAT("hive.input.format", ""),
++    HIVEINPUTFORMAT("hive.input.format", "org.apache.hadoop.hive.ql.io.CombineHiveInputFormat"),
+ 
+     HIVEENFORCEBUCKETING("hive.enforce.bucketing", false),
+     HIVEENFORCESORTING("hive.enforce.sorting", false),
+diff --git a/conf/hive-default.xml b/conf/hive-default.xml
+index 3f16032..6efc095 100644
+--- a/conf/hive-default.xml
++++ b/conf/hive-default.xml
+@@ -589,8 +589,8 @@
+ 
+ <property>
+   <name>hive.input.format</name>
+-  <value>org.apache.hadoop.hive.ql.io.HiveInputFormat</value>
+-  <description>The default input format, if it is not specified, the system assigns it. It is set to HiveInputFormat for hadoop versions 17, 18 and 19, whereas it is set to CombineHiveInputFormat for hadoop 20. The user can always overwrite it - if there is a bug in CombineHiveInputFormat, it can always be manually set to HiveInputFormat. </description>
++  <value>org.apache.hadoop.hive.ql.io.CombineHiveInputFormat</value>
++  <description>The default input format. Set this to HiveInputFormat if you encounter problems with CombineHiveInputFormat.</description>
+ </property>
+ 
+ <property>
+-- 
+1.7.0.4
+

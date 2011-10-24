@@ -1,0 +1,419 @@
+From 860bb4b6ffc9e3d917b1b7d4aad22555c70e0fc8 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Mon, 8 Aug 2011 21:44:13 -0700
+Subject: [PATCH 49/51] HIVE-1734. Implement map_keys() and map_values() UDFs
+
+Reason: Customer request
+Author: Carl Steinbach
+Ref: CDH-3440
+---
+ .../hadoop/hive/ql/exec/FunctionRegistry.java      |    4 +
+ .../hive/ql/udf/generic/GenericUDFMapKeys.java     |   73 ++++++++++++++++++++
+ .../hive/ql/udf/generic/GenericUDFMapValues.java   |   73 ++++++++++++++++++++
+ .../queries/clientnegative/udf_map_keys_arg_num.q  |    1 +
+ .../queries/clientnegative/udf_map_keys_arg_type.q |    1 +
+ .../clientnegative/udf_map_values_arg_num.q        |    1 +
+ .../clientnegative/udf_map_values_arg_type.q       |    1 +
+ ql/src/test/queries/clientpositive/udf_map_keys.q  |   11 +++
+ .../test/queries/clientpositive/udf_map_values.q   |   11 +++
+ .../clientnegative/udf_map_keys_arg_num.q.out      |    1 +
+ .../clientnegative/udf_map_keys_arg_type.q.out     |    1 +
+ .../clientnegative/udf_map_values_arg_num.q.out    |    1 +
+ .../clientnegative/udf_map_values_arg_type.q.out   |    1 +
+ .../results/clientpositive/show_functions.q.out    |    2 +
+ .../test/results/clientpositive/udf_map_keys.q.out |   40 +++++++++++
+ .../results/clientpositive/udf_map_values.q.out    |   40 +++++++++++
+ 16 files changed, 262 insertions(+), 0 deletions(-)
+ create mode 100644 ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapKeys.java
+ create mode 100644 ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapValues.java
+ create mode 100644 ql/src/test/queries/clientnegative/udf_map_keys_arg_num.q
+ create mode 100644 ql/src/test/queries/clientnegative/udf_map_keys_arg_type.q
+ create mode 100644 ql/src/test/queries/clientnegative/udf_map_values_arg_num.q
+ create mode 100644 ql/src/test/queries/clientnegative/udf_map_values_arg_type.q
+ create mode 100644 ql/src/test/queries/clientpositive/udf_map_keys.q
+ create mode 100644 ql/src/test/queries/clientpositive/udf_map_values.q
+ create mode 100644 ql/src/test/results/clientnegative/udf_map_keys_arg_num.q.out
+ create mode 100644 ql/src/test/results/clientnegative/udf_map_keys_arg_type.q.out
+ create mode 100644 ql/src/test/results/clientnegative/udf_map_values_arg_num.q.out
+ create mode 100644 ql/src/test/results/clientnegative/udf_map_values_arg_type.q.out
+ create mode 100644 ql/src/test/results/clientpositive/udf_map_keys.q.out
+ create mode 100644 ql/src/test/results/clientpositive/udf_map_values.q.out
+
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java b/ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java
+index af2bacb..38f399c 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/exec/FunctionRegistry.java
+@@ -159,6 +159,8 @@ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFIndex;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFInstr;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFLocate;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFMap;
++import org.apache.hadoop.hive.ql.udf.generic.GenericUDFMapKeys;
++import org.apache.hadoop.hive.ql.udf.generic.GenericUDFMapValues;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPAnd;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqual;
+ import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqualOrGreaterThan;
+@@ -406,6 +408,8 @@ public final class FunctionRegistry {
+     registerGenericUDF("concat_ws", GenericUDFConcatWS.class);
+     registerGenericUDF("array_contains", GenericUDFArrayContains.class);
+     registerGenericUDF("sentences", GenericUDFSentences.class);
++    registerGenericUDF("map_keys", GenericUDFMapKeys.class);
++    registerGenericUDF("map_values", GenericUDFMapValues.class);
+ 
+     // Generic UDTF's
+     registerGenericUDTF("explode", GenericUDTFExplode.class);
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapKeys.java b/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapKeys.java
+new file mode 100644
+index 0000000..b384717
+--- /dev/null
++++ b/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapKeys.java
+@@ -0,0 +1,73 @@
++/**
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hadoop.hive.ql.udf.generic;
++
++import java.util.ArrayList;
++
++import org.apache.hadoop.hive.ql.exec.Description;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentTypeException;
++import org.apache.hadoop.hive.ql.metadata.HiveException;
++import org.apache.hadoop.hive.serde2.objectinspector.MapObjectInspector;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector.Category;
++
++/**
++ * GenericUDFMapKeys.
++ *
++ */
++@Description(name = "map_keys", value = "_FUNC_(map) - "
++  + "Returns an unordered array containing the keys of the input map.")
++public class GenericUDFMapKeys extends GenericUDF {
++  private MapObjectInspector mapOI;
++  private final ArrayList<Object> retArray = new ArrayList<Object>();
++
++  @Override
++  public ObjectInspector initialize(ObjectInspector[] arguments)
++  throws UDFArgumentException {
++    if (arguments.length != 1) {
++      throw new UDFArgumentLengthException("The function MAP_KEYS only accepts one argument.");
++    } else if (!(arguments[0] instanceof MapObjectInspector)) {
++      throw new UDFArgumentTypeException(0, "\""
++          + Category.MAP.toString().toLowerCase()
++          + "\" is expected at function MAP_KEYS, " + "but \""
++          + arguments[0].getTypeName() + "\" is found");
++    }
++
++    mapOI = (MapObjectInspector) arguments[0];
++    ObjectInspector mapKeyOI = mapOI.getMapKeyObjectInspector();
++    return ObjectInspectorFactory.getStandardListObjectInspector(mapKeyOI);
++  }
++
++  @Override
++  public Object evaluate(DeferredObject[] arguments) throws HiveException {
++    retArray.clear();
++    Object mapObj = arguments[0].get();
++    retArray.addAll(mapOI.getMap(mapObj).keySet());
++    return retArray;
++  }
++
++  @Override
++  public String getDisplayString(String[] children) {
++    assert children.length == 1;
++    return "map_keys(" + children[0] + ")";
++  }
++}
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapValues.java b/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapValues.java
+new file mode 100644
+index 0000000..73812cb
+--- /dev/null
++++ b/ql/src/java/org/apache/hadoop/hive/ql/udf/generic/GenericUDFMapValues.java
+@@ -0,0 +1,73 @@
++/**
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hadoop.hive.ql.udf.generic;
++
++import java.util.ArrayList;
++
++import org.apache.hadoop.hive.ql.exec.Description;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
++import org.apache.hadoop.hive.ql.exec.UDFArgumentTypeException;
++import org.apache.hadoop.hive.ql.metadata.HiveException;
++import org.apache.hadoop.hive.serde2.objectinspector.MapObjectInspector;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
++import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector.Category;
++
++/**
++ * GenericUDFMapValues.
++ *
++ */
++@Description(name = "map_values", value = "_FUNC_(map) - "
++  + "Returns an unordered array containing the values of the input map.")
++public class GenericUDFMapValues extends GenericUDF {
++  private MapObjectInspector mapOI;
++  private final ArrayList<Object> retArray = new ArrayList<Object>();
++
++  @Override
++  public ObjectInspector initialize(ObjectInspector[] arguments)
++  throws UDFArgumentException {
++    if (arguments.length != 1) {
++      throw new UDFArgumentLengthException("The function MAP_VALUES only accepts 1 argument.");
++    } else if (!(arguments[0] instanceof MapObjectInspector)) {
++      throw new UDFArgumentTypeException(0, "\""
++          + Category.MAP.toString().toLowerCase()
++          + "\" is expected at function MAP_VALUES, " + "but \""
++          + arguments[0].getTypeName() + "\" is found");
++    }
++
++    mapOI = (MapObjectInspector) arguments[0];
++    ObjectInspector mapValueOI = mapOI.getMapValueObjectInspector();
++    return ObjectInspectorFactory.getStandardListObjectInspector(mapValueOI);
++  }
++
++  @Override
++  public Object evaluate(DeferredObject[] arguments) throws HiveException {
++    retArray.clear();
++    Object mapObj = arguments[0].get();
++    retArray.addAll(mapOI.getMap(mapObj).values());
++    return retArray;
++  }
++
++  @Override
++  public String getDisplayString(String[] children) {
++    assert children.length == 1;
++    return "map_values(" + children[0] + ")";
++  }
++}
+diff --git a/ql/src/test/queries/clientnegative/udf_map_keys_arg_num.q b/ql/src/test/queries/clientnegative/udf_map_keys_arg_num.q
+new file mode 100644
+index 0000000..ebb6c2a
+--- /dev/null
++++ b/ql/src/test/queries/clientnegative/udf_map_keys_arg_num.q
+@@ -0,0 +1 @@
++SELECT map_keys(map("a", "1"), map("b", "2")) FROM src LIMIT 1;
+diff --git a/ql/src/test/queries/clientnegative/udf_map_keys_arg_type.q b/ql/src/test/queries/clientnegative/udf_map_keys_arg_type.q
+new file mode 100644
+index 0000000..0757d14
+--- /dev/null
++++ b/ql/src/test/queries/clientnegative/udf_map_keys_arg_type.q
+@@ -0,0 +1 @@
++SELECT map_keys(array(1, 2, 3)) FROM src LIMIT 1;
+diff --git a/ql/src/test/queries/clientnegative/udf_map_values_arg_num.q b/ql/src/test/queries/clientnegative/udf_map_values_arg_num.q
+new file mode 100644
+index 0000000..c97476a
+--- /dev/null
++++ b/ql/src/test/queries/clientnegative/udf_map_values_arg_num.q
+@@ -0,0 +1 @@
++SELECT map_values(map("a", "1"), map("b", "2")) FROM src LIMIT 1;
+diff --git a/ql/src/test/queries/clientnegative/udf_map_values_arg_type.q b/ql/src/test/queries/clientnegative/udf_map_values_arg_type.q
+new file mode 100644
+index 0000000..cc060ea
+--- /dev/null
++++ b/ql/src/test/queries/clientnegative/udf_map_values_arg_type.q
+@@ -0,0 +1 @@
++SELECT map_values(array(1, 2, 3, 4)) FROM src LIMIT 1;
+diff --git a/ql/src/test/queries/clientpositive/udf_map_keys.q b/ql/src/test/queries/clientpositive/udf_map_keys.q
+new file mode 100644
+index 0000000..7ae8d78
+--- /dev/null
++++ b/ql/src/test/queries/clientpositive/udf_map_keys.q
+@@ -0,0 +1,11 @@
++use default;
++-- Test map_keys() UDF
++
++DESCRIBE FUNCTION map_keys;
++DESCRIBE FUNCTION EXTENDED map_keys;
++
++-- Evaluate function against INT valued keys
++SELECT map_keys(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1;
++
++-- Evaluate function against STRING valued keys
++SELECT map_keys(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1;
+diff --git a/ql/src/test/queries/clientpositive/udf_map_values.q b/ql/src/test/queries/clientpositive/udf_map_values.q
+new file mode 100644
+index 0000000..e25b9bc
+--- /dev/null
++++ b/ql/src/test/queries/clientpositive/udf_map_values.q
+@@ -0,0 +1,11 @@
++use default;
++-- Test map_values() UDF
++
++DESCRIBE FUNCTION map_values;
++DESCRIBE FUNCTION EXTENDED map_values;
++
++-- Evaluate function against STRING valued values
++SELECT map_values(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1;
++
++-- Evaluate function against INT valued keys
++SELECT map_values(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1;
+diff --git a/ql/src/test/results/clientnegative/udf_map_keys_arg_num.q.out b/ql/src/test/results/clientnegative/udf_map_keys_arg_num.q.out
+new file mode 100644
+index 0000000..ca412bf
+--- /dev/null
++++ b/ql/src/test/results/clientnegative/udf_map_keys_arg_num.q.out
+@@ -0,0 +1 @@
++FAILED: Error in semantic analysis: Line 1:7 Arguments length mismatch "2": The function MAP_KEYS only accepts one argument.
+diff --git a/ql/src/test/results/clientnegative/udf_map_keys_arg_type.q.out b/ql/src/test/results/clientnegative/udf_map_keys_arg_type.q.out
+new file mode 100644
+index 0000000..4185679
+--- /dev/null
++++ b/ql/src/test/results/clientnegative/udf_map_keys_arg_type.q.out
+@@ -0,0 +1 @@
++FAILED: Error in semantic analysis: Line 1:16 Argument type mismatch 3: "map" is expected at function MAP_KEYS, but "array<int>" is found
+diff --git a/ql/src/test/results/clientnegative/udf_map_values_arg_num.q.out b/ql/src/test/results/clientnegative/udf_map_values_arg_num.q.out
+new file mode 100644
+index 0000000..b59efa0
+--- /dev/null
++++ b/ql/src/test/results/clientnegative/udf_map_values_arg_num.q.out
+@@ -0,0 +1 @@
++FAILED: Error in semantic analysis: Line 1:7 Arguments length mismatch "2": The function MAP_VALUES only accepts 1 argument.
+diff --git a/ql/src/test/results/clientnegative/udf_map_values_arg_type.q.out b/ql/src/test/results/clientnegative/udf_map_values_arg_type.q.out
+new file mode 100644
+index 0000000..8dd1f81
+--- /dev/null
++++ b/ql/src/test/results/clientnegative/udf_map_values_arg_type.q.out
+@@ -0,0 +1 @@
++FAILED: Error in semantic analysis: Line 1:18 Argument type mismatch 4: "map" is expected at function MAP_VALUES, but "array<int>" is found
+diff --git a/ql/src/test/results/clientpositive/show_functions.q.out b/ql/src/test/results/clientpositive/show_functions.q.out
+index 7dfcd86..9cc7098 100644
+--- a/ql/src/test/results/clientpositive/show_functions.q.out
++++ b/ql/src/test/results/clientpositive/show_functions.q.out
+@@ -87,6 +87,8 @@ lower
+ lpad
+ ltrim
+ map
++map_keys
++map_values
+ max
+ min
+ minute
+diff --git a/ql/src/test/results/clientpositive/udf_map_keys.q.out b/ql/src/test/results/clientpositive/udf_map_keys.q.out
+new file mode 100644
+index 0000000..8dd248c
+--- /dev/null
++++ b/ql/src/test/results/clientpositive/udf_map_keys.q.out
+@@ -0,0 +1,40 @@
++PREHOOK: query: use default
++PREHOOK: type: SWITCHDATABASE
++POSTHOOK: query: use default
++POSTHOOK: type: SWITCHDATABASE
++PREHOOK: query: -- Test map_keys() UDF
++
++DESCRIBE FUNCTION map_keys
++PREHOOK: type: DESCFUNCTION
++POSTHOOK: query: -- Test map_keys() UDF
++
++DESCRIBE FUNCTION map_keys
++POSTHOOK: type: DESCFUNCTION
++map_keys(map) - Returns an unordered array containing the keys of the input map.
++PREHOOK: query: DESCRIBE FUNCTION EXTENDED map_keys
++PREHOOK: type: DESCFUNCTION
++POSTHOOK: query: DESCRIBE FUNCTION EXTENDED map_keys
++POSTHOOK: type: DESCFUNCTION
++map_keys(map) - Returns an unordered array containing the keys of the input map.
++PREHOOK: query: -- Evaluate function against INT valued keys
++SELECT map_keys(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1
++PREHOOK: type: QUERY
++PREHOOK: Input: default@src
++PREHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-18-58_296_9108820645412211778/-mr-10000
++POSTHOOK: query: -- Evaluate function against INT valued keys
++SELECT map_keys(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1
++POSTHOOK: type: QUERY
++POSTHOOK: Input: default@src
++POSTHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-18-58_296_9108820645412211778/-mr-10000
++[1,2,3]
++PREHOOK: query: -- Evaluate function against STRING valued keys
++SELECT map_keys(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1
++PREHOOK: type: QUERY
++PREHOOK: Input: default@src
++PREHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-04_267_2431051360518045221/-mr-10000
++POSTHOOK: query: -- Evaluate function against STRING valued keys
++SELECT map_keys(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1
++POSTHOOK: type: QUERY
++POSTHOOK: Input: default@src
++POSTHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-04_267_2431051360518045221/-mr-10000
++["b","a","c"]
+diff --git a/ql/src/test/results/clientpositive/udf_map_values.q.out b/ql/src/test/results/clientpositive/udf_map_values.q.out
+new file mode 100644
+index 0000000..82845c3
+--- /dev/null
++++ b/ql/src/test/results/clientpositive/udf_map_values.q.out
+@@ -0,0 +1,40 @@
++PREHOOK: query: use default
++PREHOOK: type: SWITCHDATABASE
++POSTHOOK: query: use default
++POSTHOOK: type: SWITCHDATABASE
++PREHOOK: query: -- Test map_values() UDF
++
++DESCRIBE FUNCTION map_values
++PREHOOK: type: DESCFUNCTION
++POSTHOOK: query: -- Test map_values() UDF
++
++DESCRIBE FUNCTION map_values
++POSTHOOK: type: DESCFUNCTION
++map_values(map) - Returns an unordered array containing the values of the input map.
++PREHOOK: query: DESCRIBE FUNCTION EXTENDED map_values
++PREHOOK: type: DESCFUNCTION
++POSTHOOK: query: DESCRIBE FUNCTION EXTENDED map_values
++POSTHOOK: type: DESCFUNCTION
++map_values(map) - Returns an unordered array containing the values of the input map.
++PREHOOK: query: -- Evaluate function against STRING valued values
++SELECT map_values(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1
++PREHOOK: type: QUERY
++PREHOOK: Input: default@src
++PREHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-10_440_3825624243726375363/-mr-10000
++POSTHOOK: query: -- Evaluate function against STRING valued values
++SELECT map_values(map(1, "a", 2, "b", 3, "c")) FROM src LIMIT 1
++POSTHOOK: type: QUERY
++POSTHOOK: Input: default@src
++POSTHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-10_440_3825624243726375363/-mr-10000
++["a","b","c"]
++PREHOOK: query: -- Evaluate function against INT valued keys
++SELECT map_values(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1
++PREHOOK: type: QUERY
++PREHOOK: Input: default@src
++PREHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-17_803_4547220042289617300/-mr-10000
++POSTHOOK: query: -- Evaluate function against INT valued keys
++SELECT map_values(map("a", 1, "b", 2, "c", 3)) FROM src LIMIT 1
++POSTHOOK: type: QUERY
++POSTHOOK: Input: default@src
++POSTHOOK: Output: file:/var/folders/b7/b7UUwNZdF1KKHtM+5la6f++++TI/-Tmp-/carl/hive_2011-08-04_23-19-17_803_4547220042289617300/-mr-10000
++[2,1,3]
+-- 
+1.7.0.4
+

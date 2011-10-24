@@ -1,0 +1,45 @@
+From fedd36428d51a85b5c17aea1dd9ec8ebb4ad3e51 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Fri, 8 Jul 2011 21:51:49 -0700
+Subject: [PATCH 46/51] CLOUDERA-BUILD. Revert "DISTRO-245. CDH packages shouldn't ship jars from other CDH packages"
+
+Reason: Bug
+Author: Carl Steinbach
+Ref: CDH-3320
+This reverts commit 042d65459a4fbc314eea58917a0e5443c19832f9.
+---
+ bin/hive-config.sh       |    9 ---------
+ cloudera/install_hive.sh |    3 ---
+ 2 files changed, 0 insertions(+), 12 deletions(-)
+
+diff --git a/bin/hive-config.sh b/bin/hive-config.sh
+index 2ebdc10..2524bbc 100644
+--- a/bin/hive-config.sh
++++ b/bin/hive-config.sh
+@@ -66,12 +66,3 @@ export HIVE_AUX_JARS_PATH=$HIVE_AUX_JARS_PATH
+ 
+ # Default to use 256MB 
+ export HADOOP_HEAPSIZE=${HADOOP_HEAPSIZE:-256}
+-
+-# Find paths to our dependency systems. If they are unset, use CDH defaults.
+-if [ -z "${HBASE_HOME}" ]; then
+-  HBASE_HOME=/usr/lib/hbase
+-fi
+-
+-if [ -e "$HBASE_HOME/bin/hbase" ]; then
+-  HIVE_AUX_JARS_PATH=`$HBASE_HOME/bin/hbase classpath`:${HIVE_AUX_JARS_PATH}
+-fi
+diff --git a/cloudera/install_hive.sh b/cloudera/install_hive.sh
+index 3a84f9b..c93b0c6 100755
+--- a/cloudera/install_hive.sh
++++ b/cloudera/install_hive.sh
+@@ -143,6 +143,3 @@ chmod 755 ${PYTHON_DIR}/hive_metastore/*-remote
+ 
+ # Dir for Metastore DB
+ install -d -m 1777 $PREFIX/var/lib/hive/metastore/
+-
+-# We need to get rid of jars that happen to be shipped in other CDH packages
+-rm -f ${LIB_DIR}/lib/hbase-*.jar ${LIB_DIR}/lib/zookeeper-*.jar
+-- 
+1.7.0.4
+

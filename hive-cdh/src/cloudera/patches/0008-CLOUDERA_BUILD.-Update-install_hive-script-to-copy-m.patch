@@ -1,0 +1,22 @@
+From 90f7e2106a64ed3236c3805ac39b698ca51da5cd Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Fri, 18 Feb 2011 13:00:07 -0800
+Subject: [PATCH 08/51] CLOUDERA_BUILD. Update install_hive script to copy metastore upgrade scripts
+
+---
+ cloudera/install_hive.sh |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/cloudera/install_hive.sh b/cloudera/install_hive.sh
+index c93b0c6..b90edb1 100644
+--- a/cloudera/install_hive.sh
++++ b/cloudera/install_hive.sh
+@@ -143,3 +143,5 @@ chmod 755 ${PYTHON_DIR}/hive_metastore/*-remote
+ 
+ # Dir for Metastore DB
+ install -d -m 1777 $PREFIX/var/lib/hive/metastore/
++mkdir $PREFIX/var/lib/hive/metastore/scripts
++cp -R ${BUILD_DIR}/scripts/metastore/upgrade $PREFIX/var/lib/hive/metastore/scripts
+-- 
+1.7.0.4
+

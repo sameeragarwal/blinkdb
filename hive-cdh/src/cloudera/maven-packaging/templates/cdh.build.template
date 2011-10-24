@@ -1,0 +1,9 @@
+# These are for our dependency on Hadoop.
+hadoop.dep.org=org.apache.hadoop
+hadoop.dep.name=hadoop-tarball
+hadoop.dep.artifact=hadoop-tarball
+hadoop.version=org.apache.hadoop:hadoop-core.version
+hadoop.security.version=org.apache.hadoop:hadoop-core.version
+reactor.repo=https://repository.cloudera.com/content/groups/cdh-releases-rcs
+hbase.version=org.apache.hbase:hbase.version
+hbase-test.version=org.apache.hbase:hbase.version

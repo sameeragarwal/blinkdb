@@ -1,0 +1,27 @@
+From 81052e4db7f5be95481953e96a9f9a233178b6ae Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Fri, 1 Jul 2011 17:09:45 -0700
+Subject: [PATCH 35/51] HIVE-2062. HivePreparedStatement.executeImmediate always throws exception
+
+Reason: Bug
+Author: Alexey Diomin
+Ref: CDH-3310
+---
+ .../hadoop/hive/jdbc/HivePreparedStatement.java    |    1 -
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+diff --git a/jdbc/src/java/org/apache/hadoop/hive/jdbc/HivePreparedStatement.java b/jdbc/src/java/org/apache/hadoop/hive/jdbc/HivePreparedStatement.java
+index fa7c85f..4c07363 100644
+--- a/jdbc/src/java/org/apache/hadoop/hive/jdbc/HivePreparedStatement.java
++++ b/jdbc/src/java/org/apache/hadoop/hive/jdbc/HivePreparedStatement.java
+@@ -167,7 +167,6 @@ public class HivePreparedStatement implements PreparedStatement {
+     }
+ 
+     try {
+-      clearWarnings();
+       resultSet = null;
+       if (sql.contains("?")) {
+         sql = updateSql(sql, parameters);
+-- 
+1.7.0.4
+

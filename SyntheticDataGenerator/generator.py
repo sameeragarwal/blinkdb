@@ -1,4 +1,6 @@
-import logging
+import logging, random, math
+from datetime import datetime
+from time import mktime
 from record import Record
 from database import Database
 from scipy import stats
@@ -14,6 +16,7 @@ class Generator():
         # Get the country distribution since we don't need to create it again.
         self.country_rv = self.get_country_rv()
         self.error_codes_rv = self.get_error_code_rv()
+        self.content_rv = self.get_content_rv()
         
         # A few hash maps for easy access rather than going to the DB
         # again and again.
@@ -23,7 +26,18 @@ class Generator():
         self.os_browser_rv_dict = {}        # Browser distribution for each OS.
         self.browser_version_rv_dict = {}   # Browser version distribution for each type.
         
+        # For the time being, we assume that any session time would be in a 
+        # 1 year period starting from 1/1/2010
+        self.global_session_begin_time = mktime(datetime(2010, 1, 1, 0, 0, 0, 0).timetuple())
+        
         return
+    
+    def get_content_rv(self):
+        """ Get the content rv """
+        content_ids = [1,2,3,4,5,6] # like cnn.com,bbc.com etc
+        probabilities = [0.5,0.3,0.1,0.05,0.04,0.01]
+        self.content_rv = stats.rv_discrete(values=(content_ids, probabilities), name='content_rv')
+        return self.content_rv
     
     def get_error_code_rv(self):
         """ Get the error code rv """
@@ -93,11 +107,23 @@ class Generator():
             rv = self.browser_version_rv_dict[key]
         return rv
     
-    def generate(self):
+    def generate(self, session_id):
         
         """ Generate a single record """
         
         record = Record()
+        
+        # Session information. A few assumptions here: 
+        #    - Session start time is randomly picked from an interval between
+        #      1/1/2010 and 1/1/2011.
+        #    - All sessions last between 1 second and 1 hour (60*60). 
+        #    - Sessions are in one of 4 states (state_0, state_1, state_2, state_3)
+        # TODO: Session state might depend on error code.
+        record.session_id = session_id
+        record.session_start = self.global_session_begin_time + math.floor(random.random()*31556926)
+        record.session_end = record.session_start + random.randint(1, 60*60)
+        record.session_state = random.randint(0, 3) 
+        record.error_code = self.error_codes_rv.rvs(size=1)[0]
         
         # What country is this record from?
         country_id = self.country_rv.rvs(size=1)[0]
@@ -112,6 +138,14 @@ class Generator():
         record.zip = zip_code
         record.provider = provider
         record.ip_address = ip_address
+        
+        # Pick a random user from this country. We limit the number of users from
+        # any country to 1 million.
+        # TODO: Have a better scheme for user ID.
+        record.user_id = random.randint((country_id-1)*1000000, (country_id*1000000)-1)
+        
+        # Content ID.
+        record.content_id = self.content_rv.rvs(size=1)[0]
         
         # What is the OS?
         os_rv = self.get_os_rv(country_id)
@@ -133,7 +167,9 @@ class Generator():
         browser_version_id = browser_version_rv.rvs(size=1)[0]
         record.browser_version = self.db.id_to_browser_version(browser_version_id)
         
-        # Error code.
-        record.error_code = self.error_codes_rv.rvs(size=1)[0]
+        # Flash type and version. Random stuff for now.
+        # TODO: Should be dependent on the OS and browser.
+        record.flash_type = "Flash " + str(random.randint(1,3))
+        record.flash_version = "Version " + str(random.randint(1,5))
         
         return record

@@ -23,6 +23,8 @@ def main():
     parser = argparse.ArgumentParser(description="Generates synthetic data.")
     parser.add_argument('-n', dest='record_count', action='store', type=int,
                         default='100', help='number of records to generate (default=%(default)s)')
+    parser.add_argument('-s', dest='start_session_id', action='store', type=int,
+                        default='1', help='the starting session id (default=%(default)s)')
     parser.add_argument('-v', action="store_true", default=False, help='verbose mode')
     args = parser.parse_args()
     if args.record_count < 1:
@@ -40,7 +42,10 @@ def main():
     
     # Generate the record.
     for idx in range(0, args.record_count):
-        record = generator.generate()
+        session_id = args.start_session_id + idx
+        record = generator.generate(session_id)
+        if (idx % 1000):
+            logger.info("Generated %d records."%(idx))
         print record.to_string()
     
 if __name__ == '__main__':

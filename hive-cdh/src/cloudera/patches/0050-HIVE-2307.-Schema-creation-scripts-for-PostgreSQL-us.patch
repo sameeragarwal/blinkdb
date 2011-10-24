@@ -1,0 +1,107 @@
+From 82ec62f094b9550ffdef76aa184c01b6d57abb59 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Mon, 8 Aug 2011 21:37:21 -0700
+Subject: [PATCH 50/51] HIVE-2307. Schema creation scripts for PostgreSQL use bit(1) instead of boolean
+
+Reason: Customer request
+Author: Esteban Gutierrez
+Ref: CDH-3390
+---
+ .../postgres/hive-schema-0.3.0.postgres.sql        |    2 +-
+ .../postgres/hive-schema-0.4.0.postgres.sql        |    2 +-
+ .../postgres/hive-schema-0.4.1.postgres.sql        |    2 +-
+ .../postgres/hive-schema-0.5.0.postgres.sql        |    2 +-
+ .../postgres/hive-schema-0.7.0.postgres.sql        |    4 ++--
+ .../postgres/upgrade-0.6.0-to-0.7.0.postgres.sql   |    2 +-
+ 6 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/metastore/scripts/upgrade/postgres/hive-schema-0.3.0.postgres.sql b/metastore/scripts/upgrade/postgres/hive-schema-0.3.0.postgres.sql
+index 44a2d42..d880abe 100644
+--- a/metastore/scripts/upgrade/postgres/hive-schema-0.3.0.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/hive-schema-0.3.0.postgres.sql
+@@ -79,7 +79,7 @@ CREATE INDEX "PARTITION_PARAMS_N49" on "PARTITION_PARAMS" ("PART_ID");
+ CREATE TABLE "SDS" (
+   "SD_ID" bigint NOT NULL,
+   "INPUT_FORMAT" character varying(256) DEFAULT NULL,
+-  "IS_COMPRESSED" bit(1) NOT NULL,
++  "IS_COMPRESSED" boolean NOT NULL,
+   "LOCATION" character varying(767) DEFAULT NULL,
+   "NUM_BUCKETS" bigint NOT NULL,
+   "OUTPUT_FORMAT" character varying(256) DEFAULT NULL,
+diff --git a/metastore/scripts/upgrade/postgres/hive-schema-0.4.0.postgres.sql b/metastore/scripts/upgrade/postgres/hive-schema-0.4.0.postgres.sql
+index 8c36d6a..2c1b828 100644
+--- a/metastore/scripts/upgrade/postgres/hive-schema-0.4.0.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/hive-schema-0.4.0.postgres.sql
+@@ -79,7 +79,7 @@ CREATE INDEX "PARTITION_PARAMS_N49" on "PARTITION_PARAMS" ("PART_ID");
+ CREATE TABLE "SDS" (
+   "SD_ID" bigint NOT NULL,
+   "INPUT_FORMAT" character varying(256) DEFAULT NULL,
+-  "IS_COMPRESSED" bit(1) NOT NULL,
++  "IS_COMPRESSED" boolean NOT NULL,
+   "LOCATION" character varying(767) DEFAULT NULL,
+   "NUM_BUCKETS" bigint NOT NULL,
+   "OUTPUT_FORMAT" character varying(256) DEFAULT NULL,
+diff --git a/metastore/scripts/upgrade/postgres/hive-schema-0.4.1.postgres.sql b/metastore/scripts/upgrade/postgres/hive-schema-0.4.1.postgres.sql
+index fcaed4d..9eb52e0 100644
+--- a/metastore/scripts/upgrade/postgres/hive-schema-0.4.1.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/hive-schema-0.4.1.postgres.sql
+@@ -79,7 +79,7 @@ CREATE INDEX "PARTITION_PARAMS_N49" on "PARTITION_PARAMS" ("PART_ID");
+ CREATE TABLE "SDS" (
+   "SD_ID" bigint NOT NULL,
+   "INPUT_FORMAT" character varying(256) DEFAULT NULL,
+-  "IS_COMPRESSED" bit(1) NOT NULL,
++  "IS_COMPRESSED" boolean NOT NULL,
+   "LOCATION" character varying(767) DEFAULT NULL,
+   "NUM_BUCKETS" bigint NOT NULL,
+   "OUTPUT_FORMAT" character varying(256) DEFAULT NULL,
+diff --git a/metastore/scripts/upgrade/postgres/hive-schema-0.5.0.postgres.sql b/metastore/scripts/upgrade/postgres/hive-schema-0.5.0.postgres.sql
+index 43ff12d..0e0590a 100644
+--- a/metastore/scripts/upgrade/postgres/hive-schema-0.5.0.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/hive-schema-0.5.0.postgres.sql
+@@ -79,7 +79,7 @@ CREATE INDEX "PARTITION_PARAMS_N49" on "PARTITION_PARAMS" ("PART_ID");
+ CREATE TABLE "SDS" (
+   "SD_ID" bigint NOT NULL,
+   "INPUT_FORMAT" character varying(256) DEFAULT NULL,
+-  "IS_COMPRESSED" bit(1) NOT NULL,
++  "IS_COMPRESSED" boolean NOT NULL,
+   "LOCATION" character varying(767) DEFAULT NULL,
+   "NUM_BUCKETS" bigint NOT NULL,
+   "OUTPUT_FORMAT" character varying(256) DEFAULT NULL,
+diff --git a/metastore/scripts/upgrade/postgres/hive-schema-0.7.0.postgres.sql b/metastore/scripts/upgrade/postgres/hive-schema-0.7.0.postgres.sql
+index 8412a82..ac35df0 100644
+--- a/metastore/scripts/upgrade/postgres/hive-schema-0.7.0.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/hive-schema-0.7.0.postgres.sql
+@@ -57,7 +57,7 @@ CREATE INDEX "DB_PRIVS_N49" on "DB_PRIVS" ("DB_ID");
+ CREATE TABLE "IDXS" (
+   "INDEX_ID" bigint NOT NULL,
+   "CREATE_TIME" bigint NOT NULL,
+-  "DEFERRED_REBUILD" bit(1) NOT NULL,
++  "DEFERRED_REBUILD" boolean NOT NULL,
+   "INDEX_HANDLER_CLASS" character varying(4000) DEFAULT NULL,
+   "INDEX_NAME" character varying(128) DEFAULT NULL,
+   "INDEX_TBL_ID" bigint DEFAULT NULL,
+@@ -193,7 +193,7 @@ CREATE INDEX "ROLE_MAP_N49" on "ROLE_MAP" ("ROLE_ID");
+ CREATE TABLE "SDS" (
+   "SD_ID" bigint NOT NULL,
+   "INPUT_FORMAT" character varying(4000) DEFAULT NULL,
+-  "IS_COMPRESSED" bit(1) NOT NULL,
++  "IS_COMPRESSED" boolean NOT NULL,
+   "LOCATION" character varying(4000) DEFAULT NULL,
+   "NUM_BUCKETS" bigint NOT NULL,
+   "OUTPUT_FORMAT" character varying(4000) DEFAULT NULL,
+diff --git a/metastore/scripts/upgrade/postgres/upgrade-0.6.0-to-0.7.0.postgres.sql b/metastore/scripts/upgrade/postgres/upgrade-0.6.0-to-0.7.0.postgres.sql
+index 73e6b6a..e46142b 100644
+--- a/metastore/scripts/upgrade/postgres/upgrade-0.6.0-to-0.7.0.postgres.sql
++++ b/metastore/scripts/upgrade/postgres/upgrade-0.6.0-to-0.7.0.postgres.sql
+@@ -5,7 +5,7 @@ SELECT '< HIVE-417 Implement Indexing in Hive >';
+ CREATE TABLE "IDXS" (
+   "INDEX_ID" bigint NOT NULL,
+   "CREATE_TIME" bigint NOT NULL,
+-  "DEFERRED_REBUILD" bit(1) NOT NULL,
++  "DEFERRED_REBUILD" boolean NOT NULL,
+   "INDEX_HANDLER_CLASS" character varying(256) DEFAULT NULL,
+   "INDEX_NAME" character varying(128) DEFAULT NULL,
+   "INDEX_TBL_ID" bigint DEFAULT NULL,
+-- 
+1.7.0.4
+

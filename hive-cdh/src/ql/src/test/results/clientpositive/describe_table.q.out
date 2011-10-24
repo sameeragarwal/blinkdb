@@ -1,0 +1,214 @@
+PREHOOK: query: describe srcpart
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe srcpart
+POSTHOOK: type: DESCTABLE
+key	string	default
+value	string	default
+ds	string	
+hr	string	
+PREHOOK: query: describe srcpart.key
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe srcpart.key
+POSTHOOK: type: DESCTABLE
+key	string	from deserializer
+PREHOOK: query: describe srcpart PARTITION(ds='2008-04-08', hr='12')
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe srcpart PARTITION(ds='2008-04-08', hr='12')
+POSTHOOK: type: DESCTABLE
+key	string	default
+value	string	default
+ds	string	
+hr	string	
+PREHOOK: query: describe extended srcpart
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe extended srcpart
+POSTHOOK: type: DESCTABLE
+key	string	default
+value	string	default
+ds	string	
+hr	string	
+	 	 
+Detailed Table Information	Table(tableName:srcpart, dbName:default, owner:null, createTime:1287206320, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:default), FieldSchema(name:value, type:string, comment:default), FieldSchema(name:ds, type:string, comment:null), FieldSchema(name:hr, type:string, comment:null)], location:pfile:/data/users/nzhang/work/870/apache-hive/build/ql/test/data/warehouse/srcpart, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}), partitionKeys:[FieldSchema(name:ds, type:string, comment:null), FieldSchema(name:hr, type:string, comment:null)], parameters:{transient_lastDdlTime=1287206320}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+PREHOOK: query: describe extended srcpart.key
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe extended srcpart.key
+POSTHOOK: type: DESCTABLE
+key	string	from deserializer
+PREHOOK: query: describe extended srcpart PARTITION(ds='2008-04-08', hr='12')
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe extended srcpart PARTITION(ds='2008-04-08', hr='12')
+POSTHOOK: type: DESCTABLE
+key	string	default
+value	string	default
+ds	string	
+hr	string	
+	 	 
+Detailed Partition Information	Partition(values:[2008-04-08, 12], dbName:default, tableName:srcpart, createTime:1287206322, lastAccessTime:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:default), FieldSchema(name:value, type:string, comment:default)], location:pfile:/data/users/nzhang/work/870/apache-hive/build/ql/test/data/warehouse/srcpart/ds=2008-04-08/hr=12, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}), parameters:{transient_lastDdlTime=1287206322})	
+PREHOOK: query: describe formatted srcpart
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe formatted srcpart
+POSTHOOK: type: DESCTABLE
+# col_name            	data_type           	comment             
+	 	 
+key                 	string              	default             
+value               	string              	default             
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+ds                  	string              	None                
+hr                  	string              	None                
+	 	 
+# Detailed Table Information	 	 
+Database:           	default             	 
+Owner:              	null                	 
+CreateTime:         	Fri Oct 15 22:18:40 PDT 2010	 
+LastAccessTime:     	UNKNOWN             	 
+Protect Mode:       	None                	 
+Retention:          	0                   	 
+Location:           	pfile:/data/users/nzhang/work/870/apache-hive/build/ql/test/data/warehouse/srcpart	 
+Table Type:         	MANAGED_TABLE       	 
+Table Parameters:	 	 
+	transient_lastDdlTime	1287206320          
+	 	 
+# Storage Information	 	 
+SerDe Library:      	org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe	 
+InputFormat:        	org.apache.hadoop.mapred.TextInputFormat	 
+OutputFormat:       	org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat	 
+Compressed:         	No                  	 
+Num Buckets:        	-1                  	 
+Bucket Columns:     	[]                  	 
+Sort Columns:       	[]                  	 
+Storage Desc Params:	 	 
+	serialization.format	1                   
+PREHOOK: query: describe formatted srcpart.key
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe formatted srcpart.key
+POSTHOOK: type: DESCTABLE
+# col_name            	data_type           	comment             
+	 	 
+key                 	string              	from deserializer   
+PREHOOK: query: describe formatted srcpart PARTITION(ds='2008-04-08', hr='12')
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe formatted srcpart PARTITION(ds='2008-04-08', hr='12')
+POSTHOOK: type: DESCTABLE
+# col_name            	data_type           	comment             
+	 	 
+key                 	string              	default             
+value               	string              	default             
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+ds                  	string              	None                
+hr                  	string              	None                
+	 	 
+# Detailed Partition Information	 	 
+Partition Value:    	[2008-04-08, 12]    	 
+Database:           	default             	 
+Table:              	srcpart             	 
+CreateTime:         	Fri Oct 15 22:18:42 PDT 2010	 
+LastAccessTime:     	UNKNOWN             	 
+Protect Mode:       	None                	 
+Location:           	pfile:/data/users/nzhang/work/870/apache-hive/build/ql/test/data/warehouse/srcpart/ds=2008-04-08/hr=12	 
+Partition Parameters:	 	 
+	transient_lastDdlTime	1287206322          
+	 	 
+# Storage Information	 	 
+SerDe Library:      	org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe	 
+InputFormat:        	org.apache.hadoop.mapred.TextInputFormat	 
+OutputFormat:       	org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat	 
+Compressed:         	No                  	 
+Num Buckets:        	-1                  	 
+Bucket Columns:     	[]                  	 
+Sort Columns:       	[]                  	 
+Storage Desc Params:	 	 
+	serialization.format	1                   
+PREHOOK: query: create table srcpart_serdeprops like srcpart
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table srcpart_serdeprops like srcpart
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@srcpart_serdeprops
+PREHOOK: query: alter table srcpart_serdeprops set serdeproperties('xyz'='0')
+PREHOOK: type: ALTERTABLE_SERDEPROPERTIES
+PREHOOK: Input: default@srcpart_serdeprops
+PREHOOK: Output: default@srcpart_serdeprops
+POSTHOOK: query: alter table srcpart_serdeprops set serdeproperties('xyz'='0')
+POSTHOOK: type: ALTERTABLE_SERDEPROPERTIES
+POSTHOOK: Input: default@srcpart_serdeprops
+POSTHOOK: Output: default@srcpart_serdeprops
+PREHOOK: query: alter table srcpart_serdeprops set serdeproperties('pqrs'='1')
+PREHOOK: type: ALTERTABLE_SERDEPROPERTIES
+PREHOOK: Input: default@srcpart_serdeprops
+PREHOOK: Output: default@srcpart_serdeprops
+POSTHOOK: query: alter table srcpart_serdeprops set serdeproperties('pqrs'='1')
+POSTHOOK: type: ALTERTABLE_SERDEPROPERTIES
+POSTHOOK: Input: default@srcpart_serdeprops
+POSTHOOK: Output: default@srcpart_serdeprops
+PREHOOK: query: alter table srcpart_serdeprops set serdeproperties('abcd'='2')
+PREHOOK: type: ALTERTABLE_SERDEPROPERTIES
+PREHOOK: Input: default@srcpart_serdeprops
+PREHOOK: Output: default@srcpart_serdeprops
+POSTHOOK: query: alter table srcpart_serdeprops set serdeproperties('abcd'='2')
+POSTHOOK: type: ALTERTABLE_SERDEPROPERTIES
+POSTHOOK: Input: default@srcpart_serdeprops
+POSTHOOK: Output: default@srcpart_serdeprops
+PREHOOK: query: alter table srcpart_serdeprops set serdeproperties('A1234'='3')
+PREHOOK: type: ALTERTABLE_SERDEPROPERTIES
+PREHOOK: Input: default@srcpart_serdeprops
+PREHOOK: Output: default@srcpart_serdeprops
+POSTHOOK: query: alter table srcpart_serdeprops set serdeproperties('A1234'='3')
+POSTHOOK: type: ALTERTABLE_SERDEPROPERTIES
+POSTHOOK: Input: default@srcpart_serdeprops
+POSTHOOK: Output: default@srcpart_serdeprops
+PREHOOK: query: describe formatted srcpart_serdeprops
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: describe formatted srcpart_serdeprops
+POSTHOOK: type: DESCTABLE
+# col_name            	data_type           	comment             
+	 	 
+key                 	string              	default             
+value               	string              	default             
+	 	 
+# Partition Information	 	 
+# col_name            	data_type           	comment             
+	 	 
+ds                  	string              	None                
+hr                  	string              	None                
+	 	 
+# Detailed Table Information	 	 
+Database:           	default             	 
+Owner:              	null                	 
+CreateTime:         	Fri Oct 15 22:18:53 PDT 2010	 
+LastAccessTime:     	UNKNOWN             	 
+Protect Mode:       	None                	 
+Retention:          	0                   	 
+Location:           	pfile:/data/users/nzhang/work/870/apache-hive/build/ql/test/data/warehouse/srcpart_serdeprops	 
+Table Type:         	MANAGED_TABLE       	 
+Table Parameters:	 	 
+	last_modified_by    	nzhang              
+	last_modified_time  	1287206333          
+	transient_lastDdlTime	1287206333          
+	 	 
+# Storage Information	 	 
+SerDe Library:      	org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe	 
+InputFormat:        	org.apache.hadoop.mapred.TextInputFormat	 
+OutputFormat:       	org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat	 
+Compressed:         	No                  	 
+Num Buckets:        	-1                  	 
+Bucket Columns:     	[]                  	 
+Sort Columns:       	[]                  	 
+Storage Desc Params:	 	 
+	A1234               	3                   
+	abcd                	2                   
+	pqrs                	1                   
+	serialization.format	1                   
+	xyz                 	0                   
+PREHOOK: query: drop table srcpart_serdeprops
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@srcpart_serdeprops
+PREHOOK: Output: default@srcpart_serdeprops
+POSTHOOK: query: drop table srcpart_serdeprops
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@srcpart_serdeprops
+POSTHOOK: Output: default@srcpart_serdeprops

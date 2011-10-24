@@ -1,0 +1,22 @@
+#!/bin/bash
+# Copyright (c) 2009 Cloudera, inc
+#
+# Performs a release build
+
+set -e
+
+# Do the build
+BIN_DIR=$(readlink -f $(dirname $0))
+RELEASE_DIR=$BIN_DIR/..
+
+cd $RELEASE_DIR
+
+mkdir -p build/.ivy
+ant $EXTRA_ANT_FLAGS \
+  -propertyfile cloudera/build.properties \
+  -Dreactor.repo=file://${HOME}/.m2/repository \
+  tar
+
+# Call Maven build for install/deploy of artifacts
+cd $BIN_DIR/maven-packaging
+mvn -Dnot.cdh.release.build=false install $DO_MAVEN_DEPLOY

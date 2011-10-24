@@ -1,0 +1,35 @@
+From 32e01719692705eba41104ce6d8114f7d82ac877 Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Wed, 16 Feb 2011 17:22:33 -0800
+Subject: [PATCH 06/51] CLOUDERA-BUILD. Fixing security version.
+
+---
+ build.properties                                   |    3 +--
+ .../maven-packaging/templates/cdh.build.template   |    1 +
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/build.properties b/build.properties
+index a710ecb..514c2f9 100644
+--- a/build.properties
++++ b/build.properties
+@@ -42,6 +42,5 @@ common.jar=${hadoop.root}/lib/commons-httpclient-3.0.1.jar
+ datanucleus.repo=http://www.datanucleus.org/downloads/maven2
+ 
+ # URLs pointing to a built tarball of a secure hadoop release
+-hadoop.security.url=http://mirror.facebook.net/facebook/hive-deps/hadoop/core/hadoop-0.20.3-CDH3-SNAPSHOT/hadoop-0.20.3-CDH3-SNAPSHOT.tar.gz
+-hadoop.security.version=0.20.3-CDH3-SNAPSHOT
++hadoop.security.version=${hadoop.version}
+ 
+diff --git a/cloudera/maven-packaging/templates/cdh.build.template b/cloudera/maven-packaging/templates/cdh.build.template
+index a6f9e3d..13111f2 100644
+--- a/cloudera/maven-packaging/templates/cdh.build.template
++++ b/cloudera/maven-packaging/templates/cdh.build.template
+@@ -3,4 +3,5 @@ hadoop.dep.org=org.apache.hadoop
+ hadoop.dep.name=hadoop-tarball
+ hadoop.dep.artifact=hadoop-tarball
+ hadoop.version=org.apache.hadoop:hadoop-core.version
++hadoop.security.version=org.apache.hadoop:hadoop-core.version
+ reactor.repo=https://repository.cloudera.com/content/repositories/snapshots
+-- 
+1.7.0.4
+

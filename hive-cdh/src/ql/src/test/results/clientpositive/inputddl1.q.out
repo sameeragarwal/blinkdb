@@ -1,0 +1,38 @@
+PREHOOK: query: EXPLAIN
+CREATE TABLE INPUTDDL1(key INT, value STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: EXPLAIN
+CREATE TABLE INPUTDDL1(key INT, value STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+ABSTRACT SYNTAX TREE:
+  (TOK_CREATETABLE (TOK_TABNAME INPUTDDL1) TOK_LIKETABLE (TOK_TABCOLLIST (TOK_TABCOL key TOK_INT) (TOK_TABCOL value TOK_STRING)) TOK_TBLTEXTFILE)
+
+STAGE DEPENDENCIES:
+  Stage-0 is a root stage
+
+STAGE PLANS:
+  Stage: Stage-0
+      Create Table Operator:
+        Create Table
+          columns: key int, value string
+          if not exists: false
+          input format: org.apache.hadoop.mapred.TextInputFormat
+          # buckets: -1
+          output format: org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat
+          name: INPUTDDL1
+          isExternal: false
+
+
+PREHOOK: query: CREATE TABLE INPUTDDL1(key INT, value STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE INPUTDDL1(key INT, value STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@INPUTDDL1
+PREHOOK: query: SELECT INPUTDDL1.* from INPUTDDL1
+PREHOOK: type: QUERY
+PREHOOK: Input: default@inputddl1
+PREHOOK: Output: file:/tmp/sdong/hive_2011-02-10_16-01-07_911_8364896664990642164/-mr-10000
+POSTHOOK: query: SELECT INPUTDDL1.* from INPUTDDL1
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@inputddl1
+POSTHOOK: Output: file:/tmp/sdong/hive_2011-02-10_16-01-07_911_8364896664990642164/-mr-10000

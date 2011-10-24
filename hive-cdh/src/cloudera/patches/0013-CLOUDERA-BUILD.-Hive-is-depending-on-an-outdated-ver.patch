@@ -1,0 +1,39 @@
+From e0989a0672efc01762db568033693370b3ca64ac Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Mon, 28 Feb 2011 08:52:53 -0800
+Subject: [PATCH 13/51] CLOUDERA-BUILD. Hive is depending on an outdated version of HBase.
+
+* Removing HBase from libraries.properties, which we don't modify in
+the build any more, and putting it in cdh.build.properties instead,
+which we *do* modify, and making sure it's pulling in our version.
+---
+ .../maven-packaging/templates/cdh.build.template   |    2 ++
+ ivy/libraries.properties                           |    2 --
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cloudera/maven-packaging/templates/cdh.build.template b/cloudera/maven-packaging/templates/cdh.build.template
+index 13111f2..a18f7f2 100644
+--- a/cloudera/maven-packaging/templates/cdh.build.template
++++ b/cloudera/maven-packaging/templates/cdh.build.template
+@@ -5,3 +5,5 @@ hadoop.dep.artifact=hadoop-tarball
+ hadoop.version=org.apache.hadoop:hadoop-core.version
+ hadoop.security.version=org.apache.hadoop:hadoop-core.version
+ reactor.repo=https://repository.cloudera.com/content/repositories/snapshots
++hbase.version=org.apache.hbase:hbase.version
++hbase-test.version=org.apache.hbase:hbase.version
+diff --git a/ivy/libraries.properties b/ivy/libraries.properties
+index af856bd..317a20e 100644
+--- a/ivy/libraries.properties
++++ b/ivy/libraries.properties
+@@ -35,8 +35,6 @@ commons-lang.version=2.4
+ commons-logging.version=1.0.4
+ commons-logging-api.version=1.0.4
+ commons-pool.version=1.5.4
+-hbase.version=0.89.0-SNAPSHOT
+-hbase-test.version=0.89.0-SNAPSHOT
+ jdo-api.version=2.3-ec
+ jdom.version=1.1
+ jline.version=0.9.94
+-- 
+1.7.0.4
+

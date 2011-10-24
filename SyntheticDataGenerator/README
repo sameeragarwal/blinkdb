@@ -1,0 +1,21 @@
+Synthetic Data Generator
+========================
+This python script generates synthetic data for use with QuicksilverDB. It uses statistics from the following sources:
+
+* Country statistics - http://www.internetworldstats.com/top20.htm
+* City, zipcodes from MaxMind GeoCity-Lite
+* Browser shares, OS shares from http://www.netmarketshare.com/
+
+The database is SQLite, to see the tables, use SQLiteStudio (http://sqlitestudio.one.pl/)
+
+To get help, run:
+
+$ python main.py -h
+
+Change Log:
+==========
+Version 1.0 [Oct 21, 2011]
+--------------------------
+- Basic functionality added.
+- In this version, the OS share is assumed to be equal in every country.
+- Need to create a table for content id. 

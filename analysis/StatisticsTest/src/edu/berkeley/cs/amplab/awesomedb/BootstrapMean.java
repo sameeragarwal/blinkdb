@@ -11,7 +11,7 @@ public class BootstrapMean {
     double meanMean;
     double stdev;
     double meanTime;
-    public BootstrapMean(double[] sample, int bootstraps) {
+    public BootstrapMean(double[] sample, int bootstraps, int size) {
         double[] subsample;
         cummulativeTime = new long[bootstraps];
         sampleMeans = new double[bootstraps];
@@ -19,7 +19,7 @@ public class BootstrapMean {
         
         for (int i = 0; i < bootstraps; i++) {
             long start = System.nanoTime();
-            subsample = BootstrapSample.GenerateSampleWithReplacement(sample);
+            subsample = BootstrapSample.GenerateSampleWithReplacement(sample, size);
             sampleMeans[i] = StatisticalMean.Mean(subsample);
             long time = Math.max(System.nanoTime() - start, 0);
             cummulativeTime[i] = time;
@@ -29,7 +29,9 @@ public class BootstrapMean {
         meanTime = meanTimePerBootstrap.getResult();
         StandardDeviation dev = new StandardDeviation(false);
         stdev = dev.evaluate(sampleMeans);
-
+    }
+    public BootstrapMean(double[] sample, int bootstraps) {
+        this(sample, bootstraps, sample.length);
     }
     
     public double getMeanTime() {

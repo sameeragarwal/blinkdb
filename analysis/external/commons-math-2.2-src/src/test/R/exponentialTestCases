@@ -1,0 +1,103 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate exponential distribution tests in
+# org.apache.commons.math.distribution.ExponentialDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+#------------------------------------------------------------------------------
+tol <- 1E-9
+
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+# function to verify distribution computations
+
+verifyDistribution <- function(points, expected, mean, tol) {
+ rDistValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDistValues[i] <- pexp(point, 1/mean)
+    }
+    output <- c("Distribution test mean = ", mean)
+    if (assertEquals(expected, rDistValues, tol, "Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify density computations
+verifyDensity <- function(points, expected, mean, tol) {
+ rDensityValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDensityValues[i] <- dexp(point, 1/mean)
+    }
+    output <- c("Density test mean = ", mean)
+    if (assertEquals(expected, rDensityValues, tol, "Density Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify quantiles
+verifyQuantiles <- function(points, expected, mean, tol) {
+	rQuantileValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rQuantileValues[i] <- qexp(point, 1/mean, log = FALSE)
+    }
+    output <- c("Quantile test mean = ", mean)
+    if (assertEquals(expected, rQuantileValues, tol, "Quantile Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }    
+}
+
+
+#--------------------------------------------------------------------------
+cat("Exponential test cases\n")
+
+mean <- 5
+
+distributionValues <- c(0, 0, 0.001, 0.01, 0.025, 0.05, 0.1, 0.999,
+                0.990, 0.975, 0.950, 0.900)
+densityValues <- c(0.2, 0.2, 0.1998, 0.198, 0.195, 0.19, 0.18, 0.000200000000000,
+                0.00200000000002, 0.00499999999997, 0.00999999999994, 0.0199999999999)
+distributionPoints <- c(0, 0, 0.00500250166792, 0.0502516792675, 0.126589039921, 0.256466471938,
+                0.526802578289, 34.5387763949, 23.0258509299, 18.4443972706, 14.9786613678, 11.5129254650)
+verifyDistribution(distributionPoints, distributionValues, mean, tol)
+verifyQuantiles(distributionValues, distributionPoints, mean, tol)
+verifyDensity(distributionPoints, densityValues, mean, tol)
+
+output <- "Probability test P(.25 < X < .75)"
+if (assertEquals(0.0905214480757, pexp(.75, 1/mean) - pexp(.25, 1/mean), tol, "Probability value")) {
+    displayPadded(output, SUCCEEDED, WIDTH)
+} else {
+    displayPadded(output, FAILED, WIDTH)
+}      
+
+displayDashes(WIDTH)

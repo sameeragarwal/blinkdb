@@ -1,0 +1,111 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate Normal distribution tests in
+# org.apache.commons.math.distribution.NormalDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# pnorm(q, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE) <-- distribution
+#-----------------------------------------------------------------------------
+tol <- 1E-9
+
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+# function to verify distribution computations
+
+verifyDistribution <- function(points, expected, mu, sigma, tol) {
+ rDistValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDistValues[i] <- pnorm(point, mu, sigma, log = FALSE)
+    }
+    output <- c("Distribution test mu = ",mu,", sigma = ", sigma)
+    if (assertEquals(expected, rDistValues, tol, "Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify density computations
+
+verifyDensity <- function(points, expected, mu, sigma, tol) {
+ rDensityValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDensityValues[i] <- dnorm(point, mu, sigma, log = FALSE)
+    }
+    output <- c("Density test mu = ",mu,", sigma = ", sigma)
+    if (assertEquals(expected, rDensityValues, tol, "Density Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+#--------------------------------------------------------------------------
+cat("Normal test cases\n")
+
+mu <- 2.1
+sigma <- 1.4
+distributionValues <- c(0.001, 0.01, 0.025, 0.05, 0.1, 0.999,
+                0.990, 0.975, 0.950, 0.900)
+densityValues <- c(0.00240506434076, 0.0190372444310, 0.0417464784322, 0.0736683145538, 0.125355951380,
+                0.00240506434076, 0.0190372444310, 0.0417464784322, 0.0736683145538, 0.125355951380)
+distributionPoints <- c(-2.226325228634938, -1.156887023657177, -0.643949578356075, -0.2027950777320613, 0.305827808237559,
+                6.42632522863494, 5.35688702365718, 4.843949578356074, 4.40279507773206, 3.89417219176244)
+verifyDistribution(distributionPoints, distributionValues, mu, sigma, tol)
+verifyDensity(distributionPoints, densityValues, mu, sigma, tol)
+
+distributionValues <- c( 0.0227501319482, 0.158655253931, 0.5, 0.841344746069, 0.977249868052,
+                     0.998650101968, 0.999968328758, 0.999999713348)
+densityValues <- c(0.0385649760808, 0.172836231799, 0.284958771715, 0.172836231799, 0.0385649760808,
+                0.00316560600853, 9.55930184035e-05, 1.06194251052e-06)
+distributionPoints <- c(mu - 2 *sigma, mu - sigma, mu, mu + sigma,
+		mu + 2 * sigma,  mu + 3 * sigma, mu + 4 * sigma,
+                    mu + 5 * sigma)
+verifyDistribution(distributionPoints, distributionValues, mu, sigma, tol)
+verifyDensity(distributionPoints, densityValues, mu, sigma, tol)
+
+mu <- 0
+sigma <- 1
+distributionPoints <- c(mu - 2 *sigma, mu - sigma, mu, mu + sigma,
+		mu + 2 * sigma,  mu + 3 * sigma, mu + 4 * sigma,
+                    mu + 5 * sigma)
+densityValues <- c(0.0539909665132, 0.241970724519, 0.398942280401, 0.241970724519, 0.0539909665132,
+                0.00443184841194, 0.000133830225765, 1.48671951473e-06)            
+verifyDistribution(distributionPoints, distributionValues, mu, sigma, tol)
+verifyDensity(distributionPoints, densityValues, mu, sigma, tol)
+
+mu <- 0
+sigma <- 0.1
+distributionPoints <- c(mu - 2 *sigma, mu - sigma, mu, mu + sigma,
+		mu + 2 * sigma,  mu + 3 * sigma, mu + 4 * sigma,
+                    mu + 5 * sigma)
+densityValues <- c(0.539909665132, 2.41970724519, 3.98942280401, 2.41970724519,
+                0.539909665132, 0.0443184841194, 0.00133830225765, 1.48671951473e-05)                    
+verifyDistribution(distributionPoints, distributionValues, mu, sigma, tol)
+verifyDensity(distributionPoints, densityValues, mu, sigma, tol)
+
+displayDashes(WIDTH)

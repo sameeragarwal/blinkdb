@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 937893 $ $Date: 2010-04-25 23:42:47 +0200 (dim. 25 avril 2010) $ -->
+<document url="stat.html">
+  <properties>
+    <title>The Commons Math User Guide - Complex Numbers</title>
+  </properties>
+  <body>
+    <section name="7 Complex Numbers">
+      <subsection name="7.1 Overview" href="overview">
+        <p>
+          The complex packages provides a complex number type as well as complex
+          versions of common transcendental functions and complex number
+          formatting.
+        </p>
+      </subsection>
+      <subsection name="7.2 Complex Numbers" href="complex">
+        <p>
+          <a href="../apidocs/org/apache/commons/math/complex/Complex.html">
+          Complex</a> provides a complex number type that forms the basis for
+          the complex functionality found in commons-math.
+         </p>  
+         <p>
+           Complex functions and arithmetic operations are implemented in
+           commons-math by applying standard computational formulas and
+           following the rules for <code>java.lang.Double</code> arithmetic in 
+           handling infinite and <code>NaN</code> values.  No attempt is made
+           to comply with ANSII/IEC C99x Annex G or any other standard for
+           Complex arithmetic.  See the class and method javadocs for the 
+           <a href="../apidocs/org/apache/commons/math/complex/Complex.html">
+           Complex</a> and
+           <a href="../apidocs/org/apache/commons/math/complex/ComplexUtils.html">
+           ComplexUtils</a> classes for details on computing formulas.
+        </p>
+        <p>
+          To create a complex number, simply call the constructor passing in two
+          floating-point arguments, the first being the real part of the
+          complex number and the second being the imaginary part:
+          <source>Complex c = new Complex(1.0, 3.0); // 1 + 3i</source>
+        </p>
+        <p>
+          Complex numbers may also be created from polar representations
+          using the <code>polar2Complex</code> method in 
+          <code>ComplexUtils</code>.
+        </p>
+        <p>
+          The <code>Complex</code> class provides basic unary and binary
+          complex number operations.  These operations provide the means to add,
+          subtract, multiply and divide complex numbers along with other
+          complex number functions similar to the real number functions found in
+          <code>java.math.BigDecimal</code>:
+          <source>Complex lhs = new Complex(1.0, 3.0);
+Complex rhs = new Complex(2.0, 5.0);
+
+Complex answer = lhs.add(rhs);       // add two complex numbers
+        answer = lhs.subtract(rhs);  // subtract two complex numbers
+        answer = lhs.abs();          // absolute value
+        answer = lhs.conjugate(rhs); // complex conjugate</source>
+        </p>
+      </subsection>
+      <subsection name="7.3 Complex Transcendental Functions" href="function">
+        <p>
+          <a href="../apidocs/org/apache/commons/math/complex/Complex.html">
+          Complex</a> also provides implementations of serveral transcendental
+          functions involving complex number arguments.
+          Prior to version 1.2, these functions were provided
+          by <a href="../apidocs/org/apache/commons/math/complex/ComplexUtils.html">
+          ComplexUtils</a> in a way similar to the real number functions found in
+          <code>java.lang.Math</code>, but this has been deprecated.
+          These operations provide the means to compute the log, sine, tangent,
+          and other complex values :
+          <source>Complex first  = new Complex(1.0, 3.0);
+Complex second = new Complex(2.0, 5.0);
+
+Complex answer = first.log();        // natural logarithm.
+        answer = first.cos();        // cosine
+        answer = first.pow(second);  // first raised to the power of second</source>
+        </p>
+      </subsection>
+      <subsection name="7.4 Complex Formatting and Parsing" href="formatting">
+        <p>
+          <code>Complex</code> instances can be converted to and from strings
+          using the<a href="../apidocs/org/apache/commons/math/complex/ComplexFormat.html">
+          ComplexFormat</a> class.
+          <code>ComplexFormat</code> is a <code>java.text.Format</code>
+          extension and, as such, is used like other formatting objects (e.g.
+          <code>java.text.SimpleDateFormat</code>):
+          <source>ComplexFormat format = new ComplexFormat(); // default format
+Complex c = new Complex(1.1111, 2.2222);
+String s = format.format(c); // s contains "1.11 + 2.22i"</source>
+        </p>
+        <p>
+          To customize the formatting output, one or two
+          <code>java.text.NumberFormat</code> instances can be used to construct
+          a <code>ComplexFormat</code>.  These number formats control the
+          formatting of the real and imaginary values of the complex number:
+          <source>NumberFormat nf = NumberFormat.getInstance();
+nf.setMinimumFractionDigits(3);
+nf.setMaximumFractionDigits(3);
+
+// create complex format with custom number format
+// when one number format is used, both real and
+// imaginary parts are formatted the same
+ComplexFormat cf = new ComplexFormat(nf);
+Complex c = new Complex(1.11, 2.2222);
+String s = format.format(c); // s contains "1.110 + 2.222i"
+
+NumberFormat nf2 = NumberFormat.getInstance();
+nf.setMinimumFractionDigits(1);
+nf.setMaximumFractionDigits(1);
+
+// create complex format with custom number formats
+cf = new ComplexFormat(nf, nf2);
+s = format.format(c); // s contains "1.110 + 2.2i"</source>
+        </p>
+        <p>
+          Another formatting customization provided by
+          <code>ComplexFormat</code> is the text used for the imaginary
+          designation.  By default, the imaginary notation is "i" but, it can be
+          manipulated using the <code>setImaginaryCharacter</code> method.
+        </p>
+        <p>
+          Formatting inverse operation, parsing, can also be performed by
+          <code>ComplexFormat</code>.  Parse a complex number from a string,
+          simply call the <code>parse</code> method:
+          <source>ComplexFormat cf = new ComplexFormat();
+Complex c = cf.parse("1.110 + 2.222i");</source>
+        </p>
+      </subsection>
+    </section>
+  </body>
+</document>

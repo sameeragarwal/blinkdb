@@ -1,0 +1,86 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+#
+# Utility functions used in R comparison tests.
+#
+#------------------------------------------------------------------------------
+# Global constants
+#------------------------------------------------------------------------------
+WIDTH <- 80                    # screen size constant for display functions
+SUCCEEDED <- "SUCCEEDED"
+FAILED <- "FAILED"
+options(digits=12)             # display 12 digits throughout
+#------------------------------------------------------------------------------
+# Comparison functions
+#------------------------------------------------------------------------------
+# Tests to see if <expected> and <observed> are within <tol> of
+# one another in the sup norm.
+#
+# Returns 1 if no pair of corresponding non-NULL, non-NaN, non-na entries
+# differs by more than abs and NULLs, NaNs, na's correspond;
+# otherwise displays <message> and returns 0.
+# Works for both vectors and scalar values.
+#
+assertEquals <- function(expected, observed, tol, message) {
+    failed <- 0
+    if (any(is.na(observed) != is.na(expected))) {
+        failed <- 1
+    }
+    if (any(is.null(observed) != is.null(expected))) {
+        failed <- 1
+    }
+    if (any(is.nan(expected) != is.nan(observed))) {
+        failed <- 1
+    }
+    if (any(is.na(expected) != is.na(observed))) {
+        failed <- 1
+    }
+    if (!failed) {
+        if(any(abs(observed - expected) > tol, na.rm = TRUE)) {
+            failed <- 1
+        }
+    }
+    if (failed) {
+        cat("FAILURE: ",message,"\n")
+        cat("EXPECTED: ",expected,"\n")
+        cat("OBSERVED: ",observed,"\n")
+        cat("DIFF: ",observed - expected,"\n")
+        cat("TOLERANCE: ",tol,"\n")
+    }  
+    return(!failed)
+}
+#------------------------------------------------------------------------------
+# Display functions
+#------------------------------------------------------------------------------
+# Displays n-col dashed line.
+#
+displayDashes <- function(n) {
+    cat(rep("-",n),"\n",sep='')
+    return(1)
+}
+#------------------------------------------------------------------------------
+# Displays <start>......<end> with enough dots in between to make <n> cols, 
+# followed by a new line character. Blows up if <start><end> is longer than
+# <n> cols by itself.
+#
+# Expects <start> and <end> to be strings (character vectors).
+# 
+displayPadded <- function(start, end, n) {
+    len = sum(nchar(start)) + sum(nchar(end))
+    cat(start, rep(".", n - len), end, "\n",sep='')
+    return(1)
+}

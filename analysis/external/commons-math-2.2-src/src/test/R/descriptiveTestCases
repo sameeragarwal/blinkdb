@@ -1,0 +1,83 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate summary statistics tests in
+# org.apache.commons.math.stat.CertifiedDataTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+#  mean(x)
+#  sd(x)
+#------------------------------------------------------------------------------
+tol <- 1E-14                     # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+options(digits=15)                # bump displayed digits to 15
+
+verifyMean <- function(values, expectedMean, tol, desc) {
+    results <- mean(values)
+    if (assertEquals(expectedMean, results, tol, "mean")) {
+        displayPadded(c(desc," mean test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " mean test"), FAILED, WIDTH)
+    } 
+}
+
+verifySigma <- function(values, expectedSigma, tol, desc) {
+    results <- sd(values)
+    if (assertEquals(expectedSigma, results, tol, "std")) {
+        displayPadded(c(desc," std test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " std test"), FAILED, WIDTH)
+    } 
+}
+
+cat("Descriptive test cases\n")
+
+# Michelson data
+values <- c(299.85,299.74,299.90,300.07,299.93,299.85,299.95,299.98,299.98,
+299.88,300.00,299.98,299.93,299.65,299.76,299.81,300.00,300.00,299.96,299.96,
+299.96,299.94,299.96,299.94,299.88,299.80,299.85,299.88,299.90,299.84,299.83,
+299.79,299.81,299.88,299.88,299.83,299.80,299.79,299.76,299.80,299.88,299.88,
+299.88,299.86,299.72,299.72,299.62,299.86,299.97,299.95,299.88,299.91,299.85,
+299.87,299.84,299.84,299.85,299.84,299.84,299.84,299.89,299.81,299.81,299.82,
+299.80,299.77,299.76,299.74,299.75,299.76,299.91,299.92,299.89,299.86,299.88,
+299.72,299.84,299.85,299.85,299.78,299.89,299.84,299.78,299.81,299.76,299.81,
+299.79,299.81,299.82,299.85,299.87,299.87,299.81,299.74,299.81,299.94,299.95,
+299.80,299.81,299.87)
+expectedMean <- 299.852400000000
+expectedSigma <- 0.0790105478190518
+verifyMean(values, expectedMean, tol, "Michelson")
+verifySigma(values, expectedSigma, tol, "Michelson")
+
+# Mavro data
+values <- c(2.00180,2.00170,2.00180,2.00190,2.00180,2.00170,2.00150,2.00140,
+2.00150,2.00150,2.00170,2.00180,2.00180,2.00190,2.00190,2.00210,2.00200,
+2.00160,2.00140,2.00130,2.00130,2.00150,2.00150,2.00160,2.00150,2.00140,
+2.00130,2.00140,2.00150,2.00140,2.00150,2.00160,2.00150,2.00160,2.00190,
+2.00200,2.00200,2.00210,2.00220,2.00230,2.00240,2.00250,2.00270,2.00260,
+2.00260,2.00260,2.00270,2.00260,2.00250,2.00240)
+expectedMean <- 2.00185600000000
+expectedSigma <- 0.000429123454003053
+verifyMean(values, expectedMean, tol, "Mavro")
+verifySigma(values, expectedSigma, tol, "Mavro")
+
+displayDashes(WIDTH)        

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.1//EN" "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<!-- commons math customization of default Checkstyle behavior -->
+<module name="Checker">
+  <property name="localeLanguage" value="en"/>
+
+  <module name="TreeWalker">
+   
+    <!-- Verify that EVERY source file has the appropriate license -->
+    <module name="Header">
+      <property name="headerFile" value="${checkstyle.header.file}"/>
+    </module>
+
+    <!-- Operator must be at end of wrapped line -->
+    <module name="OperatorWrap">
+      <property name="option" value="eol"/>
+    </module>
+    
+    <!-- Interfaces must be types (not just constants) -->
+    <module name="InterfaceIsType"/>
+
+    <!-- Must have class / interface header comments including scm version -->
+    <module name="JavadocType">
+        <property name="versionFormat" value="\$Revision.*\$ \$Date.*\$"/>
+    </module>
+        
+     <!-- Require method javadocs, allow undeclared RTE -->
+    <module name="JavadocMethod">
+      <property name="allowUndeclaredRTE" value="true"/>
+    </module>
+        
+    <!-- Require field javadoc -->
+    <module name="JavadocVariable"/>
+        
+    <!-- No tabs allowed! -->
+    <module name="TabCharacter"/>
+    
+    <!-- No public fields -->
+    <module name="VisibilityModifier">
+       <property name="protectedAllowed" value="true"/>
+    </module>
+    
+    <!-- Require hash code override when equals is -->
+    <module name="EqualsHashCode"/>
+    
+    <!-- Disallow unnecessary instantiation of Boolean, String -->
+    <module name="IllegalInstantiation">
+      <property name="classes" value="java.lang.Boolean, java.lang.String"/>
+    </module>
+
+    <!-- Required for SuppressionCommentFilter below -->
+    <module name="FileContentsHolder"/>
+ 
+    <!--  Import should be explicit, really needed and only from pure java packages -->
+    <module name="AvoidStarImport" />
+    <module name="UnusedImports" />
+    <module name="IllegalImport" />
+
+    <!-- Utility class should not be instantiated, they must have a private constructor -->
+    <module name="HideUtilityClassConstructor" />
+
+    <!-- Switch statements should be complete and with independent cases -->
+    <module name="FallThrough" />
+    <module name="MissingSwitchDefault" />
+
+    <!-- Constant names should obey the traditional all uppercase naming convention -->
+    <module name="ConstantName" />
+
+    <!-- Method parameters and local variables should not hide fields, except in constructors and setters -->
+    <module name="HiddenField">
+        <property name="ignoreConstructorParameter" value="true" />
+        <property name="ignoreSetter" value="true" />
+    </module>
+    
+    <!-- No trailing whitespace -->
+    <module name="Regexp">
+      <property name="format" value="[ \t]+$"/>
+      <property name="illegalPattern" value="true"/>
+      <property name="message" value="Trailing whitespace"/>
+    </module>
+    
+    <!-- No System.out.println() statements -->
+    <module name="Regexp">
+      <!-- no sysouts -->
+      <property name="format" value="System\.out\.println"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+
+    <!-- Authors should be in pom.xml file -->
+    <module name="Regexp">
+      <property name="format" value="@author"/>
+      <property name="illegalPattern" value="true"/>
+      <property name="message" value="developers names should be in pom file"/>
+    </module>
+
+    <!-- Use a consistent way to put modifiers -->
+    <module name="RedundantModifier" />
+    <module name="ModifierOrder" />
+
+    <!-- Use a consistent way to put declarations -->
+    <module name="DeclarationOrder" />
+
+    <!-- Don't add up parentheses when they are not required -->
+    <module name="UnnecessaryParentheses" />
+
+    <!--  Don't use too widespread catch (Exception, Throwable, RuntimeException)  -->
+    <module name="IllegalCatch" />
+
+    <!-- Don't use = or != for string comparisons -->
+    <module name="StringLiteralEquality" />
+ 
+   <!-- Don't declare multiple variables in the same statement -->
+    <module name="MultipleVariableDeclarations" />
+
+    <!-- String literals more than one character long should not be repeated several times -->
+    <!-- the "unchecked" string is also accepted to allow @SuppressWarnings("unchecked") -->
+    <module name="MultipleStringLiterals" >
+      <property name="ignoreStringsRegexp" value='^(("")|(".")|("unchecked"))$'/>
+    </module>
+
+    <!-- <module name="TodoComment" /> -->
+
+  </module>
+  
+  <!-- Require files to end with newline characters -->
+  <module name="NewlineAtEndOfFile"/>
+  
+  <!-- Require package javadoc -->
+  <module name="PackageHtml"/>
+
+  <!-- Setup special comments to suppress specific checks from source files -->
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE\: stop JavadocVariable"/>
+    <property name="onCommentFormat"  value="CHECKSTYLE\: resume JavadocVariable"/>
+    <property name="checkFormat"      value="JavadocVariable"/>
+  </module>
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE\: stop JavadocMethodCheck"/>
+    <property name="onCommentFormat"  value="CHECKSTYLE\: resume JavadocMethodCheck"/>
+    <property name="checkFormat"      value="JavadocMethodCheck"/>
+  </module>
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE\: stop ConstantName"/>
+    <property name="onCommentFormat"  value="CHECKSTYLE\: resume ConstantName"/>
+    <property name="checkFormat"      value="ConstantName"/>
+  </module>
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE\: stop HideUtilityClassConstructor"/>
+    <property name="onCommentFormat"  value="CHECKSTYLE\: resume HideUtilityClassConstructor"/>
+    <property name="checkFormat"      value="HideUtilityClassConstructor"/>
+  </module>
+  <module name="SuppressionCommentFilter">
+    <property name="offCommentFormat" value="CHECKSTYLE\: stop MultipleVariableDeclarations"/>
+    <property name="onCommentFormat"  value="CHECKSTYLE\: resume MultipleVariableDeclarations"/>
+    <property name="checkFormat"      value="MultipleVariableDeclarations"/>
+  </module>
+
+</module>
+

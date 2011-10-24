@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+   
+         http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 937893 $ $Date: 2010-04-25 23:42:47 +0200 (dim. 25 avril 2010) $ -->
+<document url="genetics.html">
+  <properties>
+    <title>The Commons Math User Guide - Genetic Algorithms</title>
+  </properties>
+  <body>
+    <section name="14 Genetic Algorithms">
+      <subsection name="14.1 Overview" href="overview">
+        <p>
+          The genetics package provides a framework and implementations for 
+          genetic algorithms.
+        </p>
+      </subsection>
+      <subsection name="14.2 GA Framework">
+      <p>
+      <a href="../apidocs/org/apache/commons/math/genetics/GeneticAlgorithm.html">
+      GeneticAlgorithm</a> provides an execution framework for Genetic Algorithms (GA).  
+      <a href="../apidocs/org/apache/commons/math/genetics/Population.html">
+      Populations,</a> consisting of <a href="../apidocs/org/apache/commons/math/genetics/Chromosome.html">
+      Chromosomes</a> are evolved by the <code>GeneticAlgorithm</code> until a 
+      <a href="../apidocs/org/apache/commons/math/genetics/StoppingCondition.html">
+      StoppingCondition</a> is reached. Evolution is determined by <a href="../apidocs/org/apache/commons/math/genetics/SelectionPolicy.html">
+      SelectionPolicy</a>, <a href="../apidocs/org/apache/commons/math/genetics/MutationPolicy.html">
+      MutationPolicy</a> and <a href="../apidocs/org/apache/commons/math/genetics/Fitness.html">
+      Fitness</a>.
+      </p>
+      <p>
+      The GA itself is implemented by the <code>evolve</code> method of the
+      <code>GeneticAlgorithm</code> class,
+      which looks like this:
+      <source>public Population evolve(Population initial, StoppingCondition condition) {
+    Population current = initial;
+    while (!condition.isSatisfied(current)) {
+        current = nextGeneration(current);
+    }
+    return current;
+}
+          </source>
+          The <code>nextGeneration</code> method implements the following algorithm:
+          <ol>
+          <li>Get nextGeneration population to fill from <code>current</code>
+             generation, using its nextGeneration method</li>
+          <li>Loop until new generation is filled:</li>
+          <ul><li>Apply configured <code>SelectionPolicy</code> to select a pair of parents
+                 from <code>current</code></li>
+             <li>With probability = 
+                 <a href="../apidocs/org/apache/commons/math/genetics/GeneticAlgorithm.html#getCrossoverRate()">
+                 getCrossoverRate()</a>, apply configured <code>CrossoverPolicy</code> to parents</li>
+             <li>With probability = 
+                 <a href="../apidocs/org/apache/commons/math/genetics/GeneticAlgorithm.html#getMutationRate()">
+                 getMutationRate()</a>,
+                 apply configured <code>MutationPolicy</code> to each of the offspring</li>
+             <li>Add offspring individually to nextGeneration,
+                 space permitting</li>
+          </ul>
+          <li>Return nextGeneration</li>
+         </ol>  
+      </p>
+      </subsection>
+      <subsection name="14.3 Implementation">
+      <p>
+      Here is an example GA execution:
+      <source>
+// initialize a new genetic algorithm
+GeneticAlgorithm ga = new GeneticAlgorithm(
+    new OnePointCrossover&lt;Integer&gt;(),
+    1,
+    new RandomKeyMutation(),
+    0.10,
+    new TournamentSelection(TOURNAMENT_ARITY)
+);
+        
+// initial population
+Population initial = getInitialPopulation();
+        
+// stopping condition
+StoppingCondition stopCond = new FixedGenerationCount(NUM_GENERATIONS);
+        
+// run the algorithm
+Population finalPopulation = ga.evolve(initial, stopCond);
+        
+// best chromosome from the final population
+Chromosome bestFinal = finalPopulation.getFittestChromosome();
+        </source>
+        The arguments to the <code>GeneticAlgorithm</code> constructor above are: <br/>
+        <table>
+        <tr><th>Parameter</th><th>value in example</th><th>meaning</th></tr>
+        <tr><td>crossoverPolicy</td>
+        <td><a href="../apidocs/org/apache/commons/math/genetics/OnePointCrossover.html">OnePointCrossover</a></td>
+        <td>A random crossover point is selected and the first part from each parent is copied to the corresponding
+        child, and the second parts are copied crosswise.</td></tr>
+        <tr><td>crossoverRate</td>
+        <td>1</td>
+        <td>Always apply crossover</td></tr>
+        <tr><td>mutationPolicy</td>
+        <td><a href="../apidocs/org/apache/commons/math/genetics/RandomKeyMutation.html">RandomKeyMutation</a></td>
+        <td>Changes a randomly chosen element of the array representation to a random value uniformly distributed in [0,1].</td></tr>
+        <tr><td>mutationRate</td>
+        <td>.1</td>
+        <td>Apply mutation with probability 0.1 - that is, 10% of the time.</td></tr>
+        <tr><td>selectionPolicy</td>
+        <td><a href="../apidocs/org/apache/commons/math/genetics/TournamentSelection.html">TournamentSelection</a></td>
+        <td>Each of the two selected chromosomes is selected based on an n-ary tournament -- this is done by drawing
+        n random chromosomes without replacement from the population, and then selecting the fittest chromosome among them.</td></tr>
+        </table><br/>
+        The algorithm starts with an <code>initial</code> population of <code>Chromosomes.</code> and executes until 
+        the specified <a href="../apidocs/org/apache/commons/math/genetics/StoppingCondition.html">StoppingCondition</a>
+        is reached.  In the example above, a
+        <a href="../apidocs/org/apache/commons/math/genetics/FixedGenerationCount.html">FixedGenerationCount</a>
+        stopping condition is used, which means the algorithm proceeds through a fixed number of generations.
+      </p>
+      </subsection>
+    </section>
+  </body>
+</document>

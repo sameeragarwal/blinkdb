@@ -1,0 +1,116 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate Poisson distribution tests in
+# org.apache.commons.math.distribution.PoissonDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# dpois(x, lambda, log = FALSE) <-- density
+# ppois(q, lambda, lower.tail = TRUE, log.p = FALSE) <-- distribution
+# pnorm(q, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE) <-- normal dist.
+#------------------------------------------------------------------------------
+tol <- 1E-10
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+# function to verify density computations
+
+verifyDensity <- function(points, expected, lambda, tol) {
+    rDensityValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDensityValues[i] <- dpois(point, lambda, log = FALSE)
+    }
+    output <- c("Density test lambda = ", lambda)
+    if (assertEquals(expected, rDensityValues, tol, "Density Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify distribution computations
+
+verifyDistribution <- function(points, expected, lambda, tol) {
+    rDistValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDistValues[i] <- ppois(point, lambda, log = FALSE)
+    }
+    output <- c("Distribution test lambda = ", lambda)
+    if (assertEquals(expected, rDistValues, tol, "Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify normal approximation
+
+verifyNormalApproximation <- function(expected, lambda, lower, upper, tol) {
+    rValue <- pnorm(upper, mean=lambda, sd=sqrt(lambda), lower.tail = TRUE,
+               log.p = FALSE) - 
+               pnorm(lower, mean=lambda, sd=sqrt(lambda), lower.tail = TRUE,
+               log.p = FALSE)
+    output <- c("Normal approx. test lambda = ", lambda, " upper = ",
+               upper, " lower = ", lower)
+    if (assertEquals(expected, rValue, tol, "Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+cat("Poisson distribution test cases\n")
+
+# stock tests
+
+lambda <- 4.0
+densityPoints <- c(-1,0,1,2,3,4,5,10,20)
+densityValues <- c(0, 0.0183156388887,  0.073262555555, 0.14652511111,
+                   0.195366814813, 0.195366814813, 0.156293451851,
+                   0.00529247667642, 8.27746364655e-09)
+verifyDensity(densityPoints, densityValues, lambda, tol)
+
+
+distributionPoints <- c(-1, 0, 1, 2, 3, 4, 5, 10, 20)
+distributionValues <- c(0,  0.0183156388887, 0.0915781944437, 0.238103305554,
+                        0.433470120367, 0.62883693518, 0.78513038703,
+                        0.99716023388, 0.999999998077)
+verifyDistribution(distributionPoints, distributionValues, lambda, tol)
+
+# normal approximation tests
+
+lambda <- 100
+verifyNormalApproximation(0.706281887248, lambda, 89.5, 110.5, tol)
+
+lambda <- 10000
+verifyNormalApproximation(0.820070051552, lambda, 9899.5, 10200.5, tol)
+
+displayDashes(WIDTH)
+
+
+
+ 
+ 

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 982950 $ $Date: 2010-08-06 15:29:01 +0200 (ven. 06 août 2010) $ -->
+<document>
+  <properties>
+    <title>User Guide - Overview</title>
+  </properties>
+  
+<body>
+
+<section name="Overview">
+
+<subsection name="0.1 About The User Guide" href="about">
+    <p>
+    This guide is intended to help programmers quickly find what they need to develop
+    solutions using Commons Math.  It also provides a supplement to the javadoc API documentation,
+    providing a little more explanation of the mathematical objects and functions included
+    in the package.    
+    </p>
+</subsection>
+
+<subsection name="0.2 What's in commons-math" href="summary">
+    <p>
+    Commons Math is made up of a small set of math/stat utilities addressing 
+    programming problems like the ones in the list below.  This list is not exhaustive, 
+    it's just meant to give a feel for the kinds of things that Commons Math provides.  
+    <ul>
+        <li>Computing means, variances and other summary statistics for a list of numbers</li>
+        <li>Fitting a line to a set of data points using linear regression</li>
+        <li>Finding a smooth curve that passes through a collection of points (interpolation)</li>
+        <li>Fitting a parametric model to a set of measurements using least-squares methods</li>
+        <li>Solving equations involving real-valued functions (i.e. root-finding)</li> 
+        <li>Solving systems of linear equations</li>
+        <li>Solving Ordinary Differential Equations</li>
+        <li>Minimizing multi-dimensional functions</li>
+        <li>Generating random numbers with more restrictions (e.g distribution, range) than what
+            is possible using the JDK</li>
+        <li>Generating random samples and/or datasets that are "like" the data in an input file</li>
+        <li>Performing statistical significance tests</li>
+        <li>Miscellaneous mathematical functions such as factorials, binomial
+            coefficients and "special functions" (e.g. gamma, beta functions)</li>
+    </ul></p> 
+    <p>
+    We are actively seeking ideas for additional components that fit into the 
+    <a href="../index.html#summary">Commons Math vision</a> of a set of lightweight, 
+    self-contained math/stat components useful for solving common programming problems.
+    Suggestions for new components or enhancements to existing functionality are always welcome! 
+    All feedback/suggestions for improvement should be sent to the 
+    <a href="http://commons.apache.org/mail-lists.html">commons-dev mailing list</a> with
+    [math] at the beginning of the subject line.
+    </p>
+</subsection>
+
+<subsection name="0.3 How commons-math is organized" href="organization">
+    <p>
+    Commons Math is divided into fourteen subpackages, based on functionality provided.
+    <ol>
+      <li><a href="stat.html">org.apache.commons.math.stat</a> - statistics, statistical tests</li>
+      <li><a href="analysis.html">org.apache.commons.math.analysis</a> - rootfinding, integration, interpolation, polynomials</li>
+      <li><a href="random.html">org.apache.commons.math.random</a> - random numbers, strings and data generation</li>
+      <li><a href="special.html">org.apache.commons.math.special</a> - special functions (Gamma, Beta) </li>
+      <li><a href="linear.html">org.apache.commons.math.linear</a> - matrices, solving linear systems </li>
+      <li><a href="utilities.html">org.apache.commons.math.util</a> - common math/stat functions extending java.lang.Math </li>
+      <li><a href="complex.html">org.apache.commons.math.complex</a> - complex numbers</li>
+      <li><a href="distribution.html">org.apache.commons.math.distribution</a> - probability distributions</li>
+      <li><a href="fraction.html">org.apache.commons.math.fraction</a> - rational numbers</li>
+      <li><a href="transform.html">org.apache.commons.math.transform</a> - transform methods (Fast Fourier)</li>
+      <li><a href="geometry.html">org.apache.commons.math.geometry</a> - 3D geometry (vectors and rotations)</li>
+      <li><a href="optimization.html">org.apache.commons.math.optimization</a> - function maximization or minimization</li>
+      <li><a href="ode.html">org.apache.commons.math.ode</a> - Ordinary Differential Equations integration</li>
+      <li><a href="genetics.html">org.apache.commons.math.genetics</a> - Genetic Algorithms</li>
+    </ol>
+    Package javadocs are <a href="../apidocs/index.html">here</a>
+    </p>
+</subsection>
+
+<subsection name="0.4 How interface contracts are specified in commons-math javadoc" href="contracts">
+  <p>
+    You should always read the javadoc class and method comments carefully when using 
+    Commons Math components in your programs.  The javadoc provides references to the algorithms
+    that are used, usage notes about limitations, performance, etc. as well as interface contracts.
+    Interface contracts are specified in terms of preconditions (what has to be true in order
+    for the method to return valid results), special values returned (e.g. Double.NaN) 
+    or exceptions that may be thrown if the preconditions are not met, and definitions for returned
+    values/objects or state changes.</p>
+  <p>
+    When the actual parameters provided to a method or the internal state of an object 
+    make a computation meaningless, an IllegalArgumentException or IllegalStateException may
+    be thrown. Exact conditions under which runtime exceptions (and any other exceptions) are 
+    thrown are specified in the javadoc method comments.  In some cases, to be consistent with 
+    the <a href="http://grouper.ieee.org/groups/754/">IEEE 754 standard</a> for floating point 
+    arithmetic and with java.lang.Math, Commons Math methods return Double.NaN values.
+    Conditions under which Double.NaN or other special values are returned are fully specified
+    in the javadoc method comments.
+  </p>
+  <p>
+    As of version 2.2, the policy for dealing with null references is as
+    follows: When an argument is unexpectedly null, a
+    <a href="../apidocs/org/apache/commons/math/exception/NullArgumentException.html">
+      NullArgumentException</a> is raised for signalling the
+    illegal argument. Note that this class does not inherit from the
+    standard <code>NullPointerException</code> but is a subclass of
+    <code>IllegalArgumentException</code>.
+    No <code>NullPointerException</code> should be propagated from within
+    Commons-Math.
+  </p>
+</subsection>
+
+<subsection name="0.5 Dependencies" href="dependencies">
+    <p>
+    Commons Math requires JDK 1.5+ and has no runtime dependencies.
+    </p>
+</subsection>
+
+<subsection name="0.6 License" href="license">
+    <p>
+    Commons Math is distributed under the terms of the Apache License, Version 2.0:
+    <a href="http://www.apache.org/licenses/LICENSE-2.0"/>.
+    </p>
+
+    <p>
+    This product includes software developed by the University of Chicago, as Operator
+    of Argonne National Laboratory. This corresponds to software translated from the lmder,
+    lmpar and qrsolv Fortran routines from the Minpack package and distributed under the
+    following disclaimer: <a href="http://www.netlib.org/minpack/disclaimer"/>.
+    </p>
+
+    <p>
+    This product includes software translated from the odex Fortran routine developed by
+    E. Hairer and G. Wanner and distributed under the following license:
+    <a href="http://www.unige.ch/~hairer/prog/licence.txt"/>.
+    </p>
+
+    <p>
+    This product includes software translated from some LAPACK Fortran routines and
+    distributed under the following license: <a href="http://www.netlib.org/lapack/LICENSE"/>.
+    </p>
+
+</subsection>
+
+</section>
+
+</body>
+</document>
+

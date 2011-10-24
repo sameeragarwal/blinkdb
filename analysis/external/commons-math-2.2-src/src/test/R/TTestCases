@@ -1,0 +1,106 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate TTest tests in
+# org.apache.commons.math.inference.TTestImpl
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# t.test(x, y = NULL, alternative = c("two.sided", "less", "greater"),
+# mu = 0, paired = FALSE, var.equal = FALSE, ... )
+# Arguments
+#   x  a numeric vector of data values.
+#   y  an optional numeric vector data values.
+#   alternative 	a character string specifying the alternative hypothesis, 
+#     must be one of "two.sided" (default), "greater" or "less". You can specify
+#     just the initial letter.
+#   mu  a number indicating the true value of the mean (or difference in means
+#      if you are performing a two sample test).
+#   paired 	a logical indicating whether you want a paired t-test.
+#   var.equal 	a logical variable indicating whether to treat the two
+#     variances as being equal. 
+#     If TRUE then the pooled variance is used to estimate the variance,
+#     otherwise the Welch (or Satterthwaite) approximation to the degrees
+#     of freedom is used.
+#------------------------------------------------------------------------------
+tol <- 1E-10                       # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+#------------------------------------------------------------------------------
+source("testFunctions")           # utility test functions
+#------------------------------------------------------------------------------
+# Verification function
+#
+verifyTest <- function(out,expectedP, expectedT,
+  tol) {
+  if (assertEquals(expectedP, out$p.value, tol,
+     "Ttest p value")) {
+     displayPadded(output, SUCCEEDED, 80)
+  } else {
+     displayPadded(output, FAILED, 80)
+  }  
+  output <- c("t test test statistic") 
+  if (assertEquals(expectedT, out$statistic, tol,
+      "Ttest t statistic")) {
+      displayPadded(output, SUCCEEDED, 80)
+  } else {
+      displayPadded(output, FAILED, 80)
+  }          
+  displayDashes(WIDTH)
+}
+
+cat("One-sample, two-sided TTest test cases \n")
+sample1 <- c(93.0, 103.0, 95.0, 101.0, 91.0, 105.0, 96.0, 94.0, 101.0,  88.0,
+                      98.0, 94.0, 101.0, 92.0, 95.0)
+out <- t.test(sample1, mu=100.0)
+expectedP <-  0.0136390585873
+expectedT<- -2.81976445346
+verifyTest(out,expectedP, expectedT, tol) 
+
+cat("One-sample, one-sided TTest test cases \n")
+sample1 <- c(2, 0, 6, 6, 3, 3, 2, 3, -6, 6, 6, 6, 3, 0, 1, 1, 0, 2, 3, 3)
+out <- t.test(sample1, mu=0.0, alternative="g")
+expectedP <-  0.000521637019637
+expectedT<- 3.86485535541
+verifyTest(out,expectedP, expectedT, tol) 
+
+cat("Homoscedastic TTest test cases \n")
+sample1 <- c(2, 4, 6, 8, 10, 97)
+sample2 <- c(4, 6, 8, 10, 16)
+out <- t.test(sample1,sample2,var.equal = TRUE)
+expectedP <-  0.4833963785
+expectedT<- 0.73096310086
+verifyTest(out,expectedP, expectedT, tol)
+ 
+cat("Heteroscedastic TTest test cases \n")
+sample1 <- c(7, -4, 18, 17, -3, -5, 1, 10, 11, -2)
+sample2 <- c(-1, 12, -1, -3, 3, -5, 5, 2, -11, -1, -3) 
+out <- t.test(sample1,sample2,var.equal = FALSE)
+expectedP <-  0.128839369622
+expectedT<- 1.60371728768
+verifyTest(out,expectedP, expectedT, tol)
+
+cat("Small sample, heteroscedastic test cases \n")
+sample1 <- c(1,3)
+sample2 <- c(4,5)
+out <- t.test(sample1,sample2,var.equal = FALSE)
+expectedP <-  0.198727388935
+expectedT<- -2.2360679775
+verifyTest(out,expectedP, expectedT, tol)
+ 

@@ -14,8 +14,6 @@ public class BootstrapQuantile {
         cummulativeTime = new long[bootstraps];
         sampleQuantiles = new double[bootstraps];
         Mean meanTimePerBootstrap = new Mean();
-        double reduction = ((double)size) / ((double)sample.length);
-        
         for (int i = 0; i < bootstraps; i++) {
             long start = System.nanoTime();
             subsample = BootstrapSample.GenerateSampleWithReplacement(sample, size);

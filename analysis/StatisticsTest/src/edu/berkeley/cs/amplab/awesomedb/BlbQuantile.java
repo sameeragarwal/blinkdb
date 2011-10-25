@@ -1,20 +1,24 @@
 package edu.berkeley.cs.amplab.awesomedb;
-
 import org.apache.commons.math.stat.descriptive.moment.Mean;
-import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
-import org.apache.commons.math.stat.descriptive.moment.Variance;
 import org.apache.commons.math.util.FastMath;
 
-public class BlbMean {
-    double[] bagMeans;
-    double meanMean;
+
+
+public class BlbQuantile {
+    double[] bagQuantiles;
+    double meanQuantile;
     long totalTime;
     Mean perbootstrapTime;
     Mean perbagTime;
-    public BlbMean(double[] sample, double bagExp, int numberOfBags, int numberOfBootstraps) {
+    public BlbQuantile(double[] sample, 
+            double quantile,
+            double bagExp,
+            int numberOfBags, 
+            int numberOfBootstraps) {
         perbootstrapTime = new Mean();
         perbagTime = new Mean();
-        calculateBlbMean(sample, 
+        calculateBlbQuantile(sample, 
+                quantile,
                 bagExp, 
                 numberOfBags, 
                 numberOfBootstraps, 
@@ -22,8 +26,8 @@ public class BlbMean {
                 perbagTime);
     }
     
-    public double getMean() {
-        return meanMean;
+    public double getQuantile() {
+        return meanQuantile;
     }
     
     public double getTotalTime() {
@@ -38,13 +42,14 @@ public class BlbMean {
         return perbagTime.getResult();
     }
     
-    private void calculateBlbMean(double[] sample, 
+    private void calculateBlbQuantile(double[] sample, 
+            double quantile,
             double bagExp,
             final int numberOfBags,
             final int numberOfBootstraps, 
             Mean perbootstrapTime, 
             Mean perbagTime) {
-        bagMeans = new double[numberOfBags];
+        bagQuantiles = new double[numberOfBags];
         int bag_size = (int)FastMath.ceil(FastMath.pow(sample.length, bagExp));
         int[] index = new int[sample.length];
         for (int ii = 0; ii < sample.length; ii++) {
@@ -52,23 +57,27 @@ public class BlbMean {
         }
         int[] origIndex = index.clone();
         long bootstrapTime = 0;
-        Mean actualMean = new Mean();
+        Mean actualQuantile = new Mean();
         for (int ii = 0; ii < numberOfBags; ii ++) {
             SamplingUtilities.KnuthShuffle(index);
             double[] sampleBag = new double[bag_size];
             for (int jj = 0; jj < bag_size; jj++) {
                 sampleBag[jj] = sample[index[jj]];
             }
-            BootstrapMean mean = new BootstrapMean(sampleBag, numberOfBootstraps, sample.length);
-            bagMeans[ii] = mean.Mean();
-            actualMean.increment(bagMeans[ii]);
-            perbootstrapTime.increment(mean.getMeanTime());
-            bootstrapTime += mean.getTimes()[mean.getTimes().length - 1];
-            perbagTime.increment(mean.getTimes()[mean.getTimes().length - 1]);
+            BootstrapQuantile bootstrapQuantile= new BootstrapQuantile(
+                    sampleBag, 
+                    quantile, 
+                    numberOfBootstraps, 
+                    sample.length);
+            bagQuantiles[ii] = bootstrapQuantile.Quantile();
+            actualQuantile.increment(bagQuantiles[ii]);
+            perbootstrapTime.increment(bootstrapQuantile.getMeanTime());
+            bootstrapTime += bootstrapQuantile.getTimes()[bootstrapQuantile.getTimes().length - 1];
+            perbagTime.increment(bootstrapQuantile.getTimes()[bootstrapQuantile.getTimes().length - 1]);
             index = origIndex.clone();
         }
         
-        meanMean = actualMean.getResult();
+        meanQuantile = actualQuantile.getResult();
         
         totalTime = bootstrapTime;
     }

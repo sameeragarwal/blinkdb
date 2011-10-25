@@ -1,0 +1,193 @@
+From 1a3960eda01917a281de248a74f4db1a7fd01645 Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Wed, 16 Feb 2011 15:52:45 -0800
+Subject: [PATCH 03/51] CLOUDERA-BUILD. Bumping up version to 0.7.0, making sure we don't have to change every POM every time in the future.
+
+---
+ cloudera/maven-packaging/hive-anttasks/pom.xml  |    2 +-
+ cloudera/maven-packaging/hive-cli/pom.xml       |    2 +-
+ cloudera/maven-packaging/hive-common/pom.xml    |    7 ++++++-
+ cloudera/maven-packaging/hive-contrib/pom.xml   |    2 +-
+ cloudera/maven-packaging/hive-exec/pom.xml      |    2 +-
+ cloudera/maven-packaging/hive-hwi/pom.xml       |    2 +-
+ cloudera/maven-packaging/hive-jdbc/pom.xml      |    2 +-
+ cloudera/maven-packaging/hive-metastore/pom.xml |    2 +-
+ cloudera/maven-packaging/hive-serde/pom.xml     |    2 +-
+ cloudera/maven-packaging/hive-service/pom.xml   |    2 +-
+ cloudera/maven-packaging/hive-shims/pom.xml     |    2 +-
+ cloudera/maven-packaging/pom.xml                |    4 ++++
+ 12 files changed, 20 insertions(+), 11 deletions(-)
+
+diff --git a/cloudera/maven-packaging/hive-anttasks/pom.xml b/cloudera/maven-packaging/hive-anttasks/pom.xml
+index 3deee06..7b713ae 100644
+--- a/cloudera/maven-packaging/hive-anttasks/pom.xml
++++ b/cloudera/maven-packaging/hive-anttasks/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-anttasks</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive anttasks</name>
+diff --git a/cloudera/maven-packaging/hive-cli/pom.xml b/cloudera/maven-packaging/hive-cli/pom.xml
+index f3db397..513f415 100644
+--- a/cloudera/maven-packaging/hive-cli/pom.xml
++++ b/cloudera/maven-packaging/hive-cli/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-cli</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive cli</name>
+diff --git a/cloudera/maven-packaging/hive-common/pom.xml b/cloudera/maven-packaging/hive-common/pom.xml
+index 60f3060..81074d5 100644
+--- a/cloudera/maven-packaging/hive-common/pom.xml
++++ b/cloudera/maven-packaging/hive-common/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-common</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive common</name>
+@@ -144,6 +144,11 @@
+       <artifactId>velocity</artifactId>
+     </dependency>
+ 
++    <dependency>
++      <groupId>com.google.guava</groupId>
++      <artifactId>guava</artifactId>
++    </dependency>
++
+   </dependencies>
+ 
+   <build>
+diff --git a/cloudera/maven-packaging/hive-contrib/pom.xml b/cloudera/maven-packaging/hive-contrib/pom.xml
+index ac32d6f..0e8fdad 100644
+--- a/cloudera/maven-packaging/hive-contrib/pom.xml
++++ b/cloudera/maven-packaging/hive-contrib/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-contrib</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive contrib</name>
+diff --git a/cloudera/maven-packaging/hive-exec/pom.xml b/cloudera/maven-packaging/hive-exec/pom.xml
+index c32fd98..8cc4405 100644
+--- a/cloudera/maven-packaging/hive-exec/pom.xml
++++ b/cloudera/maven-packaging/hive-exec/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-exec</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive exec</name>
+diff --git a/cloudera/maven-packaging/hive-hwi/pom.xml b/cloudera/maven-packaging/hive-hwi/pom.xml
+index cde151c..b831f6c 100644
+--- a/cloudera/maven-packaging/hive-hwi/pom.xml
++++ b/cloudera/maven-packaging/hive-hwi/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-hwi</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive hwi</name>
+diff --git a/cloudera/maven-packaging/hive-jdbc/pom.xml b/cloudera/maven-packaging/hive-jdbc/pom.xml
+index ed06ad5..ebfd7e8 100644
+--- a/cloudera/maven-packaging/hive-jdbc/pom.xml
++++ b/cloudera/maven-packaging/hive-jdbc/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-jdbc</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive jdbc</name>
+diff --git a/cloudera/maven-packaging/hive-metastore/pom.xml b/cloudera/maven-packaging/hive-metastore/pom.xml
+index a843f96..5ec02b3 100644
+--- a/cloudera/maven-packaging/hive-metastore/pom.xml
++++ b/cloudera/maven-packaging/hive-metastore/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-metastore</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive metastore</name>
+diff --git a/cloudera/maven-packaging/hive-serde/pom.xml b/cloudera/maven-packaging/hive-serde/pom.xml
+index 489f7c3..dc7ba7b 100644
+--- a/cloudera/maven-packaging/hive-serde/pom.xml
++++ b/cloudera/maven-packaging/hive-serde/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-serde</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive serde</name>
+diff --git a/cloudera/maven-packaging/hive-service/pom.xml b/cloudera/maven-packaging/hive-service/pom.xml
+index 371955c..fd03316 100644
+--- a/cloudera/maven-packaging/hive-service/pom.xml
++++ b/cloudera/maven-packaging/hive-service/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-service</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive service</name>
+diff --git a/cloudera/maven-packaging/hive-shims/pom.xml b/cloudera/maven-packaging/hive-shims/pom.xml
+index a730211..2ae516b 100644
+--- a/cloudera/maven-packaging/hive-shims/pom.xml
++++ b/cloudera/maven-packaging/hive-shims/pom.xml
+@@ -29,7 +29,7 @@
+ 
+   <groupId>org.apache.hadoop.hive</groupId>
+   <artifactId>hive-shims</artifactId>
+-  <version>0.6.0-CDH3B4-SNAPSHOT</version>
++  <version>${cdh.hive.version}</version>
+   <packaging>jar</packaging>
+ 
+   <name>Hive shims</name>
+diff --git a/cloudera/maven-packaging/pom.xml b/cloudera/maven-packaging/pom.xml
+index ba2e82b..24e3b53 100644
+--- a/cloudera/maven-packaging/pom.xml
++++ b/cloudera/maven-packaging/pom.xml
+@@ -31,6 +31,10 @@
+ 
+   <name>CDH Hive root</name>
+ 
++  <properties>
++    <cdh.hive.version>0.7.0-CDH3B4-SNAPSHOT</cdh.hive.version>
++  </properties>
++
+   <modules>
+     <module>../../cloudera-pom.xml</module>
+     <module>hive-anttasks</module>
+-- 
+1.7.0.4
+

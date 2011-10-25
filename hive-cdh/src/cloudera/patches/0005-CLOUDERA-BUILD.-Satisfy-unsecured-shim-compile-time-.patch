@@ -1,0 +1,40 @@
+From 61b89612a9382f0830b1c7c0f06defa8ac6a4149 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Wed, 16 Feb 2011 16:57:09 -0800
+Subject: [PATCH 05/51] CLOUDERA-BUILD. Satisfy unsecured shim compile-time deps by pulling down 0.20.1
+
+---
+ shims/build.xml |    2 +-
+ shims/ivy.xml   |    3 +++
+ 2 files changed, 4 insertions(+), 1 deletions(-)
+
+diff --git a/shims/build.xml b/shims/build.xml
+index 6caa6ed..22afcee 100644
+--- a/shims/build.xml
++++ b/shims/build.xml
+@@ -60,7 +60,7 @@ to call at top-level: ant deploy-contrib compile-core-test
+ 
+   <target name="compile" depends="init">
+     <antcall target="build_shims" inheritRefs="false" inheritAll="false">
+-      <param name="hadoop.version.ant-internal" value="${hadoop.version}" />
++      <param name="hadoop.version.ant-internal" value="0.20.1" />
+     </antcall>
+     <antcall target="build_shims" inheritRefs="false" inheritAll="false">
+       <param name="hadoop.version.ant-internal" value="${hadoop.version}" />
+diff --git a/shims/ivy.xml b/shims/ivy.xml
+index b758746..51a1d9f 100644
+--- a/shims/ivy.xml
++++ b/shims/ivy.xml
+@@ -24,6 +24,9 @@
+       </description>
+     </info>
+     <dependencies>
++        <dependency org="hadoop" name="core" rev="0.20.1">
++          <artifact name="hadoop" type="source" ext="tar.gz"/>
++        </dependency>
+         <dependency org="${hadoop.dep.org}" name="${hadoop.dep.name}" rev="${hadoop.version}">
+           <artifact name="${hadoop.dep.artifact}" type="source" ext="tar.gz"/>
+         </dependency> 
+-- 
+1.7.0.4
+

@@ -1,0 +1,26 @@
+From db87fc636ba79c5b8ab48dd54676893eeca68684 Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Wed, 16 Feb 2011 18:36:54 -0800
+Subject: [PATCH 07/51] CLOUDERA-BUILD. Another compile attempt.
+
+---
+ shims/build.xml |    3 ---
+ 1 files changed, 0 insertions(+), 3 deletions(-)
+
+diff --git a/shims/build.xml b/shims/build.xml
+index 22afcee..54fad42 100644
+--- a/shims/build.xml
++++ b/shims/build.xml
+@@ -115,9 +115,6 @@ to call at top-level: ant deploy-contrib compile-core-test
+     <antcall target="compile_secure_test" inheritRefs="false" inheritAll="false">
+       <param name="hadoop.version.ant-internal" value="${hadoop.security.version}" />
+       <param name="hadoop.version.ant-internal.prefix" value="0.20S" />
+-      <param name="hadoop.dep.org" value="hadoop" />
+-      <param name="hadoop.dep.name" value="core" />
+-      <param name="hadoop.dep.articact" value="hadoop" />
+     </antcall>
+   </target>
+ </project>
+-- 
+1.7.0.4
+

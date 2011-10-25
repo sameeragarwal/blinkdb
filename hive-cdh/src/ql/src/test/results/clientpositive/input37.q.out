@@ -1,0 +1,34 @@
+PREHOOK: query: create table documents(contents string) stored as textfile
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table documents(contents string) stored as textfile
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@documents
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/docurl.txt' INTO TABLE documents
+PREHOOK: type: LOAD
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/docurl.txt' INTO TABLE documents
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@documents
+PREHOOK: query: select url, count(1) 
+FROM
+(
+  FROM documents
+  MAP documents.contents
+  USING 'java -cp ../build/ql/test/classes org.apache.hadoop.hive.scripts.extracturl' AS (url, count)
+) subq
+group by url
+PREHOOK: type: QUERY
+PREHOOK: Input: default@documents
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-28-09_514_9061274612297235392/10000
+POSTHOOK: query: select url, count(1) 
+FROM
+(
+  FROM documents
+  MAP documents.contents
+  USING 'java -cp ../build/ql/test/classes org.apache.hadoop.hive.scripts.extracturl' AS (url, count)
+) subq
+group by url
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@documents
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-28-09_514_9061274612297235392/10000
+1uauniajqtunlsvadmxhlxvngxpqjuzbpzvdiwmzphmbaicduzkgxgtdeiunduosu.html	4
+4uzsbtwvdypfitqfqdjosynqp.html	4

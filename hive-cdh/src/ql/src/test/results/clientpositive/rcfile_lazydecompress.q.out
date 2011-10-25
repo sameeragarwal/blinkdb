@@ -1,0 +1,123 @@
+PREHOOK: query: CREATE table rcfileTableLazyDecompress (key STRING, value STRING) STORED AS RCFile
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE table rcfileTableLazyDecompress (key STRING, value STRING) STORED AS RCFile
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@rcfileTableLazyDecompress
+PREHOOK: query: FROM src
+INSERT OVERWRITE TABLE rcfileTableLazyDecompress SELECT src.key, src.value LIMIT 10
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src
+PREHOOK: Output: default@rcfiletablelazydecompress
+POSTHOOK: query: FROM src
+INSERT OVERWRITE TABLE rcfileTableLazyDecompress SELECT src.key, src.value LIMIT 10
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src
+POSTHOOK: Output: default@rcfiletablelazydecompress
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+PREHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-26_308_5035766417306203353/10000
+POSTHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-26_308_5035766417306203353/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+311	val_311
+409	val_409
+255	val_255
+278	val_278
+484	val_484
+PREHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238 and key < 400
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-28_826_2664555248442666518/10000
+POSTHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238 and key < 400
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-28_826_2664555248442666518/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+311	val_311
+255	val_255
+278	val_278
+PREHOOK: query: SELECT key, count(1) FROM rcfileTableLazyDecompress where key > 238 group by key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-31_347_4980542755724589562/10000
+POSTHOOK: query: SELECT key, count(1) FROM rcfileTableLazyDecompress where key > 238 group by key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-31_347_4980542755724589562/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+255	1
+278	1
+311	1
+409	1
+484	1
+PREHOOK: query: FROM src
+INSERT OVERWRITE TABLE rcfileTableLazyDecompress SELECT src.key, src.value LIMIT 10
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src
+PREHOOK: Output: default@rcfiletablelazydecompress
+POSTHOOK: query: FROM src
+INSERT OVERWRITE TABLE rcfileTableLazyDecompress SELECT src.key, src.value LIMIT 10
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src
+POSTHOOK: Output: default@rcfiletablelazydecompress
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+PREHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-36_558_7043959496739147343/10000
+POSTHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-36_558_7043959496739147343/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+311	val_311
+409	val_409
+255	val_255
+278	val_278
+484	val_484
+PREHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238 and key < 400
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-39_022_510504722430321903/10000
+POSTHOOK: query: SELECT key, value FROM rcfileTableLazyDecompress where key > 238 and key < 400
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-39_022_510504722430321903/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+311	val_311
+255	val_255
+278	val_278
+PREHOOK: query: SELECT key, count(1) FROM rcfileTableLazyDecompress where key > 238 group by key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@rcfiletablelazydecompress
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-41_564_865533805813240026/10000
+POSTHOOK: query: SELECT key, count(1) FROM rcfileTableLazyDecompress where key > 238 group by key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@rcfiletablelazydecompress
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-48-41_564_865533805813240026/10000
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.key SIMPLE [(src)src.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+POSTHOOK: Lineage: rcfiletablelazydecompress.value SIMPLE [(src)src.FieldSchema(name:value, type:string, comment:default), ]
+255	1
+278	1
+311	1
+409	1
+484	1

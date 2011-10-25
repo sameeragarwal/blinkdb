@@ -1,0 +1,37 @@
+PREHOOK: query: -- test for internationalization
+-- kv4.txt contains the utf-8 character 0xE982B5E993AE which we are verifying later on
+CREATE TABLE INPUTDDL5(name STRING) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: -- test for internationalization
+-- kv4.txt contains the utf-8 character 0xE982B5E993AE which we are verifying later on
+CREATE TABLE INPUTDDL5(name STRING) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@INPUTDDL5
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv4.txt' INTO TABLE INPUTDDL5
+PREHOOK: type: LOAD
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/kv4.txt' INTO TABLE INPUTDDL5
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@inputddl5
+PREHOOK: query: DESCRIBE INPUTDDL5
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE INPUTDDL5
+POSTHOOK: type: DESCTABLE
+name	string	
+PREHOOK: query: SELECT INPUTDDL5.name from INPUTDDL5
+PREHOOK: type: QUERY
+PREHOOK: Input: default@inputddl5
+PREHOOK: Output: file:/tmp/thiruvel/hive_2010-10-11_05-10-24_142_4717365799469321057/-mr-10000
+POSTHOOK: query: SELECT INPUTDDL5.name from INPUTDDL5
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@inputddl5
+POSTHOOK: Output: file:/tmp/thiruvel/hive_2010-10-11_05-10-24_142_4717365799469321057/-mr-10000
+邵铮
+PREHOOK: query: SELECT count(1) FROM INPUTDDL5 WHERE INPUTDDL5.name = _UTF-8 0xE982B5E993AE
+PREHOOK: type: QUERY
+PREHOOK: Input: default@inputddl5
+PREHOOK: Output: file:/tmp/thiruvel/hive_2010-10-11_05-10-26_576_1899173500377396904/-mr-10000
+POSTHOOK: query: SELECT count(1) FROM INPUTDDL5 WHERE INPUTDDL5.name = _UTF-8 0xE982B5E993AE
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@inputddl5
+POSTHOOK: Output: file:/tmp/thiruvel/hive_2010-10-11_05-10-26_576_1899173500377396904/-mr-10000
+1

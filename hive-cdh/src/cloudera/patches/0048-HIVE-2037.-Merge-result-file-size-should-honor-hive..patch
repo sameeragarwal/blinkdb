@@ -1,0 +1,161 @@
+From 2ba5c2afa046a89c47885138a236c99d523ed26b Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Wed, 3 Aug 2011 17:52:23 -0700
+Subject: [PATCH 48/51] HIVE-2037. Merge result file size should honor hive.merge.size.per.task
+
+Reason: Defines configuration properties required by CombineHiveInputFormat.
+Author: Ning Zhang
+Ref: CDH-3443
+---
+ .../java/org/apache/hadoop/hive/conf/HiveConf.java |    3 ++
+ .../org/apache/hadoop/hive/ql/exec/ExecDriver.java |   14 ++++++++
+ .../ql/plan/ConditionalResolverMergeFiles.java     |    6 +++-
+ .../org/apache/hadoop/hive/ql/plan/MapredWork.java |   34 ++++++++++++++++++--
+ 4 files changed, 53 insertions(+), 4 deletions(-)
+
+diff --git a/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java b/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+index daea038..e400b3c 100644
+--- a/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
++++ b/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+@@ -315,7 +315,10 @@ public class HiveConf extends Configuration {
+     HIVESKEWJOINKEY("hive.skewjoin.key", 1000000),
+     HIVESKEWJOINMAPJOINNUMMAPTASK("hive.skewjoin.mapjoin.map.tasks", 10000),
+     HIVESKEWJOINMAPJOINMINSPLIT("hive.skewjoin.mapjoin.min.split", 33554432L), //32M
++    MAPREDMAXSPLITSIZE("mapred.max.split.size", 256000000L),
+     MAPREDMINSPLITSIZE("mapred.min.split.size", 1L),
++    MAPREDMINSPLITSIZEPERNODE("mapred.min.split.size.per.rack", 1L),
++    MAPREDMINSPLITSIZEPERRACK("mapred.min.split.size.per.node", 1L),
+     HIVEMERGEMAPONLY("hive.mergejob.maponly", true),
+ 
+     HIVESENDHEARTBEAT("hive.heartbeat.interval", 1000),
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/exec/ExecDriver.java b/ql/src/java/org/apache/hadoop/hive/ql/exec/ExecDriver.java
+index c0742cc..3e42cb6 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/exec/ExecDriver.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/exec/ExecDriver.java
+@@ -519,9 +519,23 @@ public class ExecDriver extends Task<MapredWork> implements Serializable {
+     if (work.getNumMapTasks() != null) {
+       job.setNumMapTasks(work.getNumMapTasks().intValue());
+     }
++
++    if (work.getMaxSplitSize() != null) {
++      HiveConf.setLongVar(job, HiveConf.ConfVars.MAPREDMAXSPLITSIZE, work.getMaxSplitSize().longValue());
++    }
++
+     if (work.getMinSplitSize() != null) {
+       HiveConf.setLongVar(job, HiveConf.ConfVars.MAPREDMINSPLITSIZE, work.getMinSplitSize().longValue());
+     }
++
++    if (work.getMinSplitSizePerNode() != null) {
++      HiveConf.setLongVar(job, HiveConf.ConfVars.MAPREDMINSPLITSIZEPERNODE, work.getMinSplitSizePerNode().longValue());
++    }
++
++    if (work.getMinSplitSizePerRack() != null) {
++      HiveConf.setLongVar(job, HiveConf.ConfVars.MAPREDMINSPLITSIZEPERRACK, work.getMinSplitSizePerRack().longValue());
++    }
++
+     job.setNumReduceTasks(work.getNumReduceTasks().intValue());
+     job.setReducerClass(ExecReducer.class);
+ 
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/plan/ConditionalResolverMergeFiles.java b/ql/src/java/org/apache/hadoop/hive/ql/plan/ConditionalResolverMergeFiles.java
+index 4a847da..5751956 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/plan/ConditionalResolverMergeFiles.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/plan/ConditionalResolverMergeFiles.java
+@@ -117,7 +117,7 @@ public class ConditionalResolverMergeFiles implements ConditionalResolver,
+     long trgtSize = conf.getLongVar(HiveConf.ConfVars.HIVEMERGEMAPFILESSIZE);
+     long avgConditionSize = conf
+         .getLongVar(HiveConf.ConfVars.HIVEMERGEMAPFILESAVGSIZE);
+-    trgtSize = trgtSize > avgConditionSize ? trgtSize : avgConditionSize;
++    trgtSize = Math.max(trgtSize, avgConditionSize);
+ 
+     Task<? extends Serializable> mvTask = ctx.getListTasks().get(0);
+     Task<? extends Serializable> mrTask = ctx.getListTasks().get(1);
+@@ -255,8 +255,12 @@ public class ConditionalResolverMergeFiles implements ConditionalResolver,
+       reducers = Math.min(maxReducers, reducers);
+       work.setNumReduceTasks(reducers);
+     }
++    work.setMaxSplitSize(targetSize);
+     work.setMinSplitSize(targetSize);
++    work.setMinSplitSizePerNode(targetSize);
++    work.setMinSplitSizePerRack(targetSize);
+   }
++
+   /**
+    * Whether to merge files inside directory given the threshold of the average file size.
+    *
+diff --git a/ql/src/java/org/apache/hadoop/hive/ql/plan/MapredWork.java b/ql/src/java/org/apache/hadoop/hive/ql/plan/MapredWork.java
+index 74a3ca1..5b4649f 100644
+--- a/ql/src/java/org/apache/hadoop/hive/ql/plan/MapredWork.java
++++ b/ql/src/java/org/apache/hadoop/hive/ql/plan/MapredWork.java
+@@ -29,9 +29,6 @@ import org.apache.hadoop.hive.ql.exec.Operator;
+ import org.apache.hadoop.hive.ql.exec.Utilities;
+ import org.apache.hadoop.hive.ql.parse.OpParseContext;
+ import org.apache.hadoop.hive.ql.parse.QBJoinTree;
+-import org.apache.hadoop.hive.conf.HiveConf;
+-import org.apache.hadoop.hive.ql.metadata.Hive;
+-import org.apache.hadoop.hive.ql.metadata.HiveException;
+ 
+ /**
+  * MapredWork.
+@@ -63,7 +60,10 @@ public class MapredWork implements Serializable {
+ 
+   private Integer numReduceTasks;
+   private Integer numMapTasks;
++  private Long maxSplitSize;
+   private Long minSplitSize;
++  private Long minSplitSizePerNode;
++  private Long minSplitSizePerRack;
+ 
+   private boolean needsTagging;
+   private boolean hadoopSupportsSplittable;
+@@ -104,6 +104,10 @@ public class MapredWork implements Serializable {
+     this.mapLocalWork = mapLocalWork;
+     aliasToPartnInfo = new LinkedHashMap<String, PartitionDesc>();
+     this.hadoopSupportsSplittable = hadoopSupportsSplittable;
++    maxSplitSize = null;
++    minSplitSize = null;
++    minSplitSizePerNode = null;
++    minSplitSizePerRack = null;
+   }
+ 
+   public String getCommand() {
+@@ -320,6 +324,14 @@ public class MapredWork implements Serializable {
+     this.hadoopSupportsSplittable = hadoopSupportsSplittable;
+   }
+ 
++  public Long getMaxSplitSize() {
++    return maxSplitSize;
++  }
++
++  public void setMaxSplitSize(Long maxSplitSize) {
++    this.maxSplitSize = maxSplitSize;
++  }
++
+   public Long getMinSplitSize() {
+     return minSplitSize;
+   }
+@@ -328,6 +340,22 @@ public class MapredWork implements Serializable {
+     this.minSplitSize = minSplitSize;
+   }
+ 
++  public Long getMinSplitSizePerNode() {
++    return minSplitSizePerNode;
++  }
++
++  public void setMinSplitSizePerNode(Long minSplitSizePerNode) {
++    this.minSplitSizePerNode = minSplitSizePerNode;
++  }
++
++  public Long getMinSplitSizePerRack() {
++    return minSplitSizePerRack;
++  }
++
++  public void setMinSplitSizePerRack(Long minSplitSizePerRack) {
++    this.minSplitSizePerRack = minSplitSizePerRack;
++  }
++
+   public String getInputformat() {
+     return inputformat;
+   }
+-- 
+1.7.0.4
+

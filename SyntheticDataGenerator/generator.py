@@ -135,7 +135,7 @@ class Generator():
         [city, state, zip_code, provider, ip_address] = Database.get_city_details(self.db, city_id)
         record.state = state
         record.city = city
-        record.zip = zip_code
+        record.zip_code = zip_code
         record.provider = provider
         record.ip_address = ip_address
         

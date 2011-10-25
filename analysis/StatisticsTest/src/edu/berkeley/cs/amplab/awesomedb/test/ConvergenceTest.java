@@ -47,12 +47,12 @@ public class ConvergenceTest {
         return sample;
     }
     public static void main(String[] args) throws MathException, IOException {
-        final int NUMBER_OF_BOOTSTRAPS = 150; // Picked at random
         final int SMOOTHING = 100;
         final int POPULATION_SIZE = 100000;
         final int MEAN_ESTIMATES = 2000;
         final int START_SAMPLE_SIZE = 200;
         final int END_SAMPLE_SIZE = 10000;
+        final int NUMBER_OF_BOOTSTRAPS = 150; // Picked at random
         final int NUMBER_OF_BAGS = 200;
         final int NUMBER_OF_BLB_BOOTSTRAPS = 50;
         double[] baseSample = generateSample(POPULATION_SIZE);

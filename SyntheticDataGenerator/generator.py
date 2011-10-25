@@ -29,6 +29,7 @@ class Generator():
         # For the time being, we assume that any session time would be in a 
         # 1 year period starting from 1/1/2010
         self.global_session_begin_time = mktime(datetime(2010, 1, 1, 0, 0, 0, 0).timetuple())
+        self.last_session_start_time = self.global_session_begin_time + math.floor(random.random()*31556926)
         
         return
     
@@ -114,13 +115,15 @@ class Generator():
         record = Record()
         
         # Session information. A few assumptions here: 
-        #    - Session start time is randomly picked from an interval between
+        #    - Global session start time is randomly picked from an interval between
         #      1/1/2010 and 1/1/2011.
+        #    - Time between two sessions is no more than 100ms.
         #    - All sessions last between 1 second and 1 hour (60*60). 
         #    - Sessions are in one of 4 states (state_0, state_1, state_2, state_3)
         # TODO: Session state might depend on error code.
         record.session_id = session_id
-        record.session_start = self.global_session_begin_time + math.floor(random.random()*31556926)
+        record.session_start = self.last_session_start_time + random.random()*0.1 
+        self.last_session_start_time = record.session_start
         record.session_end = record.session_start + random.randint(1, 60*60)
         record.session_state = random.randint(0, 3) 
         record.error_code = self.error_codes_rv.rvs(size=1)[0]

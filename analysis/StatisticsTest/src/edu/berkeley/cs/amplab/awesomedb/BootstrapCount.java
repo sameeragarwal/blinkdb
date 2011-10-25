@@ -3,32 +3,32 @@ package edu.berkeley.cs.amplab.awesomedb;
 import org.apache.commons.math.stat.descriptive.moment.Mean;
 import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
 
-public class BootstrapSum {
-    double[] sampleSums;
+public class BootstrapCount {
+    double[] sampleCounts;
     long[] cummulativeTime;
-    double meanSum;
+    double meanCount;
     double stdev;
     double meanTime;
-    public BootstrapSum(double[] sample, double samplingRate, int bootstraps, int size) {
+    public BootstrapCount(double[] sample, double samplingRate, double target, int bootstraps, int size) {
         double[] subsample;
         cummulativeTime = new long[bootstraps];
-        sampleSums = new double[bootstraps];
+        sampleCounts = new double[bootstraps];
         Mean meanTimePerBootstrap = new Mean();
         for (int i = 0; i < bootstraps; i++) {
             long start = System.nanoTime();
             subsample = BootstrapSample.GenerateSampleWithReplacement(sample, size);
-            sampleSums[i] = StatisticalSum.Sum(subsample, samplingRate);
+            sampleCounts[i] = StatisticalCount.Count(subsample, samplingRate, target);
             long time = Math.max(System.nanoTime() - start, 0);
             cummulativeTime[i] = time;
             meanTimePerBootstrap.increment(time);
         }
-        meanSum = StatisticalMean.Mean(sampleSums);
+        meanCount = StatisticalMean.Mean(sampleCounts);
         meanTime = meanTimePerBootstrap.getResult();
         StandardDeviation dev = new StandardDeviation(false);
-        stdev = dev.evaluate(sampleSums);
+        stdev = dev.evaluate(sampleCounts);
     }
-    public BootstrapSum(double[] sample, double samplingRate, int bootstraps) {
-        this(sample, samplingRate, bootstraps, sample.length);
+    public BootstrapCount(double[] sample, double samplingRate, double target, int bootstraps) {
+        this(sample, samplingRate, target, bootstraps, sample.length);
     }
     
     public double getMeanTime() {
@@ -39,12 +39,12 @@ public class BootstrapSum {
         return cummulativeTime;
     }
 
-    public double[] getSums() {
-        return sampleSums;
+    public double[] getQuantiles() {
+        return sampleCounts;
     }
 
-    public double Sum() {
-        return meanSum;
+    public double Count() {
+        return meanCount;
     }
 
     public double StDev() {

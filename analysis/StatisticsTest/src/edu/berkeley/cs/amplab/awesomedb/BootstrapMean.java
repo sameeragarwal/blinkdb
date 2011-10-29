@@ -1,5 +1,7 @@
 package edu.berkeley.cs.amplab.awesomedb;
 
+import java.util.HashMap;
+
 import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
 import org.apache.commons.math.stat.descriptive.moment.Mean;
 
@@ -12,14 +14,14 @@ public class BootstrapMean {
     double stdev;
     double meanTime;
     public BootstrapMean(double[] sample, int bootstraps, int size) {
-        double[] subsample;
+        HashMap<Double, Integer> subsample;
         cummulativeTime = new long[bootstraps];
         sampleMeans = new double[bootstraps];
         Mean meanTimePerBootstrap = new Mean();
         
         for (int i = 0; i < bootstraps; i++) {
             long start = System.nanoTime();
-            subsample = BootstrapSample.GenerateSampleWithReplacement(sample, size);
+            subsample = BootstrapSample.GenerateSampleWithReplacementInFrequency(sample, size);
             sampleMeans[i] = StatisticalMean.Mean(subsample);
             long time = Math.max(System.nanoTime() - start, 0);
             cummulativeTime[i] = time;

@@ -1,0 +1,1 @@
+USAGE: java -Xmx<mem_limit> -jar ReservoirSampling.jar <filename> <initial_sample_size> <number_of_samples> <sampling_levels>

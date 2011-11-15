@@ -423,6 +423,7 @@ public class ParseDriver {
    */
   public ASTNode parse(String command, Context ctx) throws ParseException {
     LOG.info("Parsing command: " + command);
+    LOG.info("Execution flag: " + ctx.executionFlag);
 
     HiveLexerX lexer = new HiveLexerX(new ANTLRNoCaseStringStream(command));
     TokenRewriteStream tokens = new TokenRewriteStream(lexer);

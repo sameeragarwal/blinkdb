@@ -1003,4 +1003,12 @@
   This is first introduced by SymlinkTextInputFormat to replace symlink files with real paths at compile time.</description>
 </property>
 
+<!-- QuickSilverDB Configuration Parameters -->
+
+<property>
+  <name>quicksilver.sample.enable</name>
+  <value>true</value>
+  <description>Enables or Disables Sample Creation in QuickSilverDB</description>
+</property>
+
 </configuration>

@@ -6598,11 +6598,6 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
 	  List<ASTNode> tableNameList = new ArrayList<ASTNode>();
 	  Bounds timeErrorBound = new Bounds();
 	  
-	  //
-	  //timeErrorBound.errorBound = 0.1;
-	  //timeErrorBound.timeBound = 0.1;
-	  //
-	  
 	  WalkAST(ast, tableNameList, timeErrorBound);
 	  if (timeErrorBound.isInitialized()) {
 		  CostModel costModel = CostModel.getInstance();
@@ -6614,6 +6609,33 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
 				  LOG.info("Replacing table [" + tableNameNode.token.getText() + "] with [" + sampledTableName + "]");
 				  tableNameNode.token.setText(sampledTableName);
 			  }
+		  }
+	  }
+  }
+  
+  /**
+   * @name modifyQueryToCreateSample
+   * @author sameerag
+   * @param ast
+   * @param sampleNumber
+   * @description Replace the table name with the sample table name in the AST based on Sample Number.
+   */
+  @SuppressWarnings("nls")
+  private void modifyQueryToCreateSample(ASTNode ast, int sampleNumber) {
+	  if (ast != null) {
+		  for (int i=0; i<ast.getChildCount(); i++){
+			  ASTNode child = (ASTNode) ast.getChild(i);
+			  switch (child.getToken().getType()) {
+			  case HiveParser.TOK_TABNAME:
+				  	ASTNode tableNameNode = (ASTNode) child.getChild(0);
+				  	String sampledTableName = tableNameNode.token.getText() + "_sample_" + sampleNumber;
+				  	LOG.info("Replacing table [" + tableNameNode.token.getText() + "] with [" + sampledTableName + "]");
+					tableNameNode.token.setText(sampledTableName);
+				  break;
+			  default:
+				  break;
+			  }
+			  modifyQueryToCreateSample(child, sampleNumber);
 		  }
 	  }
   }
@@ -6644,10 +6666,18 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
 
     // analyze create table command
     if (ast.getToken().getType() == HiveParser.TOK_CREATETABLE) {
+
+    	//TODO(sameerag): Look more into CTAS (create-table-as-select) semantics
+        LOG.info("Execution Flag: " + this.ctx.executionFlag);
+        int sampleNumber = this.ctx.executionFlag;
+        if (sampleNumber != 0)
+      	  modifyQueryToCreateSample(ast, sampleNumber);
+
       // if it is not CTAS, we don't need to go further and just return
       if ((child = analyzeCreateTable(ast, qb)) == null) {
         return;
       }
+            
     } else {
       SessionState.get().setCommandType(HiveOperation.QUERY);
     }

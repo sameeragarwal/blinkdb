@@ -309,9 +309,10 @@ public class Driver implements CommandProcessor {
    * Compile a new query. Any currently-planned query associated with this Driver is discarded.
    *
    * @param command
+   * @param flag
    *          The SQL query to compile.
    */
-  public int compile(String command) {
+  public int compile(String command, int executionFlag) {
     if (plan != null) {
       close();
       plan = null;
@@ -322,11 +323,12 @@ public class Driver implements CommandProcessor {
     try {
       command = new VariableSubstitution().substitute(conf,command);
       ctx = new Context(conf);
+      ctx.executionFlag = executionFlag;
 
       ParseDriver pd = new ParseDriver();
       ASTNode tree = pd.parse(command, ctx);
       tree = ParseUtils.findRootNonNullToken(tree);
-
+      
       BaseSemanticAnalyzer sem = SemanticAnalyzerFactory.get(conf, tree);
       List<AbstractSemanticAnalyzerHook> saHooks = getSemanticAnalyzerHooks();
 
@@ -728,31 +730,50 @@ public class Driver implements CommandProcessor {
     }
     ctx.setHiveLocks(null);
   }
-
+  
+  //@sameerag
   public CommandProcessorResponse run(String command) {
-    errorMessage = null;
-    SQLState = null;
+	  CommandProcessorResponse ret = null;
+	  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+	     (command.toLowerCase().contains("create") || command.toLowerCase().contains("load data")))
+	  {
+		  int numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
+		  for (int i = 0; i < numSamples; i++)
+			  ret = run(command, i);
+	  }
+	  else
+	  {
+		  ret = run(command, -1);
+	  }
+	  
+	  return ret;
+  }
 
-    int ret = compile(command);
-    if (ret != 0) {
-      releaseLocks(ctx.getHiveLocks());
-      return new CommandProcessorResponse(ret, errorMessage, SQLState);
-    }
+  public CommandProcessorResponse run(String command, int executionFlag) {
+	  errorMessage = null;
+	  SQLState = null;
 
-    ret = acquireReadWriteLocks();
-    if (ret != 0) {
-      releaseLocks(ctx.getHiveLocks());
-      return new CommandProcessorResponse(ret, errorMessage, SQLState);
-    }
+	  int ret = compile(command, executionFlag);
+	  if (ret != 0) {
+		  releaseLocks(ctx.getHiveLocks());
+		  return new CommandProcessorResponse(ret, errorMessage, SQLState);
+	  }
 
-    ret = execute();
-    if (ret != 0) {
-      releaseLocks(ctx.getHiveLocks());
-      return new CommandProcessorResponse(ret, errorMessage, SQLState);
-    }
+	  ret = acquireReadWriteLocks();
+	  if (ret != 0) {
+		  releaseLocks(ctx.getHiveLocks());
+		  return new CommandProcessorResponse(ret, errorMessage, SQLState);
+	  }
 
-    releaseLocks(ctx.getHiveLocks());
-    return new CommandProcessorResponse(ret);
+	  ret = execute();
+	  if (ret != 0) {
+		  releaseLocks(ctx.getHiveLocks());
+		  return new CommandProcessorResponse(ret, errorMessage, SQLState);
+	  }
+
+	  releaseLocks(ctx.getHiveLocks());
+	  return new CommandProcessorResponse(ret);
+
   }
 
   private List<AbstractSemanticAnalyzerHook> getSemanticAnalyzerHooks() throws Exception {

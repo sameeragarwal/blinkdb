@@ -419,6 +419,10 @@ public class HiveConf extends Configuration {
     // once the feature is stable
     HIVE_MAPPER_CANNOT_SPAN_MULTIPLE_PARTITIONS("hive.mapper.cannot.span.multiple.partitions", false),
     HIVE_REWORK_MAPREDWORK("hive.rework.mapredwork", false),
+    
+    //@sameerag: QuicksilverDB configuration parameters
+    QUICKSILVER_SAMPLING_ENABLED("quicksilver.sample.enable", false),
+    SAMPLES_PER_TABLE("quicksilver.sample.num", 3),
     ;
 
 
@@ -635,7 +639,15 @@ public class HiveConf extends Configuration {
     } else {
       addResource(hsiteurl);
     }
-
+    
+    //@sameerag: Adding QuickSilver config file
+    URL qsconfurl = getClassLoader().getResource("quicksilver-conf.xml");
+    if (qsconfurl == null) {
+      l4j.debug("quicksilver-conf.xml not found.");
+    } else {
+      addResource(qsconfurl);
+    }
+    
     // if hadoop configuration files are already in our path - then define
     // the containing directory as the configuration directory
     URL hadoopconfurl = getClassLoader().getResource("hadoop-default.xml");

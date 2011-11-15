@@ -51,6 +51,10 @@ import org.apache.hadoop.conf.Configuration;
  * each query should call clear() at end of use to remove temporary folders
  */
 public class Context {
+
+  //sameerag: Adding Execution Flag for Sample Table Creation
+  public int executionFlag;
+  
   private Path resFile;
   private Path resDir;
   private FileSystem resFs;

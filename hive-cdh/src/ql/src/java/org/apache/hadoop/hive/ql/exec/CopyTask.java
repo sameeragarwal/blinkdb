@@ -18,18 +18,25 @@
 
 package org.apache.hadoop.hive.ql.exec;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.Serializable;
 
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hive.conf.HiveConf;
 import org.apache.hadoop.hive.ql.Context;
 import org.apache.hadoop.hive.ql.DriverContext;
 import org.apache.hadoop.hive.ql.parse.LoadSemanticAnalyzer;
 import org.apache.hadoop.hive.ql.plan.CopyWork;
 import org.apache.hadoop.hive.ql.plan.api.StageType;
+import org.apache.hadoop.hive.ql.sampling.Sample;
 import org.apache.hadoop.util.StringUtils;
+import org.apache.hadoop.conf.Configuration;
+
 
 /**
  * CopyTask implementation.
@@ -41,11 +48,12 @@ public class CopyTask extends Task<CopyWork> implements Serializable {
   public CopyTask() {
     super();
   }
-
+  
   @Override
   public int execute(DriverContext driverContext) {
     FileSystem dstFs = null;
     Path toPath = null;
+    console.printInfo("Sameer: Execution Flag: " + driverContext.getCtx().executionFlag);
     try {
       Path fromPath = new Path(work.getFromPath());
       toPath = new Path(work.getToPath());
@@ -72,14 +80,32 @@ public class CopyTask extends Task<CopyWork> implements Serializable {
       for (FileStatus oneSrc : srcs) {
         System.out.println("Copying file: " + oneSrc.getPath().toString());
         LOG.debug("Copying file: " + oneSrc.getPath().toString());
-        if (!FileUtil.copy(srcFs, oneSrc.getPath(), dstFs, toPath, false, // delete
-            // source
-            true, // overwrite destination
-            conf)) {
-          console.printError("Failed to copy: '" + oneSrc.getPath().toString()
-              + "to: '" + toPath.toString() + "'");
-          return 1;
+
+        //@sameerag: Checking to see if sampling has been enabled.
+        if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED))
+        {
+            Sample _s = new Sample();
+            if (!_s.sample(srcFs, oneSrc.getPath(), dstFs, toPath, false, // delete
+                // source
+                true, // overwrite destination
+                conf)) {
+              console.printError("Failed to copy: '" + oneSrc.getPath().toString()
+                  + "to: '" + toPath.toString() + "'");
+              return 1;
+            }
+        } 
+        else 
+        {
+        	if (!FileUtil.copy(srcFs, oneSrc.getPath(), dstFs, toPath, false, // delete
+        	    // source
+                true, // overwrite destination
+                conf)) {
+            console.printError("Failed to copy: '" + oneSrc.getPath().toString()
+                + "to: '" + toPath.toString() + "'");
+            return 1;
+          }
         }
+        
       }
       return 0;
 
@@ -89,7 +115,7 @@ public class CopyTask extends Task<CopyWork> implements Serializable {
       return (1);
     }
   }
-
+  
   @Override
   public StageType getType() {
     return StageType.COPY;

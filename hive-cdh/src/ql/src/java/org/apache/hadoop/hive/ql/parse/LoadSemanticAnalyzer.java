@@ -158,9 +158,45 @@ public class LoadSemanticAnalyzer extends BaseSemanticAnalyzer {
       throw new SemanticException(ErrorMsg.ILLEGAL_PATH.getMsg(ast, reason));
     }
   }
+    
+  /**
+   * @name modifyQueryToCreateSample
+   * @author sameerag
+   * @param ast
+   * @param sampleNumber
+   * @description Replace the table name with the sample table name in the AST based on Sample Number.
+   */
+  @SuppressWarnings("nls")
+  private void modifyQueryToCreateSample(ASTNode ast, int sampleNumber) {
+	  if (ast != null) {
+		  for (int i=0; i<ast.getChildCount(); i++){
+			  ASTNode child = (ASTNode) ast.getChild(i);
+			  switch (child.getToken().getType()) {
+			  case HiveParser.TOK_TABNAME:
+				  	ASTNode tableNameNode = (ASTNode) child.getChild(0);
+				  	String sampledTableName = tableNameNode.token.getText() + "_sample_" + sampleNumber;
+				  	LOG.info("Replacing table [" + tableNameNode.token.getText() + "] with [" + sampledTableName + "]");
+					tableNameNode.token.setText(sampledTableName);
+				  break;
+			  default:
+				  break;
+			  }
+			  modifyQueryToCreateSample(child, sampleNumber);
+		  }
+	  }
+  }
 
   @Override
   public void analyzeInternal(ASTNode ast) throws SemanticException {
+	  
+    //@sameerag: Directing data to be loaded into the correct table
+    if (ast.getToken().getType() == HiveParser.TOK_LOAD) {
+	    LOG.info("Execution Flag: " + this.ctx.executionFlag);
+	    int sampleNumber = this.ctx.executionFlag;
+  	    if (sampleNumber > 0)
+  	      modifyQueryToCreateSample(ast, sampleNumber);
+    }
+
     isLocal = false;
     isOverWrite = false;
     Tree fromTree = ast.getChild(0);

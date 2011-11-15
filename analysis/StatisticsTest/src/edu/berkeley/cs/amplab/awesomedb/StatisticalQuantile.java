@@ -1,6 +1,11 @@
 package edu.berkeley.cs.amplab.awesomedb;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.commons.math.util.FastMath;
 
 public class StatisticalQuantile {
@@ -12,5 +17,37 @@ public class StatisticalQuantile {
                 (position - FastMath.floor(position)) * (samples[(int)FastMath.floor(position) + 1] - 
                         samples[(int)FastMath.floor(position)]);
         return result;
+    }
+    public static double Quantile(HashMap<Double, Integer> frequencySamples, double quantile) {
+        Double[] keys;
+        keys = (Double[]) frequencySamples.keySet().toArray();
+        Arrays.sort(keys, null);
+        Set<Map.Entry<Double,Integer>> entrySet = frequencySamples.entrySet();
+        long size = 0;
+        for (Map.Entry<Double,Integer> entry : entrySet) {
+            size += entry.getValue();
+        }
+        double position = ((double)size) * quantile;
+        long position0 = (long)FastMath.floor(position);
+        long position1 = position0 + 1;
+        double val0 =0.0
+        , val1 = 0.0;
+        int current = 0, prev = 0;
+        for (Double key : keys) {
+            Integer value = frequencySamples.get(key);
+            current += value;
+            if (prev < position0 && position0 <= current) {
+                val0 = key;
+            }
+            if (prev < position1 && position1 <=current) {
+                val1 = key;
+                break;
+            }
+            prev = current;
+        }
+        double result = val0 + 
+                (position - FastMath.floor(position)) * (val1 - val0);
+        return result;
+        
     }
 }

@@ -157,6 +157,11 @@ public class Sample {
 			boolean deleteSource,
 			boolean overwrite,
 			Configuration conf) throws IOException {
+		
+		long fileSize = -1;
+		File f = new File(src.toUri());
+		if (f != null)
+			fileSize = f.length(); //in bytes
 
 		dst = checkDest(src.getName(), dstFS, dst, overwrite);
 
@@ -178,7 +183,7 @@ public class Sample {
 				in = srcFS.open(src);
 				out = dstFS.create(dst, overwrite);
 				//IOUtils.copyBytes(in, out, conf, true);
-				sampleLines(in, out, conf, true);
+				sampleLines(in, out, conf, fileSize, true);
 			} catch (IOException e) {
 				IOUtils.closeStream(out);
 				IOUtils.closeStream(in);
@@ -194,7 +199,7 @@ public class Sample {
 		}
 	}
 
-	public void sampleLines(InputStream in, OutputStream out, Configuration conf, boolean close) 
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize, boolean close) 
 	throws IOException {
 
 		//Sample and copy data in a memory stream before copying the stream over to out stream.
@@ -205,7 +210,7 @@ public class Sample {
 		try {
 			//TODO: Take value from conf and pass it to reservoir sample
 			ReservoirSampling _rs = new ReservoirSampling();
-			List<String> sample = _rs.reservoirSampling(in, 5);
+			List<String> sample = _rs.reservoirSampling(in, fileSize);
 
 			Iterator<String> iterator = sample.iterator();
 			while (iterator.hasNext()) {
@@ -225,11 +230,16 @@ public class Sample {
 		}
 	}
 	
-	public void sampleLines(InputStream in, OutputStream out, Configuration conf) 
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize) 
 	throws IOException {
-		sampleLines(in, out, conf, true);
+		sampleLines(in, out, conf, fileSize, true);
 	}
 	
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf) 
+	throws IOException {
+		sampleLines(in, out, conf, -1, true);
+	}
+
 	//
 	// If the destination is a subdirectory of the source, then
 	// generate exception

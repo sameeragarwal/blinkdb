@@ -1,8 +1,6 @@
 package edu.berkeley.cs.amplab.awesomedb;
 
 import org.apache.commons.math.stat.descriptive.moment.Mean;
-import org.apache.commons.math.stat.descriptive.moment.StandardDeviation;
-import org.apache.commons.math.stat.descriptive.moment.Variance;
 import org.apache.commons.math.util.FastMath;
 
 public class BlbMean {

@@ -1,0 +1,17 @@
+target/
+build/
+metastore_db/
+project/boot
+TempStatsStore
+
+# Compiled Source
+*.class
+
+# Packages
+#*.jar
+
+# Log Files
+*.log
+
+# emacs backup
+*~

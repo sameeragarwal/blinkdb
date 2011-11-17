@@ -1,6 +1,4 @@
 package edu.berkeley.cs.amplab.awesomedb;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,8 +17,13 @@ public class StatisticalQuantile {
         return result;
     }
     public static double Quantile(HashMap<Double, Integer> frequencySamples, double quantile) {
+        Object[] keysObjects;
+        keysObjects = frequencySamples.keySet().toArray();
         Double[] keys;
-        keys = (Double[]) frequencySamples.keySet().toArray();
+        keys = new Double[keysObjects.length];
+        for (int i = 0; i < keys.length; i++) {
+            keys[i] = (Double) keysObjects[i];
+        }
         Arrays.sort(keys, null);
         Set<Map.Entry<Double,Integer>> entrySet = frequencySamples.entrySet();
         long size = 0;

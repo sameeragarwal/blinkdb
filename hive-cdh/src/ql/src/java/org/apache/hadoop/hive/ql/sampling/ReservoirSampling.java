@@ -1,13 +1,13 @@
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
+ * or more contributor license agreements. See the NOTICE file
  * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
+ * regarding copyright ownership. The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * with the License. You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,6 +18,8 @@
 
 package org.apache.hadoop.hive.ql.sampling;
 
+import org.apache.hadoop.hive.ql.estimation.QuickSilverStream;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,12 +28,34 @@ import java.util.Random;
 
 public class ReservoirSampling {
 
-	public List <String> reservoirSampling (InputStream in, int reservoirSize)
+	public List <String> reservoirSampling (InputStream in, long fileSize)
 	{
+		//FIXME
+		int reservoirSize = 5;
+		
 		try
 		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String line;
+			
+			// Estimated rows in the Input Stream
+			//TODO: @sameerag make it a config parameter (readlimit: size and rows)
+			int sampleStreamCount = 5;
+			List <String> sampleStream= new ArrayList<String>(sampleStreamCount);
+			//Never read more than 1MB of data.
+			br.mark(1024*1024);
+			while ((sampleStreamCount != 0) && (line = br.readLine()) != null)
+			{
+				sampleStream.add(line);
+				sampleStreamCount--; 
+			}
+			
+			QuickSilverStream _qs = new QuickSilverStream();
+			int estimatedRows = _qs.estimateRows(sampleStream, fileSize);
+			System.out.println("Estimated Rows in Table: "+ estimatedRows);
+
+			br.reset();
+			
 			List <String> reservoirList= new ArrayList<String>(reservoirSize);
 			int count=0;
 			Random rnd = new Random();

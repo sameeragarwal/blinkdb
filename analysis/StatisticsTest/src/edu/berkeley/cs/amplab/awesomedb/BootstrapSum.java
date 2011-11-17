@@ -12,13 +12,13 @@ public class BootstrapSum {
     double stdev;
     double meanTime;
     public BootstrapSum(double[] sample, double samplingRate, int bootstraps, int size) {
-        HashMap<Double, Integer> subsample;
+        double[] subsample;
         cummulativeTime = new long[bootstraps];
         sampleSums = new double[bootstraps];
         Mean meanTimePerBootstrap = new Mean();
         for (int i = 0; i < bootstraps; i++) {
             long start = System.nanoTime();
-            subsample = BootstrapSample.GenerateSampleWithReplacementInFrequency(sample, size);
+            subsample = BootstrapSample.GenerateSampleWithReplacement(sample, size);
             sampleSums[i] = StatisticalSum.Sum(subsample, samplingRate);
             long time = Math.max(System.nanoTime() - start, 0);
             cummulativeTime[i] = time;

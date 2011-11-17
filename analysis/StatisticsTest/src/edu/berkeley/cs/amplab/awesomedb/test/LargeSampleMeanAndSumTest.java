@@ -13,15 +13,16 @@ import edu.berkeley.cs.amplab.awesomedb.StatisticalMean;
 import edu.berkeley.cs.amplab.awesomedb.StatisticalSum;
 
 public class LargeSampleMeanAndSumTest {
-    final static int NUMBER_OF_BOOTSTRAPS = 150; // Picked at random
-    final static int NUMBER_OF_BAGS = 200;
-    final static int NUMBER_OF_BLB_BOOTSTRAPS = 50;
+    final static int NUMBER_OF_BOOTSTRAPS = 100; // Picked at random
+    final static int NUMBER_OF_BAGS = 150;
+    final static int NUMBER_OF_BLB_BOOTSTRAPS = 25;
     final static double BAG_EXPONENT = 0.7;
     public static void main(String[] args) throws IOException {
         if (args.length != 2) {
             System.out.println("Must provide filename and sampling rate");
         }
         double samplingRate = Double.parseDouble(args[1]);
+        System.err.println(String.format("%1$s Start reading files", System.currentTimeMillis()));
         BufferedReader file = new BufferedReader(new FileReader(args[0]));
         List<Double> doublesList = new ArrayList<Double>();
         String line = null;
@@ -32,19 +33,20 @@ public class LargeSampleMeanAndSumTest {
         for (int i = 0; i < sample.length; i++) {
             sample[i] = doublesList.get(i).doubleValue();
         }
+        System.err.println(String.format("%1$s Done reading files", System.currentTimeMillis()));
         
         // Mean
+        System.err.println(String.format("%1$s Start statistical means", 
+                System.currentTimeMillis()));
         long start = System.nanoTime();
         double statisticalMean = StatisticalMean.Mean(sample);
         long statisticalMeanTime = Math.max(0, System.nanoTime() - start);
         start = 0;
+        System.err.println(String.format("%1$s End statistical means", 
+                System.currentTimeMillis()));
         
-        BootstrapMean bootstrapMeanObj = new BootstrapMean(sample, NUMBER_OF_BOOTSTRAPS);
-        double bootstrapMean = bootstrapMeanObj.Mean();
-        double bootstrapMeanTotalTime = 
-                bootstrapMeanObj.getTimes()[bootstrapMeanObj.getTimes().length - 1];
-        double bootstrapMeanPerBootstrapTime = bootstrapMeanObj.getMeanTime();
-        
+        System.err.println(String.format("%1$s Start blb means", 
+                System.currentTimeMillis()));
         BlbMean blbMeanObj = new BlbMean(sample, 
                 BAG_EXPONENT, 
                 NUMBER_OF_BAGS, 
@@ -53,19 +55,29 @@ public class LargeSampleMeanAndSumTest {
         double blbMeanTotalTime = blbMeanObj.getTotalTime();
         double blbMeanPerBagTime = blbMeanObj.getPerBagTime();
         double blbMeanPerBootstrapTime = blbMeanObj.getPerBootstrapTime();
+        System.err.println(String.format("%1$s End BLB means", 
+                System.currentTimeMillis()));
+        
+        System.err.println(String.format("%1$s Start bootstrap means", 
+                System.currentTimeMillis()));
+        BootstrapMean bootstrapMeanObj = new BootstrapMean(sample, NUMBER_OF_BOOTSTRAPS);
+        double bootstrapMean = bootstrapMeanObj.Mean();
+        double bootstrapMeanTotalTime = 
+                bootstrapMeanObj.getTimes()[bootstrapMeanObj.getTimes().length - 1];
+        double bootstrapMeanPerBootstrapTime = bootstrapMeanObj.getMeanTime();
+        System.err.println(String.format("%1$s End botstrap mean means", 
+                System.currentTimeMillis()));
         
         // Sum
+        System.err.println(String.format("%1$s Start statistical sum", 
+                System.currentTimeMillis()));
         start = System.nanoTime();
         double statisticalSum = StatisticalSum.Sum(sample, samplingRate);
         long statisticalSumTime = Math.max(0, System.nanoTime() - start);
         start = 0;
         
-        BootstrapSum bootstrapSumObj = new BootstrapSum(sample, samplingRate, NUMBER_OF_BOOTSTRAPS);
-        double bootstrapSum = bootstrapSumObj.Sum();
-        double bootstrapSumTotalTime = 
-                bootstrapSumObj.getTimes()[bootstrapSumObj.getTimes().length - 1];
-        double bootstrapSumPerBootstrapTime = bootstrapSumObj.getMeanTime();
-        
+        System.err.println(String.format("%1$s Start blb sum", 
+                System.currentTimeMillis()));
         BlbSum blbSumObj = new BlbSum(sample,
                 samplingRate,
                 BAG_EXPONENT, 
@@ -75,6 +87,16 @@ public class LargeSampleMeanAndSumTest {
         double blbSumTotalTime = blbSumObj.getTotalTime();
         double blbSumPerBagTime = blbSumObj.getPerBagTime();
         double blbSumPerBootstrapTime = blbSumObj.getPerBootstrapTime();
+        
+        System.err.println(String.format("%1$s Start bootstrap sum", 
+                System.currentTimeMillis()));
+        BootstrapSum bootstrapSumObj = new BootstrapSum(sample, samplingRate, NUMBER_OF_BOOTSTRAPS);
+        double bootstrapSum = bootstrapSumObj.Sum();
+        double bootstrapSumTotalTime = 
+                bootstrapSumObj.getTimes()[bootstrapSumObj.getTimes().length - 1];
+        double bootstrapSumPerBootstrapTime = bootstrapSumObj.getMeanTime();
+        
+        
         
         System.out.println(String.format(
                 "%1$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s,%11$s,%12$s,%13$s,%14$s,%15$s,%16$s,%17$s,%18$s", 

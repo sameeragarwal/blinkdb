@@ -11,16 +11,16 @@ import edu.berkeley.cs.amplab.awesomedb.BootstrapQuantile;
 import edu.berkeley.cs.amplab.awesomedb.StatisticalQuantile;
 
 public class LargeSampleQuantileTest {
-    final static int NUMBER_OF_BOOTSTRAPS = 150; // Picked at random
-    final static int NUMBER_OF_BAGS = 200;
-    final static int NUMBER_OF_BLB_BOOTSTRAPS = 50;
+    final static int NUMBER_OF_BOOTSTRAPS = 100; // Picked at random
+    final static int NUMBER_OF_BAGS = 150;
+    final static int NUMBER_OF_BLB_BOOTSTRAPS = 25;
     final static double BAG_EXPONENT = 0.7;
     final static double[] QUANTILES = {0.25, 0.50, 0.75, 0.90, 0.95, 0.99};
     public static void main(String[] args) throws IOException {
         if (args.length != 2) {
             System.out.println("Must provide filename and sampling rate");
         }
-        double samplingRate = Double.parseDouble(args[1]);
+        System.err.println(String.format("%1$s Start reading files", System.currentTimeMillis()));
         BufferedReader file = new BufferedReader(new FileReader(args[0]));
         List<Double> doublesList = new ArrayList<Double>();
         String line = null;
@@ -31,6 +31,7 @@ public class LargeSampleQuantileTest {
         for (int i = 0; i < sample.length; i++) {
             sample[i] = doublesList.get(i).doubleValue();
         }
+        System.err.println(String.format("%1$s Done reading files", System.currentTimeMillis()));
         
         double[] statisticalQuantiles = new double[QUANTILES.length];
         long[] statisticalQuantileTimes = new long[QUANTILES.length];
@@ -47,13 +48,6 @@ public class LargeSampleQuantileTest {
             statisticalQuantiles[i] = StatisticalQuantile.Quantile(sample, QUANTILES[i]);
             statisticalQuantileTimes[i] = Math.max(0, System.nanoTime() - start);
             
-            BootstrapQuantile bootstrapQuantileObj =
-                    new BootstrapQuantile(sample, QUANTILES[i], NUMBER_OF_BOOTSTRAPS);
-            bootstrapQuantiles[i] = bootstrapQuantileObj.Quantile();
-            bootstrapQuantileTotalTimes[i] = 
-                    bootstrapQuantileObj.getTimes()[bootstrapQuantileObj.getTimes().length - 1];
-            bootstrapQuantilePerBootstrapTimes[i] = bootstrapQuantileObj.getMeanTime();
-            
             BlbQuantile blbQuantileObj =
                     new BlbQuantile(sample, 
                             QUANTILES[i], 
@@ -64,6 +58,15 @@ public class LargeSampleQuantileTest {
             blbQuantilesTotalTimes[i] = blbQuantileObj.getTotalTime();
             blbQuantilesPerBagTimes[i] = blbQuantileObj.getPerBagTime();
             blbQuantilesPerBootstrapTimes[i] = blbQuantileObj.getPerBootstrapTime();
+            
+            BootstrapQuantile bootstrapQuantileObj =
+                    new BootstrapQuantile(sample, QUANTILES[i], NUMBER_OF_BOOTSTRAPS);
+            bootstrapQuantiles[i] = bootstrapQuantileObj.Quantile();
+            bootstrapQuantileTotalTimes[i] = 
+                    bootstrapQuantileObj.getTimes()[bootstrapQuantileObj.getTimes().length - 1];
+            bootstrapQuantilePerBootstrapTimes[i] = bootstrapQuantileObj.getMeanTime();
+            
+            
         }
         
         for(int i = 0; i < QUANTILES.length; i++) {

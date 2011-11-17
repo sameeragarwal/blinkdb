@@ -25,7 +25,8 @@ public class BootstrapSample {
     public static HashMap<Double, Integer> GenerateSampleWithReplacementInFrequency
                     (double[] population, 
                             int size) {
-        HashMap<Double, Integer> toReturn = new HashMap<Double, Integer>();
+        //System.err.println(String.format("%1$s: Start sampling", System.currentTimeMillis()));
+        HashMap<Double, Integer> toReturn = new HashMap<Double, Integer>(size);
         for (int i = 0; i < size; i++) {
             double sample = population[rng.nextInt(population.length)];
             
@@ -36,6 +37,7 @@ public class BootstrapSample {
                 toReturn.put(sample, new Integer(1));
             }
         }
+        //System.err.println(String.format("%1$s: Done sampling", System.currentTimeMillis()));
         return toReturn;
         
     }

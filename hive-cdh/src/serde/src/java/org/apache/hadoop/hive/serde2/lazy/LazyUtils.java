@@ -198,7 +198,7 @@ public final class LazyUtils {
     }
     case DOUBLE: {
       double d = ((DoubleObjectInspector) oi).get(o);
-      ByteBuffer b = Text.encode(String.valueOf(d));
+      ByteBuffer b = Text.encode(String.valueOf(d)); 
       out.write(b.array(), 0, b.limit());
       break;
     }

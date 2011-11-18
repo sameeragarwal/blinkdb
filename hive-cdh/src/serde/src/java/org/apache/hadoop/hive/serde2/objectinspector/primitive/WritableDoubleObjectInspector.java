@@ -55,5 +55,4 @@ public class WritableDoubleObjectInspector extends
     ((DoubleWritable) o).set(value);
     return o;
   }
-
 }

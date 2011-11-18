@@ -49,7 +49,7 @@ public class DoubleWritable implements WritableComparable {
   }
 
   public void write(DataOutput out) throws IOException {
-    out.writeDouble(value);
+      out.writeDouble(value);
   }
 
   public void set(double value) {
@@ -85,7 +85,7 @@ public class DoubleWritable implements WritableComparable {
 
   @Override
   public String toString() {
-    return Double.toString(value);
+      return Double.toString(value);
   }
 
   /** A Comparator optimized for DoubleWritable. */

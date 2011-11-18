@@ -305,6 +305,10 @@ public class Driver implements CommandProcessor {
     }
   }
 
+  public int compile(String command) {
+	return compile(command, -1);
+  }
+
   /**
    * Compile a new query. Any currently-planned query associated with this Driver is discarded.
    *
@@ -1129,12 +1133,12 @@ public class Driver implements CommandProcessor {
   }
 
   public boolean getResults(ArrayList<String> res) throws IOException {
-    if (plan != null && plan.getFetchTask() != null) {
+	  if (plan != null && plan.getFetchTask() != null) {
       FetchTask ft = plan.getFetchTask();
       ft.setMaxRows(maxRows);
       return ft.fetch(res);
     }
-
+   
     if (resStream == null) {
       resStream = ctx.getStream();
     }

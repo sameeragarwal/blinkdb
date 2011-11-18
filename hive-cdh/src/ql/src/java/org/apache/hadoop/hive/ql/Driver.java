@@ -304,6 +304,11 @@ public class Driver implements CommandProcessor {
       conf = SessionState.get().getConf();
     }
   }
+  
+  //@sameerag
+  public int compile(String command) {
+	  return compile(command, -1);
+  }
 
   public int compile(String command) {
 	return compile(command, -1);

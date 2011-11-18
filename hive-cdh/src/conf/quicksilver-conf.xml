@@ -33,4 +33,34 @@
   <description>Number of samples per table</description>
 </property>
 
+<property>
+  <name>quicksilver.sample.level.size.1</name>
+  <value>32</value>
+  <description>Size in MB of the sample at level 1</description>
+</property>
+
+<property>
+  <name>quicksilver.sample.level.2</name>
+  <value>16</value>
+  <description>Size in MB of the sample at level 1</description>
+</property>
+
+<property>
+  <name>quicksilver.sample.level.3</name>
+  <value>8</value>
+  <description>Size in MB of the sample at level 1</description>
+</property>
+
+<property>
+  <name>quicksilver.sample.level.4</name>
+  <value>4</value>
+  <description>Size in MB of the sample at level 1</description>
+</property>
+
+<property>
+  <name>quicksilver.sample.level.5</name>
+  <value>4</value>
+  <description>Size in MB of the sample at level 1</description>
+</property>
+
 </configuration>

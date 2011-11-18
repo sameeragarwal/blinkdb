@@ -54,7 +54,7 @@ public class ReservoirSampling {
 
 			br.reset();
 			
-			int reservoirSizeInRows = (int) (((float)sampleSize)/fileSize)*estimatedRows;
+			int reservoirSizeInRows = (int) (((float)sampleSize*estimatedRows)/fileSize);
 			if (reservoirSizeInRows > estimatedRows)
 				reservoirSizeInRows = estimatedRows;
 			

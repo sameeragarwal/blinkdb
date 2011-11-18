@@ -82,13 +82,14 @@ public class CopyTask extends Task<CopyWork> implements Serializable {
         LOG.debug("Copying file: " + oneSrc.getPath().toString());
 
         //@sameerag: Checking to see if sampling has been enabled.
-        if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED))
+        if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) &&  (driverContext.getCtx().executionFlag > 0))
         {
             Sample _s = new Sample();
             if (!_s.sample(srcFs, oneSrc.getPath(), dstFs, toPath, false, // delete
                 // source
                 true, // overwrite destination
-                conf)) {
+                conf,
+                driverContext.getCtx().executionFlag)) {
               console.printError("Failed to copy: '" + oneSrc.getPath().toString()
                   + "to: '" + toPath.toString() + "'");
               return 1;

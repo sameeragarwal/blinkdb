@@ -423,6 +423,11 @@ public class HiveConf extends Configuration {
     //@sameerag: QuicksilverDB configuration parameters
     QUICKSILVER_SAMPLING_ENABLED("quicksilver.sample.enable", false),
     SAMPLES_PER_TABLE("quicksilver.sample.num", 3),
+    SAMPLE_SIZE_LEVEL_1("quicksilver.sample.level.size.1", 2),
+    SAMPLE_SIZE_LEVEL_2("quicksilver.sample.level.size.1", 4),
+    SAMPLE_SIZE_LEVEL_3("quicksilver.sample.level.size.1", 8),
+    SAMPLE_SIZE_LEVEL_4("quicksilver.sample.level.size.1", 16),
+    SAMPLE_SIZE_LEVEL_5("quicksilver.sample.level.size.1", 32),
     ;
 
 

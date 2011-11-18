@@ -310,10 +310,6 @@ public class Driver implements CommandProcessor {
 	  return compile(command, -1);
   }
 
-  public int compile(String command) {
-	return compile(command, -1);
-  }
-
   /**
    * Compile a new query. Any currently-planned query associated with this Driver is discarded.
    *

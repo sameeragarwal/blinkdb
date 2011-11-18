@@ -28,10 +28,8 @@ import java.util.Random;
 
 public class ReservoirSampling {
 
-	public List <String> reservoirSampling (InputStream in, long fileSize)
+	public List <String> reservoirSampling (InputStream in, long fileSize, int sampleSize)
 	{
-		//FIXME
-		int reservoirSize = 5;
 		
 		try
 		{
@@ -56,7 +54,11 @@ public class ReservoirSampling {
 
 			br.reset();
 			
-			List <String> reservoirList= new ArrayList<String>(reservoirSize);
+			int reservoirSizeInRows = (int) (((float)sampleSize)/fileSize)*estimatedRows;
+			if (reservoirSizeInRows > estimatedRows)
+				reservoirSizeInRows = estimatedRows;
+			
+			List <String> reservoirList= new ArrayList<String>(reservoirSizeInRows);
 			int count=0;
 			Random rnd = new Random();
 
@@ -64,14 +66,14 @@ public class ReservoirSampling {
 			while ((line = br.readLine()) != null)
 			{
 				count ++;
-				if (count <= reservoirSize)
+				if (count <= reservoirSizeInRows)
 				{
 					reservoirList.add(line);
 				}
 				else
 				{
 					randomNumber = (int)rnd.nextInt(count);
-					if (randomNumber < reservoirSize)
+					if (randomNumber < reservoirSizeInRows)
 					{
 						reservoirList.set(randomNumber, line);
 					}

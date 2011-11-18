@@ -28,6 +28,8 @@ import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hive.conf.HiveConf;
+
 
 public class Sample {
 
@@ -35,7 +37,8 @@ public class Sample {
 	public boolean sample(File src,
 			FileSystem dstFS, Path dst,
 			boolean deleteSource, 
-			Configuration conf) throws IOException {
+			Configuration conf,
+			int samplingLevel) throws IOException {
 		dst = checkDest(src.getName(), dstFS, dst, false);
 
 		if (src.isDirectory()) {
@@ -45,7 +48,7 @@ public class Sample {
 			File contents[] = src.listFiles();
 			for (int i = 0; i < contents.length; i++) {
 				sample(contents[i], dstFS, new Path(dst, contents[i].getName()),
-						deleteSource, conf);
+						deleteSource, conf, samplingLevel);
 			}
 		} else if (src.isFile()) {
 			InputStream in = null;
@@ -54,7 +57,7 @@ public class Sample {
 				in = new FileInputStream(src);
 				out = dstFS.create(dst);
 				//IOUtils.copyBytes(in, out, conf);
-				sampleLines(in, out, conf);
+				sampleLines(in, out, conf, samplingLevel);
 			} catch (IOException e) {
 				IOUtils.closeStream( out );
 				IOUtils.closeStream( in );
@@ -75,7 +78,8 @@ public class Sample {
 	/** Copy FileSystem files to local files. */
 	public boolean sample(FileSystem srcFS, Path src, 
 			File dst, boolean deleteSource,
-			Configuration conf) throws IOException {
+			Configuration conf,
+			int samplingLevel) throws IOException {
 		if (srcFS.getFileStatus(src).isDir()) {
 			if (!dst.mkdirs()) {
 				return false;
@@ -84,12 +88,12 @@ public class Sample {
 			for (int i = 0; i < contents.length; i++) {
 				sample(srcFS, contents[i].getPath(), 
 						new File(dst, contents[i].getPath().getName()),
-						deleteSource, conf);
+						deleteSource, conf, samplingLevel);
 			}
 		} else if (srcFS.isFile(src)) {
 			InputStream in = srcFS.open(src);
 			//IOUtils.copyBytes(in, new FileOutputStream(dst), conf);
-			sampleLines(in, new FileOutputStream(dst), conf);
+			sampleLines(in, new FileOutputStream(dst), conf, samplingLevel);
 		} else {
 			throw new IOException(src.toString() + 
 					": No such file or directory");
@@ -106,22 +110,24 @@ public class Sample {
 	public boolean sample(FileSystem srcFS, Path src, 
 			FileSystem dstFS, Path dst, 
 			boolean deleteSource,
-			Configuration conf) throws IOException {
-		return sample(srcFS, src, dstFS, dst, deleteSource, true, conf);
+			Configuration conf,
+			int samplingLevel) throws IOException {
+		return sample(srcFS, src, dstFS, dst, deleteSource, true, conf, samplingLevel);
 	}
 
 	//@sameerag
 	public boolean sample(FileSystem srcFS, Path[] srcs, 
 			FileSystem dstFS, Path dst,
 			boolean deleteSource, 
-			boolean overwrite, Configuration conf)
-	throws IOException {
+			boolean overwrite,
+			Configuration conf,
+			int samplingLevel) throws IOException {
 		boolean gotException = false;
 		boolean returnVal = true;
 		StringBuffer exceptions = new StringBuffer();
 
 		if (srcs.length == 1)
-			return sample(srcFS, srcs[0], dstFS, dst, deleteSource, overwrite, conf);
+			return sample(srcFS, srcs[0], dstFS, dst, deleteSource, overwrite, conf, samplingLevel);
 
 		// Check if dest is directory
 		if (!dstFS.exists(dst)) {
@@ -136,7 +142,7 @@ public class Sample {
 
 		for (Path src : srcs) {
 			try {
-				if (!sample(srcFS, src, dstFS, dst, deleteSource, overwrite, conf))
+				if (!sample(srcFS, src, dstFS, dst, deleteSource, overwrite, conf, samplingLevel))
 					returnVal = false;
 			} catch (IOException e) {
 				gotException = true;
@@ -156,7 +162,8 @@ public class Sample {
 			FileSystem dstFS, Path dst, 
 			boolean deleteSource,
 			boolean overwrite,
-			Configuration conf) throws IOException {
+			Configuration conf,
+			int samplingLevel) throws IOException {
 		
 		long fileSize = -1;
 		File f = new File(src.toUri());
@@ -174,7 +181,7 @@ public class Sample {
 			for (int i = 0; i < contents.length; i++) {
 				sample(srcFS, contents[i].getPath(), dstFS, 
 						new Path(dst, contents[i].getPath().getName()),
-						deleteSource, overwrite, conf);
+						deleteSource, overwrite, conf, samplingLevel);
 			}
 		} else if (srcFS.isFile(src)) {
 			InputStream in=null;
@@ -183,7 +190,7 @@ public class Sample {
 				in = srcFS.open(src);
 				out = dstFS.create(dst, overwrite);
 				//IOUtils.copyBytes(in, out, conf, true);
-				sampleLines(in, out, conf, fileSize, true);
+				sampleLines(in, out, conf, fileSize, true, samplingLevel);
 			} catch (IOException e) {
 				IOUtils.closeStream(out);
 				IOUtils.closeStream(in);
@@ -199,7 +206,7 @@ public class Sample {
 		}
 	}
 
-	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize, boolean close) 
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize, boolean close, int samplingLevel) 
 	throws IOException {
 
 		//Sample and copy data in a memory stream before copying the stream over to out stream.
@@ -207,10 +214,17 @@ public class Sample {
 		PrintStream ps = out instanceof PrintStream ? (PrintStream)out : null;
 		PrintStream outps = new PrintStream(out);
 
+		//Read from configuration file that corresponds to size/level
+		int sampleSize = 0;
+		if (samplingLevel == 1)
+			sampleSize = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLE_SIZE_LEVEL_1);
+		else if (samplingLevel == 2)
+			sampleSize = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLE_SIZE_LEVEL_2);
+		
 		try {
 			//TODO: Take value from conf and pass it to reservoir sample
 			ReservoirSampling _rs = new ReservoirSampling();
-			List<String> sample = _rs.reservoirSampling(in, fileSize);
+			List<String> sample = _rs.reservoirSampling(in, fileSize, sampleSize*1024*1024);
 
 			Iterator<String> iterator = sample.iterator();
 			while (iterator.hasNext()) {
@@ -230,14 +244,14 @@ public class Sample {
 		}
 	}
 	
-	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize) 
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf, long fileSize, int samplingLevel) 
 	throws IOException {
-		sampleLines(in, out, conf, fileSize, true);
+		sampleLines(in, out, conf, fileSize, true, samplingLevel);
 	}
 	
-	public void sampleLines(InputStream in, OutputStream out, Configuration conf) 
+	public void sampleLines(InputStream in, OutputStream out, Configuration conf, int samplingLevel) 
 	throws IOException {
-		sampleLines(in, out, conf, -1, true);
+		sampleLines(in, out, conf, -1, true, samplingLevel);
 	}
 
 	//

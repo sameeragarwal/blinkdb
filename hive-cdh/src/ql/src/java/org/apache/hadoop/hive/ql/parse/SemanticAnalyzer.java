@@ -6670,7 +6670,7 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
     	//TODO(sameerag): Look more into CTAS (create-table-as-select) semantics
         LOG.info("Execution Flag: " + this.ctx.executionFlag);
         int sampleNumber = this.ctx.executionFlag;
-        if (sampleNumber != 0)
+        if (sampleNumber > 0)
       	  modifyQueryToCreateSample(ast, sampleNumber);
 
       // if it is not CTAS, we don't need to go further and just return

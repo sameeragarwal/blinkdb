@@ -421,7 +421,7 @@ public class HiveConf extends Configuration {
     HIVE_REWORK_MAPREDWORK("hive.rework.mapredwork", false),
     
     //@sameerag: QuicksilverDB configuration parameters
-    QUICKSILVER_SAMPLING_ENABLED("quicksilver.sample.enable", false),
+    QUICKSILVER_SAMPLING_ENABLED("quicksilver.sample.enable", true),
     SAMPLES_PER_TABLE("quicksilver.sample.num", 3),
     SAMPLE_SIZE_LEVEL_1("quicksilver.sample.level.size.1", 2),
     SAMPLE_SIZE_LEVEL_2("quicksilver.sample.level.size.2", 4),

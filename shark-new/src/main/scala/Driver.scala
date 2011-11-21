@@ -140,13 +140,32 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     updateOperatorFactory()
     super.init()
   }
-
+  
+  //@sameerag
   override def run(command: String): CommandProcessorResponse = {
+    
+	  var ret : CommandProcessorResponse = null;
+	  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+	     (command.toLowerCase().contains("create") || command.toLowerCase().contains("load data")))
+	  {
+		  var numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
+		  for (i <- 0 until numSamples)
+			  ret = run(command, i); 
+	  }
+	  else
+	  {
+		  ret = run(command, -1);
+	  }
+	  
+	  return ret;
+  }
+  
+  override def run(command: String, executionFlag: Int): CommandProcessorResponse = {
     var errorMessage = null;
     var sqlState = null;
     
-    super.compile(command)
-    var ret = compile(command);
+    super.compile(command, executionFlag)
+    var ret = compile(command, executionFlag);
     if (ret != 0) {
       releaseLocks(context.getHiveLocks());
       return new CommandProcessorResponse(ret, errorMessage, sqlState);
@@ -167,11 +186,16 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     releaseLocks(context.getHiveLocks());
     return new CommandProcessorResponse(ret);
   }
-
+  
   override def compile(cmd: String): Int = {
+    return compile(cmd, -1);
+  }
+
+  override def compile(cmd: String, executionFlag: Int): Int = {
     try {
       var command = new VariableSubstitution().substitute(conf, cmd)
       context = new Context(conf)
+      context.executionFlag = executionFlag;
       
       var pd: ParseDriver = new ParseDriver()
       var tree: ASTNode = pd.parse(command, context)
@@ -189,15 +213,15 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
         // validate the plan
         sem.validate()
         if (SessionState.get().getCommandType() != HiveOperation.QUERY.getOperationName)
-          return super.compile(cmd)
+          return super.compile(cmd, executionFlag)
         plan = new QueryPlan(command, sem)
         if (sem.getFetchTask != null)
           sem.getFetchTask.initialize(conf, null, null)
       }
       else {
-        return super.compile(cmd)
+        return super.compile(cmd, executionFlag)
       }
-      return super.compile(cmd)
+      return super.compile(cmd, executionFlag)
     }
     catch {
       case e: SemanticException => {

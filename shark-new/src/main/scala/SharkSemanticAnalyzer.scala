@@ -32,34 +32,6 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
 
   var moveTasks = new ArrayList[MoveTask]()
 
-  /*
-  @SuppressWarnings("nls")
-  private void WalkAST(ASTNode ast, List<ASTNode> tableNameList, Bounds bounds) {
-	  if (ast != null) {
-		  for (int i=0; i<ast.getChildCount(); i++){
-			  ASTNode child = (ASTNode) ast.getChild(i);
-			  switch (child.getToken().getType()) {
-			  case HiveParser.TOK_TABNAME:
-				  	ASTNode tableNameNode = (ASTNode) child.getChild(0);
-				  	tableNameList.add(tableNameNode);
-				  break;
-			  case HiveParser.TOK_WITHMAXERROR:
-			    ASTNode errorBoundNode = (ASTNode) child.getChild(0);
-			    bounds.errorBound = Double.parseDouble(errorBoundNode.token.getText());
-			    break;
-			  case HiveParser.TOK_INTIME:
-			    ASTNode timeBoundNode = (ASTNode) child.getChild(0);	  
-			    bounds.timeBound = Double.parseDouble(timeBoundNode.token.getText());
-			    break;
-			  default:
-				  break;
-			  }
-			  WalkAST(child, tableNameList, bounds);
-		  }
-	  }
-  }
-  */
-
 /**
 * Walk the AST, and get all the table name nodes in a list. 
 */

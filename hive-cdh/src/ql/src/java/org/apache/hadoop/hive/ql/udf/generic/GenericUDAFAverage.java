@@ -293,7 +293,9 @@ public class GenericUDAFAverage extends AbstractGenericUDAFResolver {
         ArrayList<String> fname = new ArrayList<String>();
         fname.add("avg");
         fname.add("error");
+        fname.add("ci");
         ArrayList<ObjectInspector> foi = new ArrayList<ObjectInspector>();
+        foi.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
         foi.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
         foi.add(PrimitiveObjectInspectorFactory.writableDoubleObjectInspector);
         result = new ArrayList<DoubleWritable>();
@@ -401,11 +403,12 @@ public class GenericUDAFAverage extends AbstractGenericUDAFResolver {
         return null;
       } else {
         result.add(new DoubleWritable(myagg.sum / myagg.count));
-        result.add(new DoubleWritable(2.0*Math.sqrt(myagg.variance / (myagg.count*myagg.count))));
+        result.add(new DoubleWritable(1.96*Math.sqrt(myagg.variance / (myagg.count*myagg.count))));
+        result.add(new DoubleWritable(95.0));
         return result;
       }
     }
-   }
+  }
 
 
   /**

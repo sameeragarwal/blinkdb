@@ -18,6 +18,7 @@
 package org.apache.hadoop.hive.ql.udf.generic;
 
 import org.apache.commons.logging.Log;
+
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentTypeException;
@@ -25,13 +26,19 @@ import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.parse.SemanticException;
 import org.apache.hadoop.hive.serde2.io.DoubleWritable;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.StructField;
+import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.DoubleObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.LongObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils;
 import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.util.StringUtils;
+import java.util.ArrayList;
 
 /**
  * GenericUDAFSum.
@@ -63,7 +70,7 @@ public class GenericUDAFSum extends AbstractGenericUDAFResolver {
       //return new GenericUDAFSumLong();
     case FLOAT:
     case DOUBLE:
-    	return new GenericUDAFSunWithErrorEvaluator
+    	return new GenericUDAFSumWithErrorEvaluator();
     case STRING:
       //@sameerag: Commenting this out because 'approximate concatenation' makes no sense 
       //return new GenericUDAFSumDouble();
@@ -160,7 +167,7 @@ public class GenericUDAFSum extends AbstractGenericUDAFResolver {
   /**
   *
   */
-   public static class GenericUDAFSumWithErrorEvaluator extends GenericUDAFAverageEvaluator {
+   public static class GenericUDAFSumWithErrorEvaluator extends GenericUDAFEvaluator {
 
    // For PARTIAL1 and COMPLETE
    private PrimitiveObjectInspector inputOI;
@@ -228,7 +235,7 @@ public class GenericUDAFSum extends AbstractGenericUDAFResolver {
 
      } else {
        ArrayList<String> fname = new ArrayList<String>();
-       fname.add("avg");
+       fname.add("sum");
        fname.add("error");
        fname.add("ci");
        ArrayList<ObjectInspector> foi = new ArrayList<ObjectInspector>();
@@ -339,8 +346,8 @@ public class GenericUDAFSum extends AbstractGenericUDAFResolver {
      if (myagg.count == 0) { // SQL standard - return null for zero elements
        return null;
      } else {
-       result.add(new DoubleWritable(myagg.sum / myagg.count));
-       result.add(new DoubleWritable(1.96*Math.sqrt(myagg.variance)));
+       result.add(new DoubleWritable(myagg.sum));
+       result.add(new DoubleWritable(1.96*Math.sqrt((myagg.variance/myagg.count))));
        result.add(new DoubleWritable(95.0));
        return result;
      }

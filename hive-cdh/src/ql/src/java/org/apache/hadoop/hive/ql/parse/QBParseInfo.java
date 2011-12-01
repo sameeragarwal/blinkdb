@@ -49,6 +49,9 @@ public class QBParseInfo {
   private final HashMap<String, ASTNode> destToWhereExpr;
   private final HashMap<String, ASTNode> destToGroupby;
   private final Map<String, ASTNode> destToHaving;
+  
+  //@sameerag
+  private final HashMap<String, ASTNode> destToSampleExpr;  
 
   private boolean isAnalyzeCommand; // used for the analyze command (statistics)
   private boolean isInsertToTable;  // used for insert overwrite command (statistics)
@@ -102,6 +105,9 @@ public class QBParseInfo {
     destToSortby = new HashMap<String, ASTNode>();
     destToOrderby = new HashMap<String, ASTNode>();
     destToLimit = new HashMap<String, Integer>();
+    
+    //@sameerag
+    destToSampleExpr = new HashMap<String, ASTNode>();
 
     destToAggregationExprs = new LinkedHashMap<String, LinkedHashMap<String, ASTNode>>();
     destToDistinctFuncExprs = new HashMap<String, List<ASTNode>>();
@@ -144,13 +150,18 @@ public class QBParseInfo {
   public void setSelExprForClause(String clause, ASTNode ast) {
     destToSelExpr.put(clause, ast);
   }
-
+  
   public void setWhrExprForClause(String clause, ASTNode ast) {
     destToWhereExpr.put(clause, ast);
   }
 
   public void setHavingExprForClause(String clause, ASTNode ast) {
     destToHaving.put(clause, ast);
+  }
+  
+  //@sameerag
+  public void setSampleExprForClause(String clause, ASTNode ast) {
+    destToSampleExpr.put(clause, ast);
   }
 
   public void setGroupByExprForClause(String clause, ASTNode ast) {
@@ -220,9 +231,19 @@ public class QBParseInfo {
   public ASTNode getWhrForClause(String clause) {
     return destToWhereExpr.get(clause);
   }
+  
+  //@sameerag
+  public ASTNode getSampleForClause(String clause) {
+    return destToSampleExpr.get(clause);
+  }
 
   public HashMap<String, ASTNode> getDestToWhereExpr() {
     return destToWhereExpr;
+  }
+
+  //@sameerag
+  public HashMap<String, ASTNode> getDestToSampleExpr() {
+    return destToSampleExpr;
   }
 
   public ASTNode getGroupByForClause(String clause) {

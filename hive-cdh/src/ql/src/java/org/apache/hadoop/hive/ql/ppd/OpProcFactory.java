@@ -31,6 +31,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hive.conf.HiveConf;
 import org.apache.hadoop.hive.ql.exec.FilterOperator;
+import org.apache.hadoop.hive.ql.exec.SamplingOperator;
 import org.apache.hadoop.hive.ql.exec.FunctionRegistry;
 import org.apache.hadoop.hive.ql.exec.JoinOperator;
 import org.apache.hadoop.hive.ql.exec.Operator;
@@ -145,7 +146,7 @@ public final class OpProcFactory {
           + ((Operator) nd).getIdentifier() + ")");
       OpWalkerInfo owi = (OpWalkerInfo) procCtx;
       Operator<? extends Serializable> op = (Operator<? extends Serializable>) nd;
-      ExprNodeDesc predicate = (((FilterOperator) nd).getConf()).getPredicate();
+      ExprNodeDesc predicate = (((SamplingOperator) nd).getConf()).getPredicate();
       // get pushdown predicates for this operator's predicate
       ExprWalkerInfo ewi = ExprWalkerProcFactory.extractPushdownPreds(owi, op,
           predicate);

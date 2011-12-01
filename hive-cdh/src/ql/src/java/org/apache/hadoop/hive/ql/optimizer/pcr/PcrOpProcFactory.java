@@ -25,6 +25,7 @@ import java.util.Stack;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hive.ql.exec.FilterOperator;
+import org.apache.hadoop.hive.ql.exec.SamplingOperator;
 import org.apache.hadoop.hive.ql.exec.Operator;
 import org.apache.hadoop.hive.ql.exec.TableScanOperator;
 import org.apache.hadoop.hive.ql.lib.Node;
@@ -59,9 +60,11 @@ public final class PcrOpProcFactory {
     public Object process(Node nd, Stack<Node> stack, NodeProcessorCtx procCtx,
         Object... nodeOutputs) throws SemanticException {
       PcrOpWalkerCtx owc = (PcrOpWalkerCtx) procCtx;
-      FilterOperator fop = (FilterOperator) nd;
-      FilterOperator fop2 = null;
-
+      //FilterOperator fop = (FilterOperator) nd;
+      //FilterOperator fop2 = null;
+      SamplingOperator fop = (SamplingOperator) nd;
+      SamplingOperator fop2 = null;
+      
       // The stack contains either ... TS, Filter or
       // ... TS, Filter, Filter with the head of the stack being the rightmost
       // symbol. So we just pop out the two elements from the top and if the
@@ -76,7 +79,7 @@ public final class PcrOpProcFactory {
         pop = top;
       } else {
         top = (TableScanOperator) stack.peek();
-        fop2 = (FilterOperator) tmp2;
+        fop2 = (SamplingOperator) tmp2;
         pop = fop2;
       }
       stack.push(tmp2);

@@ -20,7 +20,7 @@ package org.apache.hadoop.hive.ql.optimizer.pcr;
 
 import java.io.Serializable;
 import java.util.List;
-
+import org.apache.hadoop.hive.ql.exec.SamplingOperator;
 import org.apache.hadoop.hive.ql.exec.FilterOperator;
 import org.apache.hadoop.hive.ql.exec.Operator;
 import org.apache.hadoop.hive.ql.lib.NodeProcessorCtx;
@@ -33,9 +33,9 @@ public class PcrOpWalkerCtx implements NodeProcessorCtx {
 
   static public class OpToDeleteInfo {
     private final Operator<? extends Serializable> parent;
-    private final FilterOperator operator;
+    private final SamplingOperator operator;
 
-    public OpToDeleteInfo(Operator<? extends Serializable> parent, FilterOperator operator) {
+    public OpToDeleteInfo(Operator<? extends Serializable> parent, SamplingOperator operator) {
       super();
       this.parent = parent;
       this.operator = operator;
@@ -43,7 +43,7 @@ public class PcrOpWalkerCtx implements NodeProcessorCtx {
     public Operator<? extends Serializable> getParent() {
       return parent;
     }
-    public FilterOperator getOperator() {
+    public SamplingOperator getOperator() {
       return operator;
     }
   }

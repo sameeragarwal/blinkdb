@@ -22,6 +22,7 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.apache.hadoop.hive.ql.exec.FilterOperator;
+import org.apache.hadoop.hive.ql.exec.SamplingOperator;
 import org.apache.hadoop.hive.ql.exec.TableScanOperator;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.lib.Node;
@@ -50,8 +51,11 @@ public final class OpProcFactory {
     public Object process(Node nd, Stack<Node> stack, NodeProcessorCtx procCtx,
         Object... nodeOutputs) throws SemanticException {
       OpWalkerCtx owc = (OpWalkerCtx) procCtx;
-      FilterOperator fop = (FilterOperator) nd;
-      FilterOperator fop2 = null;
+      //FilterOperator fop = (FilterOperator) nd;
+      //FilterOperator fop2 = null;
+
+      SamplingOperator fop = (SamplingOperator) nd;
+      SamplingOperator fop2 = null;
 
       // The stack contains either ... TS, Filter or
       // ... TS, Filter, Filter with the head of the stack being the rightmost
@@ -65,7 +69,7 @@ public final class OpProcFactory {
         top = (TableScanOperator) tmp2;
       } else {
         top = (TableScanOperator) stack.peek();
-        fop2 = (FilterOperator) tmp2;
+        fop2 = (SamplingOperator) tmp2;
       }
       stack.push(tmp2);
       stack.push(tmp);

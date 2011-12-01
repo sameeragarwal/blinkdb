@@ -1,0 +1,1340 @@
+Buildfile: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build.xml
+     [exec] [INFO] Scanning for projects...
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building Hive ant
+     [exec] [INFO]    task-segment: [process-resources]
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] [deps-to-props:generate {execution: cdh.build.properties}]
+     [exec] [INFO] 
+     [exec] [INFO]   templateFile: /home/sameer/projects/QuicksilverDB/hive-cdh/src/cloudera/maven-packaging/templates/cdh.build.template
+     [exec] [INFO]   targetFile: /home/sameer/projects/QuicksilverDB/hive-cdh/src/cdh.build.properties
+     [exec] [WARNING] Missing mapping [reactor.repo = https://repository.cloudera.com/content/groups/cdh-releases-rcs]
+     [exec] [WARNING] Missing mapping [hadoop.dep.artifact = hadoop-tarball]
+     [exec] [WARNING] Missing mapping [hadoop.dep.name = hadoop-tarball]
+     [exec] [WARNING] Missing mapping [hadoop.dep.org = org.apache.hadoop]
+     [exec] [INFO] 
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] BUILD SUCCESSFUL
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Total time: 1 second
+     [exec] [INFO] Finished at: Thu Dec 01 00:40:09 PST 2011
+     [exec] [INFO] Final Memory: 8M/80M
+     [exec] [INFO] ------------------------------------------------------------------------
+
+jar:
+
+create-dirs:
+
+compile-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+deploy-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+
+init:
+
+compile:
+
+ivy-init-dirs:
+
+ivy-download:
+      [get] Getting: http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.1.0/ivy-2.1.0.jar
+      [get] To: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/ivy-2.1.0.jar
+      [get] Not modified - so not downloaded
+
+ivy-probe-antlib:
+
+ivy-init-antlib:
+
+ivy-init:
+
+ivy-retrieve-hadoop-source:
+[ivy:retrieve] :: Ivy 2.1.0 - 20090925235825 :: http://ant.apache.org/ivy/ ::
+[ivy:retrieve] :: loading settings :: file = /home/sameer/projects/QuicksilverDB/hive-cdh/src/ivy/ivysettings.xml
+[ivy:retrieve] :: resolving dependencies :: org.apache.hive#hive-shims;0.7.1-cdh3u1
+[ivy:retrieve] 	confs: [default]
+[ivy:retrieve] 	found hadoop#core;0.20.1 in hadoop-source2
+[ivy:retrieve] 	found org.apache.hadoop#hadoop-tarball;0.20.2-cdh3u1 in reactor-repo
+[ivy:retrieve] 	found com.cloudera.cdh#hadoop-ant;3.0-u1 in reactor-repo
+[ivy:retrieve] :: resolution report :: resolve 3072ms :: artifacts dl 4ms
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+	---------------------------------------------------------------------
+[ivy:retrieve] :: retrieving :: org.apache.hive#hive-shims
+[ivy:retrieve] 	confs: [default]
+[ivy:retrieve] 	0 artifacts copied, 3 already retrieved (0kB/7ms)
+
+install-hadoopcore-internal:
+
+build_shims:
+     [echo] Compiling shims against hadoop 0.20.1 (/home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hadoopcore/hadoop-0.20.1)
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/shims/build.xml:53: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+ivy-init-dirs:
+
+ivy-download:
+      [get] Getting: http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.1.0/ivy-2.1.0.jar
+      [get] To: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/ivy-2.1.0.jar
+      [get] Not modified - so not downloaded
+
+ivy-probe-antlib:
+
+ivy-init-antlib:
+
+ivy-init:
+
+ivy-retrieve-hadoop-source:
+[ivy:retrieve] :: Ivy 2.1.0 - 20090925235825 :: http://ant.apache.org/ivy/ ::
+[ivy:retrieve] :: loading settings :: file = /home/sameer/projects/QuicksilverDB/hive-cdh/src/ivy/ivysettings.xml
+[ivy:retrieve] :: resolving dependencies :: org.apache.hive#hive-shims;0.7.1-cdh3u1
+[ivy:retrieve] 	confs: [default]
+[ivy:retrieve] 	found hadoop#core;0.20.1 in hadoop-source2
+[ivy:retrieve] 	found org.apache.hadoop#hadoop-tarball;0.20.2-cdh3u1 in reactor-repo
+[ivy:retrieve] 	found com.cloudera.cdh#hadoop-ant;3.0-u1 in reactor-repo
+[ivy:retrieve] :: resolution report :: resolve 1840ms :: artifacts dl 5ms
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+	---------------------------------------------------------------------
+[ivy:retrieve] :: retrieving :: org.apache.hive#hive-shims
+[ivy:retrieve] 	confs: [default]
+[ivy:retrieve] 	0 artifacts copied, 3 already retrieved (0kB/5ms)
+
+install-hadoopcore-internal:
+
+build_shims:
+     [echo] Compiling shims against hadoop 0.20.2-cdh3u1 (/home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hadoopcore/hadoop-0.20.2-cdh3u1)
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/shims/build.xml:53: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/shims/build.xml:75: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+     [echo] Jar: shims
+
+create-dirs:
+
+compile-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+deploy-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+
+init:
+
+setup:
+
+compile:
+     [echo] Compiling: common
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build-common.xml:325: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+     [echo] Jar: common
+
+create-dirs:
+
+compile-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+deploy-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+
+init:
+
+dynamic-serde:
+
+ivy-init-dirs:
+
+ivy-download:
+      [get] Getting: http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.1.0/ivy-2.1.0.jar
+      [get] To: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/ivy-2.1.0.jar
+      [get] Not modified - so not downloaded
+
+ivy-probe-antlib:
+
+ivy-init-antlib:
+
+ivy-init:
+
+ivy-resolve:
+[ivy:resolve] :: Ivy 2.1.0 - 20090925235825 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /home/sameer/projects/QuicksilverDB/hive-cdh/src/ivy/ivysettings.xml
+
+ivy-retrieve:
+
+compile:
+     [echo] Compiling: hive
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/serde/build.xml:52: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+     [echo] Jar: serde
+
+create-dirs:
+
+compile-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+deploy-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+
+init:
+
+metastore-init:
+
+build-grammar:
+
+model-compile:
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/metastore/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+ivy-init-dirs:
+
+ivy-download:
+      [get] Getting: http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.1.0/ivy-2.1.0.jar
+      [get] To: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/ivy-2.1.0.jar
+      [get] Not modified - so not downloaded
+
+ivy-probe-antlib:
+
+ivy-init-antlib:
+
+ivy-init:
+
+ivy-resolve:
+[ivy:resolve] :: Ivy 2.1.0 - 20090925235825 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /home/sameer/projects/QuicksilverDB/hive-cdh/src/ivy/ivysettings.xml
+
+ivy-retrieve:
+
+core-compile:
+     [echo] Compiling: 
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/metastore/build.xml:60: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+model-enhance:
+[datanucleusenhancer] log4j:WARN No appenders could be found for logger (DataNucleus.Enhancer).
+[datanucleusenhancer] log4j:WARN Please initialize the log4j system properly.
+[datanucleusenhancer] DataNucleus Enhancer (version 2.0.3) : Enhancement of classes
+[datanucleusenhancer] DataNucleus Enhancer : Classpath
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/service/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/common/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/serde/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/metastore/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/cli/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/shims/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hwi/classes
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hadoopcore/hadoop-0.20.2-cdh3u1/hadoop-core-0.20.2-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hadoopcore/hadoop-0.20.2-cdh3u1/hadoop-tools-0.20.2-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/anttasks/hive-anttasks-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/cli/hive-cli-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/common/hive-common-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/contrib/hive-contrib-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hbase-handler/hive-hbase-handler-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/hwi/hive-hwi-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/jdbc/hive-jdbc-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/metastore/hive-metastore-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/hive-exec-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/serde/hive-serde-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/service/hive-service-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/shims/hive-shims-0.7.1-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/asm-3.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/commons-codec-1.3.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/commons-collections-3.2.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/commons-lang-2.4.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/commons-logging-1.0.4.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/commons-logging-api-1.0.4.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/derby.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/json.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/log4j-1.2.15.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/thrift-0.5.0.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/thrift-fb303-0.5.0.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/lib/velocity-1.5.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/lib/antlr-2.7.7.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/lib/antlr-3.0.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/lib/antlr-runtime-3.0.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/lib/stringtemplate-3.1b1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/commons-cli-1.2.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/commons-dbcp-1.4.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/commons-pool-1.5.4.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/datanucleus-connectionpool-2.0.3.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/datanucleus-core-2.0.3.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/datanucleus-enhancer-2.0.3.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/datanucleus-rdbms-2.0.3.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/guava-r06.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/hbase-0.90.3-cdh3u1-tests.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/hbase-0.90.3-cdh3u1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/jdo2-api-2.3-ec.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/slf4j-api-1.6.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/slf4j-log4j12-1.6.1.jar
+[datanucleusenhancer] >>  /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/default/zookeeper-3.3.1.jar
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MDatabase
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MFieldSchema
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MType
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MTable
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MSerDeInfo
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MOrder
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MStorageDescriptor
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MPartition
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MIndex
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MRole
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MRoleMap
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MGlobalPrivilege
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MDBPrivilege
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MTablePrivilege
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MPartitionPrivilege
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MTableColumnPrivilege
+[datanucleusenhancer] ENHANCED (PersistenceCapable) : org.apache.hadoop.hive.metastore.model.MPartitionColumnPrivilege
+[datanucleusenhancer] DataNucleus Enhancer completed with success for 17 classes. Timings : input=542 ms, enhance=153 ms, total=695 ms. Consult the log for full details
+
+compile:
+
+jar:
+     [echo] Jar: metastore
+
+create-dirs:
+
+compile-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+deploy-ant-tasks:
+
+create-dirs:
+
+init:
+
+compile:
+     [echo] Compiling: anttasks
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ant/build.xml:40: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+jar:
+
+init:
+
+ql-init:
+
+build-grammar:
+     [echo] Building Grammar /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g  ....
+     [java] ANTLR Parser Generator  Version 3.0.1 (August 13, 2007)  1989-2007
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:97:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:97:11: expecting RCURLY, found 'hadoop'
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:98:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:98:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:99:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:99:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:100:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:100:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:101:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:101:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:102:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:102:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:103:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:103:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:104:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:104:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:105:8: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:105:8: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:106:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:106:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:107:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:107:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:108:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:108:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:109:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:109:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:110:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:110:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:111:29: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:111:29: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:112:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:112:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:113:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:113:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:114:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:114:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:115:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:115:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:116:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:116:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:117:25: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:117:25: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:118:22: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:118:22: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:119:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:119:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:120:25: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:120:25: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:121:27: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:121:27: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:122:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:122:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:123:25: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:123:25: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:124:38: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:124:38: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:125:21: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:125:21: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:126:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:126:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:127:25: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:127:25: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:128:31: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:128:31: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:129:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:129:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:130:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:130:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:131:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:131:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:132:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:132:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:133:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:133:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:134:40: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:134:40: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:135:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:135:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:136:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:136:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:137:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:137:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:138:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:138:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:139:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:139:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:140:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:140:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:141:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:141:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:142:21: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:142:21: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:143:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:143:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:144:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:144:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:145:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:145:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:146:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:146:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:147:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:147:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:148:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:148:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:149:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:149:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:150:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:150:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:151:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:151:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:152:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:152:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:153:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:153:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:154:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:154:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:155:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:155:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:156:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:156:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:157:28: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:157:28: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:158:26: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:158:26: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:159:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:159:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:160:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:160:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:161:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:161:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:162:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:162:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:163:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:163:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:164:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:164:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:165:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:165:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:166:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:166:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:167:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:167:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:168:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:168:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:169:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:169:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:170:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:170:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:171:28: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:171:28: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:172:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:172:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:173:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:173:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:174:22: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:174:22: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:175:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:175:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:176:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:176:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:177:22: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:177:22: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:178:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:178:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:179:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:179:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:180:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:180:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:181:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:181:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:182:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:182:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:183:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:183:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:184:25: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:184:25: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:185:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:185:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:186:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:186:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:187:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:187:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:188:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:188:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:189:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:189:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:190:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:190:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:191:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:191:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:192:10: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:192:10: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:193:18: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:193:18: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:194:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:194:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:195:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:195:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:196:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:196:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:197:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:197:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:198:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:198:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:199:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:199:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:200:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:200:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:201:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:201:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:202:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:202:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:203:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:203:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:204:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:204:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:205:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:205:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:206:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:206:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:207:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:207:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:208:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:208:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:209:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:209:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:210:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:210:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:211:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:211:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:212:10: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:212:10: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:213:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:213:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:214:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:214:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:215:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:215:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:216:1: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:216:1: unexpected token: TOK_PRIVILEGE
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:217:19: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:217:19: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:218:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:218:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:219:10: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:219:10: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:220:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:220:9: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:221:22: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:221:22: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:222:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:222:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:223:24: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:223:24: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:224:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:224:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:225:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:225:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:226:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:226:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:227:14: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:227:14: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:228:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:228:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:229:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:229:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:230:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:230:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:231:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:231:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:232:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:232:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:233:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:233:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:234:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:234:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:235:20: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:235:20: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:236:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:236:16: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:237:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:237:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:238:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:238:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:239:23: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:239:23: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:240:15: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:240:15: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:241:29: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:241:29: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:242:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:242:12: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:243:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:243:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:244:11: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:244:11: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:245:17: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:245:17: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:246:13: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:246:13: unexpected token: ;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:251:9: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:251:9: unexpected token: 
+     [java] package org.apache.hadoop.hive.ql.parse;
+     [java] 
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:254:16: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:254:16: unexpected token: package org.apache.hadoop.hive.ql.parse;
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:257:10: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:257:10: unexpected token: 
+     [java]   Stack msgs = new Stack<String>();
+     [java] 
+     [java] error(100): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:261:12: syntax error: antlr: /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:261:12: unexpected token: 
+     [java] catch (RecognitionException e) {
+     [java]  reportError(e);
+     [java]   throw e;
+     [java] }
+     [java] 
+     [java] warning(200): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1500:5: Decision can match input such as "Identifier DOT Identifier" using multiple alternatives: 1, 2
+     [java] As a result, alternative(s) 2 were disabled for that input
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:277:60: reference to undefined token in rewrite rule: TOK_EXPLAIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:292:10: reference to undefined token in rewrite rule: TOK_LOAD
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:330:10: reference to undefined token in rewrite rule: TOK_IFEXISTS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:337:10: reference to undefined token in rewrite rule: TOK_IFNOTEXISTS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:349:10: reference to undefined token in rewrite rule: TOK_CREATEDATABASE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:356:43: reference to undefined token in rewrite rule: TOK_DATABASEPROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:363:55: reference to undefined token in rewrite rule: TOK_DBPROPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:371:10: reference to undefined token in rewrite rule: TOK_SWITCHDATABASE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:378:10: reference to undefined token in rewrite rule: TOK_DROPDATABASE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:385:10: reference to undefined token in rewrite rule: TOK_DATABASECOMMENT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:404:10: reference to undefined token in rewrite rule: TOK_CREATETABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:405:12: reference to undefined token in rewrite rule: TOK_LIKETABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:432:9: reference to undefined token in rewrite rule: TOK_CREATEINDEX
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:447:56: reference to undefined token in rewrite rule: TOK_INDEXCOMMENT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:454:9: reference to undefined token in rewrite rule: TOK_DEFERRED_REBUILDINDEX
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:461:9: reference to undefined token in rewrite rule: TOK_CREATEINDEX_INDEXTBLNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:475:46: reference to undefined token in rewrite rule: TOK_INDEXPROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:482:55: reference to undefined token in rewrite rule: TOK_INDEXPROPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:489:9: reference to undefined token in rewrite rule: TOK_DROPINDEX
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:495:49: reference to undefined token in rewrite rule: TOK_DROPTABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:544:11: reference to undefined token in rewrite rule: TOK_ALTERINDEX_REBUILD
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:548:11: reference to undefined token in rewrite rule: TOK_ALTERINDEX_PROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:562:10: reference to undefined token in rewrite rule: TOK_ALTERDATABASE_PROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:569:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_RENAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:576:26: reference to undefined token in rewrite rule: TOK_ALTERTABLE_ADDCOLS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:577:26: reference to undefined token in rewrite rule: TOK_ALTERTABLE_REPLACECOLS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:584:9: reference to undefined token in rewrite rule: TOK_ALTERTABLE_RENAMECOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:589:27: reference to undefined token in rewrite rule: TOK_ALTERTABLE_CHANGECOL_AFTER_POSITION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:590:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_CHANGECOL_AFTER_POSITION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:597:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_ADDPARTS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:604:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_TOUCH
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:611:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_ARCHIVE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:618:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_UNARCHIVE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:625:43: reference to undefined token in rewrite rule: TOK_PARTITIONLOCATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:632:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_DROPPARTS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:639:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_PROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:646:10: reference to undefined token in rewrite rule: TOK_ALTERVIEW_PROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:653:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_SERIALIZER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:655:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_SERDEPROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:662:7: reference to undefined token in rewrite rule: TOK_TABLE_PARTITION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:669:8: reference to undefined token in rewrite rule: TOK_ALTERTABLE_PARTITION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:684:7: reference to undefined token in rewrite rule: TOK_ALTERTABLE_FILEFORMAT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:691:8: reference to undefined token in rewrite rule: TOK_ALTERTABLE_LOCATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:698:10: reference to undefined token in rewrite rule: TOK_ALTERTABLE_ALTERPARTS_PROTECTMODE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:704:44: reference to undefined token in rewrite rule: TOK_ENABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:705:45: reference to undefined token in rewrite rule: TOK_DISABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:711:24: reference to undefined token in rewrite rule: TOK_OFFLINE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:712:24: reference to undefined token in rewrite rule: TOK_NO_DROP
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:713:25: reference to undefined token in rewrite rule: TOK_READONLY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:721:6: reference to undefined token in rewrite rule: TOK_ALTERTABLE_CLUSTER_SORT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:724:6: reference to undefined token in rewrite rule: TOK_ALTERTABLE_CLUSTER_SORT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:730:29: reference to undefined token in rewrite rule: TOK_TBLSEQUENCEFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:731:25: reference to undefined token in rewrite rule: TOK_TBLTEXTFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:732:23: reference to undefined token in rewrite rule: TOK_TBLRCFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:734:12: reference to undefined token in rewrite rule: TOK_TABLEFILEFORMAT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:735:35: reference to undefined token in rewrite rule: TOK_FILEFORMAT_GENERIC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:748:40: reference to undefined token in rewrite rule: TOK_TABTYPE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:754:110: reference to undefined token in rewrite rule: TOK_DESCTABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:755:80: reference to undefined token in rewrite rule: TOK_DESCFUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:756:79: reference to undefined token in rewrite rule: TOK_DESCDATABASE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:762:85: reference to undefined token in rewrite rule: TOK_ANALYZE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:768:76: reference to undefined token in rewrite rule: TOK_SHOWDATABASES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:769:118: reference to undefined token in rewrite rule: TOK_SHOWTABLES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:769:134: reference to undefined token in rewrite rule: TOK_FROM
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:770:54: reference to undefined token in rewrite rule: TOK_SHOWFUNCTIONS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:771:60: reference to undefined token in rewrite rule: TOK_SHOWPARTITIONS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:773:10: reference to undefined token in rewrite rule: TOK_SHOW_TABLESTATUS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:774:80: reference to undefined token in rewrite rule: TOK_SHOWLOCKS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:776:10: reference to undefined token in rewrite rule: TOK_SHOWINDEXES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:782:63: reference to undefined token in rewrite rule: TOK_LOCKTABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:794:57: reference to undefined token in rewrite rule: TOK_UNLOCKTABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:801:10: reference to undefined token in rewrite rule: TOK_CREATEROLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:808:10: reference to undefined token in rewrite rule: TOK_DROPROLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:818:10: reference to undefined token in rewrite rule: TOK_GRANT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:825:10: reference to undefined token in rewrite rule: TOK_REVOKE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:832:10: reference to undefined token in rewrite rule: TOK_GRANT_ROLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:839:10: reference to undefined token in rewrite rule: TOK_REVOKE_ROLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:846:10: reference to undefined token in rewrite rule: TOK_SHOW_ROLE_GRANT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:853:10: reference to undefined token in rewrite rule: TOK_SHOW_GRANT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:860:10: reference to undefined token in rewrite rule: TOK_PRIV_OBJECT_COL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:867:10: reference to undefined token in rewrite rule: TOK_PRIV_OBJECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:874:10: reference to undefined token in rewrite rule: TOK_PRIVILEGE_LIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:881:10: reference to undefined token in rewrite rule: TOK_PRIVILEGE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:887:19: reference to undefined token in rewrite rule: TOK_PRIV_ALL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:888:21: reference to undefined token in rewrite rule: TOK_PRIV_ALTER_METADATA
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:889:22: reference to undefined token in rewrite rule: TOK_PRIV_ALTER_DATA
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:890:22: reference to undefined token in rewrite rule: TOK_PRIV_CREATE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:891:20: reference to undefined token in rewrite rule: TOK_PRIV_DROP
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:892:21: reference to undefined token in rewrite rule: TOK_PRIV_INDEX
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:893:20: reference to undefined token in rewrite rule: TOK_PRIV_LOCK
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:894:22: reference to undefined token in rewrite rule: TOK_PRIV_SELECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:895:29: reference to undefined token in rewrite rule: TOK_PRIV_SHOW_DATABASE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:901:49: reference to undefined token in rewrite rule: TOK_PRINCIPAL_NAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:907:30: reference to undefined token in rewrite rule: TOK_USER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:908:32: reference to undefined token in rewrite rule: TOK_GROUP
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:909:30: reference to undefined token in rewrite rule: TOK_ROLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:916:10: reference to undefined token in rewrite rule: TOK_GRANT_WITH_OPTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:923:10: reference to undefined token in rewrite rule: TOK_MSCK
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:930:10: reference to undefined token in rewrite rule: TOK_CREATEFUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:937:10: reference to undefined token in rewrite rule: TOK_DROPFUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:950:10: reference to undefined token in rewrite rule: TOK_CREATEVIEW
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:961:47: reference to undefined token in rewrite rule: TOK_DROPVIEW
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:975:46: reference to undefined token in rewrite rule: TOK_TABLECOMMENT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:982:10: reference to undefined token in rewrite rule: TOK_TABLEPARTCOLS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:990:10: reference to undefined token in rewrite rule: TOK_TABLEBUCKETS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:996:27: reference to undefined token in rewrite rule: TOK_SERDE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:997:31: reference to undefined token in rewrite rule: TOK_SERDE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:998:14: reference to undefined token in rewrite rule: TOK_SERDE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1004:42: reference to undefined token in rewrite rule: TOK_RECORDREADER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1005:14: reference to undefined token in rewrite rule: TOK_RECORDREADER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1011:42: reference to undefined token in rewrite rule: TOK_RECORDWRITER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1012:14: reference to undefined token in rewrite rule: TOK_RECORDWRITER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1019:10: reference to undefined token in rewrite rule: TOK_SERDENAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1027:10: reference to undefined token in rewrite rule: TOK_SERDEPROPS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1035:10: reference to undefined token in rewrite rule: TOK_TABLEROWFORMAT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1037:10: reference to undefined token in rewrite rule: TOK_TABLESERIALIZER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1051:46: reference to undefined token in rewrite rule: TOK_TABLEPROPERTIES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1058:55: reference to undefined token in rewrite rule: TOK_TABLEPROPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1065:56: reference to undefined token in rewrite rule: TOK_TABLEPROPERTY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1073:10: reference to undefined token in rewrite rule: TOK_TABLEROWFORMATFIELD
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1081:10: reference to undefined token in rewrite rule: TOK_TABLEROWFORMATCOLLITEMS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1089:10: reference to undefined token in rewrite rule: TOK_TABLEROWFORMATMAPKEYS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1097:10: reference to undefined token in rewrite rule: TOK_TABLEROWFORMATLINES
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1104:43: reference to undefined token in rewrite rule: TOK_TBLSEQUENCEFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1105:41: reference to undefined token in rewrite rule: TOK_TBLTEXTFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1106:39: reference to undefined token in rewrite rule: TOK_TBLRCFILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1108:12: reference to undefined token in rewrite rule: TOK_TABLEFILEFORMAT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1111:12: reference to undefined token in rewrite rule: TOK_STORAGEHANDLER
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1113:12: reference to undefined token in rewrite rule: TOK_FILEFORMAT_GENERIC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1120:43: reference to undefined token in rewrite rule: TOK_TABLELOCATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1126:51: reference to undefined token in rewrite rule: TOK_TABCOLLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1132:61: reference to undefined token in rewrite rule: TOK_TABCOLLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1138:43: reference to undefined token in rewrite rule: TOK_TABCOLNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1151:53: reference to undefined token in rewrite rule: TOK_TABCOLNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1158:27: reference to undefined token in rewrite rule: TOK_TABSORTCOLNAMEASC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1159:27: reference to undefined token in rewrite rule: TOK_TABSORTCOLNAMEDESC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1165:57: reference to undefined token in rewrite rule: TOK_TABCOLNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1172:10: reference to undefined token in rewrite rule: TOK_TABCOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1172:30: reference to undefined token in rewrite rule: TOK_NULL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1179:27: reference to undefined token in rewrite rule: TOK_TABSORTCOLNAMEASC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1180:27: reference to undefined token in rewrite rule: TOK_TABSORTCOLNAMEDESC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1187:30: reference to undefined token in rewrite rule: TOK_TABCOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1188:30: reference to undefined token in rewrite rule: TOK_TABCOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1195:30: reference to undefined token in rewrite rule: TOK_TABCOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1196:30: reference to undefined token in rewrite rule: TOK_TABCOL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1208:37: reference to undefined token in rewrite rule: TOK_COLTYPELIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1221:30: reference to undefined token in rewrite rule: TOK_TINYINT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1222:30: reference to undefined token in rewrite rule: TOK_SMALLINT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1223:30: reference to undefined token in rewrite rule: TOK_INT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1224:30: reference to undefined token in rewrite rule: TOK_BIGINT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1225:30: reference to undefined token in rewrite rule: TOK_BOOLEAN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1226:30: reference to undefined token in rewrite rule: TOK_FLOAT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1227:30: reference to undefined token in rewrite rule: TOK_DOUBLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1228:30: reference to undefined token in rewrite rule: TOK_DATE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1229:30: reference to undefined token in rewrite rule: TOK_DATETIME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1230:30: reference to undefined token in rewrite rule: TOK_TIMESTAMP
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1231:30: reference to undefined token in rewrite rule: TOK_STRING
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1237:49: reference to undefined token in rewrite rule: TOK_LIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1243:67: reference to undefined token in rewrite rule: TOK_STRUCT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1250:10: reference to undefined token in rewrite rule: TOK_MAP
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1256:58: reference to undefined token in rewrite rule: TOK_UNIONTYPE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1262:28: reference to undefined token in rewrite rule: TOK_UNION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1273:23: reference to undefined token in rewrite rule: TOK_QUERY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1292:22: reference to undefined token in rewrite rule: TOK_QUERY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1292:45: reference to undefined token in rewrite rule: TOK_INSERT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1313:22: reference to undefined token in rewrite rule: TOK_QUERY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1313:45: reference to undefined token in rewrite rule: TOK_INSERT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1313:58: reference to undefined token in rewrite rule: TOK_DESTINATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1313:76: reference to undefined token in rewrite rule: TOK_DIR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1313:84: reference to undefined token in rewrite rule: TOK_TMP_FILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1333:22: reference to undefined token in rewrite rule: TOK_INSERT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1348:22: reference to undefined token in rewrite rule: TOK_INSERT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1348:35: reference to undefined token in rewrite rule: TOK_DESTINATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1348:53: reference to undefined token in rewrite rule: TOK_DIR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1348:61: reference to undefined token in rewrite rule: TOK_TMP_FILE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1357:44: reference to undefined token in rewrite rule: TOK_DESTINATION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1364:47: reference to undefined token in rewrite rule: TOK_LOCAL_DIR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1365:38: reference to undefined token in rewrite rule: TOK_DIR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1373:29: reference to undefined token in rewrite rule: TOK_LIMIT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1382:28: reference to undefined token in rewrite rule: TOK_INTIME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1389:34: reference to undefined token in rewrite rule: TOK_WITHMAXERROR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1396:30: reference to undefined token in rewrite rule: TOK_QSSAMPLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1407:50: reference to undefined token in rewrite rule: TOK_SELECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1408:50: reference to undefined token in rewrite rule: TOK_SELECTDI
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1409:11: reference to undefined token in rewrite rule: TOK_SELECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1409:36: reference to undefined token in rewrite rule: TOK_SELEXPR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1411:21: reference to undefined token in rewrite rule: TOK_SELECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1411:34: reference to undefined token in rewrite rule: TOK_SELEXPR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1430:10: reference to undefined token in rewrite rule: TOK_TRANSFORM
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1437:48: reference to undefined token in rewrite rule: TOK_HINTLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1451:45: reference to undefined token in rewrite rule: TOK_HINT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1458:19: reference to undefined token in rewrite rule: TOK_MAPJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1459:25: reference to undefined token in rewrite rule: TOK_STREAMTABLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1460:26: reference to undefined token in rewrite rule: TOK_HOLD_DDLTIME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1467:43: reference to undefined token in rewrite rule: TOK_HINTARGLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1481:109: reference to undefined token in rewrite rule: TOK_SELEXPR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1494:10: reference to undefined token in rewrite rule: TOK_TRANSFORM
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1508:53: reference to undefined token in rewrite rule: TOK_EXPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1516:14: reference to undefined token in rewrite rule: TOK_ALLCOLREF
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1518:14: reference to undefined token in rewrite rule: TOK_ALLCOLREF
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1526:21: reference to undefined token in rewrite rule: TOK_TABLE_OR_COL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1533:41: reference to undefined token in rewrite rule: TOK_EXPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1540:41: reference to undefined token in rewrite rule: TOK_ALIASLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1549:29: reference to undefined token in rewrite rule: TOK_FROM
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1569:12: reference to undefined token in rewrite rule: TOK_EXPLIST
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1575:24: reference to undefined token in rewrite rule: TOK_UNIQUEJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1581:38: reference to undefined token in rewrite rule: TOK_JOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1582:38: reference to undefined token in rewrite rule: TOK_LEFTOUTERJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1583:38: reference to undefined token in rewrite rule: TOK_RIGHTOUTERJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1584:38: reference to undefined token in rewrite rule: TOK_FULLOUTERJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1585:38: reference to undefined token in rewrite rule: TOK_LEFTSEMIJOIN
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1592:83: reference to undefined token in rewrite rule: TOK_LATERAL_VIEW
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1592:102: reference to undefined token in rewrite rule: TOK_SELECT
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1592:115: reference to undefined token in rewrite rule: TOK_SELEXPR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1599:21: reference to undefined token in rewrite rule: TOK_TABALIAS
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1613:154: reference to undefined token in rewrite rule: TOK_TABLESAMPLE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1620:10: reference to undefined token in rewrite rule: TOK_TABREF
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1627:10: reference to undefined token in rewrite rule: TOK_TABNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1635:10: reference to undefined token in rewrite rule: TOK_TABNAME
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1642:60: reference to undefined token in rewrite rule: TOK_SUBQUERY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1651:35: reference to undefined token in rewrite rule: TOK_WHERE
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1671:10: reference to undefined token in rewrite rule: TOK_GROUPBY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1685:36: reference to undefined token in rewrite rule: TOK_HAVING
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1702:35: reference to undefined token in rewrite rule: TOK_ORDERBY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1711:32: reference to undefined token in rewrite rule: TOK_CLUSTERBY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1719:41: reference to undefined token in rewrite rule: TOK_DISTRIBUTEBY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1728:35: reference to undefined token in rewrite rule: TOK_SORTBY
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1742:34: reference to undefined token in rewrite rule: TOK_FUNCTIONSTAR
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1743:34: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1744:34: reference to undefined token in rewrite rule: TOK_FUNCTIONDI
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1763:17: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1773:17: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1783:17: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1800:54: reference to undefined token in rewrite rule: TOK_CHARSETLITERAL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1812:16: reference to undefined token in rewrite rule: TOK_NULL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1835:18: reference to undefined token in rewrite rule: TOK_ISNULL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1836:27: reference to undefined token in rewrite rule: TOK_ISNOTNULL
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1846:24: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1919:16: reference to undefined token in rewrite rule: TOK_FUNCTION
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1967:34: reference to undefined token in rewrite rule: TOK_TAB
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1973:62: reference to undefined token in rewrite rule: TOK_PARTSPEC
+     [java] error(135): /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/src/java/org/apache/hadoop/hive/ql/parse/Hive.g:1978:39: reference to undefined token in rewrite rule: TOK_PARTVAL
+
+ivy-init-dirs:
+
+ivy-download:
+      [get] Getting: http://repo2.maven.org/maven2/org/apache/ivy/ivy/2.1.0/ivy-2.1.0.jar
+      [get] To: /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ivy/lib/ivy-2.1.0.jar
+      [get] Not modified - so not downloaded
+
+ivy-probe-antlib:
+
+ivy-init-antlib:
+
+ivy-init:
+
+ivy-resolve:
+[ivy:resolve] :: Ivy 2.1.0 - 20090925235825 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /home/sameer/projects/QuicksilverDB/hive-cdh/src/ivy/ivysettings.xml
+
+ivy-retrieve:
+
+compile:
+     [echo] Compiling: hive
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/ql/build.xml:164: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 8 source files to /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/classes
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:412: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("explain statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:486: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:519: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:609: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:662: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("load statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:799: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:878: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("ddl statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1431: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1464: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("if exists clause"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1507: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1543: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("if not exists clause"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1590: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1643: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("create database statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1822: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1857: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("dbproperties"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1907: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:1941: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("database properties list"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2023: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2056: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("switch database statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2101: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2142: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("drop database statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2255: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2288: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("database's comment"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2334: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2418: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("create table statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2865: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:2948: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("create index statement");
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3262: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3295: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("comment on an index");
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3341: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3377: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("auto rebuild index");
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3424: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3459: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("index table name");
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3510: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3541: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("table properties with prefix"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3563: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3598: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("index properties"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3648: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3682: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("index properties list"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3764: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3808: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("drop index statement");
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3897: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:3935: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("drop statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4013: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4058: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4161: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4212: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter table statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4493: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4522: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter view statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4542: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4591: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter index statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4754: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4783: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter database statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4803: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4841: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter database properties statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4897: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4935: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("rename statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:4991: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5038: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("add column statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5149: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5200: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("rename column name"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5344: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5509: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("add partition statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5674: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5709: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("touch statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5789: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5824: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("archive statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5904: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:5939: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("unarchive statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6019: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6052: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("partition location"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6098: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6141: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("drop partition statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6260: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6298: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter properties statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6354: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6392: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter view properties statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6448: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6501: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter serdes statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6681: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6713: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("table partition prefix");
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6783: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6815: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("alter table partition statement");
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6863: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6896: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("alter table partition statement suffix");
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:6974: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7009: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("alter fileformat statement"); 
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7059: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7095: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("alter location");
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7145: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7174: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("alter partition protect mode statement"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7216: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7253: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("protect mode specification enable"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7357: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7393: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("protect mode specification enable"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7524: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7562: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]         msgs.push("alter cluster by sort by statement");
+    [javac]         ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7682: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]             msgs.pop();
+    [javac]             ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:7742: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]          msgs.push("file format specification"); 
+    [javac]          ^
+    [javac] /home/sameer/projects/QuicksilverDB/hive-cdh/src/build/ql/gen/antlr/gen-java/org/apache/hadoop/hive/ql/parse/HiveParser.java:8014: cannot find symbol
+    [javac] symbol  : variable msgs
+    [javac] location: class HiveParser
+    [javac]              msgs.pop(); 
+    [javac]              ^
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb49cfffd, pid=28587, tid=3078490992
+#
+# JRE version: 6.0_22-b22
+# Java VM: OpenJDK Server VM (20.0-b11 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.10.4
+# Distribution: Ubuntu 11.04, package 6b22-1.10.4-0ubuntu1~11.04.1
+# Problematic frame:
+# J  com.sun.tools.javac.comp.Resolve.findMethod(Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/util/Name;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/code/Type;ZLcom/sun/tools/javac/code/Symbol;ZZZ)Lcom/sun/tools/javac/code/Symbol;
+#
+# An error report file with more information is saved as:
+# /home/sameer/projects/QuicksilverDB/hive-cdh/src/hs_err_pid28587.log
+#
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+#

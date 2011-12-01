@@ -24,6 +24,7 @@ backtrack=false;
 k=3;
 }
 
+
 tokens {
 TOK_INSERT;
 TOK_QUERY;
@@ -242,6 +243,7 @@ TOK_TABNAME;
 TOK_TABSRC;
 TOK_INTIME;
 TOK_WITHMAXERROR;
+TOK_QSSAMPLE;
 }
 // sameerag: Added Time and Error tokens
 
@@ -1278,6 +1280,7 @@ regular_body
    selectClause
    fromClause
    whereClause?
+   qsSampleClause?
    groupByClause?
    havingClause?
    orderByClause?
@@ -1287,7 +1290,7 @@ regular_body
    timeClause?
    maxErrorClause?
    limitClause? -> ^(TOK_QUERY fromClause ^(TOK_INSERT insertClause
-                     selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
+                     selectClause whereClause? qsSampleClause? groupByClause? havingClause? orderByClause? clusterByClause?
                      distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?))
    |
    selectStatement
@@ -1298,6 +1301,7 @@ selectStatement
    selectClause
    fromClause
    whereClause?
+   qsSampleClause?
    groupByClause?
    havingClause?
    orderByClause?
@@ -1307,7 +1311,7 @@ selectStatement
    timeClause?
    maxErrorClause?
    limitClause? -> ^(TOK_QUERY fromClause ^(TOK_INSERT ^(TOK_DESTINATION ^(TOK_DIR TOK_TMP_FILE))
-                     selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
+                     selectClause whereClause? qsSampleClause? groupByClause? havingClause? orderByClause? clusterByClause?
                      distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?))
    ;
 
@@ -1317,6 +1321,7 @@ body
    insertClause
    selectClause
    whereClause?
+   qsSampleClause? 
    groupByClause?
    havingClause?
    orderByClause?
@@ -1326,11 +1331,12 @@ body
    timeClause?
    maxErrorClause?
    limitClause? -> ^(TOK_INSERT insertClause?
-                     selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
+                     selectClause whereClause? groupByClause? qsSampleClause? havingClause? orderByClause? clusterByClause?
                      distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?)
    |
    selectClause
    whereClause?
+   qsSampleClause? 
    groupByClause?
    havingClause?
    orderByClause?
@@ -1340,7 +1346,7 @@ body
    timeClause?
    maxErrorClause?
    limitClause? -> ^(TOK_INSERT ^(TOK_DESTINATION ^(TOK_DIR TOK_TMP_FILE))
-                     selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
+                     selectClause whereClause? qsSampleClause? groupByClause? havingClause? orderByClause? clusterByClause?
                      distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?)
    ;
 
@@ -1383,6 +1389,12 @@ maxErrorClause
 	KW_WITHMAXERROR num=Number -> ^(TOK_WITHMAXERROR $num)
 	;
 
+qsSampleClause
+@init {msgs.push("max error clause");}
+@after {msgs.pop(); }
+	:
+	KW_QSSAMPLE num=Number -> ^(TOK_QSSAMPLE $num)
+	;
 
 //----------------------- Rules for parsing selectClause -----------------------------
 // select a,b,c ...
@@ -2230,6 +2242,7 @@ KW_SHOW_DATABASE: 'SHOW_DATABASE';
 KW_UPDATE: 'UPDATE';
 KW_INTIME: 'INTIME';
 KW_WITHMAXERROR: 'WITHMAXERROR';
+KW_QSSAMPLE: 'QSSAMPLE';
 
 
 // Operators

@@ -619,6 +619,10 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
       case HiveParser.TOK_WHERE:
         qbp.setWhrExprForClause(ctx_1.dest, ast);
         break;
+       
+      case HiveParser.TOK_QSSAMPLE:
+        qbp.setSampleExprForClause(ctx_1.dest, ast);
+    	break;  
 
       case HiveParser.TOK_DESTINATION:
         ctx_1.dest = "insclause-" + ctx_1.nextNum;
@@ -1333,6 +1337,15 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
     ASTNode whereExpr = qb.getParseInfo().getWhrForClause(dest);
     return genFilterPlan(qb, (ASTNode) whereExpr.getChild(0), input);
   }
+  
+  //@sameerag
+  @SuppressWarnings("nls")
+  private Operator genSamplePlan(String dest, QB qb, Operator input)
+      throws SemanticException {
+
+    ASTNode sampleExpr = qb.getParseInfo().getSampleForClause(dest);
+    return genSamplePlan(qb, (ASTNode) sampleExpr.getChild(0), input);
+  }
 
   /**
    * create a filter plan. The condition and the inputs are specified.
@@ -1361,6 +1374,34 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
     return output;
   }
 
+  /** @sameerag
+   * TODO(sameerag): Modify FilterDesc/genExprNodeDesc
+   * create a sample plan. The condition and the inputs are specified.
+   *
+   * @param qb
+   *          current query block
+   * @param condn
+   *          The condition to be resolved
+   * @param input
+   *          the input operator
+   */
+  @SuppressWarnings("nls")
+  private Operator genSamplePlan(QB qb, ASTNode condn, Operator input)
+      throws SemanticException {
+
+    OpParseContext inputCtx = opParseCtx.get(input);
+    RowResolver inputRR = inputCtx.getRowResolver();
+    Operator output = putOpInsertMap(OperatorFactory.getAndMakeChild(
+        new FilterDesc(genExprNodeDesc(condn, inputRR), false), new RowSchema(
+        inputRR.getColumnInfos()), input), inputRR);
+
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Created Filter Plan for " + qb.getId() + " row schema: "
+                + inputRR.toString());
+    }
+    return output;
+  }
+  
   @SuppressWarnings("nls")
   private Integer genColListRegex(String colRegex, String tabAlias,
       ASTNode sel, ArrayList<ExprNodeDesc> col_list,
@@ -5404,6 +5445,11 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
         if (qbp.getWhrForClause(dest) != null) {
           curr = genFilterPlan(dest, qb, curr);
         }
+        
+        //@sameerag: Just adding here for now. Doesn't support joins
+        if (qbp.getSampleForClause(dest) != null) {
+            curr = genSamplePlan(dest, qb, curr);
+          }
 
         if (qbp.getAggregationExprsForClause(dest).size() != 0
             || getGroupByForClause(qbp, dest).size() > 0) {

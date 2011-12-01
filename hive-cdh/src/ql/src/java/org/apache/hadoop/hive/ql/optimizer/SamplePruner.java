@@ -27,6 +27,7 @@ import java.util.Stack;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hive.ql.exec.SamplingOperator;
 import org.apache.hadoop.hive.ql.exec.FilterOperator;
 import org.apache.hadoop.hive.ql.exec.TableScanOperator;
 import org.apache.hadoop.hive.ql.lib.DefaultGraphWalker;
@@ -122,7 +123,7 @@ public class SamplePruner implements Transform {
     @Override
     public Object process(Node nd, Stack<Node> stack, NodeProcessorCtx procCtx,
         Object... nodeOutputs) throws SemanticException {
-      FilterOperator filOp = (FilterOperator) nd;
+      SamplingOperator filOp = (SamplingOperator) nd;
       FilterDesc filOpDesc = filOp.getConf();
       sampleDesc sampleDescr = filOpDesc.getSampleDescr();
 

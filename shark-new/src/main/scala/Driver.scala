@@ -146,7 +146,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     
 	  var ret : CommandProcessorResponse = null;
 	  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
-	     (command.toLowerCase().contains("create") || command.toLowerCase().contains("load data")))
+	     (command.toLowerCase().contains("create table") || command.toLowerCase().contains("load data")))
 	  {
 		  var numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
 		  for (i <- 0 until numSamples)

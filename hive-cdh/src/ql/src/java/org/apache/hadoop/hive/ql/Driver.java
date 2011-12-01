@@ -740,7 +740,7 @@ public class Driver implements CommandProcessor {
   public CommandProcessorResponse run(String command) {
 	  CommandProcessorResponse ret = null;
 	  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
-	     (command.toLowerCase().contains("create") || command.toLowerCase().contains("load data")))
+	     (command.toLowerCase().contains("create table") || command.toLowerCase().contains("load data")))
 	  {
 		  int numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
 		  for (int i = 0; i < numSamples; i++)

@@ -49,10 +49,10 @@ public class KMeansTest {
         final int SMOOTHING = 100;
         final int POPULATION_SIZE = 100000;
         final int MEAN_ESTIMATES = 20000;
-        final int START_SAMPLE_SIZE = 200;
-        final int END_SAMPLE_SIZE = 10000;
-        final int NUMBER_OF_BOOTSTRAPS = 300; // Picked at random
-        final int NUMBER_OF_BAGS = 200;
+        final int START_SAMPLE_SIZE = 2000;
+        final int END_SAMPLE_SIZE = 2000 + 1;
+        final int START_NUMBER_OF_BOOTSTRAPS = 100; // Picked at random
+        final int END_NUMBER_OF_BOOTSTRAPS = 500;
         final int NUMBER_OF_BLB_BOOTSTRAPS = 50;
         final double BAG_EXP = 0.7;
         final double DELTA = 1.0e-7;
@@ -61,7 +61,7 @@ public class KMeansTest {
         double[] baseSample = generateSample(POPULATION_SIZE);
         double[][] scratchKMeans = new double[MEAN_ESTIMATES][];
         FileWriter file = new FileWriter(String.format("kmeans.dat"));
-        file.write("size,truth,truth_time,bootstrap,per_bootstrap_time,bootstrap_total_time,blb,per_bootstrap_blb_time,per_bag_time,total_blb_time\n");
+        file.write("size,bootstraps,truth,truth_time,bootstrap,per_bootstrap_time,bootstrap_total_time,blb,per_bootstrap_blb_time,per_bag_time,total_blb_time\n");
         for (int i = START_SAMPLE_SIZE; i < END_SAMPLE_SIZE; i+= 10) {
             long startAccurate = System.nanoTime();
             for (int estimate = 0; estimate < MEAN_ESTIMATES; estimate++) {
@@ -79,33 +79,39 @@ public class KMeansTest {
             Mean perbootstrapBlbTime = new Mean();
             Mean perbagTime = new Mean();
             Mean blbTotalTime = new Mean();
-            for (int exp = 0; exp < SMOOTHING; exp++) {
-                double[] sample = BootstrapSample.GenerateSampleWithReplacement(baseSample, i);
-                bootstrapExperiment(sample, K, NITTER, DELTA, NUMBER_OF_BOOTSTRAPS, trueKMeanVar,
-                        bootstrapDistanceMean, perbootstrapTime,
-                        bootstrapTotalTime);
-                
-                blbExperiment(sample, K, NITTER, DELTA, BAG_EXP, NUMBER_OF_BAGS,
-                        NUMBER_OF_BLB_BOOTSTRAPS,
-                        trueKMeanVar, blbDistanceMean, perbootstrapBlbTime,
-                        perbagTime, blbTotalTime);
-            }
-            System.out.println(String.format("bag actual = %1$s, blb = %2$s, boot = %3$s", trueKMeanVar,
-                    blbDistanceMean.getResult(), bootstrapDistanceMean.getResult()));
-            file.write(String.format("%1$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s\n", 
-                    i, //1
-                    trueKMeanVar, //2
-                    accurateTime,//3
-                    bootstrapDistanceMean.getResult(),//4
-                    perbootstrapTime.getResult(),//5
-                    bootstrapTotalTime.getResult(),//6
-                    blbDistanceMean.getResult(),//7
-                    perbootstrapBlbTime.getResult(),//8
-                    perbagTime.getResult(),//9
-                    blbTotalTime.getResult()));//10
+            for (int bootstraps = START_NUMBER_OF_BOOTSTRAPS; 
+                    bootstraps < END_NUMBER_OF_BOOTSTRAPS;
+                    bootstraps++) {
+                for (int exp = 0; exp < SMOOTHING; exp++) {
+                    double[] sample = BootstrapSample.GenerateSampleWithReplacement(baseSample, i);
+                    bootstrapExperiment(sample, K, NITTER, DELTA, bootstraps, trueKMeanVar,
+                            bootstrapDistanceMean, perbootstrapTime,
+                            bootstrapTotalTime);
                     
-            file.flush();
-            System.out.println(String.format("Explored %1$s of %2$s", i, END_SAMPLE_SIZE));
+                    blbExperiment(sample, K, NITTER, DELTA, BAG_EXP, bootstraps,
+                            NUMBER_OF_BLB_BOOTSTRAPS,
+                            trueKMeanVar, blbDistanceMean, perbootstrapBlbTime,
+                            perbagTime, blbTotalTime);
+                }
+                System.out.println(String.format("bag actual = %1$s, blb = %2$s, boot = %3$s", trueKMeanVar,
+                        blbDistanceMean.getResult(), bootstrapDistanceMean.getResult()));
+                file.write(String.format("%1$s,%11$s,%2$s,%3$s,%4$s,%5$s,%6$s,%7$s,%8$s,%9$s,%10$s\n", 
+                        i, //1
+                        trueKMeanVar, //2
+                        accurateTime,//3
+                        bootstrapDistanceMean.getResult(),//4
+                        perbootstrapTime.getResult(),//5
+                        bootstrapTotalTime.getResult(),//6
+                        blbDistanceMean.getResult(),//7
+                        perbootstrapBlbTime.getResult(),//8
+                        perbagTime.getResult(),//9
+                        blbTotalTime.getResult(),//10
+                        bootstraps
+                        ));
+                        
+                file.flush();
+                System.out.println(String.format("Explored %1$s of %2$s", i, END_SAMPLE_SIZE));
+            }
         }
         
     }

@@ -32,57 +32,57 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
 
   var moveTasks = new ArrayList[MoveTask]()
 
-/**
-* Walk the AST, and get all the table name nodes in a list. 
-*/
-
-def WalkAST(ast: ASTNode, tableNameList: ListBuffer[ASTNode], bounds: Bounds): Unit = {
-  if (ast != null) {
-    for (i <- 0 to ast.getChildCount() -1){
-      var child: ASTNode = ast.getChild(i).asInstanceOf[ASTNode];
-      child.getToken().getType() match {
-      	case HiveParser.TOK_TABNAME =>
-      		var tableNameNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];
-      		tableNameList.add(tableNameNode);
-      	case HiveParser.TOK_WITHMAXERROR =>
-      		var errorBoundNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];
-      		bounds.errorBound = java.lang.Double.parseDouble(errorBoundNode.token.getText());
-      	case HiveParser.TOK_INTIME =>
-      		var timeBoundNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];	  
-      		bounds.timeBound = java.lang.Double.parseDouble(timeBoundNode.token.getText());
-      	case _ => 
-	  }
-      
-      WalkAST(child, tableNameList, bounds);
-    }
-  }  
-}
+  /**
+  * Walk the AST, and get all the table name nodes in a list. 
+  */
+  
+  def WalkAST(ast: ASTNode, tableNameList: ListBuffer[ASTNode], bounds: Bounds): Unit = {
+    if (ast != null) {
+      for (i <- 0 to ast.getChildCount() -1){
+        var child: ASTNode = ast.getChild(i).asInstanceOf[ASTNode];
+        child.getToken().getType() match {
+        	case HiveParser.TOK_TABNAME =>
+        		var tableNameNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];
+        		tableNameList.add(tableNameNode);
+        	case HiveParser.TOK_WITHMAXERROR =>
+        		var errorBoundNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];
+        		bounds.errorBound = java.lang.Double.parseDouble(errorBoundNode.token.getText());
+        	case HiveParser.TOK_INTIME =>
+        		var timeBoundNode: ASTNode = child.getChild(0).asInstanceOf[ASTNode];	  
+        		bounds.timeBound = java.lang.Double.parseDouble(timeBoundNode.token.getText());
+        	case _ => 
+  	  }
+        
+        WalkAST(child, tableNameList, bounds);
+      }
+    }  
+  }
   
     /**
    * @name replaceTableNameWithSampleName
    * @author api, sameerag
    * @description Replace the full table name with the sample table name in the AST.
    */
-def replaceTableNameWithSampleName(ast: ASTNode) = {
-
-  //var tableNameList: List[ASTNode]  = new ArrayList[ASTNode]();
-  var tableNameList = new ListBuffer[ASTNode];
-  var timeErrorBound: Bounds  = new Bounds();
-	  
-  WalkAST(ast, tableNameList, timeErrorBound);
-  if (timeErrorBound.isInitialized()) {
-    var costModel: CostModel = CostModel.getInstance();
-	var iterator: Iterator[ASTNode]  = tableNameList.iterator();
-	while (iterator.hasNext()) {
-	  var tableNameNode: ASTNode = iterator.next();
-	  var sampledTableName: String = costModel.getSampledTableName(timeErrorBound.errorBound, timeErrorBound.timeBound);
-	  if (sampledTableName != null) {
-	    LOG.info("Replacing table [" + tableNameNode.token.getText() + "] with [" + sampledTableName + "]");
-	    tableNameNode.token.setText(sampledTableName);
-	  }
-	}
-  }
-}
+   def replaceTableNameWithSampleName(ast: ASTNode) = {
+   
+     //var tableNameList: List[ASTNode]  = new ArrayList[ASTNode]();
+     var tableNameList = new ListBuffer[ASTNode];
+     var timeErrorBound: Bounds  = new Bounds();
+   	  
+     WalkAST(ast, tableNameList, timeErrorBound);
+     if (timeErrorBound.isInitialized()) {
+       var costModel: CostModel = CostModel.getInstance();
+   	var iterator: Iterator[ASTNode]  = tableNameList.iterator();
+   	while (iterator.hasNext()) {
+   	  var tableNameNode: ASTNode = iterator.next();
+   	  var sampledTableName: String = costModel.getSampledTableName(timeErrorBound.errorBound, timeErrorBound.timeBound);
+   	  if (sampledTableName != null) {
+   	    LOG.info("Replacing table [" + tableNameNode.token.getText() + "] with [" + sampledTableName + "]");
+   	    tableNameNode.token.setText(sampledTableName);
+   	  }
+   	}
+     }
+   }
   
   override def analyzeInternal(ast: ASTNode): Unit = {
     reset()
@@ -95,7 +95,7 @@ def replaceTableNameWithSampleName(ast: ASTNode) = {
     var child: ASTNode = ast;
 
     LOG.info("Starting Semantic Analysis");
-    
+
     //@sameerag: Adding Anand's table-rewriting logic
     replaceTableNameWithSampleName(ast);
 

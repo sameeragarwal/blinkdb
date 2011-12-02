@@ -11,10 +11,22 @@ public class StatisticalQuantile {
         double[] newSample = samples.clone();
         Arrays.sort(newSample);
         double position = quantile * ((double)samples.length);
-        double result = samples[(int)FastMath.floor(position)] + 
-                (position - FastMath.floor(position)) * (samples[(int)FastMath.floor(position) + 1] - 
-                        samples[(int)FastMath.floor(position)]);
+        double result = samples[(int)FastMath.ceil(position - 0.5)];//+ 
+//                (position - FastMath.floor(position)) * (samples[(int)FastMath.floor(position) + 1] - 
+//                        samples[(int)FastMath.floor(position)]);
         return result;
+    }
+    public static double QuantileVar(double[] samples, double quantile, double quantileValue) {
+        int count = 0;
+        for (double sample : samples) {
+            if (sample == quantileValue) {
+                count++;
+            }
+        }
+        double p = ((double)count) / ((double)samples.length);
+        double inv_p2 = 1.0 / (p * p);
+        double term = (quantile * (1 - quantile)) / ((double)samples.length);
+        return inv_p2 * term;
     }
     public static double Quantile(HashMap<Double, Integer> frequencySamples, double quantile) {
         Object[] keysObjects;

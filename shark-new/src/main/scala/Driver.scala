@@ -140,7 +140,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     updateOperatorFactory()
     super.init()
   }
-  
+
   //@sameerag
   override def run(command: String): CommandProcessorResponse = {
     
@@ -159,7 +159,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
 	  
 	  return ret;
   }
-  
+
   override def run(command: String, executionFlag: Int): CommandProcessorResponse = {
     var errorMessage = null;
     var sqlState = null;
@@ -186,7 +186,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     releaseLocks(context.getHiveLocks());
     return new CommandProcessorResponse(ret);
   }
-  
+
   override def compile(cmd: String): Int = {
     return compile(cmd, -1);
   }
@@ -196,7 +196,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
       var command = new VariableSubstitution().substitute(conf, cmd)
       context = new Context(conf)
       context.executionFlag = executionFlag;
-      
+
       var pd: ParseDriver = new ParseDriver()
       var tree: ASTNode = pd.parse(command, context)
       tree = ParseUtils.findRootNonNullToken(tree)
@@ -275,6 +275,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
 
     // Initialize top operators
     topOps.foreach { op => {
+      println(Utilities.getTableDesc(topToTable.get(op)))
       op.asInstanceOf[TableScanOperator].setTableDesc(Utilities.getTableDesc(topToTable.get(op)))
       op.initialize(conf, Array(ObjectInspectorUtils.getStandardObjectInspector(
         topToTable.get(op).getDeserializer().getObjectInspector())))
@@ -285,17 +286,29 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
         val table_desc = Utilities.getTableDesc(table)
         val table_path = table.getDataLocation.toString
         op.process(
-          (topToTable.get(op).getInputFormatClass() match {
-            // Only support textfile for now
-            case _ => sc.textFile(table_path)
-          })
-          .mapPartitions { iter => {
-            val deserializer = table_desc.getDeserializer()
-            val oi = deserializer.getObjectInspector.asInstanceOf[StructObjectInspector]
-            iter.map { value => {
-              ObjectInspectorUtils.copyToStandardObject(deserializer.deserialize(value),oi)
+      
+          OperatorTreeCache.get(op) match {
+            case Some(r) => { 
+              println("Found table in cache")
+              r
+            }
+            case None => {
+              println("Didn't find table in cache")
+              val r = (topToTable.get(op).getInputFormatClass() match {
+                // Only support textfile for now
+                case _ => sc.textFile(table_path)
+              })
+                .mapPartitions { iter => {
+                  val deserializer = table_desc.getDeserializer()
+                  val oi = deserializer.getObjectInspector.asInstanceOf[StructObjectInspector]
+                  iter.map { value => {
+                    ObjectInspectorUtils.copyToStandardObject(deserializer.deserialize(value),oi)
+                  }}
+                }}
+              r.cache()
+              OperatorTreeCache.put(op, r)
+              r
             }}
-          }}
         , 0)
     }}
 

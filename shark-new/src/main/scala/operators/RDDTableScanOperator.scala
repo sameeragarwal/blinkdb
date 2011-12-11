@@ -1,43 +1,56 @@
 package shark.operators
 
+import shark._
 import spark.{Serializer => _,_}
 import spark.SparkContext._
 
+import org.apache.hadoop.io.Writable
 import org.apache.hadoop.hive.ql.exec.Operator
 import org.apache.hadoop.hive.ql.exec.TableScanOperator
+import org.apache.hadoop.hive.ql.metadata.Table
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
+import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector
+import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo
+import org.apache.hadoop.hive.serde2.`lazy`.ByteArrayRef
+import org.apache.hadoop.hive.serde2.`lazy`.LazyFactory
 
 import java.io.Serializable
+import java.util.ArrayList
 
 import scala.collection.JavaConversions._
 import scala.collection.mutable.Stack
 
 
-class RDDTableScanOperator extends TableScanOperator {
+class RDDTableScanOperator extends TableScanOperator with RDDOperator {
 
-  override def processOp(obj: Object, tag: Int) {
-    val rdd = obj.asInstanceOf[RDD[Any]]
-    forward(rdd, inputObjInspectors(tag))
-  }
+  @transient var table: Table = _
 
-  def processRDD[T](rdd: RDD[T]) = {
+/*  override def cacheRDD[T](rdd: RDD[T]): RDD[_] = {
+    rdd.cache()
+    OperatorTreeCache.put(this, rdd)
     rdd
+  }*/
+
+  override def processRDD[T](rdd: RDD[T], cached: Boolean): RDD[_] = {
+    val tablePath = table.getDataLocation.toString
+    val newRDD = getTableDesc.getInputFileFormatClass match {
+      case _ => SharkEnv.sc.textFile(tablePath)
+    }
+    if (!cached) {
+      newRDD.cache()
+      OperatorTreeCache.put(this, newRDD)
+      super.processRDD(newRDD, false)
+    }
+    else
+      super.processRDD(rdd, false)
   }
 
-  def findOperator(operatorId: String): Operator[_ <: Serializable] = {
-    val visited = scala.collection.mutable.Set[Operator[_ <: Serializable]]()
-    val remaining: Stack[Operator[_ <: Serializable]] = Stack(this)
-    var current: Operator[_ <: Serializable] = null
-    while (!remaining.isEmpty) {
-      current = remaining.pop
-      visited.add(current)
-      if (current.getOperatorId == operatorId)
-        return current
-      if (current.getChildOperators != null)
-        current.getChildOperators.filter(op => !(visited.contains(op))).foreach(remaining.push(_))
-      if (current.getParentOperators != null)
-        current.getParentOperators.filter(op => !(visited.contains(op))).foreach(remaining.push(_))
-    }
-    null
+  override def processIter[T](iter: Iterator[T]): Iterator[_] = {
+    val deserializer = getTableDesc.getDeserializer
+    val oi = deserializer.getObjectInspector.asInstanceOf[StructObjectInspector]
+    iter.map { value => {
+      deserializer.deserialize(value.asInstanceOf[String])
+    }}
   }
 }
 

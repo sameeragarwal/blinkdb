@@ -138,8 +138,8 @@ class Database():
         zip_code = row['postal_code']
         provider = row['provider']
         ip_address_int = random.randint(3221225729, 3758096126) # Class C
-        ip_address = socket.inet_ntoa(struct.pack('L', socket.htonl(ip_address_int)))
-        
+        #ip_address = socket.inet_ntop(socket.AF_INET6, struct.pack('L', int(socket.htonl(ip_address_int))))
+        ip_address = socket.inet_ntoa(hex(ip_address_int)[2:].zfill(8).decode('hex')) 
         return [city, state, zip_code, provider, ip_address]
 
     @staticmethod

@@ -1,13 +1,23 @@
 package shark.operators
 
+import shark._
+
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hive.ql.plan._
 import org.apache.hadoop.hive.ql.exec.Operator
 import org.apache.hadoop.hive.ql.exec.TableScanOperator
 import org.apache.hadoop.hive.ql.exec.Utilities.EnumDelegate
+import org.apache.hadoop.hive.ql.exec.OperatorFactory
+import org.apache.hadoop.hive.ql.exec.OperatorFactory.OpTuple
 import org.apache.hadoop.hive.ql.metadata.Table
 import org.apache.hadoop.hive.ql.plan.GroupByDesc
 import org.apache.hadoop.hive.ql.plan.PlanUtils.ExpressionTypes
 import org.apache.hadoop.hive.ql.plan.TableDesc
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
+import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo
+
+import spark._
 
 import java.beans.XMLEncoder
 import java.beans.XMLDecoder
@@ -16,68 +26,184 @@ import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.Serializable
 import java.util.HashMap
+import java.util.ArrayList
 
 import scala.collection.mutable.Stack
+import scala.collection.mutable.Map
 import scala.collection.JavaConversions._
 
 
-object RDDOperator {
+object RDDOperator extends Logging {
 
-  var topOp: RDDTableScanOperator = null
+  val opIdToTypeInfos: HashMap[String, ArrayList[TypeInfo]] = new HashMap[String, ArrayList[TypeInfo]]()
 
-  var topOperators: RDDTableScanOperator = null
+  val opIdToSerializedOp: HashMap[String, Array[Byte]] =
+    new HashMap[String, Array[Byte]]()
 
-  var topToTable: HashMap[TableScanOperator, Table] = null
-
-  var tableDesc: TableDesc = null
-
-  var serOp: Array[Byte] = null
+  var broadcastOps: broadcast.Broadcast[HashMap[String, Array[Byte]]] = null
 
   var hconf: Configuration = null
 
-  def serializeOperator(o: Operator[_ <: Serializable]): Array[Byte] = {
-    val out = new ByteArrayOutputStream()
-    val e = new XMLEncoder(out);
-    // workaround for java 1.5
-    e.setPersistenceDelegate(classOf[ExpressionTypes], new EnumDelegate());
-    e.setPersistenceDelegate(classOf[GroupByDesc.Mode], new EnumDelegate());
-    e.writeObject(o);
-    e.close();
-    out.toByteArray()
-  }
-
-  def deserializeOperator(bytes: Array[Byte]) = {
-    val d: XMLDecoder = new XMLDecoder(new ByteArrayInputStream(bytes))
-    var ret: Operator[_ <: Serializable] = null
-    ret = d.readObject().asInstanceOf[Operator[_ <: Serializable]]
-    d.close();
-    ret
-  }
-
-  def getTopOperators(op: Operator[_ <: Serializable]): List[TableScanOperator] = {
+  /**
+   *Serializes each operator in the operator tree before they have been initialized.
+   *Adds each to the opIdToSerializedOp map
+   */
+  def serializeOperatorTree(op: Operator[_ <: Serializable]) {
+    val t = System.currentTimeMillis
     val s = Stack[Operator[_ <: Serializable]]()
-    var top = List[TableScanOperator]()
     val visited = scala.collection.mutable.Set[Operator[_ <: Serializable]]()
+    val emptyList = new java.util.ArrayList[Operator[_ <: Serializable]]()
+
     s.push(op)
     while(!s.isEmpty) {
       val current = s.pop
-      visited.add(current)
-      if (current.getParentOperators == null || current.getParentOperators.isEmpty)
-        top = current.asInstanceOf[TableScanOperator] :: top
-      else 
-        current.getParentOperators.filter(op => !(visited.contains(op))).foreach(s.push(_))
+      // Initialize operators after all of their parents are initialized
+      val parentsInitialized = (current.getParentOperators == null) || 
+        (current.getParentOperators forall { visited contains _ })
+      if (!parentsInitialized)
+        s.push(current)
+      else if (!(visited.contains(current))) {
+        val prevParents = current.getParentOperators
+        val prevChildren = current.getChildOperators
+        //current.setParentOperators(emptyList) TODO: Slightly hacky way, serializes operator tree multiple times
+        current.setChildOperators(emptyList)
+        val serializedCurrent = SharkUtilities.xmlSerialize(current)
+        opIdToSerializedOp.put(current.getOperatorId, serializedCurrent)
+        current.setParentOperators(prevParents)
+        current.setChildOperators(prevChildren)
+        visited.add(current)
 
+        current match {
+          case operator: RDDReduceSinkOperator => {
+            // TODO: Should match on a trait rather than indiv classes
+            operator.getChildOperators().foreach { child => child match {
+              case op: RDDGroupByOperator => {
+                op.reduceSinkConf = operator.getConf
+              }
+              case op: RDDExtractOperator =>
+                op.reduceSinkConf = operator.getConf
+              case op: RDDJoinOperator => {
+                op.reduceSinkConfs(operator.getConf.getTag) = operator.getConf                
+              }
+            }}
+          }
+          case _ => None
+        }
+      }
       if (current.getChildOperators != null)
         current.getChildOperators.filter(op => !(visited.contains(op))).foreach(s.push(_))
+      if (current.getParentOperators != null)
+        current.getParentOperators.filter(op => !(visited.contains(op))).foreach(s.push(_))
     }
-    top
-  }
-
-  def initTopOps(op: Operator[_ <: Serializable]): Unit = {
-    val topOps = getTopOperators(op)
-    topOps.foreach(op => {
-      op.initialize(hconf, Array(topToTable.get(topOp).getDeserializer.getObjectInspector))
-    })
+    logInfo("Operator Tree serialized in " + (System.currentTimeMillis - t) + " ms")
+    //broadcastOps = SharkEnv.sc.broadcast(opIdToSerializedOp)
   }
 }
 
+trait RDDOperator extends Serializable {
+  self: Operator[_ <: Serializable] => 
+ 
+  
+  // Only called on slave nodes
+  def initObjectInspector(id: String, typeInfos: ArrayList[TypeInfo], hconf: Configuration) {
+/*    val ois = typeInfos.map { ti => 
+      ExtendedTypeInfoUtils.getStandardObjectInspectorFromTypeInfo(ti)
+    }.toArray*/
+    val s = Stack[Operator[_ <: Serializable]]()
+    if (self.getParentOperators != null)
+      self.getParentOperators.foreach(s.push(_))
+    while(!(s.isEmpty)) {
+      val current = s.pop
+      current match {
+        case op: RDDTableScanOperator => 
+          op.setParentOperators(new ArrayList())
+          op.initialize(hconf, Array(op.getTableDesc.getDeserializer.getObjectInspector))
+        case op =>
+          op.getParentOperators.foreach(s.push(_))
+      } 
+    } 
+  }
+  
+  def preProcess() {
+    self.getInputObjInspectors().zipWithIndex.foreach {case (oi, i) => 
+      println(self.getOperatorId + " tag: " + i + " oi: " + oi)
+    }
+    Unit
+  }
+
+  def cacheRDD[T](rdd: RDD[T]): RDD[_] = {
+    rdd
+  }
+
+  // Called on Master node
+  def evaluate(): RDD[_] = {
+    val typeInfos = new ArrayList[TypeInfo]()
+    this.getInputObjInspectors().foreach { oi =>
+      typeInfos.add(ExtendedTypeInfoUtils.
+                    getTypeInfoFromObjectInspector(oi))
+    }
+    RDDOperator.opIdToTypeInfos.put(getOperatorId, typeInfos)
+    OperatorTreeCache.get(this) match {
+      case Some(rdd) => { 
+        processRDD(rdd, true)
+      }
+      case None => {
+        processParents(getParentOperators.asInstanceOf[java.util.List[RDDOperator]])
+      }
+    }
+  } 
+  
+  def processParents(parents: java.util.List[RDDOperator]): RDD[_] = {
+    if (parents == null)
+      processRDD(null)
+    else if (parents.size() == 1)
+      processRDD(parents.get(0).evaluate())
+    else {
+      val m = new HashMap[Int, RDD[_]]()
+      parents.foreach { parent => parent match {
+        case p: RDDReduceSinkOperator => 
+          m.put(p.getConf.getTag, p.evaluate())
+      }}
+      self match {
+        case op: RDDJoinOperator =>
+          op.processRDDs(m)
+        case op: RDDUnionOperator =>
+          op.processRDDs(m)
+        case _ =>
+          throw new Exception("Wrong type to call  processRDDs on")
+      }
+    }
+  }
+
+  def processRDD[T](rdd: RDD[T]): RDD[_] = {
+    processRDD(rdd, false)
+  }
+  // Called on Master node
+  def processRDD[T](rdd: RDD[T], cached: Boolean): RDD[_] = {
+    val serializedHConf = SharkUtilities.xmlSerialize(RDDOperator.hconf)
+    setChildOperators(new java.util.ArrayList())
+    val id = getOperatorId
+    val serializedOp = RDDOperator.opIdToSerializedOp.get(id)
+    println(id + " len " + serializedOp.length)
+    val typeInfos = RDDOperator.opIdToTypeInfos.get(getOperatorId)
+//    val broadcastOps = RDDOperator.broadcastOps
+    rdd.mapPartitions { iter => {
+      //val op = SharkUtilities.xmlDeserialize(broadcastOps.value.get(id)).asInstanceOf[RDDOperator]
+      val op = SharkUtilities.xmlDeserialize(serializedOp).asInstanceOf[RDDOperator]
+      val hconf = SharkUtilities.xmlDeserialize(serializedHConf).asInstanceOf[Configuration]
+      op.initObjectInspector(id, typeInfos, hconf)
+      op.preProcess()
+      val newIter = op.processIter(iter)
+      op.postProcess()
+      newIter
+    }}
+  }
+
+  def processIter[T](iter: Iterator[T]): Iterator[_] = {
+    iter
+  }
+
+  def postProcess() {
+    Unit
+  }
+}

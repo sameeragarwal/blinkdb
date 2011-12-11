@@ -61,7 +61,7 @@ if [ -f "${HADOOP_HOME}/conf/hdfs-site.xml" ]; then
     cp "${HADOOP_HOME}/conf/hdfs-site.xml" "${SHARK_DIR}/conf"
 fi
 
-CLASSPATH="$SHARK_DIR/conf:$HIVE_CONF_DIR:$SHARK_DIR/target/scala-$SCALA_VERSION/classes"
+CLASSPATH="$HADOOP_HOME/conf:$HIVE_CONF_DIR:$SHARK_DIR/target/scala-$SCALA_VERSION/classes"
 
 for jar in `find $SHARK_DIR/lib -name '*.jar'`; do
     CLASSPATH+=:$jar

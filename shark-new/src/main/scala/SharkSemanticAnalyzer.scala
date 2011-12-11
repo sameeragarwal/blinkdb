@@ -32,7 +32,7 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
 
   var moveTasks = new ArrayList[MoveTask]()
 
-  /**
+/**
   * Walk the AST, and get all the table name nodes in a list. 
   */
   
@@ -95,7 +95,7 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
     var child: ASTNode = ast;
 
     LOG.info("Starting Semantic Analysis");
-
+    
     //@sameerag: Adding Anand's table-rewriting logic
     replaceTableNameWithSampleName(ast);
 
@@ -135,6 +135,7 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
     init(pCtx);
     genMapRedTasks(qb)
   }
+
 
   def genMapRedTasks(qb: QB): Unit = {
     var fetchTask: FetchTask = null

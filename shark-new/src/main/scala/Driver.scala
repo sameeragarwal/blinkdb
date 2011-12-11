@@ -15,6 +15,7 @@ import org.apache.hadoop.hive.ql.exec.Utilities
 import org.apache.hadoop.hive.ql.exec.TableScanOperator
 import org.apache.hadoop.hive.ql.metadata.Table
 import org.apache.hadoop.hive.ql.processors.CommandProcessorResponse
+import org.apache.hadoop.hive.ql.exec.Operator
 import org.apache.hadoop.hive.ql.exec.OperatorFactory
 import org.apache.hadoop.hive.ql.exec.OperatorFactory.OpTuple
 import org.apache.hadoop.hive.ql.exec.MoveTask
@@ -27,12 +28,15 @@ import org.apache.hadoop.hive.ql.hooks.ReadEntity
 import org.apache.hadoop.hive.ql.hooks.WriteEntity
 import org.apache.hadoop.hive.ql.lockmgr.LockException
 import org.apache.hadoop.hive.ql.lockmgr.HiveLock
+import org.apache.hadoop.hive.ql.metadata.Partition;
+import org.apache.hadoop.hive.ql.optimizer.ppr.PartitionPruner;
 import org.apache.hadoop.hive.ql.parse.ASTNode
 import org.apache.hadoop.hive.ql.parse.BaseSemanticAnalyzer
 import org.apache.hadoop.hive.ql.parse.ParseContext
 import org.apache.hadoop.hive.ql.parse.ParseDriver
 import org.apache.hadoop.hive.ql.parse.ParseException
 import org.apache.hadoop.hive.ql.parse.ParseUtils
+import org.apache.hadoop.hive.ql.parse.PrunedPartitionList;
 import org.apache.hadoop.hive.ql.parse.VariableSubstitution
 import org.apache.hadoop.hive.ql.parse.SemanticAnalyzer
 import org.apache.hadoop.hive.ql.parse.SemanticAnalyzerFactory
@@ -53,17 +57,21 @@ import org.apache.hadoop.hive.ql.plan.GroupByDesc
 import org.apache.hadoop.hive.ql.plan.HiveOperation
 import org.apache.hadoop.hive.ql.QueryPlan
 import org.apache.hadoop.hive.ql.session.SessionState
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils.ObjectInspectorCopyOption
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector
 import org.apache.hadoop.hive.shims.ShimLoader
 import org.apache.hadoop.util.ReflectionUtils
 
 import java.io.File
 import java.util.ArrayList
+import java.util.Arrays
 
 import scala.collection.JavaConversions._
-
+import scala.collection.mutable.Stack
 
 class SharkDriver(conf: HiveConf) extends Driver(conf) {
 
@@ -82,27 +90,11 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
    * Shark operators. OperatorFactory.opvec is a static array list.
    */
   def updateOperatorFactory(): Unit = {
-
-    // TODO(rxin): There gotta be a better way to do this. Extremely
-    // dangerous to do it this way ...
-    OperatorFactory.opvec.remove(17) //LateralViewForward
-    OperatorFactory.opvec.remove(16) //LateralViewJoin
-    OperatorFactory.opvec.remove(15) //UDTFDesc
-    // 14 is UnionDesc
-    OperatorFactory.opvec.remove(13) //TableScan
-    OperatorFactory.opvec.remove(12) //Limit
-    // 11 is SMBJoinDesc
-    // 10 is MapJoinDesc
-    OperatorFactory.opvec.remove(9) //Join
-    OperatorFactory.opvec.remove(8) //GroupBy
-    OperatorFactory.opvec.remove(7) //Extract
-    OperatorFactory.opvec.remove(6) //ReduceSink
-    // 5 is ScriptDesc
-    // 4 is CollectDesc
-    OperatorFactory.opvec.remove(3) //FileSink
-    // 2 is ForwardDesc
-    OperatorFactory.opvec.remove(1) //Select
-    OperatorFactory.opvec.remove(0) //Filter
+    OperatorFactory.opvec.clear()
+    /**
+     * Missing Operators:
+     * Union, SMBJoin, MapJoin, Script, Collect, Forward 
+     */
 
     OperatorFactory.opvec.add(new OpTuple[LateralViewForwardDesc](
       classOf[LateralViewForwardDesc], classOf[RDDLateralViewForwardOperator]));
@@ -131,35 +123,30 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
   }
 
   override def init(): Unit = {
-    // Setup Spark.
-    var master = System.getenv("MASTER")
-    if (master == null) master = "local"
-    sc = new SparkContext(master, "Shark")
-
     // Setup Hive.
     updateOperatorFactory()
     super.init()
   }
-
-  //@sameerag
-  override def run(command: String): CommandProcessorResponse = {
+  
+  // @sameerag
+  override def run(command: String) : CommandProcessorResponse = {
+    var ret : CommandProcessorResponse = null;
+    if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+       (command.toLowerCase().contains("create table") || command.toLowerCase().contains("load data")))
+    {
+        var numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
+        for (i <- 0 until numSamples)
+      	  ret = run(command, i); 
+    }
+    else
+    {
+        ret = run(command, -1);
+    }
     
-	  var ret : CommandProcessorResponse = null;
-	  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
-	     (command.toLowerCase().contains("create table") || command.toLowerCase().contains("load data")))
-	  {
-		  var numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
-		  for (i <- 0 until numSamples)
-			  ret = run(command, i); 
-	  }
-	  else
-	  {
-		  ret = run(command, -1);
-	  }
-	  
-	  return ret;
-  }
+    return ret;
 
+  }
+  
   override def run(command: String, executionFlag: Int): CommandProcessorResponse = {
     var errorMessage = null;
     var sqlState = null;
@@ -191,12 +178,13 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     return compile(cmd, -1);
   }
 
+  // @sameerag
   override def compile(cmd: String, executionFlag: Int): Int = {
     try {
       var command = new VariableSubstitution().substitute(conf, cmd)
       context = new Context(conf)
       context.executionFlag = executionFlag;
-
+      
       var pd: ParseDriver = new ParseDriver()
       var tree: ASTNode = pd.parse(command, context)
       tree = ParseUtils.findRootNonNullToken(tree)
@@ -252,7 +240,6 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
 
     val topOps = pctx.getTopOps().values()
     val topToTable = pctx.getTopToTable()
-    RDDOperator.topToTable = topToTable
     if (SessionState.get().getCommandType() != HiveOperation.QUERY.getOperationName) 
       return super.execute()
     
@@ -267,24 +254,85 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     }
     
     val topOp = topOps.toArray()(0).asInstanceOf[RDDTableScanOperator]
-    RDDOperator.topOp = topOp
-    RDDOperator.serOp = RDDOperator.serializeOperator(topOp)
-    RDDOperator.hconf = conf
-    RDDOperator.deserializeOperator(RDDOperator.serOp)
-    RDDOperator.tableDesc = Utilities.getTableDesc(topToTable.get(topOp))
 
+    RDDOperator.hconf = conf
+
+    // Add table metadata to TableScanOperators
+    topOps.foreach { op => {
+      op.asInstanceOf[TableScanOperator].setTableDesc(Utilities.getTableDesc(topToTable.get(op)))
+      op.asInstanceOf[RDDTableScanOperator].table = topToTable.get(op)
+    }}
+
+    // Serialize operator tree before it is initialized
+    var time = System.currentTimeMillis
+    RDDOperator.serializeOperatorTree(topOp)
+    println("Op Tree serialization: " +  (System.currentTimeMillis - time))
+    
     // Initialize top operators
     topOps.foreach { op => {
-      println(Utilities.getTableDesc(topToTable.get(op)))
-      op.asInstanceOf[TableScanOperator].setTableDesc(Utilities.getTableDesc(topToTable.get(op)))
       op.initialize(conf, Array(ObjectInspectorUtils.getStandardObjectInspector(
         topToTable.get(op).getDeserializer().getObjectInspector())))
     }}
 
-    topOps.foreach { op => {
+/*    // Get list of relevant partitions
+    val partsList:PrunedPartitionList = 
+      if (topToTable.get(topOps.toArray()(0)).isPartitioned()) 
+        PartitionPruner.prune(
+          pctx.getTopToTable().get(topOp), 
+          pctx.getOpToPartPruner().get(topOp), 
+          pctx.getConf(), "",
+          pctx.getPrunedPartitions())
+      else null
+    val numParts = 
+      if (partsList != null) 
+        partsList.getConfirmedPartns().size
+      else 0 
+
+    // Initialize top operators
+    var rowObjectInspector:ObjectInspector = null
+    topOps.foreach({
+      op => {
+        val table = topToTable.get(op);
+        println(Utilities.getTableDesc(table))
+        rowObjectInspector = 
+          if (numParts > 0) {
+            val part = partsList.getConfirmedPartns().toArray()(0).asInstanceOf[Partition]
+            val partDesc = Utilities.getPartitionDesc(part)
+            val partProps = partDesc.getProperties()
+            val tableDeser = partDesc.getDeserializerClass().newInstance()
+            tableDeser.initialize(conf, partProps)
+            val partCols = partProps.getProperty(
+              org.apache.hadoop.hive.metastore.api.Constants.META_TABLE_PARTITION_COLUMNS);
+            val partNames = new ArrayList[String]
+            val partObjectInspectors = new ArrayList[ObjectInspector]
+            partCols.trim().split("/").foreach(key => {
+                partNames.add(key)
+                partObjectInspectors.add(PrimitiveObjectInspectorFactory.javaStringObjectInspector)
+            })
+            val partObjectInspector = ObjectInspectorFactory
+                .getStandardStructObjectInspector(partNames, partObjectInspectors);
+            val oiList = Arrays.asList(
+              tableDeser.getObjectInspector().asInstanceOf[StructObjectInspector], 
+              partObjectInspector.asInstanceOf[StructObjectInspector])
+            // new inspector is union of table + partition object inspectors
+            ObjectInspectorUtils.getStandardObjectInspector(
+                ObjectInspectorFactory.getUnionStructObjectInspector(oiList))
+          } else 
+              topToTable.get(op).getDeserializer().getObjectInspector()
+          op.asInstanceOf[TableScanOperator].setTableDesc(
+            Utilities.getTableDesc(topToTable.get(op)))
+          op.initialize(conf, 
+              Array(ObjectInspectorUtils.getStandardObjectInspector(rowObjectInspector)))
+      }
+    })
+
+    // Process top operators
+    topOps.foreach(
+      op => {
         val table = topToTable.get(op)
         val table_desc = Utilities.getTableDesc(table)
         val table_path = table.getDataLocation.toString
+
         op.process(
       
           OperatorTreeCache.get(op) match {
@@ -294,27 +342,100 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
             }
             case None => {
               println("Didn't find table in cache")
-              val r = (topToTable.get(op).getInputFormatClass() match {
-                // Only support textfile for now
-                case _ => sc.textFile(table_path)
-              })
-                .mapPartitions { iter => {
-                  val deserializer = table_desc.getDeserializer()
-                  val oi = deserializer.getObjectInspector.asInstanceOf[StructObjectInspector]
-                  iter.map { value => {
-                    ObjectInspectorUtils.copyToStandardObject(deserializer.deserialize(value),oi)
-                  }}
-                }}
-              r.cache()
-              OperatorTreeCache.put(op, r)
+              val r = 
+              if (numParts > 0) {
+                var rowsRDD: RDD[Object] = null
+                RDDOperator.setInputOI(rowObjectInspector)
+                val partitions = partsList.getConfirmedPartns().toArray()
+                partitions.foreach(part => {
+                  val partition = part.asInstanceOf[Partition]
+                  val partDesc = Utilities.getPartitionDesc(partition)
+                  val partRDD = (topToTable.get(op).getInputFormatClass() 
+                    match {
+                      case _ =>  sc.textFile(partition.getDataLocation().getPath()) 
+                     })
+                    .map(value => {
+                      // Map each tuple to a row object
+                       val deserializer = partDesc.getDeserializer()
+                       val oi = deserializer.getObjectInspector().asInstanceOf[StructObjectInspector]
+
+                       // Get table field ois
+                       val ois = new ArrayList[ObjectInspector]
+                       val tableFields= oi.asInstanceOf[StructObjectInspector].getAllStructFieldRefs()
+                       tableFields.foreach(sf => ois.add(sf.getFieldObjectInspector()))
+
+                       // Get partition field info
+                       val partSpec = partDesc.getPartSpec()
+                       val partProps = partDesc.getProperties()
+                       val deser = partDesc.getDeserializer()
+                       val rawRowObjectInspector = deser.getObjectInspector()
+                       val partCols = partProps.getProperty(org.apache.hadoop.hive.metastore.api.Constants.META_TABLE_PARTITION_COLUMNS);
+                       val partKeys = partCols.trim().split("/")
+                       val partValues = new ArrayList[String]
+                       partKeys.foreach(key => {
+                         if (partSpec == null) {
+                           partValues.add(new String)
+                         } else {
+                           partValues.add(new String(partSpec.get(key)))
+                         }
+                       })
+                       // Obj is an ArrayList of col values (table + partition)
+                       val obj = ObjectInspectorUtils.copyToStandardObject(deserializer.deserialize(value), oi)
+                       obj.asInstanceOf[ArrayList[Any]].addAll(partValues.asInstanceOf[ArrayList[String]])
+                       obj
+                     })
+                    rowsRDD = rowsRDD match  {
+                      case null => partRDD
+                      case _ => rowsRDD.union(partRDD)
+                    }
+                })
+                rowsRDD
+              } else {
+                // Table is not partitioned
+                val rdd = (topToTable.get(op).getInputFormatClass() 
+                  match {
+                    // Only support textfile for now
+                    case _ => sc.textFile(table_path)
+                  })
+                  .mapPartitions((iter) => {
+                    val deserializer = table_desc.getDeserializer()
+                    val oi = deserializer.getObjectInspector.asInstanceOf[StructObjectInspector]
+                    iter.map(value => ObjectInspectorUtils
+                      .copyToStandardObject(deserializer.deserialize(value),oi))
+                  })
+                  rdd
+              }       
+              //r.cache()
+              //OperatorTreeCache.put(op, r)
               r
-            }}
-        , 0)
-    }}
+            }
+          }, 0)
+      })
+>>>>>>> master*/
+
+    // Find FileSinkOperator
+    def findSink(op: Operator[_ <: Serializable]) = {
+      val s = Stack[Operator[_]]()
+      s.push(op)
+      while(s.head.getChildOperators != null && 
+            !s.head.getChildOperators.isEmpty) {
+        s.head.getChildOperators.foreach(s.push(_))
+      }
+      s.head
+    }
+    val sinkOp = findSink(topOp.asInstanceOf[Operator[_ <: Serializable]])
+
+    sinkOp match {
+      case op: RDDFileSinkOperator => 
+        op.evaluate().foreach { _ => Unit } // Force spark evaluation
+      case _ =>
+        throw new Exception("File Sink Operator not found")
+    }
 
     val feedBack = new JobCloseFeedBack
     val success = true
-    topOp.jobClose(conf,success,feedBack)
+    sinkOp.jobClose(conf,success,feedBack)
+
     //Use MoveTasks to move data from temporary storage               
     sem.moveTasks.foreach { task => {
       task.initialize(conf,null,null)

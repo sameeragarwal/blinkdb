@@ -16,25 +16,40 @@ object OperatorTreeCache {
   def makeKeyWrapper(operator: Operator[_]): KeyWrapper = {
     new KeyWrapper(getKeyList(operator,List()))
   }
+  // TODO: Can make this an instance method of RDDOperator. Also need to remove duplicate serialization.
   def getKeyList(operator: Operator[_], l: List[Any]): List[Any] = {
     operator match {
-      case op:RDDTableScanOperator =>
+      case op: RDDTableScanOperator =>
         new String(SharkUtilities.xmlSerialize(op.getTableDesc)) :: l
-      case op:RDDSelectOperator =>
+      case op: RDDSelectOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
-      case op:RDDFilterOperator =>
+      case op: RDDFilterOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
-      case op:RDDFileSinkOperator =>
+      case op: RDDFileSinkOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
-      case op:RDDReduceSinkOperator =>
+      case op: RDDReduceSinkOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
-      case op:RDDGroupByOperator =>
+      case op: RDDLimitOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      case op: RDDUnionOperator =>
+        getKeyList(op.getParentOperators()(0),
+                   new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      case op: RDDGroupByOperator =>
+        getKeyList(op.getParentOperators()(0),
+                   new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      case op: RDDExtractOperator =>
+        getKeyList(op.getParentOperators()(0),
+                   new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      case op: RDDJoinOperator => // Assumes 2 parents
+        getKeyList(op.getParentOperators()(1),
+                   getKeyList(op.getParentOperators()(1),
+                              new String(SharkUtilities.xmlSerialize(op.getConf)) :: l))
+
     }
   }
   def put(operator: Operator[_],rdd:RDD[_]) {

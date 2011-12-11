@@ -3,6 +3,7 @@ package shark.operators
 import spark.{Serializer => _,_}
 import spark.SparkContext._
 
+import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.mapred.JobConf
 import org.apache.hadoop.hive.ql.exec.LateralViewForwardOperator
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
@@ -14,16 +15,12 @@ import scala.collection.JavaConversions._
 
 class RDDLateralViewForwardOperator extends LateralViewForwardOperator {
 
-  override def processOp(rdd: Object, tag: Int) {
-    val newRDD = processRDD(rdd.asInstanceOf[RDD[Any]])
-    forward(newRDD, inputObjInspectors(tag))
-  }
-
   /*
    * This method implements an explode UDTF (Hive does this from the 
    * UDTFOperator class instead). Returns RDD with a new row for each 
    * value of each row's array to be exploded.
    */
+  /*
   def processRDD[T: ClassManifest](rdd: RDD[T]) = {
     val selOpId = getChildOperators.asInstanceOf[ArrayList[Any]](1)
       .asInstanceOf[RDDSelectOperator].getOperatorId
@@ -51,6 +48,6 @@ class RDDLateralViewForwardOperator extends LateralViewForwardOperator {
       }}
     }}
     newRDD
-  }
+  }*/
 }
 

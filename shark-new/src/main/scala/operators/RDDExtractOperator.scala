@@ -3,62 +3,93 @@ package shark.operators
 import spark.{Serializer => _,_}
 import spark.SparkContext._
 
+import shark.ReduceKey
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.ql.exec.ExprNodeEvaluatorFactory
 import org.apache.hadoop.hive.ql.exec.ExtractOperator
 import org.apache.hadoop.hive.ql.exec.ReduceSinkOperator
+import org.apache.hadoop.hive.ql.plan.ReduceSinkDesc
+import org.apache.hadoop.hive.ql.plan.TableDesc
 import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory
+import org.apache.hadoop.hive.serde2.Deserializer
 import org.apache.hadoop.io.BytesWritable
-import org.apache.hadoop.mapred.JobConf
 
 import scala.collection.JavaConversions._
+import scala.reflect.BeanProperty
+import java.util.ArrayList
 
-
-class RDDExtractOperator extends ExtractOperator {
+class RDDExtractOperator extends ExtractOperator with RDDOperator {
 
   def getEval = eval
 
+  @BeanProperty
+  var reduceSinkConf: ReduceSinkDesc = null
+
   override def initializeOp(hconf:Configuration) {
     eval = ExprNodeEvaluatorFactory.get(conf.getCol)
-    outputObjInspector = eval.initialize(
-      inputObjInspectors(0).asInstanceOf[StructObjectInspector]
-        .getStructFieldRef("VALUE").getFieldObjectInspector)
+    outputObjInspector = eval.initialize(inputObjInspectors(0))
     initializeChildren(hconf)
   }
 
-  override def processOp(o:Object, tag:Int){    
-    processOp(o.asInstanceOf[RDD[Any]])
+  // TODO: Remove duplicated deserialization code
+  def initSerializer(tableDesc: TableDesc): Deserializer = {
+    val deserializer = tableDesc.getDeserializerClass.
+      newInstance().asInstanceOf[Deserializer]
+    deserializer.initialize(null, tableDesc.getProperties())
+    deserializer
   }
 
-  def processOp(rdd:RDD[Any]){
+  def deserialize(serDe: Deserializer, bytes: BytesWritable) = {    
+    serDe.deserialize(bytes)
+  }
 
-    val table_desc = RDDOperator.tableDesc   
-    val ser_top_op = RDDOperator.serOp
-    val current_id = this.getOperatorId
-    val newRDD = rdd.mapPartitions { iter => {
-      val top_op = RDDOperator.deserializeOperator(ser_top_op).asInstanceOf[RDDTableScanOperator]
-      val oi = Array(ObjectInspectorUtils.getStandardObjectInspector(
-        table_desc.getDeserializer().getObjectInspector()))
-      val jc = new JobConf()
-      RDDOperator.getTopOperators(top_op).foreach(_.initialize(jc,oi))
-      val current_op = top_op.findOperator(current_id).asInstanceOf[RDDExtractOperator]
-      val rowInspector = current_op.getInputObjInspectors()(0).asInstanceOf[StructObjectInspector]
-      val parent = current_op.getParentOperators()(0).asInstanceOf[RDDReduceSinkOperator]
-      
-      iter.map { row => {
-        row match {
-          case (key: SerializableWritable[BytesWritable],
-            value: SerializableWritable[BytesWritable]) => { 
-            current_op.getEval.evaluate(parent.deserializeValue(value.value))
-          }
-          case _ => throw new Exception
+  def deserializeStandardObject(serDe: Deserializer, bytes: BytesWritable) = {
+    val deserializedObj = deserialize(serDe, bytes)
+    if (deserializedObj == null)
+      Array()
+    else
+      ObjectInspectorUtils.copyToStandardObject(deserializedObj,
+                                                serDe.getObjectInspector.asInstanceOf[StructObjectInspector])            .asInstanceOf[ArrayList[Object]].toArray
+  }
+
+  override def processIter[T](iter: Iterator[T]) = {
+    val rowInspector = getInputObjInspectors()(0).asInstanceOf[StructObjectInspector]
+    
+    val deserializer = initSerializer(reduceSinkConf.getValueSerializeInfo)
+    val bytes = new BytesWritable()
+    iter.map { row => {
+      row match {
+        case (key: ReduceKey,
+              value: Array[Byte]) => { 
+          bytes.set(value)
+          deserialize(deserializer, bytes)
         }
-      }}
+        case _ => throw new Exception
+      }
     }}
+  }
 
-    forward(newRDD,inputObjInspectors(0))
+  def processOrderedRDD[K <% Ordered[K]: ClassManifest, V: ClassManifest, T](rdd: RDD[T]): RDD[_] = {
+     val newRDD = rdd match {
+      case r:RDD[(K,V)] => {
+        // TODO: use sortByKey() instead
+        val rangeRDD = r.partitionBy(new RangePartitioner(r.splits.size, r, true))
+        new SortedRDD(rangeRDD, true)
+      }
+      case _ => rdd
+    }
+    newRDD
+  }
+ 
+  override def processRDD[T](rdd: RDD[T]): RDD[_] = {
+    val hasOrder = getParentOperators()(0) match {
+      case op:RDDReduceSinkOperator 
+              => (op.getConf.getOrder != null)
+      case _ => false
+    }
+    super.processRDD(if (hasOrder) processOrderedRDD(rdd) else rdd)
   }
 }
 

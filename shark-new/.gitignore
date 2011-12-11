@@ -15,3 +15,12 @@ TempStatsStore
 
 # emacs backup
 *~
+
+# mac os file
+*.DS_Store
+
+# latex files
+paper.pdf
+paper.blg
+paper.bbl
+paper.aux

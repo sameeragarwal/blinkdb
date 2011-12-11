@@ -1,5 +1,6 @@
 package shark
 
+import spark.Logging
 import org.apache.hadoop.hive.ql.exec.Utilities.EnumDelegate
 import org.apache.hadoop.hive.ql.plan.GroupByDesc
 import org.apache.hadoop.hive.ql.plan.PlanUtils.ExpressionTypes
@@ -11,9 +12,9 @@ import java.io.ByteArrayOutputStream
 import java.io.Serializable
 
 
-object SharkUtilities{
+object SharkUtilities {
 
-  def xmlSerialize(o:Serializable): Array[Byte] = {
+  def xmlSerialize(o: Any): Array[Byte] = {
     val out = new ByteArrayOutputStream()
     val e = new XMLEncoder(out)
     // workaround for java 1.5
@@ -24,9 +25,9 @@ object SharkUtilities{
     out.toByteArray()
   }
 
-  def xmlDeserialize(bytes:Array[Byte]): Serializable = {
+  def xmlDeserialize(bytes: Array[Byte]): Any  = {
     val d:XMLDecoder = new XMLDecoder(new ByteArrayInputStream(bytes))
-    val ret = d.readObject().asInstanceOf[Serializable]
+    val ret = d.readObject()
     d.close()
     ret
   }

@@ -14,7 +14,10 @@ import org.apache.hadoop.hive.ql.plan.GroupByDesc
 import org.apache.hadoop.hive.ql.plan.PlanUtils.ExpressionTypes
 import org.apache.hadoop.hive.ql.plan.TableDesc
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
+import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo
 
 import spark._
@@ -27,11 +30,11 @@ import java.io.ByteArrayOutputStream
 import java.io.Serializable
 import java.util.HashMap
 import java.util.ArrayList
+import java.util.Arrays
 
 import scala.collection.mutable.Stack
 import scala.collection.mutable.Map
 import scala.collection.JavaConversions._
-
 
 object RDDOperator extends Logging {
 
@@ -103,7 +106,6 @@ object RDDOperator extends Logging {
 trait RDDOperator extends Serializable {
   self: Operator[_ <: Serializable] => 
  
-  
   // Only called on slave nodes
   def initObjectInspector(id: String, typeInfos: ArrayList[TypeInfo], hconf: Configuration) {
 /*    val ois = typeInfos.map { ti => 
@@ -115,9 +117,34 @@ trait RDDOperator extends Serializable {
     while(!(s.isEmpty)) {
       val current = s.pop
       current match {
-        case op: RDDTableScanOperator => 
+        case op: RDDTableScanOperator =>  {
           op.setParentOperators(new ArrayList())
-          op.initialize(hconf, Array(op.getTableDesc.getDeserializer.getObjectInspector))
+          val table = op.getTableDesc
+          val partDesc = op.firstConfPartDesc
+          val rowObjectInspector = 
+            // Add partition field info to object inspector
+            if (partDesc != null) {
+              val partProps = partDesc.getProperties()
+              val tableDeser = partDesc.getDeserializerClass().newInstance()
+              tableDeser.initialize(hconf, partProps)
+              val partCols = partProps.getProperty(
+                org.apache.hadoop.hive.metastore.api.Constants.META_TABLE_PARTITION_COLUMNS);
+              val partNames = new ArrayList[String]
+              val partObjectInspectors = new ArrayList[ObjectInspector]
+              partCols.trim().split("/").foreach(key => {
+                  partNames.add(key)
+                  partObjectInspectors.add(PrimitiveObjectInspectorFactory.javaStringObjectInspector)
+              })
+              val partObjectInspector = ObjectInspectorFactory
+                  .getStandardStructObjectInspector(partNames, partObjectInspectors);
+              val oiList = Arrays.asList(
+                tableDeser.getObjectInspector().asInstanceOf[StructObjectInspector], 
+                partObjectInspector.asInstanceOf[StructObjectInspector])
+              // new oi is union of table + partition object inspectors
+                ObjectInspectorFactory.getUnionStructObjectInspector(oiList)
+            } else table.getDeserializer().getObjectInspector()
+          op.initialize(hconf, Array(rowObjectInspector))
+        }
         case op =>
           op.getParentOperators.foreach(s.push(_))
       } 
@@ -137,12 +164,14 @@ trait RDDOperator extends Serializable {
 
   // Called on Master node
   def evaluate(): RDD[_] = {
+    /*
     val typeInfos = new ArrayList[TypeInfo]()
     this.getInputObjInspectors().foreach { oi =>
       typeInfos.add(ExtendedTypeInfoUtils.
                     getTypeInfoFromObjectInspector(oi))
     }
     RDDOperator.opIdToTypeInfos.put(getOperatorId, typeInfos)
+    */
     OperatorTreeCache.get(this) match {
       case Some(rdd) => { 
         processRDD(rdd, true)

@@ -1,0 +1,76 @@
+
+\section{Future Work}
+\label{sec:future}
+
+Given that this was a class project, we had limited resources in our research and development. The scope of this project, however, can be extended in many dimensions and we plan to continue development after the end of the course. We separate our short-term engineering priorities from the long-term research roadmaps and document them here.
+
+\subsection{Short-term Priorities}
+There are a number of implementation details that we must tackle for Shark to be usable in real-world deployment, including:
+\begin{enumerate}
+    \item Better use and tuning of JVM memory management.
+	\item Implement Thrift and JDBC interfaces.
+	\item In-memory materialized views: Although the long term roadmap is for the system to intelligent decide on part of the data to cache, it would be useful for users to create in-memory materialized views for fine-grained control of caching.
+	\item Implement map-side join: Currently, Shark relies on the shuffle operation to join two tables, i.e. a hash-based join. This is particularly effective for joining two large tables. When one of the table is small, however, it is more efficient to ship the entire small table to all mappers, and the join operation simply becomes a filter operation on the large table. This avoids the expensive hash shuffling.
+	\item Various other optimizations and Hive features including table locking, and support for multiple joins in a single shuffle phase.
+	\item TPC-H data: Conduct benchmarks using 10TB TPC-H benchmark to better understand Shark's performance characteristics. We also plan to run benchmarks with caching enabled for other operators apart from table scans to determine the performance benefits for queries with similar operator subtrees. 
+\end{enumerate}
+
+
+\subsection{Long-Term Research}
+As stated earlier, this is the beginning of a long term research project. We would like to explore the following topics: (1) integrated data analysis using UDFs, (2) multiple query optimization and caching, (3) in-memory columnar store, (4) in-memory compressed caching, (5) answering queries probabilistically using Quicksilver \cite{quicksilverdb}, a concurrent project developed in the AMPLab that is built on top of Shark, and (6) incremental data processing and data streaming. 
+
+The remaining of this section is devoted to three areas of interest: efficient in-memory caching and integrated data analysis using UDFs, and multiple query optimizations.
+
+
+\subsection{Efficient In-memory Caching}
+
+At the moment, Shark RDDs cache the in-memory representation of data as Java objects. Java objects, however, have significant overheads (e.g. a 32 bit Integer object occupies 12 bytes, a 200\% overhead). Such overheads reduce the effectiveness of caching because the amount of data Shark can cache is limited. 
+
+One way to mitigate the problem is to store RDDs in memory in columnar format. This provides benefits in two dimensions. First, Shark can store an entire column of primitive types consecutively in memory using an array, which does not involve the object overheads of Java. For tables whose columns are filled with foreign keys, this can reduce the total in-memory data structure size by up to a factor of 3. Second, columnar store enables more efficient compression \cite{cstore}. By employing computationally cheap compression algorithms on columnar structures, we expect the in-memory RDD caches will be 1/10 of what they are today.
+
+\subsubsection{Integrated Data Analysis using UDFs}
+We intend for Shark to provide a streamlined interface to unify deep data analysis with SQL query processing. It combines SQL's convenience in data manipulation with sophisticated analysis using machine learning algorithms. The analytical algorithms run in the same set of workers as the query processing engine and can reuse intermediate data in the form of RDDs created by the engine.
+
+Shark should allow users to write UDFs in Scala to express their algorithms for distributed computation and integrate them with SQL through a special kind of table-valued user-defined functions. We plan for Shark to provide a simple API for these UDFs, which accept a \emph{Table} RDD as input and emit a \emph{Table} RDD as output. This would be implemented by wrapping the UDF interface around the Scala interpreter.
+
+Basic machine learning algorithms, \eg linear regression, logistics regression, k-means, will be included with the Shark distribution. In most cases, the user only needs to implement a UDF that transforms the input \emph{Table} object into the desired input data type for the selected algorithm and transforms the output from the algorithm into a separate \emph{Table} object. Short UDFs can also be embedded inline in queries in Shark's interactive mode, in part thanks to the conciseness of anonymous functions in Scala.
+
+The following example illustrates the complete process of implementing k-means clustering in Shark. The \texttt{kmeans\_core} function does the iterative k-means computation that partitions n points into k clusters represented by the centroids. \texttt{kmeans} is a UDF wrapper that converts each input record into a 2-dimensional Point object and then converts the output from \texttt{kmeans\_core} back to a Table RDD. 
+{\small
+\begin{verbatim}
+WITH my_working_set AS (
+  SELECT * FROM my_table WHERE ...
+)
+SELECT col1, col2, centroid FROM kmeans(my_working_set)
+
+def kmeans(table: RDD[Table]): RDD[Table] = {
+  return table.addColumn("clusterid",
+    kmeans_core(table.map{
+      _.get("field1"), _.get("field2") })
+}
+
+def kmeans_core(points: RDD[Point], k: Int) = {
+  // Initialize the centroids.
+  clusters = new HashMap[Int, Point]
+  for (i <- 0 until k) centroids(i) = Point.random()
+
+  for (i <- 1 until 10) {
+    // Assign points to centroids and update centroids.
+    clusters = points.groupBy(closestCentroid)
+      .map{ 
+         (id, points) => (id, points.sum / points.size)
+      }.collectMap()
+  }
+}
+\end{verbatim}
+}
+
+Note that since the output of the UDFs is also an RDD, the system is in closed form and the UDF output can be further processed by other Shark operators or analysis algorithms. As a syntactic sugar, users can use \texttt{\$0} to express results from the previous query.
+
+
+\subsubsection{Multiple Query Optimization}
+Traditional database optimizers are designed to optimize the execution of a single query. In his seminal paper on Multiple Query Optimizazation (MQO) \cite{mqo}, Sellis proposed techniques to build shared query plans from individual query plans. Krishnamurthy surveyed \cite{krishnamurthy2006shared} recent developments in MQO in his PhD dissertation. There are two types of MQO algorithms: static and dynamic. Static algorithms are easier to implement but require the system knowing the queries to be executed a priori. Dynamic algorithms are more flexible at the expense of being too sophisticated.
+
+Static algorithms typically work very well in decision support systems such as data warehouses, where a specific set of reporting queries are predefined. Such techniques however don't work for interactive, ad-hoc data analysis. Since Shark focuses both on traditional data warehousing queries as well as ad-hoc, exploratory queries, we should investigate dynamic MQOs.
+
+

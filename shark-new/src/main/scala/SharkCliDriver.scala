@@ -50,7 +50,7 @@ import org.apache.hadoop.hive.metastore.api.Schema
 import scala.collection.JavaConversions._
 
 object SharkCliDriver {
-  val prompt = "quicksilver"
+  val prompt = "shark"
   def main(args: Array[String]){
     val oproc = new OptionsProcessor();
     if (!oproc.process_stage1(args)) {

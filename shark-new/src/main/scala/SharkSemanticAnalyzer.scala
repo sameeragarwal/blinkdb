@@ -4,26 +4,30 @@ import shark.operators._
 
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.hive.conf.HiveConf
+import org.apache.hadoop.hive.metastore.Warehouse
 import org.apache.hadoop.hive.metastore.api.FieldSchema
+import org.apache.hadoop.hive.metastore.api.MetaException
 import org.apache.hadoop.hive.ql.exec.FetchTask
 import org.apache.hadoop.hive.ql.exec.MoveTask
+import org.apache.hadoop.hive.ql.exec.DDLTask
 import org.apache.hadoop.hive.ql.exec.TaskFactory
+import org.apache.hadoop.hive.ql.metadata.HiveException
 import org.apache.hadoop.hive.ql.optimizer.Optimizer
 import org.apache.hadoop.hive.ql.parse._
+import org.apache.hadoop.hive.ql.plan.DDLWork
 import org.apache.hadoop.hive.ql.plan.HiveOperation
 import org.apache.hadoop.hive.ql.plan.FetchWork
 import org.apache.hadoop.hive.ql.plan.PlanUtils
 import org.apache.hadoop.hive.ql.plan.MoveWork
 import org.apache.hadoop.hive.ql.session.SessionState
 
-//@sameerag
-import org.apache.hadoop.hive.ql.costmodel._
-import scala.collection.mutable.ListBuffer
-
 import java.util.ArrayList
 
 import scala.collection.JavaConversions._
 
+//@sameerag
+import org.apache.hadoop.hive.ql.costmodel._
+import scala.collection.mutable.ListBuffer
 
 class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
 
@@ -32,7 +36,13 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
 
   var moveTasks = new ArrayList[MoveTask]()
 
-/**
+  var ddlTasks = new ArrayList[DDLTask]()
+
+  var isCTAS = false
+
+  var ctasTableName: String = null
+
+  /**
   * Walk the AST, and get all the table name nodes in a list. 
   */
   
@@ -83,7 +93,7 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
    	}
      }
    }
-  
+
   override def analyzeInternal(ast: ASTNode): Unit = {
     reset()
 
@@ -95,13 +105,29 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
     var child: ASTNode = ast;
 
     LOG.info("Starting Semantic Analysis");
-    
     //@sameerag: Adding Anand's table-rewriting logic
     replaceTableNameWithSampleName(ast);
 
+    //TODO: can probably reuse Hive code for this
     // analyze create table command
     if (ast.getToken().getType() == HiveParser.TOK_CREATETABLE) {
-      return super.analyzeInternal(ast)
+      super.analyzeInternal(ast)
+      for(ch <- ast.getChildren) {
+        ch.asInstanceOf[ASTNode].getToken.getType match {
+          case HiveParser.TOK_QUERY => {
+            isCTAS = true
+            child = ch.asInstanceOf[ASTNode]
+          }
+          case _ =>
+            Unit
+        }
+      }
+      if (!isCTAS)
+        return
+      else {
+        qb.setTableDesc(getParseContext.getQB.getTableDesc)
+        reset()
+      }
     } else {
       SessionState.get().setCommandType(HiveOperation.QUERY);
     }
@@ -110,11 +136,9 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
     if (ast.getToken().getType() == HiveParser.TOK_CREATEVIEW) {
       return super.analyzeInternal(ast)
     }
-
     // continue analyzing from the child ASTNode.
     doPhase1(child, qb, initPhase1Ctx());
     LOG.info("Completed phase 1 of Semantic Analysis");
-
     getMetaData(qb);
     LOG.info("Completed getting MetaData in Semantic Analysis");
 
@@ -136,7 +160,6 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
     genMapRedTasks(qb)
   }
 
-
   def genMapRedTasks(qb: QB): Unit = {
     var fetchTask: FetchTask = null
     var fetchWork: FetchWork = null
@@ -148,7 +171,6 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
       val colTypes = loadWork.getColumnTypes
       val resFileFormat = HiveConf.getVar(conf, HiveConf.ConfVars.HIVEQUERYRESULTFILEFORMAT)
       val resultTab = PlanUtils.getDefaultQueryOutputTableDesc(cols, colTypes, resFileFormat)
-      println(new Path(loadWork.getSourceDir))
       fetchWork = new FetchWork(
         new Path(loadWork.getSourceDir).toString, resultTab, qb.getParseInfo.getOuterQueryLimit)
       fetchTask = TaskFactory.get(fetchWork,conf).asInstanceOf[FetchTask]
@@ -158,18 +180,42 @@ class SharkSemanticAnalyzer(conf: HiveConf) extends SemanticAnalyzer(conf){
       // Configure MoveTasks
       val fileWork = getParseContext.getLoadFileWork
       val tableWork = getParseContext.getLoadTableWork
-      
       tableWork.foreach { ltd => 
         mvTask.add(TaskFactory.get(
           new MoveWork(null, null, ltd, null, false), conf).asInstanceOf[MoveTask])
       }
 
-      fileWork.foreach { lfd =>
+      fileWork.foreach { lfd => {
+        if (qb.isCTAS) {
+          var location = qb.getTableDesc.getLocation
+          if (location == null) {
+            try {
+              val dumpTable = db.newTable(qb.getTableDesc.getTableName)
+              val wh = new Warehouse(conf)
+              location = wh.getDefaultTablePath(dumpTable.getDbName,
+                                                dumpTable.getTableName).toString
+            } catch {
+              case e: HiveException => throw new SemanticException(e)
+              case e: MetaException => throw new SemanticException(e)
+            }
+          }
+          lfd.setTargetDir(location)
+        }
         mvTask.add(TaskFactory.get(
           new MoveWork(null, null, null, lfd, false), conf).asInstanceOf[MoveTask])
-      }
+      }}
 
       moveTasks = mvTask
+    }
+    if (qb.isCTAS) {
+      val tableDesc = qb.getTableDesc
+      ctasTableName = tableDesc.getTableName
+      //TODO: private method, need to find work around
+      //validateCreateTable(tableDesc)
+      getOutputs.clear()
+      val tableTask = TaskFactory.get(new DDLWork(
+        getInputs, getOutputs, tableDesc), conf).asInstanceOf[DDLTask]
+      ddlTasks.add(tableTask)
     }
   }
 

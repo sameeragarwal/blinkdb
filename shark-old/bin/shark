@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+
+SCALA_VERSION=2.9.1.final
+export JAVA_OPTS=" -Djava.library.path=$MESOS_HOME/lib/java"
+
+BIN_DIR=`dirname "$0"`
+SHARK_DIR=`cd "$BIN_DIR/.."; pwd`
+BIN_DIR=`cd "$BIN_DIR"; pwd`
+
+HIVE_CONF_DIR="$HIVE_HOME/conf"
+
+if [ "x$SPARK_HOME" == "x" ] ; then
+    echo "No SPARK_HOME specified. Running with default Spark configurations"
+else
+    if [ -e $SPARK_HOME/conf/spark-env.sh ] ; then
+	. $SPARK_HOME/conf/spark-env.sh
+    fi
+fi
+if [ "x$HIVE_HOME" == "x" ] ; then
+    echo "No HIVE_HOME specified. Please set HIVE_HOME"
+    exit 1
+fi
+
+SERVICE=""
+HELP=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --service)
+      shift
+      SERVICE=$1
+      shift
+      ;;
+    --rcfilecat)
+      SERVICE=rcfilecat
+      shift
+      ;;
+    --help)
+      HELP=_help
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [ "$SERVICE" = "" ] ; then
+  if [ "$HELP" = "_help" ] ; then
+    SERVICE="help"
+  else
+    SERVICE="cli"
+  fi
+fi
+
+if [ -f "${HIVE_CONF_DIR}/hive-env.sh" ]; then
+  . "${HIVE_CONF_DIR}/hive-env.sh"
+fi
+
+HIVE_LIB=${HIVE_HOME}/lib
+if [ -f "${HADOOP_HOME}/conf/hdfs-site.xml" ]; then 
+    cp "${HADOOP_HOME}/conf/hdfs-site.xml" "${SHARK_DIR}/conf"
+fi
+
+CLASSPATH="$HIVE_CONF_DIR:$SHARK_DIR/target/scala-$SCALA_VERSION/classes"
+
+for jar in `find $SHARK_DIR/lib -name '*.jar'`; do
+    CLASSPATH+=:$jar
+done
+for jar in `find $HIVE_LIB -name '*.jar'`; do
+    CLASSPATH+=:$jar
+done
+
+# add the auxillary jars such as serdes
+if [ -d "${HIVE_AUX_JARS_PATH}" ]; then
+  for f in ${HIVE_AUX_JARS_PATH}/*.jar; do
+    if [[ ! -f $f ]]; then
+        continue;
+    fi
+    AUX_CLASSPATH=${AUX_CLASSPATH}:$f
+    if [ "${AUX_PARAM}" == "" ]; then
+        AUX_PARAM=file://$f
+    else
+        AUX_PARAM=${AUX_PARAM},file://$f;
+    fi
+  done
+elif [ "${HIVE_AUX_JARS_PATH}" != "" ]; then 
+  AUX_CLASSPATH=${HIVE_AUX_JARS_PATH}
+  AUX_PARAM=file://${HIVE_AUX_JARS_PATH}
+  AUX_PARAM=`echo $AUX_PARAM | sed 's/,/,file:\/\//g'`
+fi
+
+# adding jars from auxlib directory
+for f in ${HIVE_HOME}/auxlib/*.jar; do
+  if [[ ! -f $f ]]; then
+      continue;
+  fi
+  AUX_CLASSPATH=${AUX_CLASSPATH}:$f
+  if [ "${AUX_PARAM}" == "" ]; then
+    AUX_PARAM=file://$f
+  else
+    AUX_PARAM=${AUX_PARAM},file://$f;
+  fi
+done
+
+CLASSPATH=${CLASSPATH}:${AUX_CLASSPATH}
+
+if [ "${AUX_PARAM}" != "" ]; then
+  HIVE_OPTS="$HIVE_OPTS -hiveconf hive.aux.jars.path=${AUX_PARAM}"
+  AUX_JARS_CMD_LINE="-libjars ${AUX_PARAM}"
+fi
+
+SERVICE_LIST=""
+
+for i in "$BIN_DIR"/ext/*.sh ; do
+  . $i
+done
+
+for i in "$BIN_DIR"/ext/util/*.sh ; do
+  . $i
+done
+
+TORUN=""
+for j in $SERVICE_LIST ; do
+  if [ "$j" = "$SERVICE" ] ; then
+    TORUN=${j}$HELP
+  fi
+done
+if [ "$TORUN" = "" ] ; then
+  echo "Service $SERVICE not found"
+  echo "Available Services: $SERVICE_LIST"
+  exit 7
+else
+  $TORUN "$@"
+fi

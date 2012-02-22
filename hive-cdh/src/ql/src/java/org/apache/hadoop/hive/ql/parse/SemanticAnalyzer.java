@@ -620,9 +620,9 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
         qbp.setWhrExprForClause(ctx_1.dest, ast);
         break;
        
-      case HiveParser.TOK_QSSAMPLE:
-        qbp.setSampleExprForClause(ctx_1.dest, ast);
-    	break;  
+      //case HiveParser.TOK_QSSAMPLE:
+      //  qbp.setSampleExprForClause(ctx_1.dest, ast);
+      //	break;  
 
       case HiveParser.TOK_DESTINATION:
         ctx_1.dest = "insclause-" + ctx_1.nextNum;

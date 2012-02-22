@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-2011-11-18 14:16:02.347 GMT:
- Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.2.0 - (689064): instance a816c00e-0133-b708-b847-000002233968
+2012-02-22 00:32:12.040 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.2.0 - (689064): instance a816c00e-0135-a278-f9b9-000000971318
 on database directory /home/sameer/projects/QuicksilverDB/hive-cdh/src/metastore_db  
 
 Database Class Loader started - derby.database.classpath=''

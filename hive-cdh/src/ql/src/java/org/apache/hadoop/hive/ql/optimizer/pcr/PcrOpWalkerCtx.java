@@ -33,9 +33,11 @@ public class PcrOpWalkerCtx implements NodeProcessorCtx {
 
   static public class OpToDeleteInfo {
     private final Operator<? extends Serializable> parent;
-    private final SamplingOperator operator;
+    //private final SamplingOperator operator;
+    private final FilterOperator operator;
 
-    public OpToDeleteInfo(Operator<? extends Serializable> parent, SamplingOperator operator) {
+    //public OpToDeleteInfo(Operator<? extends Serializable> parent, SamplingOperator operator) {
+    public OpToDeleteInfo(Operator<? extends Serializable> parent, FilterOperator operator) {
       super();
       this.parent = parent;
       this.operator = operator;
@@ -43,7 +45,8 @@ public class PcrOpWalkerCtx implements NodeProcessorCtx {
     public Operator<? extends Serializable> getParent() {
       return parent;
     }
-    public SamplingOperator getOperator() {
+    //public SamplingOperator getOperator() {
+    public FilterOperator getOperator() {
       return operator;
     }
   }

@@ -253,6 +253,7 @@ public class CliDriver {
           if (end > start) {
             double timeTaken = (end - start) / 1000.0;
             console.printInfo("Time taken: " + timeTaken + " seconds", null);
+            //System.out.println("Time taken: " + timeTaken + " seconds", null);
           }
 
         } else {

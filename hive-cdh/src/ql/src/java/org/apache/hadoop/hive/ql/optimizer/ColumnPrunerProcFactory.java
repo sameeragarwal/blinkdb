@@ -82,7 +82,8 @@ public final class ColumnPrunerProcFactory {
   public static class ColumnPrunerFilterProc implements NodeProcessor {
     public Object process(Node nd, Stack<Node> stack, NodeProcessorCtx ctx,
         Object... nodeOutputs) throws SemanticException {
-      SamplingOperator op = (SamplingOperator) nd;
+    	FilterOperator op = (FilterOperator) nd;
+      //SamplingOperator op = (SamplingOperator) nd;
       ColumnPrunerProcCtx cppCtx = (ColumnPrunerProcCtx) ctx;
       ExprNodeDesc condn = op.getConf().getPredicate();
       // get list of columns used in the filter

@@ -67,7 +67,7 @@ public final class OperatorFactory {
   public static ArrayList<OpTuple> opvec;
   static {
     opvec = new ArrayList<OpTuple>();
-    opvec.add(new OpTuple<FilterDesc>(FilterDesc.class, SamplingOperator.class));
+    opvec.add(new OpTuple<FilterDesc>(FilterDesc.class, FilterOperator.class));
     opvec.add(new OpTuple<SelectDesc>(SelectDesc.class, SelectOperator.class));
     opvec.add(new OpTuple<ForwardDesc>(ForwardDesc.class, ForwardOperator.class));
     opvec.add(new OpTuple<FileSinkDesc>(FileSinkDesc.class, FileSinkOperator.class));

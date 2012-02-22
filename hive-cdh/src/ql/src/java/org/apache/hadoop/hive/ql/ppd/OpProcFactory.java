@@ -146,7 +146,8 @@ public final class OpProcFactory {
           + ((Operator) nd).getIdentifier() + ")");
       OpWalkerInfo owi = (OpWalkerInfo) procCtx;
       Operator<? extends Serializable> op = (Operator<? extends Serializable>) nd;
-      ExprNodeDesc predicate = (((SamplingOperator) nd).getConf()).getPredicate();
+      //ExprNodeDesc predicate = (((SamplingOperator) nd).getConf()).getPredicate();
+      ExprNodeDesc predicate = (((FilterOperator) nd).getConf()).getPredicate();
       // get pushdown predicates for this operator's predicate
       ExprWalkerInfo ewi = ExprWalkerProcFactory.extractPushdownPreds(owi, op,
           predicate);

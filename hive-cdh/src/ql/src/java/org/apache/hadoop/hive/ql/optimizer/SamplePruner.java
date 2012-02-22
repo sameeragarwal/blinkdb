@@ -123,7 +123,8 @@ public class SamplePruner implements Transform {
     @Override
     public Object process(Node nd, Stack<Node> stack, NodeProcessorCtx procCtx,
         Object... nodeOutputs) throws SemanticException {
-      SamplingOperator filOp = (SamplingOperator) nd;
+      //SamplingOperator filOp = (SamplingOperator) nd;
+      FilterOperator filOp = (FilterOperator) nd;
       FilterDesc filOpDesc = filOp.getConf();
       sampleDesc sampleDescr = filOpDesc.getSampleDescr();
 

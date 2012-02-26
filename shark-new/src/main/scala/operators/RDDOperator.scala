@@ -153,7 +153,7 @@ trait RDDOperator extends Serializable {
   
   def preProcess() {
     self.getInputObjInspectors().zipWithIndex.foreach {case (oi, i) => 
-      println(self.getOperatorId + " tag: " + i + " oi: " + oi)
+      //println(self.getOperatorId + " tag: " + i + " oi: " + oi)
     }
     Unit
   }
@@ -213,7 +213,7 @@ trait RDDOperator extends Serializable {
     setChildOperators(new java.util.ArrayList())
     val id = getOperatorId
     val serializedOp = RDDOperator.opIdToSerializedOp.get(id)
-    println(id + " len " + serializedOp.length)
+    //println(id + " len " + serializedOp.length)
     val typeInfos = RDDOperator.opIdToTypeInfos.get(getOperatorId)
 //    val broadcastOps = RDDOperator.broadcastOps
     rdd.mapPartitions { iter => {

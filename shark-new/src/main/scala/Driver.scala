@@ -280,7 +280,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
       if (partsList != null) 
         partsList.getConfirmedPartns().size
       else 0 
-    println("Number of partitions: "+numParts)
+    //println("Number of partitions: "+numParts)
     var firstPartDesc: PartitionDesc = null
     if (partsList != null && partsList.getConfirmedPartns.size > 0) {
       val firstPart = partsList.getConfirmedPartns().toArray()(0).asInstanceOf[Partition]
@@ -298,7 +298,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) {
     // Serialize operator tree before it is initialized
     var time = System.currentTimeMillis
     RDDOperator.serializeOperatorTree(topOp)
-    println("Op Tree serialization: " +  (System.currentTimeMillis - time))
+    //println("Op Tree serialization: " +  (System.currentTimeMillis - time))
 
     val sinkOp = findSink(topOp.asInstanceOf[Operator[_ <: Serializable]])
 

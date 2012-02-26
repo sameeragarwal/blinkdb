@@ -20,7 +20,7 @@ object OperatorTreeCache {
   def getKeyList(operator: Operator[_], l: List[Any]): List[Any] = {
     operator match {
       case op: RDDTableScanOperator => {
-        println("table scan : " + op.getTableDesc.getTableName.split('.')(1))
+        //println("table scan : " + op.getTableDesc.getTableName.split('.')(1))
         op.getTableDesc.getTableName.split('.')(1) :: l
       }
       case op: RDDSelectOperator =>

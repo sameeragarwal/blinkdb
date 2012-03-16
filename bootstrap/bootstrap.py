@@ -2,6 +2,7 @@ from random import gauss
 import scipy.stats as stat
 from numpy import *
 import pylab
+import commands
 
 def mean(X):
     return sum(X)/ float(len(X))
@@ -39,32 +40,46 @@ def main():
   error = []
   x = []
   f_error = open('error.txt', 'w')
-  f_bars = open('error_bars', 'w')
+  f_bars = open('error_bars.txt', 'w')
 
-  for size in xrange(1000, 10000, 1000):
+  for size in xrange(1000, 11000, 1000):
     ans = bootstrap(data, samplesize=size)
     avg = average(ans)
     sd = std(ans)
     print avg, sd
     error.append(sd)
-    x.append(size)
-    f_error.write(str(size)+'\t'+str(sd)+'\n')
-    f_bars.write(str(size)+'\t'+str(avg)+'\t'+str(avg-1.96*sd)+'\t'+str(avg+1.96*sd)+'\n')
+    x.append(size/1000)
+    f_error.write(str(size/1000)+'\t'+str(sd)+'\n')
+    f_bars.write(str(size/1000)+'\t'+str(avg)+'\t'+str(avg-1.96*sd)+'\t'+str(avg+1.96*sd)+'\n')
   
   f_error.close()
   f_bars.close()
 
+  #Make GNUPLOT graphs
 
-  """
-  pylab.plot(x, error, 'bx')
-  pylab.xlabel('Sample Size (tuples)')
-  pylab.ylabel('Standard Deviation')
-  pylab.title('Bootstrap on Mean')
-  pylab.grid(True)
+  gf_error = open("error.template.plt")
+  gf_error_w = open("error.plt", "w")
 
-  pylab.savefig('mean.png')
-  pylab.show()
-  """
+  c = gf_error.read()
+  c = c.replace("_gnuplot_output_", "error.pdf")
+  c = c.replace("_gnuplot_xlabel_", "Sample Size (rows X 1000)")
+  c = c.replace("_gnuplot_ylabel_", "Standard Deviation")
+  gf_error_w.write(c)
+  gf_error_w.close()
 
+  commands.getoutput("gnuplot error.plt")
+
+  gf_bars = open("error_bars.template.plt")
+  gf_bars_w = open("error_bars.plt", "w")
+
+  c = gf_bars.read()
+  c = c.replace("_gnuplot_output_", "error_bars.pdf")
+  c = c.replace("_gnuplot_xlabel_", "Sample Size (rows X 1000)")
+  c = c.replace("_gnuplot_ylabel_", "Statistical Answer \\n(with error bars)")
+  gf_bars_w.write(c)
+  gf_bars_w.close()
+ 
+  commands.getoutput("gnuplot error_bars.plt")
+  
 if __name__ == "__main__":
-    main()
+  main()

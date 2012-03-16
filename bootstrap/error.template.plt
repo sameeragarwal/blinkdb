@@ -38,7 +38,7 @@ set style line 4 lt rgb "#F25900" lw 2 pt 9
 #set ylabel "Statistical Answer \n(with error bars)"
 set output "_gnuplot_output_"
 set xlabel "_gnuplot_xlabel_"
-set ylable "_gnuplot_ylabel_"
+set ylabel "_gnuplot_ylabel_"
 
 #set y2label "Effective Sampling Ratio"
 

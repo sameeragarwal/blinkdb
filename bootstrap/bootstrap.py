@@ -165,7 +165,7 @@ def main():
     data.append(float(line))
 
   fn = {}
-  """
+
   fn[mean] = "Mean"
   fn[std] = "Standard Deviation"
   fn[var] = "Variance"
@@ -178,8 +178,6 @@ def main():
   fn[average_of_kmeans] = "Average of K-Means"
   fn[max] = "Max"
   fn[non_zero_min] = "Non-Zero Min"
-  """
-
   fn[non_zero_mode] = "Non-Zero Mode"
 
   for k,v in fn.iteritems():

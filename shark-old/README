@@ -1,0 +1,19 @@
+Shark -- Hive on Spark
+
+Building
+Shark requires Scala 2.9.1
+
+It is built with Simple Build Tool (SBT), which we have included.
+To build Shark run:
+sbt/sbt compile
+
+Shark runs with Hive-0.7.0 and uses the Hive configurations specified in $HIVE_HOME/conf
+$HIVE_HOME must be set before running Shark
+
+For information on setting up Hive or HiveQl, please read:
+https://cwiki.apache.org/confluence/display/Hive/GettingStarted
+
+Shark also uses the Spark configurations specified in $SPARK_HOME/conf/spark-env.sh
+
+For information on Spark, please read:
+https://github.com/mesos/spark

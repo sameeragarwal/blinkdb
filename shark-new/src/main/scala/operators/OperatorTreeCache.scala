@@ -19,17 +19,23 @@ object OperatorTreeCache {
   // TODO: Can make this an instance method of RDDOperator. Also need to remove duplicate serialization.
   def getKeyList(operator: Operator[_], l: List[Any]): List[Any] = {
     operator match {
-      case op: RDDTableScanOperator =>
-        new String(SharkUtilities.xmlSerialize(op.getTableDesc)) :: l
+      case op: RDDTableScanOperator => {
+        //println("table scan : " + op.getTableDesc.getTableName.split('.')(1))
+        op.getTableDesc.getTableName.split('.')(1) :: l
+      }
       case op: RDDSelectOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
       case op: RDDFilterOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
-      case op: RDDFileSinkOperator =>
-        getKeyList(op.getParentOperators()(0),
-                   new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      case op: RDDFileSinkOperator => {
+        if (op.cacheOutputTable)
+          op.ctasTableName :: l
+        else
+          getKeyList(op.getParentOperators()(0),
+                     new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)
+      }
       case op: RDDReduceSinkOperator =>
         getKeyList(op.getParentOperators()(0),
                    new String(SharkUtilities.xmlSerialize(op.getConf)) :: l)

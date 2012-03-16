@@ -50,7 +50,7 @@ import org.apache.hadoop.hive.metastore.api.Schema
 import scala.collection.JavaConversions._
 
 object SharkCliDriver {
-  val prompt = "quicksilver"
+  val prompt = "shark"
   def main(args: Array[String]){
     val oproc = new OptionsProcessor();
     if (!oproc.process_stage1(args)) {
@@ -173,7 +173,7 @@ class SharkCliDriver extends CliDriver{
           val out = ss.out;
           val start:Long = System.currentTimeMillis();
           if (ss.getIsVerbose()) {
-            out.println(cmd);
+            //out.println(cmd);
           }
 
           ret = qp.run(cmd).getResponseCode();
@@ -196,7 +196,7 @@ class SharkCliDriver extends CliDriver{
               out.print(fs.getName());
               first_col = false;
             }*/
-            out.println();
+            //out.println();
           }
           
           try {
@@ -224,7 +224,7 @@ class SharkCliDriver extends CliDriver{
 
         } else {
           if (ss.getIsVerbose()) {
-            ss.out.println(tokens(0) + " " + cmd_1);
+            //ss.out.println(tokens(0) + " " + cmd_1);
           }
           ret = proc.run(cmd_1).getResponseCode();
         }

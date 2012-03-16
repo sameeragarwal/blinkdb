@@ -3,6 +3,7 @@ import scipy.stats as stat
 from numpy import *
 import pylab
 import commands
+import scipy.cluster.vq
 
 def mean(X):
     return sum(X)/ float(len(X))
@@ -42,6 +43,24 @@ def even_number_avg(X):
       count += 1
       esum += i
   return float(esum)/count
+
+def average_of_kmeans(X):
+  #print array(X)
+  return average(scipy.cluster.vq.kmeans(array(X), 5)[0])
+
+def non_zero_min(X):
+  Y = []
+  for i in X:
+    if i != 0:
+      Y.append(i)
+  return min(Y)
+
+def non_zero_mode(X):
+  Y = []
+  for i in X:
+    if i != 0:
+      Y.append(i)
+  return float(stat.mode(Y)[0])
 
 def bootstrap(sample, samplesize = None, nsamples = 300, statfunc = mean):
     """
@@ -146,6 +165,7 @@ def main():
     data.append(float(line))
 
   fn = {}
+  """
   fn[mean] = "Mean"
   fn[std] = "Standard Deviation"
   fn[var] = "Variance"
@@ -155,6 +175,12 @@ def main():
   fn[top_k_avg] = "Top K Average"
   fn[even_number_avg] = "Average of Even Numbers"
   fn[median] = "Median"
+  fn[average_of_kmeans] = "Average of K-Means"
+  fn[max] = "Max"
+  fn[non_zero_min] = "Non-Zero Min"
+  """
+
+  fn[non_zero_mode] = "Non-Zero Mode"
 
   for k,v in fn.iteritems():
     bootstrap_wrapper(data, k, v)

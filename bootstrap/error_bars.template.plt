@@ -40,6 +40,7 @@ set style line 5 lt rgb "#A00000" lw 1 pt 1
 set output "_gnuplot_output_"
 set xlabel "_gnuplot_xlabel_"
 set ylabel "_gnuplot_ylabel_"
+set title "_gnuplot_title_"
 
 #set y2label "Effective Sampling Ratio"
 
@@ -50,7 +51,8 @@ set key bottom right
 
 plot "error_bars.txt" using 1:2 with lines notitle ls 1, \
      "error_bars.txt" using 1:2 notitle ls 1, \
-     "error_bars.txt" using 1:2:4:3 with yerrorbars notitle ls 5
+     "error_bars.txt" using 1:2:4:3 with yerrorbars notitle ls 5, \
+     _gnuplot_true_answer_ notitle lt 3 lw 0.5
 
 #     "e1.txt" using 1:5 axis x1y2 notitle lt 3;
 #   index 0 title "Example line" w lp ls 1, \

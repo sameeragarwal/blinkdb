@@ -34,9 +34,18 @@ def main():
   # Read data from file and store it in 'data'
   #data = [1,2,3,4,5,6,7,8,9,10]
   data = []
-  for i in xrange(0,100000):
-    data.append(gauss(5, 1))
-  
+
+  # Gaussian
+  #for i in xrange(0,100000):
+  #  data.append(gauss(5, 1))
+
+  f = open("session_time.txt")
+  for line in f:
+    data.append(float(line))
+
+  true_answer = mean(data)
+  print "True Answer", true_answer
+
   error = []
   x = []
   f_error = open('error.txt', 'w')
@@ -49,8 +58,8 @@ def main():
     print avg, sd
     error.append(sd)
     x.append(size/1000)
-    f_error.write(str(size/1000)+'\t'+str(sd)+'\n')
-    f_bars.write(str(size/1000)+'\t'+str(avg)+'\t'+str(avg-1.96*sd)+'\t'+str(avg+1.96*sd)+'\n')
+    f_error.write(str(2*size/1000)+'\t'+str((100*1.96*sd/avg))+'\n')
+    f_bars.write(str(2*size/1000)+'\t'+str(avg)+'\t'+str(avg-1.96*sd)+'\t'+str(avg+1.96*sd)+'\n')
   
   f_error.close()
   f_bars.close()
@@ -62,8 +71,9 @@ def main():
 
   c = gf_error.read()
   c = c.replace("_gnuplot_output_", "error.pdf")
-  c = c.replace("_gnuplot_xlabel_", "Sample Size (rows X 1000)")
-  c = c.replace("_gnuplot_ylabel_", "Standard Deviation")
+  c = c.replace("_gnuplot_xlabel_", "Sample Size (MB)")
+  c = c.replace("_gnuplot_ylabel_", "% Error")
+  c = c.replace("_gnuplot_title_", "Mean")
   gf_error_w.write(c)
   gf_error_w.close()
 
@@ -74,8 +84,11 @@ def main():
 
   c = gf_bars.read()
   c = c.replace("_gnuplot_output_", "error_bars.pdf")
-  c = c.replace("_gnuplot_xlabel_", "Sample Size (rows X 1000)")
+  c = c.replace("_gnuplot_xlabel_", "Sample Size (MB)")
   c = c.replace("_gnuplot_ylabel_", "Statistical Answer \\n(with error bars)")
+  c = c.replace("_gnuplot_true_answer_", str(true_answer))
+  c = c.replace("_gnuplot_title_", "Mean")
+
   gf_bars_w.write(c)
   gf_bars_w.close()
  

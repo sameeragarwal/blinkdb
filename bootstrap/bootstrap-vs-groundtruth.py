@@ -118,7 +118,7 @@ def bootstrap_wrapper(data, func, fname, cf=None):
           f.write(str(2*size/1000) + '\t' + str(float(sd)/bootstrap_answer))
         gt.append(func(gt_sample))
         if j%50 == 0 and j <= 600:
-          #Variation of bootstrap
+          #Variance of sampling truth wrt k
           ans = average(gt)
           sd = std(gt)
           print "Variation of Bootstrap", j, ans, sd

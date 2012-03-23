@@ -115,11 +115,21 @@ def bootstrap_wrapper(data, func, fname):
       gt_sample.append(data[i])
       if i%size == 0 and i > 0 and j < 2000:
         j += 1
+        if j == 1:
+          #Calculate bootstrap on this sample
+          ans = bootstrap(gt_sample, statfunc=func)
+          bootstrap_answer = func(gt_sample)
+          sd = std(ans)
+          print "BootStrap", bootstrap_answer, sd
         gt.append(func(gt_sample))
+        if j%50 == 0 and j <= 300:
+          #Variation of bootstrap
+          ans = average(gt)
+          sd = std(gt)
+          print "Variation of Bootstrap", j, ans, sd
         gt_sample = []
-    print len(gt)
     sd = std(gt)
-    print "Ground Truth Standard Deviation: ", sd
+    print "Ground Truth", true_answer, sd
    
   error = []
   x = []
@@ -180,8 +190,8 @@ def main():
   #for i in xrange(0,100000):
   #  data.append(gauss(5, 1))
 
-  #f = open("session_time_20gb.txt")
-  f = open("session_time.txt")
+  f = open("session_time_20gb.txt")
+  #f = open("session_time.txt")
   for line in f:
     data.append(float(line))
 

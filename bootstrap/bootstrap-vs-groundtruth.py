@@ -171,8 +171,8 @@ def main():
 
   for k,v in fn.iteritems():
     cf = None
-    if k in cfn:
-      cf = cfn[k]
+    #if k in cfn:
+    #  cf = cfn[k]
     bootstrap_wrapper(data, k, v, cf)
 
 if __name__ == "__main__":

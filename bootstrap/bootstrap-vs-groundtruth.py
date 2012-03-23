@@ -163,8 +163,8 @@ def main():
   fn[non_zero_min] = "Non-Zero Min"
   fn[non_zero_mode] = "Non-Zero Mode"
 
-  cfn = {}
-  cfn[mean] = cf_mean
+  #cfn = {}
+  #cfn[mean] = cf_mean
   #cfn[count] = cf_count
   #cfn[percentile_99] = cf_p99
   #cfn[percentile_95] = cf_p95

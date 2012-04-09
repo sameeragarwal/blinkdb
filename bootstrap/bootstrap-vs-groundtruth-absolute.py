@@ -116,20 +116,20 @@ def bootstrap_wrapper(data, func, fname, cf=None):
           bootstrap_answer = func(gt_sample)
           sd = std(ans)
           print fname + " BootStrap", bootstrap_answer, sd
-          f.write(str(2*size/1000) + '\t' + str(float(sd)/bootstrap_answer))
+          f.write(str(2*size/1000) + '\t' + str(float(sd)))
         gt.append(func(gt_sample))
         if j%50 == 0 and j <= 600:
           #Variance of sampling truth wrt k
           ans = average(gt)
           sd = std(gt)
           print "Variation of Bootstrap", j, ans, sd
-          f2.write(str(float(sd)/ans) + '\t')
+          f2.write(str(float(sd)) + '\t')
           if j == 300:
-            f.write('\t' + str(float(sd)/ans))
+            f.write('\t' + str(float(sd)))
         gt_sample = []
     sd = std(gt)
     print "Ground Truth", true_answer, sd
-    f.write('\t' + str(float(sd)/true_answer)+'\n')
+    f.write('\t' + str(float(sd))+'\n')
     f2.write('\n')
 
 def main():
@@ -166,8 +166,8 @@ def main():
   fn[median] = "Median"
   #fn[average_of_kmeans] = "Average of K-Means"
   fn[max] = "Max"
-  fn[non_zero_min] = "Non-Zero Min"
-  #fn[min] = "Min"
+  #fn[non_zero_min] = "Non-Zero Min"
+  fn[min] = "Min"
   #fn[non_zero_mode] = "Non-Zero Mode"
 
   #cfn = {}

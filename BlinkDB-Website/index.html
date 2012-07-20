@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>BlinkDB: Queries with Bounded Errors and Bounded Response Times on Very Large Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="blinkdb/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="blinkdb/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+ 
+   <script type="text/javascript">
+
+     var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-30241779-1']);
+         _gaq.push(['_trackPageview']);
+
+           (function() {
+                var ga = document.createElement('script'); ga.type =
+                'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ?
+                      'https://ssl' : 'http://www') +
+                    '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                          })();
+
+  </script>
+    </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">BlinkDB</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <!--li><a href="#about">About</a></li-->
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>BlinkDB</h1>
+        <p>Queries with Bounded Errors and Bounded Response Times on Very Large Data</p>
+
+Today’s web is predominantly data-driven. People increasingly depend on enormous amounts of data (spanning terabytes or even petabytes in size) to make intelligent business and personal decisions. Often the time it takes to make these decisions is critical. However, unfortunately, quickly analyzing large volumes of data poses significant challenges. For instance, scanning 1TB of data may take minutes, even when the data is spread across hundreds of machines and read in parallel.
+BlinkDB is a massively parallel, sampling-based approximate query engine for running interactive queries on large volumes of data. The key observation in BlinkDB is that one can make perfect decisions in the absence of perfect answers. For example, reliably detecting a malfunctioning server in a distributed collection of system logs does not require knowing every request the server processed. Based on this insight, BlinkDB allows one to tradeoff between query accuracy and response time, enabling interactive queries over massive data by running queries on data samples. To achieve this, BlinkDB uses two key ideas that differentiate it from previous sampling-based database systems: (1) an optimization framework to build a set of multi-dimensional, multi-resolution samples, and (2) a strategy that uses a set of small samples to dynamically estimate a query’s error and response time at run-time. We have built a BlinkDB prototype, and validate its effectiveness using well-known benchmarks and a real-world workload derived from Conviva. Our initial set of experiments show that BlinkDB can execute a range of queries over a real-world query trace on up to 17 TB of data and 100 nodes in 2 seconds, with an error of 2–10%.
+<br /><br >
+        <p><a href="https://github.com/sameeragarwal/QuicksilverDB" target="_blank" class="btn btn-primary btn-large">Github Repository</a> <a href="http://arxiv.org/abs/1203.5485" target="_blank" class="btn btn-primary btn-large">Technical Report (arXiv)</a></p>
+      </div>
+      <!-- Example row of columns -->
+      <!--div class="row">
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce 
+dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut 
+fermentum massa justo sit amet risus. Etiam porta sem malesuada magna 
+mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce 
+dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut 
+fermentum massa justo sit amet risus. Etiam porta sem malesuada magna 
+mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details »</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis 
+in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. 
+Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+ ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details »</a></p>
+        </div>
+      </div-->
+
+      <hr>
+	    <section id="moreinfo">
+	        <div class="page-header">
+	          <h1><a name="contact" ><small>Questions?</small></a></h1>
+	        </div>
+	        <p>
+	          BlinkDB is being developed by <a href="http://www.cs.berkeley.edu/~sameerag/" target="_blank">Sameer Agarwal</a>, <a href="http://www.eecs.berkeley.edu/~apanda/" target="_blank">Aurojit Panda</a>, <a href="http://people.csail.mit.edu/barzan/" target="_blank">Barzan Mozafari</a>, <a href="http://db.lcs.mit.edu/madden/" target="_blank">Samuel Madden</a> and <a href="http://www.cs.berkeley.edu/~istoica" target="_blank">Ion Stoica</a> at the <a target="_blank" href="http://www.eecs.berkeley.edu/">University of California, Berkeley</a> and <a target="_blank" href="http://www.csail.mit.edu/">Massachusetts Institute of Technology</a>.
+	        <!--/p>
+	        <p-->
+	If you have any comments or questions, feel free to email us at <a href="mailto:sameerag@cs.berkeley.edu">sameerag@cs.berkeley.edu</a>.
+	        </p>
+
+	      </section>
+      <footer>
+        <!--p>© University of California, Berkeley and MIT CSAIL</p-->
+        <!--p><a target="_blank" href="http://www.eecs.berkeley.edu/">University of California, Berkeley</a> and <a target="_blank" href="http://www.csail.mit.edu/">Massachusetts Institute of Technology</a></p-->
+	  <p>This research is supported in part by gifts from Google, SAP, Amazon Web Services, Blue Goji, Cloudera, Ericsson, General Electric, Hewlett Packard, Huawei, IBM, Intel, MarkLogic, Microsoft, NEC Labs, 	NetApp, Oracle, Quanta, Splunk, VMware and by DARPA (contract #FA8650-11-C-7136).</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="blinkdb/jquery.js"></script>
+    <script src="blinkdb/bootstrap-transition.js"></script>
+    <script src="blinkdb/bootstrap-alert.js"></script>
+    <script src="blinkdb/bootstrap-modal.js"></script>
+    <script src="blinkdb/bootstrap-dropdown.js"></script>
+    <script src="blinkdb/bootstrap-scrollspy.js"></script>
+    <script src="blinkdb/bootstrap-tab.js"></script>
+    <script src="blinkdb/bootstrap-tooltip.js"></script>
+    <script src="blinkdb/bootstrap-popover.js"></script>
+    <script src="blinkdb/bootstrap-button.js"></script>
+    <script src="blinkdb/bootstrap-collapse.js"></script>
+    <script src="blinkdb/bootstrap-carousel.js"></script>
+    <script src="blinkdb/bootstrap-typeahead.js"></script>
+
+  
+
+</body></html>

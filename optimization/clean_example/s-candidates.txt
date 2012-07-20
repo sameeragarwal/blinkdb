@@ -1,0 +1,190 @@
+asn
+bufftimems
+city
+clientid
+clientip
+country
+customerid
+dma
+dt
+endedflag
+firsthbseq
+firsthbtimems
+jointimems
+lasthbtimems
+objectid
+playtimems
+startbitratekbps
+state
+tags
+asn bufftimems
+asn city
+asn clientid
+asn clientip
+asn country
+asn customerid
+asn dma
+asn dt
+asn endedflag
+asn firsthbseq
+asn firsthbtimems
+asn jointimems
+asn lasthbtimems
+asn objectid
+asn playtimems
+asn startbitratekbps
+asn state
+asn tags
+bufftimems city
+bufftimems clientid
+bufftimems clientip
+bufftimems country
+bufftimems customerid
+bufftimems dma
+bufftimems dt
+bufftimems endedflag
+bufftimems firsthbseq
+bufftimems firsthbtimems
+bufftimems jointimems
+bufftimems lasthbtimems
+bufftimems objectid
+bufftimems playtimems
+bufftimems startbitratekbps
+bufftimems state
+bufftimems tags
+city clientid
+city clientip
+city country
+city customerid
+city dma
+city dt
+city endedflag
+city firsthbseq
+city firsthbtimems
+city jointimems
+city lasthbtimems
+city objectid
+city playtimems
+city startbitratekbps
+city state
+city tags
+clientid clientip
+clientid country
+clientid customerid
+clientid dma
+clientid dt
+clientid endedflag
+clientid firsthbseq
+clientid firsthbtimems
+clientid jointimems
+clientid lasthbtimems
+clientid objectid
+clientid playtimems
+clientid startbitratekbps
+clientid state
+clientid tags
+clientip country
+clientip customerid
+clientip dma
+clientip dt
+clientip endedflag
+clientip firsthbseq
+clientip firsthbtimems
+clientip jointimems
+clientip lasthbtimems
+clientip objectid
+clientip playtimems
+clientip startbitratekbps
+clientip state
+clientip tags
+country customerid
+country dma
+country dt
+country endedflag
+country firsthbseq
+country firsthbtimems
+country jointimems
+country lasthbtimems
+country objectid
+country playtimems
+country startbitratekbps
+country state
+country tags
+customerid dma
+customerid dt
+customerid endedflag
+customerid firsthbseq
+customerid firsthbtimems
+customerid jointimems
+customerid lasthbtimems
+customerid objectid
+customerid playtimems
+customerid startbitratekbps
+customerid state
+customerid tags
+dma dt
+dma endedflag
+dma firsthbseq
+dma firsthbtimems
+dma jointimems
+dma lasthbtimems
+dma objectid
+dma playtimems
+dma startbitratekbps
+dma state
+dma tags
+dt endedflag
+dt firsthbseq
+dt firsthbtimems
+dt jointimems
+dt lasthbtimems
+dt objectid
+dt playtimems
+dt startbitratekbps
+dt state
+dt tags
+endedflag firsthbseq
+endedflag firsthbtimems
+endedflag jointimems
+endedflag lasthbtimems
+endedflag objectid
+endedflag playtimems
+endedflag startbitratekbps
+endedflag state
+endedflag tags
+firsthbseq firsthbtimems
+firsthbseq jointimems
+firsthbseq lasthbtimems
+firsthbseq objectid
+firsthbseq playtimems
+firsthbseq startbitratekbps
+firsthbseq state
+firsthbseq tags
+firsthbtimems jointimems
+firsthbtimems lasthbtimems
+firsthbtimems objectid
+firsthbtimems playtimems
+firsthbtimems startbitratekbps
+firsthbtimems state
+firsthbtimems tags
+jointimems lasthbtimems
+jointimems objectid
+jointimems playtimems
+jointimems startbitratekbps
+jointimems state
+jointimems tags
+lasthbtimems objectid
+lasthbtimems playtimems
+lasthbtimems startbitratekbps
+lasthbtimems state
+lasthbtimems tags
+objectid playtimems
+objectid startbitratekbps
+objectid state
+objectid tags
+playtimems startbitratekbps
+playtimems state
+playtimems tags
+startbitratekbps state
+startbitratekbps tags
+state tags

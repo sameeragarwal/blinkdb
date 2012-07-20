@@ -1,0 +1,42 @@
+dt
+dt country state city
+dt country jointimems
+dt asn
+dt tags
+dt objectid endedflag
+dt customerid
+dt customerid country
+dt customerid country state city jointimems endedflag
+dt customerid country state jointimems endedflag
+dt customerid country city
+dt customerid country jointimems
+dt customerid state city
+dt customerid tags objectid jointimems
+dt customerid tags objectid jointimems endedflag
+dt customerid tags objectid endedflag
+dt customerid tags objectid firsthbtimems
+dt customerid tags jointimems
+dt customerid tags jointimems endedflag
+dt customerid tags jointimems playtimems bufftimems
+dt customerid objectid
+dt customerid objectid jointimems
+dt customerid objectid jointimems endedflag
+dt customerid objectid jointimems startbitratekbps playtimems bufftimems
+dt customerid objectid jointimems playtimems bufftimems
+dt customerid objectid endedflag
+dt customerid jointimems
+dt customerid jointimems endedflag
+dt customerid jointimems startbitratekbps playtimems bufftimems
+dt customerid jointimems playtimems bufftimems
+dt customerid endedflag
+dt customerid clientid country tags objectid jointimems
+dt customerid clientid country jointimems endedflag
+dt customerid clientid country jointimems endedflag bufftimems
+dt customerid clientid country endedflag
+dt customerid clientid state city jointimems endedflag
+dt customerid clientid state jointimems endedflag
+dt customerid clientid dma tags objectid jointimems
+dt customerid clientid dma jointimems endedflag
+dt customerid clientid tags objectid
+dt customerid clientid tags objectid jointimems
+dt customerid clientid tags objectid jointimems playtimems

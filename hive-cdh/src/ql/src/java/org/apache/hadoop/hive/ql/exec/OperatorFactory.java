@@ -26,6 +26,7 @@ import org.apache.hadoop.hive.ql.plan.CollectDesc;
 import org.apache.hadoop.hive.ql.plan.ExtractDesc;
 import org.apache.hadoop.hive.ql.plan.FileSinkDesc;
 import org.apache.hadoop.hive.ql.plan.FilterDesc;
+import org.apache.hadoop.hive.ql.plan.SampleDesc;
 import org.apache.hadoop.hive.ql.plan.ForwardDesc;
 import org.apache.hadoop.hive.ql.plan.GroupByDesc;
 import org.apache.hadoop.hive.ql.plan.HashTableDummyDesc;
@@ -68,6 +69,8 @@ public final class OperatorFactory {
   static {
     opvec = new ArrayList<OpTuple>();
     opvec.add(new OpTuple<FilterDesc>(FilterDesc.class, FilterOperator.class));
+    //@sameerag: Adding Sampling Operator mappling (check)
+    opvec.add(new OpTuple<SampleDesc>(SampleDesc.class, SamplingOperator.class));
     opvec.add(new OpTuple<SelectDesc>(SelectDesc.class, SelectOperator.class));
     opvec.add(new OpTuple<ForwardDesc>(ForwardDesc.class, ForwardOperator.class));
     opvec.add(new OpTuple<FileSinkDesc>(FileSinkDesc.class, FileSinkOperator.class));

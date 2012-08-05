@@ -243,6 +243,7 @@ TOK_TABNAME;
 TOK_TABSRC;
 TOK_INTIME;
 TOK_WITHMAXERROR;
+TOK_SAMPLE_WITH;
 }
 // sameerag: Added Time and Error tokens
 
@@ -1287,9 +1288,10 @@ regular_body
    sortByClause?
    timeClause?
    maxErrorClause?
+   sampleWithClause?
    limitClause? -> ^(TOK_QUERY fromClause ^(TOK_INSERT insertClause
                      selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
-                     distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?))
+                     distributeByClause? sortByClause? timeClause? maxErrorClause? sampleWithClause? limitClause?))
    |
    selectStatement
    ;
@@ -1307,9 +1309,10 @@ selectStatement
    sortByClause?
    timeClause?
    maxErrorClause?
+   sampleWithClause?
    limitClause? -> ^(TOK_QUERY fromClause ^(TOK_INSERT ^(TOK_DESTINATION ^(TOK_DIR TOK_TMP_FILE))
                      selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
-                     distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?))
+                     distributeByClause? sortByClause? timeClause? maxErrorClause? sampleWithClause? limitClause?))
    ;
 
 
@@ -1326,9 +1329,10 @@ body
    sortByClause?
    timeClause?
    maxErrorClause?
+   sampleWithClause?
    limitClause? -> ^(TOK_INSERT insertClause?
                      selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
-                     distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?)
+                     distributeByClause? sortByClause? timeClause? maxErrorClause? sampleWithClause? limitClause?)
    |
    selectClause
    whereClause?
@@ -1340,9 +1344,10 @@ body
    sortByClause?
    timeClause?
    maxErrorClause?
+   sampleWithClause?
    limitClause? -> ^(TOK_INSERT ^(TOK_DESTINATION ^(TOK_DIR TOK_TMP_FILE))
                      selectClause whereClause? groupByClause? havingClause? orderByClause? clusterByClause?
-                     distributeByClause? sortByClause? timeClause? maxErrorClause? limitClause?)
+                     distributeByClause? sortByClause? timeClause? maxErrorClause? sampleWithClause? limitClause?)
    ;
 
 insertClause
@@ -1382,6 +1387,13 @@ maxErrorClause
 @after {msgs.pop(); }
 	:
 	KW_WITHMAXERROR num=Number -> ^(TOK_WITHMAXERROR $num)
+	;
+	
+sampleWithClause
+@init { msgs.push("sample with clause");}
+@after {msgs.pop(); }
+	:
+	KW_SAMPLE_WITH num=Number -> ^(TOK_SAMPLE_WITH $num)
 	;
 
 
@@ -2231,7 +2243,7 @@ KW_SHOW_DATABASE: 'SHOW_DATABASE';
 KW_UPDATE: 'UPDATE';
 KW_INTIME: 'INTIME';
 KW_WITHMAXERROR: 'WITHMAXERROR';
-
+KW_SAMPLE_WITH: 'SAMPLEWITH';
 
 // Operators
 // NOTE: if you add a new function/operator, add it to sysFuncNames so that describe function _FUNC_ will work.

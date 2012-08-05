@@ -23,7 +23,7 @@ import java.io.Serializable;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hive.conf.HiveConf;
 import org.apache.hadoop.hive.ql.metadata.HiveException;
-import org.apache.hadoop.hive.ql.plan.FilterDesc;
+import org.apache.hadoop.hive.ql.plan.SampleDesc;
 import org.apache.hadoop.hive.ql.plan.api.OperatorType;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
@@ -32,7 +32,7 @@ import org.apache.hadoop.io.LongWritable;
 /**
  * Filter operator implementation.
  **/
-public class SamplingOperator extends Operator<FilterDesc> implements
+public class SamplingOperator extends Operator<SampleDesc> implements
     Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -47,6 +47,7 @@ public class SamplingOperator extends Operator<FilterDesc> implements
 
   private final transient LongWritable filtered_count, passed_count;
   //private transient ExprNodeEvaluator conditionEvaluator;
+  private double probability;
   private transient PrimitiveObjectInspector conditionInspector;
   private transient int consecutiveFails;
   transient int heartbeatInterval;
@@ -64,6 +65,9 @@ public class SamplingOperator extends Operator<FilterDesc> implements
       heartbeatInterval = HiveConf.getIntVar(hconf,
           HiveConf.ConfVars.HIVESENDHEARTBEAT);
       //conditionEvaluator = ExprNodeEvaluatorFactory.get(conf.getPredicate());
+      //int p = ExprNodeEvaluatorFactory.get(conf.getProbability());
+      probability = conf.getProbability();
+      LOG.info("------------- " + probability + " ---------");
       statsMap.put(Counter.FILTERED, filtered_count);
       statsMap.put(Counter.PASSED, passed_count);
       conditionInspector = null;
@@ -86,7 +90,7 @@ public class SamplingOperator extends Operator<FilterDesc> implements
         .getPrimitiveJavaObject(condition);
     if (Boolean.TRUE.equals(ret)) {
     */
-    if(Math.random() > 0.5 ) {
+    if(Math.random() <= probability ) {
       forward(row, rowInspector);
       passed_count.set(passed_count.get() + 1);
       consecutiveFails = 0;
@@ -107,7 +111,7 @@ public class SamplingOperator extends Operator<FilterDesc> implements
    */
   @Override
   public String getName() {
-    return new String("FIL");
+    return new String("SAMPLE");
   }
 
   @Override

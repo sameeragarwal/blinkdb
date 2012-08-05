@@ -32,7 +32,7 @@ import org.apache.hadoop.io.LongWritable;
 /**
  * Filter operator implementation.
  **/
-public class FilterOperator extends Operator<FilterDesc> implements
+public class SamplingOperator extends Operator<FilterDesc> implements
     Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -46,12 +46,12 @@ public class FilterOperator extends Operator<FilterDesc> implements
   }
 
   private final transient LongWritable filtered_count, passed_count;
-  private transient ExprNodeEvaluator conditionEvaluator;
+  //private transient ExprNodeEvaluator conditionEvaluator;
   private transient PrimitiveObjectInspector conditionInspector;
   private transient int consecutiveFails;
   transient int heartbeatInterval;
 
-  public FilterOperator() {
+  public SamplingOperator() {
     super();
     filtered_count = new LongWritable();
     passed_count = new LongWritable();
@@ -63,7 +63,7 @@ public class FilterOperator extends Operator<FilterDesc> implements
     try {
       heartbeatInterval = HiveConf.getIntVar(hconf,
           HiveConf.ConfVars.HIVESENDHEARTBEAT);
-      conditionEvaluator = ExprNodeEvaluatorFactory.get(conf.getPredicate());
+      //conditionEvaluator = ExprNodeEvaluatorFactory.get(conf.getPredicate());
       statsMap.put(Counter.FILTERED, filtered_count);
       statsMap.put(Counter.PASSED, passed_count);
       conditionInspector = null;
@@ -76,15 +76,17 @@ public class FilterOperator extends Operator<FilterDesc> implements
   @Override
   public void processOp(Object row, int tag) throws HiveException {
     ObjectInspector rowInspector = inputObjInspectors[tag];
+    /*
     if (conditionInspector == null) {
       conditionInspector = (PrimitiveObjectInspector) conditionEvaluator
           .initialize(rowInspector);
     }
-    //@sameerag: Condition Evaluator // put your code here
     Object condition = conditionEvaluator.evaluate(row);
     Boolean ret = (Boolean) conditionInspector
         .getPrimitiveJavaObject(condition);
     if (Boolean.TRUE.equals(ret)) {
+    */
+    if(Math.random() > 0.5 ) {
       forward(row, rowInspector);
       passed_count.set(passed_count.get() + 1);
       consecutiveFails = 0;

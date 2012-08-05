@@ -35,6 +35,7 @@ enum OperatorType {
   LATERALVIEWFORWARD,
   HASHTABLESINK,
   HASHTABLEDUMMY,
+  SAMPLE,
 }
 
 struct Operator {

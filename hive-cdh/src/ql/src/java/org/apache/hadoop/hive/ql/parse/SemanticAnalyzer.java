@@ -124,6 +124,7 @@ import org.apache.hadoop.hive.ql.plan.ExtractDesc;
 import org.apache.hadoop.hive.ql.plan.FetchWork;
 import org.apache.hadoop.hive.ql.plan.FileSinkDesc;
 import org.apache.hadoop.hive.ql.plan.FilterDesc;
+import org.apache.hadoop.hive.ql.plan.SampleDesc;
 import org.apache.hadoop.hive.ql.plan.ForwardDesc;
 import org.apache.hadoop.hive.ql.plan.GroupByDesc;
 import org.apache.hadoop.hive.ql.plan.HiveOperation;
@@ -619,7 +620,15 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
       case HiveParser.TOK_WHERE:
         qbp.setWhrExprForClause(ctx_1.dest, ast);
         break;
-       
+
+      // (sameerag): Binomial I.I.D. Sampling
+      case HiveParser.TOK_SAMPLE_WITH:
+    	  //ASTNode errorBoundNode = (ASTNode) child.getChild(0);
+    	  double probability = Double.parseDouble(((ASTNode) ast.getChild(0)).getToken().getText());
+    	  console.printInfo("Sameer: Sample With Operator Invoked with probability = " + probability);
+    	  qbp.setSampleExprForClause(ctx_1.dest, ast);
+          break;
+
       //case HiveParser.TOK_QSSAMPLE:
       //  qbp.setSampleExprForClause(ctx_1.dest, ast);
       //	break;  
@@ -1391,12 +1400,18 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
 
     OpParseContext inputCtx = opParseCtx.get(input);
     RowResolver inputRR = inputCtx.getRowResolver();
+    /*
     Operator output = putOpInsertMap(OperatorFactory.getAndMakeChild(
-        new FilterDesc(genExprNodeDesc(condn, inputRR), false), new RowSchema(
+        new SampleDesc(genExprNodeDesc(Double.parseDouble(condn.token.getText()), inputRR), false), new RowSchema(
+        inputRR.getColumnInfos()), input), inputRR);
+	*/
+
+    Operator output = putOpInsertMap(OperatorFactory.getAndMakeChild(
+        new SampleDesc(Double.parseDouble(condn.token.getText()), false), new RowSchema(
         inputRR.getColumnInfos()), input), inputRR);
 
     if (LOG.isDebugEnabled()) {
-      LOG.debug("Created Filter Plan for " + qb.getId() + " row schema: "
+      LOG.debug("Created Sample Plan for " + qb.getId() + " row schema: "
                 + inputRR.toString());
     }
     return output;
@@ -6224,7 +6239,7 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
           .getAliasToTable().entrySet().iterator();
       Table tab = (iter.next()).getValue();
       if (!tab.isPartitioned()) {
-        if (qbParseInfo.getDestToWhereExpr().isEmpty()) {
+        if (qbParseInfo.getDestToWhereExpr().isEmpty() && qbParseInfo.getDestToSampleExpr().isEmpty()) {
           fetch = new FetchWork(tab.getPath().toString(), Utilities
               .getTableDesc(tab), qb.getParseInfo().getOuterQueryLimit());
           noMapRed = true;

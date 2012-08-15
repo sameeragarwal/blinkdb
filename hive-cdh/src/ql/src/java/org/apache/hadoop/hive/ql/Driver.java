@@ -18,9 +18,12 @@
 
 package org.apache.hadoop.hive.ql;
 
+import java.io.BufferedReader;
 import java.io.DataInput;
+import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -743,9 +746,39 @@ public class Driver implements CommandProcessor {
 	     (command.toLowerCase().contains("create table") || command.toLowerCase().contains("load data")))
 	  {
 		  int numSamples = HiveConf.getIntVar(conf, HiveConf.ConfVars.SAMPLES_PER_TABLE);
-		  for (int i = 0; i < numSamples; i++)
-			  ret = run(command, i);
+		  //sameerag: Disabling direct reservoir sampling for now
+		  //for (int i = 0; i < numSamples; i++)
+			  //ret = run(command, i);
+		  ret = run(command, -1);
 	  }
+	  /*
+	  else if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+	     command.toLowerCase().contains("bias on"))
+	  {
+		  LOG.info(command);
+		  String cols = command.split("bias on")[1];
+		  String table_stats_command = command.replace("*", cols+",count(*)");
+		  table_stats_command = table_stats_command.split("bias on")[0];
+		  table_stats_command = table_stats_command + " group by " + cols; 
+		  //Get File Stats
+		  ret = run(table_stats_command, -1);
+		  //Read File Stats and Launch Commands to Create Biased Samples
+		  try
+		  {
+			  FileInputStream fstream = new FileInputStream("_temp_key_summary.dat");
+			  DataInputStream dis = new DataInputStream(fstream);
+			  BufferedReader br = new BufferedReader(new InputStreamReader(dis));
+			  String keys;
+			  while ((keys = br.readLine()) != null)
+			  {
+				  System.out.println("Sameer: " + keys);
+			  }
+		  }
+		  catch (IOException e)
+		  {
+			LOG.info(e.toString());
+		  }
+	  }	  */
 	  else
 	  {
 		  ret = run(command, -1);

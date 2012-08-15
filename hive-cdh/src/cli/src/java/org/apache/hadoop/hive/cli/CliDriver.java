@@ -19,10 +19,15 @@
 package org.apache.hadoop.hive.cli;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -196,78 +201,178 @@ public class CliDriver {
           }
         }
     } else { // local mode
-      CommandProcessor proc = CommandProcessorFactory.get(tokens[0], (HiveConf)conf);
-      if (proc != null) {
-        if (proc instanceof Driver) {
-          Driver qp = (Driver) proc;
-          PrintStream out = ss.out;
-          long start = System.currentTimeMillis();
-          if (ss.getIsVerbose()) {
-            out.println(cmd);
-          }
 
-          ret = qp.run(cmd).getResponseCode();
-          if (ret != 0) {
-            qp.close();
-            return ret;
-          }
+        PrintStream out = ss.out;
+        PrintStream err = ss.err;
+    	String command = cmd;
+    	int i = 0;
+			 
+    	if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+    			command.toLowerCase().contains("bias on"))
+    	{
+    		double per_key_limit = Double.parseDouble(command.split("limit=")[1]);
+    		command = command.split("limit=")[0];
+    		String cols = command.split("bias on")[1];
+    		String table_stats_command = command.replace("*", cols+",count(*)");
+    		table_stats_command = table_stats_command.split("bias on")[0];
+    		table_stats_command = table_stats_command + " group by " + cols; 
+    		//Get File Stats
+    		ret = processCmdInLocal(table_stats_command, ss, 9);
+    		//Read File Stats and Launch Commands to Create Biased Samples
+    		try 
+    		{
+    			FileInputStream fstream = new FileInputStream("_temp_key_summary.dat");
+    			DataInputStream dis = new DataInputStream(fstream);
+    			BufferedReader br = new BufferedReader(new InputStreamReader(dis));
+    			String keys;
+    			while ((keys = br.readLine()) != null)
+    			{
+    				//out.println("Sameer: " + keys);
+    				int number_of_cols = cols.split(",").length;
+    				String[] key_split = keys.split("\t");
+    				String[] cols_split = cols.split(",");
+    				String table_name = command.split("bias on")[0].trim().split(" ")[command.split("bias on")[0].trim().split(" ").length - 1];
+    				String sample_table_name = "blinkdb_metadata_" + table_name + "_" + (int)(per_key_limit) ;
+    				sample_table_name = santizeTableName(sample_table_name);
+    				String query = command.split("bias on")[0] + " where ";
+    				for (i = 0; i < number_of_cols; i++)
+    				{
+    					query += cols_split[i].trim() + " = " + key_split[i].trim() + " AND ";
+    					sample_table_name += "_"+cols_split[i].trim()+"_" + key_split[i].trim();
+    				}
 
-          ArrayList<String> res = new ArrayList<String>();
+    				query = query.replaceAll(" AND $", "");
+    				double key_frequency = Double.parseDouble(key_split[i]);
+    				if (per_key_limit < key_frequency)
+    				{
+    					query += " samplewith " + (per_key_limit/key_frequency);
+    				}
+    				
+    				String drop_query = "DROP TABLE " + sample_table_name;
+    				out.println(drop_query);
+    				ret = processCmdInLocal(drop_query, ss, -1);
+    				query = "CREATE TABLE " + sample_table_name + " AS " + query;
+    				out.println(query);
+    				ret = processCmdInLocal(query, ss, -1);
 
-          if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.HIVE_CLI_PRINT_HEADER)) {
-            // Print the column names
-            boolean first_col = true;
-            Schema sc = qp.getSchema();
-            for (FieldSchema fs : sc.getFieldSchemas()) {
-              if (!first_col) {
-                out.print('\t');
-              }
-              out.print(fs.getName());
-              first_col = false;
-            }
-            out.println();
-          }
-
-          try {
-            while (qp.getResults(res)) {
-              for (String r : res) {
-                out.println(r);
-              }
-              res.clear();
-              if (out.checkError()) {
-                break;
-              }
-            }
-          } catch (IOException e) {
-            console.printError("Failed with exception " + e.getClass().getName() + ":"
-                + e.getMessage(), "\n" + org.apache.hadoop.util.StringUtils.stringifyException(e));
-            ret = 1;
-          }
-
-          int cret = qp.close();
-          if (ret == 0) {
-            ret = cret;
-          }
-
-          long end = System.currentTimeMillis();
-          if (end > start) {
-            double timeTaken = (end - start) / 1000.0;
-            console.printInfo("Time taken: " + timeTaken + " seconds", null);
-            //System.out.println("Time taken: " + timeTaken + " seconds", null);
-          }
-
-        } else {
-          if (ss.getIsVerbose()) {
-            ss.out.println(tokens[0] + " " + cmd_1);
-          }
-          ret = proc.run(cmd_1).getResponseCode();
-        }
-      }
+    			}
+    		}
+    		catch (IOException e)
+    		{
+    			err.println(e.toString());
+    		}
+    	}
+    	else
+    	{
+    		ret = processCmdInLocal(cmd, ss, -1);
+    	}
     }
-
+  //}
+    //sameerag: Local Mode Ends Here
     return ret;
   }
 
+  String santizeTableName (String table_name)
+  {
+	  table_name = table_name.replace(".", "POINT");
+	  table_name = table_name.replace("\"", "");
+	  return table_name;
+  }
+  /*
+   * @author: sameerag
+   * @description: Refactoring Local Mode Exection
+   */
+	public int processCmdInLocal(String cmd, CliSessionState ss, int executionFlag) {
+		
+	  int ret  = 0;
+	  
+	  String cmd_trimmed = cmd.trim();
+	  String[] tokens = cmd_trimmed.split("\\s+");
+	  String cmd_1 = cmd_trimmed.substring(tokens[0].length()).trim();
+
+	  CommandProcessor proc = CommandProcessorFactory.get(tokens[0], (HiveConf)conf);
+	  if (proc != null) {
+		  if (proc instanceof Driver) {
+			  Driver qp = (Driver) proc;
+			  PrintStream out = ss.out;
+			  long start = System.currentTimeMillis();
+			  if (ss.getIsVerbose()) {
+				  out.println(cmd);
+			  }
+
+			  ret = qp.run(cmd).getResponseCode();
+			  if (ret != 0) {
+				  qp.close();
+				  return ret;
+			  }
+
+			  ArrayList<String> res = new ArrayList<String>();
+
+			  if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.HIVE_CLI_PRINT_HEADER)) {
+				  // Print the column names
+				  boolean first_col = true;
+				  Schema sc = qp.getSchema();
+				  for (FieldSchema fs : sc.getFieldSchemas()) {
+					  if (!first_col) {
+						  out.print('\t');
+					  }
+					  out.print(fs.getName());
+					  first_col = false;
+				  }
+				  out.println();
+			  }
+
+			  try {
+				  //If cmd contains "bias on" and execution flag = 9, produce a key distribution summary				  
+				  FileWriter fstream = new FileWriter("_temp_key_summary.dat");
+				  BufferedWriter bfwriter = new BufferedWriter(fstream);
+
+				  while (qp.getResults(res)) {
+					  for (String r : res) {
+						  out.println(r);
+						  //Put conditional here and possibly don't write on stdout
+					    	if (HiveConf.getBoolVar(conf, HiveConf.ConfVars.QUICKSILVER_SAMPLING_ENABLED) && 
+					    			executionFlag == 9){
+					    		bfwriter.write(r+"\n");
+					    		bfwriter.flush();
+					    	}
+					  }
+					  res.clear();
+					  bfwriter.close();
+					  fstream.close();
+					  if (out.checkError()) {
+						  break;
+					  }
+				  }
+			  } catch (IOException e) {
+				  console.printError("Failed with exception " + e.getClass().getName() + ":"
+						  + e.getMessage(), "\n" + org.apache.hadoop.util.StringUtils.stringifyException(e));
+				  ret = 1;
+			  }
+
+			  int cret = qp.close();
+			  if (ret == 0) {
+				  ret = cret;
+			  }
+
+			  long end = System.currentTimeMillis();
+			  if (end > start) {
+				  double timeTaken = (end - start) / 1000.0;
+				  console.printInfo("Time taken: " + timeTaken + " seconds", null);
+				  //System.out.println("Time taken: " + timeTaken + " seconds", null);
+			  }
+
+		  } else {
+			  if (ss.getIsVerbose()) {
+				  ss.out.println(tokens[0] + " " + cmd_1);
+			  }
+			  ret = proc.run(cmd_1).getResponseCode();
+		  }
+	  }
+	  
+	  return ret;
+  }
+  
   public int processLine(String line) {
     int lastRet = 0, ret = 0;
 

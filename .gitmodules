@@ -1,0 +1,3 @@
+[submodule "hive_blinkdb"]
+	path = hive_blinkdb
+	url = git://github.com/sameeragarwal/hive_blinkdb.git

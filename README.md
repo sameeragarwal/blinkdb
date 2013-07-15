@@ -1,4 +1,5 @@
-# BlinkDB: Queries with Bounded Errors and Bounded Response Times on Very Large Data
+# BlinkDB
+## Queries with Bounded Errors and Bounded Response Times on Very Large Data
 
 BlinkDB is a large-scale data warehouse system built on Shark and Spark and is designed to be
 compatible with Apache Hive. It can answer HiveQL queries up to 200-300 times faster than Hive

@@ -1,14 +1,15 @@
-# Shark (Hive on Spark)
+# BlinkDB: Queries with Bounded Errors and Bounded Response Times on Very Large Data
 
-Shark is a large-scale data warehouse system for Spark designed to be compatible with
-Apache Hive. It can answer Hive QL queries up to 100 times faster than Hive without
-modification to the existing data nor queries. Shark supports Hive's query language,
-metastore, serialization formats, and user-defined functions.
+BlinkDB is a large-scale data warehouse system built on Shark and Spark and is designed to be
+compatible with Apache Hive. It can answer HiveQL queries up to 200-300 times faster than Hive
+by executing them on user-specified samples of data and providing approximate answers with meaningful
+error bars.
 
-Shark 0.7.0 requires:
+BlinkDB requires:
+* Shark 0.7.0
 * Scala 2.9.3
 * Hive 0.9
 * Spark 0.7.1
 * OpenJDK 7 or Oracle HotSpot JDK 7 or Oracle HotSpot JDK 6u23+
 
-## For current documentation, see the [Shark Project Wiki](https://github.com/amplab/shark/wiki)
+## For current documentation, see the [BlinkDB Website](http://blinkdb.cs.berkeley.edu)

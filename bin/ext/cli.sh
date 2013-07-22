@@ -17,6 +17,7 @@
 
 THISSERVICE=cli
 export SERVICE_LIST="${SERVICE_LIST}${THISSERVICE} "
+echo $FWDIR
 
 cli() {
   echo "Starting the Shark Command Line Client"

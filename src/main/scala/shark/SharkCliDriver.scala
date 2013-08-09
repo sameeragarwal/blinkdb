@@ -50,7 +50,7 @@ import spark.SparkContext
 
 object SharkCliDriver {
 
-  var prompt  = "shark"
+  var prompt  = "blinkdb"
   var prompt2 = "     " // when ';' is not yet seen.
 
   def main(args: Array[String]) {

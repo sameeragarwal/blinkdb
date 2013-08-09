@@ -84,6 +84,8 @@ object OperatorFactory extends LogHelper {
         _newOperatorInstance(classOf[LimitOperator], hiveOp)
       case hop: org.apache.hadoop.hive.ql.exec.FilterOperator =>
         _newOperatorInstance(classOf[FilterOperator], hiveOp)
+      case hop: org.apache.hadoop.hive.ql.exec.SamplingOperator =>
+        _newOperatorInstance(classOf[SamplingOperator], hiveOp)
       case hop: org.apache.hadoop.hive.ql.exec.ReduceSinkOperator =>
         _newOperatorInstance(classOf[ReduceSinkOperator], hiveOp)
       case hop: org.apache.hadoop.hive.ql.exec.ExtractOperator =>

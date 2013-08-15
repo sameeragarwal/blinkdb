@@ -19,5 +19,5 @@
 # Very handy for debugging.
 
 BINDIR="`dirname $0`"
-exec $BINDIR/shark -hiveconf hive.root.logger=DEBUG,console "$@"
+exec $BINDIR/blinkdb -hiveconf hive.root.logger=DEBUG,console "$@"
 

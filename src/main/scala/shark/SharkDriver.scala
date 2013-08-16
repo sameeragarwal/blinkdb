@@ -170,7 +170,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHelper {
     var _cmd = cmd.toLowerCase()
     if ((_cmd contains "approx_sum") || (_cmd contains "approx_count")) {
       val Array(str1, str2) = _cmd.split(')')
-      _cmd = str1 + " , 1000 ,0.01) " + str2 
+      _cmd = str1 + " , 1223525 ,0.01) " + str2 
     }
     
     logInfo(_cmd)

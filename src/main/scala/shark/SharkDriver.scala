@@ -144,6 +144,7 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHelper {
 
   def tableRdd(cmd:String): TableRDD = {
     useTableRddSink = true
+    
     val response = run(cmd)
     // Throw an exception if there is an error in query processing.
     if (response.getResponseCode() != 0) {
@@ -165,6 +166,15 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHelper {
     val perfLogger: PerfLogger = PerfLogger.getPerfLogger()
     perfLogger.PerfLogBegin(LOG, PerfLogger.COMPILE)
 
+    //FIXME: Temporary sanitization hack
+    var _cmd = cmd.toLowerCase()
+    if ((_cmd contains "approx_sum") || (_cmd contains "approx_count")) {
+      val Array(str1, str2) = _cmd.split(')')
+      _cmd = str1 + " , 1000 ,0.01) " + str2 
+    }
+    
+    logInfo(_cmd)
+    
     //holder for parent command type/string when executing reentrant queries
     val queryState = new SharkDriver.QueryState
 
@@ -179,9 +189,9 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHelper {
     saveSession(queryState)
 
     try {
-      val command = new VariableSubstitution().substitute(conf, cmd)
+      val command = new VariableSubstitution().substitute(conf, _cmd)
       context = new QueryContext(conf, useTableRddSink)
-      context.setCmd(cmd)
+      context.setCmd(_cmd)
       context.setTryCount(getTryCount())
 
       val tree = ParseUtils.findRootNonNullToken((new ParseDriver()).parse(command, context))

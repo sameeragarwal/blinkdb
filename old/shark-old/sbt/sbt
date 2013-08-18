@@ -1,1 +1,0 @@
-java -Xmx512M -Dsun.io.serialization.extendedDebugInfo=true -jar `dirname $0`/sbt-launch.jar "$@"

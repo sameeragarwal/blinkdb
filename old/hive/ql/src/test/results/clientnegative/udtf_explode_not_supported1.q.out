@@ -1,1 +1,0 @@
-FAILED: Error in semantic analysis: GROUP BY is not supported with a UDTF in the SELECT clause

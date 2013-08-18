@@ -1,1 +1,0 @@
-FAILED: Error in semantic analysis: In strict mode, cartesian product is not allowed. If you really want to perform the operation, set hive.mapred.mode=nonstrict

@@ -1,0 +1,51 @@
+target/
+build/
+metastore_db/
+project/boot
+lib_managed/
+TempStatsStore
+work/
+
+conf/shark-env.sh
+
+# Compiled Source
+*.class
+
+# Packages
+#*.jar
+
+# Log Files
+*.log
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+# emacs backup
+*~
+
+# tmp files
+*.swp
+.cache
+
+# mac os file
+*.DS_Store
+
+# latex files
+paper.pdf
+paper.blg
+paper.bbl
+paper.aux
+
+# IntelliJ IDE files
+.idea
+*.iml
+
+# Test Reports
+TEST*.xml
+test_warehouses
+
+# Ensime files for emacs
+.ensime
+.ensime_lucene

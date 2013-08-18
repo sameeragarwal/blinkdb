@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-SHARK_CONF_DIR=`dirname $0`/../conf
-if [ -e $SHARK_CONF_DIR/shark-env.sh ] ; then
-   . $SHARK_CONF_DIR/shark-env.sh
+BLINKDB_CONF_DIR=`dirname $0`/../conf
+if [ -e $BLINKDB_CONF_DIR/blinkdb-env.sh ] ; then
+   . $BLINKDB_CONF_DIR/blinkdb-env.sh
 fi
 
 if [[ "$@" == *"test"* ]]; then

@@ -21,6 +21,8 @@ import Keys._
 
 object SharkBuild extends Build {
 
+  val BLINKDB_VERSION = "0.1.0-SNAPSHOT"
+
   // Shark version
   val SHARK_VERSION = "0.8.0-SNAPSHOT"
 

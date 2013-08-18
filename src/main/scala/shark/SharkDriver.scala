@@ -166,18 +166,35 @@ class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHelper {
     val perfLogger: PerfLogger = PerfLogger.getPerfLogger()
     perfLogger.PerfLogBegin(LOG, PerfLogger.COMPILE)
 
-    //FIXME: Temporary sanitization hack
-    var _cmd = cmd.toLowerCase()
-    if ((_cmd contains "approx_sum") || (_cmd contains "approx_count")) {
-      val Array(str1, str2) = _cmd.split(')')
-      _cmd = str1 + " , 4296414 ,0.01) " + str2 
-    }
-    
-    logInfo(_cmd)
-    
     //holder for parent command type/string when executing reentrant queries
     val queryState = new SharkDriver.QueryState
 
+    var _cmd = cmd.toLowerCase()
+    if ((_cmd contains "approx_sum") || (_cmd contains "approx_count")) {
+
+      val sampleSize = SharkConfVars.getLongVar(conf, SharkConfVars.SAMPLE_SIZE)
+      val datasetSize = SharkConfVars.getLongVar(conf, SharkConfVars.DATASET_SIZE)
+
+      if (sampleSize == 0)
+      {
+        errorMessage = "FAILED: Hive Internal Error: Sample Size not set"
+        logError(errorMessage + "\n" +
+            "Please use set blinkdb.sample.size=<rows> to set Sample Size")
+      }
+          
+      if (datasetSize == 0)
+      {
+        errorMessage = "FAILED: Hive Internal Error: Dataset Size not set"
+        logError(errorMessage + "\n" +
+            "Please use set blinkdb.dataset.size=<rows> to set Sample Size")
+      }
+      
+      val Array(str1, str2) = _cmd.split(')')
+      _cmd = str1 + " , " + sampleSize + " , "+ datasetSize + " ) " + str2
+    }
+    
+    logInfo(_cmd)
+        
     if (plan != null) {
       close()
       plan = null

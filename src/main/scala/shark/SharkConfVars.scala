@@ -52,7 +52,10 @@ object SharkConfVars {
 
   // If true, then query plans are compressed before being sent
   val COMPRESS_QUERY_PLAN = new ConfVar("shark.compressQueryPlan", true)
-
+  
+  val SAMPLE_SIZE = new ConfVar("blinkdb.sample.size", 0l)
+  val DATASET_SIZE = new ConfVar("blinkdb.dataset.size", 0l)
+  
   // Add Shark configuration variables and their default values to the given conf,
   // so default values show up in 'set'.
   def initializeWithDefaults(conf: Configuration) {
@@ -70,6 +73,10 @@ object SharkConfVars {
       conf.setBoolean(MAP_PRUNING.varname, MAP_PRUNING.defaultBoolVal)
     if (conf.get(MAP_PRUNING_PRINT_DEBUG.varname) == null)
       conf.setBoolean(MAP_PRUNING_PRINT_DEBUG.varname, MAP_PRUNING_PRINT_DEBUG.defaultBoolVal)
+    if (conf.get(SAMPLE_SIZE.varname) == null)
+      conf.setLong(SAMPLE_SIZE.varname, SAMPLE_SIZE.defaultLongVal)
+    if (conf.get(DATASET_SIZE.varname) == null)
+      conf.setLong(DATASET_SIZE.varname, DATASET_SIZE.defaultLongVal)      
   }
 
   def getIntVar(conf: Configuration, variable: ConfVar): Int = {

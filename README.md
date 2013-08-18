@@ -1,4 +1,5 @@
-# BlinkDB
+
+![BlinkDB](http://blinkdb.org/figures/blinkdb-logo-withaffiliations.png)
 #### Queries with Bounded Errors and Bounded Response Times on Very Large Data
 
 BlinkDB is a large-scale data warehouse system built on Shark and Spark and is designed to be
@@ -14,9 +15,5 @@ VAR and STDEV).
 * Spark 0.8.x
 * OpenJDK 7 or Oracle HotSpot JDK 7 or Oracle HotSpot JDK 6u23+
 
-#### Key Features:
-* Allows users to create/delete samples on any input table and/or materialized view.
-* Provides approximate answers with error bars for queries with a single AVG, SUM, COUNT, VAR and STDEV operator on any user specified sample.
-* Complete support for GROUP BYs and FILTERs
-
-## For current documentation, see the [BlinkDB Website](http://blinkdb.cs.berkeley.edu)
+### For current documentation, see the [BlinkDB Wiki](https://github.com/sameeragarwal/blinkdb/wiki).
+### For more information about the BlinkDB Project, see the [BlinkDB Website](http://blinkdb.cs.berkeley.edu).

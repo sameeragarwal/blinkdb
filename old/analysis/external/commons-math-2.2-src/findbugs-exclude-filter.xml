@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<!--
+  This file contains some false positive bugs detected by findbugs. Their
+  false positive nature has been analyzed individually and they have been
+  put here to instruct findbugs it must ignore them.
+-->
+<FindBugsFilter>
+
+  <!--  the following equality tests are part of the reference algorithms -->
+  <!--  which already know about limited precision of the double numbers -->
+  <Match>
+    <Class name="org.apache.commons.math.distribution.SaddlePointExpansion" />
+    <Or>
+      <Method name="getDeviancePart" params="double,double" returns="double" />
+      <Method name="getStirlingError" params="double" returns="double" />
+    </Or>
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.univariate.BrentOptimizer" />
+    <Method name="localMin" params="boolean,double,double,double,double,double" returns="double" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.analysis.solvers.BrentSolver" />
+    <Method name="solve" params="org.apache.commons.math.analysis.UnivariateRealFunction,double,double,double,double,double,double" returns="double" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.analysis.solvers.MullerSolver" />
+    <Or>
+      <Method name="solve"  params="org.apache.commons.math.analysis.UnivariateRealFunction,double,double" returns="double" />
+      <Method name="solve2" params="org.apache.commons.math.analysis.UnivariateRealFunction,double,double" returns="double" />
+    </Or>
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.EigenDecompositionImpl" />
+    <Method name="findEigenVectors" params="double[][]" returns="void" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+
+  <!-- The following equality test is intentional and needed for semantic purposes -->
+  <Match>
+    <Class name="org.apache.commons.math.geometry.Vector3D" />
+    <Method name="equals" params="java.lang.Object" returns="boolean" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.linear.LinearConstraint" />
+    <Method name="equals" params="java.lang.Object" returns="boolean" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+
+  <!-- The following equality test is intentional and needed for rounding purposes -->
+  <Match>
+    <Class name="org.apache.commons.math.util.MathUtils" />
+    <Method name="roundUnscaled" params="double,double,int" returns="double" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+
+  <!-- The following equality test is intentional for division protection -->
+  <Match>
+    <Class name="org.apache.commons.math.analysis.interpolation.LoessInterpolator" />
+    <Method name="smooth" params="double[],double[]" returns="double[]" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+
+  <!-- The following equality test is intentional for infinity detection -->
+  <Match>
+    <Class name="org.apache.commons.math.util.FastMath" />
+    <Method name="atan2" params="double,double" returns="double" />
+    <Bug pattern="FE_FLOATING_POINT_EQUALITY" />
+  </Match>
+  
+  <!-- Spurious: Findbugs confused by final local variables -->
+  <Match>
+    <Class name="org.apache.commons.math.util.FastMath" />
+    <Method name="atan" params="double,double,boolean" returns="double" />
+    <Bug pattern="DLS_DEAD_LOCAL_STORE" />
+  </Match>
+
+  <!-- the following expositions of internal representation are intentional and documented -->
+  <Match>
+    <Class name="org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic"/>
+    <Method name="getDataRef" params="" returns="double[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.RealPointValuePair"/>
+    <Method name="getPointRef" params="" returns="double[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.RealPointValuePair"/>
+    <Method name="&lt;init>" params="double[],double,boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.VectorialPointValuePair"/>
+    <Or>
+      <Method name="getPointRef" params="" returns="double[]" />
+      <Method name="getValueRef" params="" returns="double[]" />
+    </Or>
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.optimization.VectorialPointValuePair"/>
+    <Method name="&lt;init>" params="double[],double[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.ode.sampling.DummyStepInterpolator"/>
+    <Method name="&lt;init>" params="double[],double[],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.ode.sampling.AbstractStepInterpolator"/>
+    <Or>
+      <Method name="getInterpolatedState" params="" returns="double[]" />
+      <Method name="getInterpolatedDerivatives" params="" returns="double[]" />
+    </Or>
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.ode.sampling.NordsieckStepInterpolator"/>
+    <Method name="reinitialize" params="double,double,double[],org.apache.commons.math.linear.Array2DRowRealMatrix" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.ode.sampling.NordsieckStepInterpolator"/>
+    <Method name="getInterpolatedStateVariation" params="" returns="double[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.BigMatrixImpl"/>
+    <Method name="&lt;init>" params="java.math.BigDecimal[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.BigMatrixImpl"/>
+    <Method name="getDataRef" params="" returns="java.math.BigDecimal[][]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.Array2DRowRealMatrix"/>
+    <Method name="&lt;init>" params="double[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.Array2DRowRealMatrix"/>
+    <Method name="getDataRef" params="" returns="double[][]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.RealMatrixImpl"/>
+    <Method name="&lt;init>" params="double[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.RealMatrixImpl"/>
+    <Method name="getDataRef" params="" returns="double[][]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.BlockFieldMatrix"/>
+    <Method name="&lt;init>" params="int,int,org.apache.commons.math.FieldElement[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.Array2DRowFieldMatrix"/>
+    <Method name="&lt;init>" params="org.apache.commons.math.FieldElement[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.Array2DRowFieldMatrix"/>
+    <Method name="getDataRef" params="" returns="org.apache.commons.math.FieldElement[][]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.BlockRealMatrix"/>
+    <Method name="&lt;init>" params="int,int,double[][],boolean" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.util.ResizableDoubleArray"/>
+    <Or>
+      <Method name="getValues"         params="" returns="double[]" />
+      <Method name="getInternalValues" params="" returns="double[]" />
+    </Or>
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.ArrayRealVector"/>
+    <Method name="getDataRef" params="" returns="double[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.linear.ArrayFieldVector"/>
+    <Method name="getDataRef" params="" returns="org.apache.commons.math.FieldElement[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.stat.clustering.EuclideanIntegerPoint"/>
+    <Method name="&lt;init>" params="int[]" returns="void" />
+    <Bug pattern="EI_EXPOSE_REP2" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.stat.clustering.EuclideanIntegerPoint"/>
+    <Method name="getPoint" params="" returns="int[]" />
+    <Bug pattern="EI_EXPOSE_REP" />
+  </Match>
+
+  <!-- The following cases are intentional unit tests for null parameters -->
+  <Match>
+    <Class name="org.apache.commons.math.stat.StatUtilsTest" />
+    <Method name="testPercentile" params="" returns="void" />
+    <Bug pattern="NP_NULL_PARAM_DEREF_NONVIRTUAL" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.analysis.UnivariateRealSolverFactoryImplTest" />
+    <Method name="testNewNewtonSolverNull" params="" returns="void" />
+    <Bug pattern="NP_NULL_PARAM_DEREF_ALL_TARGETS_DANGEROUS" />
+  </Match>
+  <Match>
+    <Class name="org.apache.commons.math.stat.regression.OLSMultipleLinearRegressionTest" />
+    <Method name="cannotAddNullYSampleData" params="" returns="void" />
+    <Bug pattern="NP_NULL_PARAM_DEREF_ALL_TARGETS_DANGEROUS" />
+  </Match>
+  
+  <!-- IntDoublePair intentionally implements Comparable inconsistently with equals -->
+  <Match>
+    <Class name="org.apache.commons.math.stat.ranking.NaturalRanking$IntDoublePair" />
+    <Bug pattern="EQ_COMPARETO_USE_OBJECT_EQUALS" />
+  </Match>
+
+</FindBugsFilter>

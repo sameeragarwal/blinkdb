@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazy
+END
+TestLazyArrayMapStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazy/TestLazyArrayMapStruct.java
+END
+TestLazyPrimitive.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazy/TestLazyPrimitive.java
+END
+TestLazySimpleSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/lazy/TestLazySimpleSerDe.java
+END

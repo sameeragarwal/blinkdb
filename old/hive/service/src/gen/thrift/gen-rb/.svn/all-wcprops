@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-rb
+END
+hive_service_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-rb/hive_service_types.rb
+END
+hive_service_constants.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-rb/hive_service_constants.rb
+END
+thrift_hive.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-rb/thrift_hive.rb
+END

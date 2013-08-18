@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/physical/index
+END
+IndexWhereProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/physical/index/IndexWhereProcessor.java
+END
+IndexWhereProcCtx.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/physical/index/IndexWhereProcCtx.java
+END
+IndexWhereTaskDispatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/optimizer/physical/index/IndexWhereTaskDispatcher.java
+END

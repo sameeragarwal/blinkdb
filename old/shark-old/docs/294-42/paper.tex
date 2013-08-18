@@ -1,0 +1,96 @@
+\documentclass[preprint]{acm_proc_article-sp}
+%\documentclass[preprint]{sig-alternate}
+\usepackage{url}
+\usepackage{graphicx,subfigure}
+\usepackage{xspace}
+
+\newcommand{\ie}{{\em i.e.,}~}
+\newcommand{\eg}{{\em e.g.,}~}
+\newcommand{\HadoopBM}{HadoopBinMem\xspace}
+
+\newenvironment{denseitemize}{
+\begin{itemize}[topsep=2pt, partopsep=0pt, leftmargin=1.5em]
+  \setlength{\itemsep}{4pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newcommand{\eat}[1]{}
+
+\begin{document}
+
+\title{Shark: Devouring Big Data}
+
+\numberofauthors{5}
+\author{
+Cliff Engle,
+Antonio Lupher,
+Reynold Xin\\\\
+UC Berkeley CS294-42 Project Report\\
+\texttt{\{cengle, alupher, rxin\}@cs.berkeley.edu}
+}
+
+\maketitle
+\begin{abstract}
+Shark is a research data analysis system built on a novel coarse-grained distributed shared-memory abstraction. Shark marries query processing with deep data analysis, providing a unified system for easy data manipulation using SQL and pushing sophisticated analysis closer to data. It scales to thousands of nodes in a fault-tolerant manner. Shark can answer queries 40X faster than Apache Hive and run machine learning programs 25X faster than MapReduce programs in Apache Hadoop on large datasets.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.2}{Database Management}{Systems}
+
+\terms{DESIGN, MANAGEMENT}
+
+\keywords{Databases, Data Warehouse, Machine Learning}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{intro}
+
+\input{hive}
+
+\input{rdd}
+
+\input{overview}
+
+\input{queryproc}
+
+\input{example}
+
+\input{perf}
+
+\input{futurework}
+
+\input{relatedwork}
+
+\input{conclusion}
+
+
+%\subsection{RDDs}
+%RDDs provide a restricted form of shared memory, based on coarse-grained transformations on immutable collections of records rather than fine-grained updates to shared states. When the workload exhibits temporal locality, programs written using RDDs outperform by orders of magnitude programs written for other system such as MapReduce. And surprisingly, although restrictive, RDDs have been shown to be expressive enough to capture a wide class of computations, ranging from more general models like MapReduce to more specialized models such as Pregel.
+
+%Formally, an RDD is an immutable, partitioned collection of records that can only be created through deterministic \emph{transformations} on either data in stable storage (\eg files in HDFS) or other RDDs. Examples of transformations include \emph{map}, \emph{filter}, \emph{reduce}, and \emph{join}. Note that RDDs do not need to be materialized at all times, as they can be reconstructed based on lineage information. Users can control two aspects of RDDs: \emph{persistence} and \emph{partitioning}. Using the persistence API, users can indicate which RDDs they will reuse and choose a storage strategy for them (\eg caching them in memory). This is particularly useful in cache investment as the higher level program can choose to materialize certain RDDs in memory and reuse them later. For workloads that require going through data multiple times, such as interactive queries and iterative machine learning queries, Spark's persistence feature is very attractive. They can also ask that an RDD's elements be partitioned across machines based on key in each record. This is useful for placement optimizations, such as ensuring that two datasets that will be joined together are hash-partitioned in the same way.
+
+
+
+%Data scientists, however, appreciate using SQL to manipulate data. Traditionally, they load data into a relational database for basic analysis, and then run algorithms in external computation frameworks such as MapReduce. Shark allows the users to express deep analyses as well as simple SQL queries, and the two can effectively share the same computation resource as well as the same in-memory data.
+
+%Although Hive was designed to be a data warehousing solution, based on our discussions with many Hive users, a large percentage of Hive queries are ad-hoc, exploratory in nature and issued from the Hive console rather than programmatically generated for traditional data warehousing reports. Take Facebook for example. Their Hadoop clusters are dominated by jobs generated from Hive \cite{hive} queries. Even though the queries are intended to be exploratory, median map and reduce job duration is 84s \cite{delay-scheduling}. Note that typical query duration would be a multiple of this number since a query consists of multiple stages of map and reduce jobs. There is a tremendous difference in interactivity between queries that run in seconds versus minutes or hours.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acknowledgments}
+The authors would like to acknowledge a number of colleagues who helped develop and conduct experiments of Shark. Much thanks to Peter Alvaro, Neil Conway, Andy Konwinski, Matei Zaharia, Michael Franklin, and Ion Stoica.
+
+This research is supported in part by gifts from Google, SAP, Amazon Web Services, Cloudera, Ericsson, General Electric, Huawei, IBM, Intel, MarkLogic, Microsoft, NEC Labs, NetApp, Oracle, Splunk, VMware and by DARPA (contract \#FA8650-11-C-7136).
+
+\bibliographystyle{abbrv}
+\bibliography{paper}
+
+\balancecolumns
+\end{document}

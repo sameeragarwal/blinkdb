@@ -1,0 +1,12 @@
+PREHOOK: query: create table test (a int) stored as inputformat 'org.apache.hadoop.hive.ql.io.RCFileInputFormat' outputformat 'org.apache.hadoop.hive.ql.io.RCFileOutputFormat' inputdriver 'RCFileInDriver' outputdriver 'RCFileOutDriver'
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table test (a int) stored as inputformat 'org.apache.hadoop.hive.ql.io.RCFileInputFormat' outputformat 'org.apache.hadoop.hive.ql.io.RCFileOutputFormat' inputdriver 'RCFileInDriver' outputdriver 'RCFileOutDriver'
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@test
+PREHOOK: query: desc extended test
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: desc extended test
+POSTHOOK: type: DESCTABLE
+a	int	
+	 	 
+Detailed Table Information	Table(tableName:test, dbName:default, owner:thiruvel, createTime:1286869048, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:a, type:int, comment:null)], location:pfile:/home/thiruvel/projects/hive/hive.unsecure/build/ql/test/data/warehouse/test, inputFormat:org.apache.hadoop.hive.ql.io.RCFileInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.RCFileOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}), partitionKeys:[], parameters:{transient_lastDdlTime=1286869048}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	

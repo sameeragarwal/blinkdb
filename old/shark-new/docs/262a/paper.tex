@@ -1,0 +1,78 @@
+\documentclass[preprint]{acm_proc_article-sp}
+%\documentclass[preprint]{sig-alternate}
+\usepackage{url}
+\usepackage{graphicx,subfigure}
+\usepackage{xspace}
+
+\newcommand{\ie}{{\em i.e.,}~}
+\newcommand{\eg}{{\em e.g.,}~}
+\newcommand{\HadoopBM}{HadoopBinMem\xspace}
+
+\newenvironment{denseitemize}{
+\begin{itemize}[topsep=2pt, partopsep=0pt, leftmargin=1.5em]
+  \setlength{\itemsep}{4pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newcommand{\eat}[1]{}
+
+\begin{document}
+
+\title{Shark: Devouring Big Data}
+
+\numberofauthors{5}
+\author{
+Cliff Engle,
+Antonio Lupher,
+Reynold Xin\\\\
+UC Berkeley CS262a Project Report\\
+\texttt{\{cengle, alupher, rxin\}@cs.berkeley.edu}
+}
+
+\maketitle
+\begin{abstract}
+Shark is a research data analysis system built on a novel coarse-grained distributed shared-memory abstraction. Shark marries query processing with deep data analysis, providing a unified system for easy data manipulation using SQL and pushing sophisticated analysis closer to data. It scales to thousands of nodes in a fault-tolerant manner. Shark can answer queries 40X faster than Apache Hive and run machine learning programs 25X faster than MapReduce programs in Apache Hadoop on large datasets.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.2}{Database Management}{Systems}
+
+\terms{DESIGN, MANAGEMENT}
+
+\keywords{Databases, Data Warehouse, Machine Learning}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{intro}
+
+\input{hive}
+
+\input{rdd}
+
+\input{overview}
+
+\input{queryproc}
+
+\input{example}
+
+\input{perf}
+
+\input{futurework}
+
+\input{relatedwork}
+
+\input{conclusion}
+
+
+\section{Acknowledgments}
+The authors would like to acknowledge a number of colleagues who helped develop and conduct experiments of Shark. Much thanks to Peter Alvaro, Neil Conway, Andy Konwinski, Matei Zaharia, Michael Franklin, and Ion Stoica.
+
+This research is supported in part by gifts from Google, SAP, Amazon Web Services, Cloudera, Ericsson, General Electric, Huawei, IBM, Intel, MarkLogic, Microsoft, NEC Labs, NetApp, Oracle, Splunk, VMware and by DARPA (contract \#FA8650-11-C-7136).
+
+\bibliographystyle{abbrv}
+\bibliography{paper}
+
+\balancecolumns
+\end{document}

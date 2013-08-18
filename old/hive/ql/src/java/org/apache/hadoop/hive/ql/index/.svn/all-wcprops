@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1173885/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index
+END
+HiveIndexHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/HiveIndexHandler.java
+END
+IndexMetadataChangeTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/IndexMetadataChangeTask.java
+END
+IndexMetadataChangeWork.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/IndexMetadataChangeWork.java
+END
+HiveIndexResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1150962/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/HiveIndexResult.java
+END
+HiveIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1170007/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/HiveIndex.java
+END
+IndexSearchCondition.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1173885/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/IndexSearchCondition.java
+END
+HiveIndexedInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1155059/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/HiveIndexedInputFormat.java
+END
+AbstractIndexHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/AbstractIndexHandler.java
+END
+AggregateIndexHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1173513/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/AggregateIndexHandler.java
+END
+TableBasedIndexHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1153022/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/TableBasedIndexHandler.java
+END
+HiveIndexQueryContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1098742/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/HiveIndexQueryContext.java
+END
+IndexPredicateAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1137839/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/index/IndexPredicateAnalyzer.java
+END

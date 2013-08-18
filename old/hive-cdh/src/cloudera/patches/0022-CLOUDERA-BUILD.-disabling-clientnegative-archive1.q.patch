@@ -1,0 +1,143 @@
+From 1da5192075e9f6f1ce78969b6069ad711fb96cde Mon Sep 17 00:00:00 2001
+From: marcel <marcel@cloudera.com>
+Date: Fri, 18 Mar 2011 14:03:54 -0700
+Subject: [PATCH 22/51] CLOUDERA-BUILD. disabling clientnegative/archive1.q
+
+---
+ ql/src/test/queries/clientnegative/archive1.q      |   11 ------
+ .../queries/clientnegative/archive1.q.disabled     |   11 ++++++
+ .../results/clientnegative/archive1.q.disabled.out |   39 ++++++++++++++++++++
+ ql/src/test/results/clientnegative/archive1.q.out  |   39 --------------------
+ 4 files changed, 50 insertions(+), 50 deletions(-)
+ delete mode 100644 ql/src/test/queries/clientnegative/archive1.q
+ create mode 100644 ql/src/test/queries/clientnegative/archive1.q.disabled
+ create mode 100644 ql/src/test/results/clientnegative/archive1.q.disabled.out
+ delete mode 100644 ql/src/test/results/clientnegative/archive1.q.out
+
+diff --git a/ql/src/test/queries/clientnegative/archive1.q b/ql/src/test/queries/clientnegative/archive1.q
+deleted file mode 100644
+index a4b50f5..0000000
+--- a/ql/src/test/queries/clientnegative/archive1.q
++++ /dev/null
+@@ -1,11 +0,0 @@
+-set hive.archive.enabled = true;
+--- Tests trying to archive a partition twice.
+--- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
+-
+-CREATE TABLE srcpart_archived LIKE srcpart;
+-
+-INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
+-SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12';
+-
+-ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12');
+-ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12');
+diff --git a/ql/src/test/queries/clientnegative/archive1.q.disabled b/ql/src/test/queries/clientnegative/archive1.q.disabled
+new file mode 100644
+index 0000000..a4b50f5
+--- /dev/null
++++ b/ql/src/test/queries/clientnegative/archive1.q.disabled
+@@ -0,0 +1,11 @@
++set hive.archive.enabled = true;
++-- Tests trying to archive a partition twice.
++-- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
++
++CREATE TABLE srcpart_archived LIKE srcpart;
++
++INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
++SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12';
++
++ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12');
++ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12');
+diff --git a/ql/src/test/results/clientnegative/archive1.q.disabled.out b/ql/src/test/results/clientnegative/archive1.q.disabled.out
+new file mode 100644
+index 0000000..0927686
+--- /dev/null
++++ b/ql/src/test/results/clientnegative/archive1.q.disabled.out
+@@ -0,0 +1,39 @@
++PREHOOK: query: -- Tests trying to archive a partition twice.
++-- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
++
++CREATE TABLE srcpart_archived LIKE srcpart
++PREHOOK: type: CREATETABLE
++POSTHOOK: query: -- Tests trying to archive a partition twice.
++-- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
++
++CREATE TABLE srcpart_archived LIKE srcpart
++POSTHOOK: type: CREATETABLE
++POSTHOOK: Output: default@srcpart_archived
++PREHOOK: query: INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
++SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12'
++PREHOOK: type: QUERY
++PREHOOK: Input: default@srcpart@ds=2008-04-08/hr=12
++PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
++POSTHOOK: query: INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
++SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12'
++POSTHOOK: type: QUERY
++POSTHOOK: Input: default@srcpart@ds=2008-04-08/hr=12
++POSTHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
++POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).key SIMPLE [(srcpart)srcpart.FieldSchema(name:key, type:string, comment:default), ]
++POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).value SIMPLE [(srcpart)srcpart.FieldSchema(name:value, type:string, comment:default), ]
++PREHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
++PREHOOK: type: ALTERTABLE_ARCHIVE
++PREHOOK: Input: default@srcpart_archived
++PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
++POSTHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
++POSTHOOK: type: ALTERTABLE_ARCHIVE
++POSTHOOK: Input: default@srcpart_archived
++POSTHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
++POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).key SIMPLE [(srcpart)srcpart.FieldSchema(name:key, type:string, comment:default), ]
++POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).value SIMPLE [(srcpart)srcpart.FieldSchema(name:value, type:string, comment:default), ]
++PREHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
++PREHOOK: type: ALTERTABLE_ARCHIVE
++PREHOOK: Input: default@srcpart_archived
++PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
++FAILED: Error in metadata: Specified partition is already archived
++FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask
+diff --git a/ql/src/test/results/clientnegative/archive1.q.out b/ql/src/test/results/clientnegative/archive1.q.out
+deleted file mode 100644
+index 0927686..0000000
+--- a/ql/src/test/results/clientnegative/archive1.q.out
++++ /dev/null
+@@ -1,39 +0,0 @@
+-PREHOOK: query: -- Tests trying to archive a partition twice.
+--- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
+-
+-CREATE TABLE srcpart_archived LIKE srcpart
+-PREHOOK: type: CREATETABLE
+-POSTHOOK: query: -- Tests trying to archive a partition twice.
+--- EXCLUDE_HADOOP_MAJOR_VERSIONS(0.17, 0.18, 0.19)
+-
+-CREATE TABLE srcpart_archived LIKE srcpart
+-POSTHOOK: type: CREATETABLE
+-POSTHOOK: Output: default@srcpart_archived
+-PREHOOK: query: INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
+-SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12'
+-PREHOOK: type: QUERY
+-PREHOOK: Input: default@srcpart@ds=2008-04-08/hr=12
+-PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
+-POSTHOOK: query: INSERT OVERWRITE TABLE srcpart_archived PARTITION (ds='2008-04-08', hr='12')
+-SELECT key, value FROM srcpart WHERE ds='2008-04-08' AND hr='12'
+-POSTHOOK: type: QUERY
+-POSTHOOK: Input: default@srcpart@ds=2008-04-08/hr=12
+-POSTHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
+-POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).key SIMPLE [(srcpart)srcpart.FieldSchema(name:key, type:string, comment:default), ]
+-POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).value SIMPLE [(srcpart)srcpart.FieldSchema(name:value, type:string, comment:default), ]
+-PREHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
+-PREHOOK: type: ALTERTABLE_ARCHIVE
+-PREHOOK: Input: default@srcpart_archived
+-PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
+-POSTHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
+-POSTHOOK: type: ALTERTABLE_ARCHIVE
+-POSTHOOK: Input: default@srcpart_archived
+-POSTHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
+-POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).key SIMPLE [(srcpart)srcpart.FieldSchema(name:key, type:string, comment:default), ]
+-POSTHOOK: Lineage: srcpart_archived PARTITION(ds=2008-04-08,hr=12).value SIMPLE [(srcpart)srcpart.FieldSchema(name:value, type:string, comment:default), ]
+-PREHOOK: query: ALTER TABLE srcpart_archived ARCHIVE PARTITION (ds='2008-04-08', hr='12')
+-PREHOOK: type: ALTERTABLE_ARCHIVE
+-PREHOOK: Input: default@srcpart_archived
+-PREHOOK: Output: default@srcpart_archived@ds=2008-04-08/hr=12
+-FAILED: Error in metadata: Specified partition is already archived
+-FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask
+-- 
+1.7.0.4
+

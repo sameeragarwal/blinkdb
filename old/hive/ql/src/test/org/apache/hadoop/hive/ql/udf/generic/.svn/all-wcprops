@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/udf/generic
+END
+GenericUDFTestGetJavaString.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/udf/generic/GenericUDFTestGetJavaString.java
+END
+GenericUDFTestTranslate.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/udf/generic/GenericUDFTestTranslate.java
+END
+GenericUDFTestGetJavaBoolean.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1035826/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/udf/generic/GenericUDFTestGetJavaBoolean.java
+END

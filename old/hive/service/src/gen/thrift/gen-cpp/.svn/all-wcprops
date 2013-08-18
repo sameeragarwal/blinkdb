@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp
+END
+hive_service_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/hive_service_types.cpp
+END
+ThriftHive.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/ThriftHive.h
+END
+hive_service_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/hive_service_types.h
+END
+ThriftHive_server.skeleton.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1074250/hive/trunk/service/src/gen/thrift/gen-cpp/ThriftHive_server.skeleton.cpp
+END
+hive_service_constants.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/hive_service_constants.cpp
+END
+ThriftHive.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/ThriftHive.cpp
+END
+hive_service_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1165207/hive/trunk/service/src/gen/thrift/gen-cpp/hive_service_constants.h
+END

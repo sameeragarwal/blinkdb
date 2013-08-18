@@ -1,0 +1,136 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate Hypergeometric distribution tests in
+# org.apache.commons.math.distribution.HypergeometricDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# dhyper(x, m, n, k, log = FALSE) <- density 
+# phyper(q, m, n, k, lower.tail = TRUE, log.p = FALSE) <- distribution
+# qhyper(p, m, n, k, lower.tail = TRUE, log.p = FALSE) <- quantiles
+#------------------------------------------------------------------------------
+tol <- 1E-6                       # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+# function to verify density computations
+
+verifyDensity <- function(points, expected, good, bad, selected, tol) {
+    rDensityValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDensityValues[i] <- dhyper(point, good, bad, selected)
+    }
+    output <- c("Density test good = ", good, ", bad = ", bad, 
+                ", selected = ",selected)
+    if (assertEquals(expected,rDensityValues,tol,"Density Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+# function to verify distribution computations
+
+verifyDistribution <- function(points, expected, good, bad, selected, tol) {
+    rDistValues <- rep(0, length(points))
+    i <- 0
+    for (point in points) {
+        i <- i + 1
+        rDistValues[i] <- phyper(point, good, bad, selected)
+    }
+    output <- c("Distribution test good = ", good, ", bad = ",
+                 bad, ", selected = ",selected)
+    if (assertEquals(expected,rDistValues,tol,"Distribution Values")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }       
+}
+
+#--------------------------------------------------------------------------
+cat("Hypergeometric test cases\n")
+
+good <- 5
+bad <- 5
+selected <- 5
+
+densityPoints <- c(-1, 0, 1, 2, 3, 4, 5, 10)
+densityValues <- c(0, 0.003968, 0.099206, 0.396825, 0.396825, 0.099206, 
+                   0.003968, 0)
+distributionValues <- c(0, .003968, .103175, .50000, .896825, .996032,
+                        1.00000, 1)
+#Eliminate p=1 case because it will mess up adjustement below
+inverseCumPoints <- c(0, 0.001, 0.010, 0.025, 0.050, 0.100, 0.999,
+                      0.990, 0.975, 0.950, 0.900)
+inverseCumValues <- c(-1, -1, 0, 0, 0, 0, 4, 3, 3, 3, 3)
+
+verifyDensity(densityPoints, densityValues, good, bad, selected, tol)
+verifyDistribution(densityPoints, distributionValues, good, bad, selected, tol)
+
+i <- 0
+rInverseCumValues <- rep(0,length(inverseCumPoints))
+for (point in inverseCumPoints) {
+  i <- i + 1
+  rInverseCumValues[i] <- qhyper(point, good, bad, selected)
+}
+
+output <- c("Inverse Distribution test good = ", good, ", bad = ", bad, 
+            ", selected = ", selected)
+# R defines quantiles from the right, need to subtract one
+if (assertEquals(inverseCumValues, rInverseCumValues-1, tol,
+    "Inverse Dist Values")) {
+    displayPadded(output, SUCCEEDED, 80)
+} else {
+    displayPadded(output, FAILED, 80)
+}       
+
+# Degenerate cases
+good <- 5
+bad <- 0
+selected <- 3
+densityPoints <- c(-1, 0, 1, 3, 10)
+densityValues <- c(0, 0, 0, 1, 0)
+distributionValues <- c(0, 0, 0, 1, 1)
+verifyDensity(densityPoints, densityValues, good, bad, selected, tol)
+verifyDistribution(densityPoints, distributionValues, good, bad, selected, tol)
+
+good <- 0
+bad <- 5
+selected <- 3
+densityPoints <- c(-1, 0, 1, 3, 10)
+densityValues <- c(0, 1, 0, 0, 0)
+distributionValues <- c(0, 1, 1, 1, 1)
+verifyDensity(densityPoints, densityValues, good, bad, selected, tol)
+verifyDistribution(densityPoints, distributionValues, good, bad, selected, tol)
+
+good <- 3
+bad <- 2
+selected <- 5
+densityPoints <- c(-1, 0, 1, 3, 10)
+densityValues <- c(0, 0, 0, 1, 0)
+distributionValues <- c(0, 0, 0, 1, 1)
+verifyDensity(densityPoints, densityValues, good, bad, selected, tol)
+verifyDistribution(densityPoints, distributionValues, good, bad, selected, tol)
+
+displayDashes(WIDTH)

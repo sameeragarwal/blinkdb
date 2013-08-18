@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/repos/asf/!svn/ver/1027721/hive/trunk/testlibs
+END
+ant-contrib.LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1027721/hive/trunk/testlibs/ant-contrib.LICENSE.txt
+END
+junit-3.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1027721/hive/trunk/testlibs/junit-3.8.1.jar
+END
+ant-contrib-1.0b3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/testlibs/ant-contrib-1.0b3.jar
+END
+junit-3.8.1.LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1027721/hive/trunk/testlibs/junit-3.8.1.LICENSE.txt
+END

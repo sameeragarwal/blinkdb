@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api
+END
+QueryPlan.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/QueryPlan.java
+END
+Adjacency.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Adjacency.java
+END
+Graph.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Graph.java
+END
+Task.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Task.java
+END
+AdjacencyType.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/AdjacencyType.java
+END
+Stage.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Stage.java
+END
+TaskType.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/TaskType.java
+END
+Query.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Query.java
+END
+StageType.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/StageType.java
+END
+NodeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/NodeType.java
+END
+Operator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/Operator.java
+END
+OperatorType.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-javabean/org/apache/hadoop/hive/ql/plan/api/OperatorType.java
+END

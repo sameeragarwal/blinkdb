@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1177382/hive/trunk/pdk/test-plugin/test
+END
+cleanup.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1177382/hive/trunk/pdk/test-plugin/test/cleanup.sql
+END
+onerow.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1177382/hive/trunk/pdk/test-plugin/test/onerow.txt
+END
+setup.sql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1177382/hive/trunk/pdk/test-plugin/test/setup.sql
+END

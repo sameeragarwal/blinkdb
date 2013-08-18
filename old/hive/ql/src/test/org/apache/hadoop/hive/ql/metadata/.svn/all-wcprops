@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1145053/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata
+END
+TestHiveMetaStoreChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/TestHiveMetaStoreChecker.java
+END
+DummySemanticAnalyzerHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/DummySemanticAnalyzerHook.java
+END
+DummySemanticAnalyzerHook1.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1065890/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/DummySemanticAnalyzerHook1.java
+END
+TestSemanticAnalyzerHookLoading.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/TestSemanticAnalyzerHookLoading.java
+END
+TestPartition.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/TestPartition.java
+END
+TestHive.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1145053/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/metadata/TestHive.java
+END

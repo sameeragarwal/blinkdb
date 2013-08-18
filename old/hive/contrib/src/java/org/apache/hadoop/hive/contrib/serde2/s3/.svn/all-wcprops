@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2/s3
+END
+S3LogDeserializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2/s3/S3LogDeserializer.java
+END
+S3LogStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1072517/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2/s3/S3LogStruct.java
+END

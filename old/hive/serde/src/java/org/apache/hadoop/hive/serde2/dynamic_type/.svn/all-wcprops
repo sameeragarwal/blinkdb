@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1152980/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type
+END
+thrift_grammarConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammarConstants.java
+END
+DynamicSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1152980/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDe.java
+END
+DynamicSerDeField.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1152338/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeField.java
+END
+DynamicSerDeInclude.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeInclude.java
+END
+DynamicSerDeFlagArgs.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFlagArgs.java
+END
+DynamicSerDeFunctionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFunctionType.java
+END
+DynamicSerDeSenum.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeSenum.java
+END
+DynamicSerDeDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeDefinition.java
+END
+DynamicSerDeXception.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeXception.java
+END
+DynamicSerDeNamespace.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeNamespace.java
+END
+DynamicSerDeTypeBool.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeBool.java
+END
+DynamicSerDeTypei32.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypei32.java
+END
+DynamicSerDeTypedef.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypedef.java
+END
+ParseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/ParseException.java
+END
+DynamicSerDeTypei16.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypei16.java
+END
+DynamicSerDeTypei64.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypei64.java
+END
+DynamicSerDeSenumDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeSenumDef.java
+END
+DynamicSerDeTypeString.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeString.java
+END
+thrift_grammarTokenManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammarTokenManager.java
+END
+DynamicSerDeTypeMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeMap.java
+END
+DynamicSerDeStructBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeStructBase.java
+END
+DynamicSerDeFieldValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFieldValue.java
+END
+DynamicSerDeConstList.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConstList.java
+END
+DynamicSerDeEnumDef.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeEnumDef.java
+END
+DynamicSerDeHeaderList.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeHeaderList.java
+END
+DynamicSerDeFieldType.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1152338/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFieldType.java
+END
+Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/Token.java
+END
+DynamicSerDeTypeDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeDefinition.java
+END
+DynamicSerDeDefinitionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeDefinitionType.java
+END
+thrift_grammarTreeConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammarTreeConstants.java
+END
+DynamicSerDeSimpleNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeSimpleNode.java
+END
+DynamicSerDeConstListContents.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConstListContents.java
+END
+DynamicSerDeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeService.java
+END
+DynamicSerDeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeEnum.java
+END
+DynamicSerDeTypeByte.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeByte.java
+END
+SimpleNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/SimpleNode.java
+END
+DynamicSerDeTypeDouble.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeDouble.java
+END
+DynamicSerDeFieldRequiredness.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFieldRequiredness.java
+END
+DynamicSerDeFieldList.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFieldList.java
+END
+DynamicSerDeConstMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConstMap.java
+END
+DynamicSerDeThrows.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeThrows.java
+END
+JJTthrift_grammarState.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/JJTthrift_grammarState.java
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/Node.java
+END
+DynamicSerDeStart.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeStart.java
+END
+thrift_grammar.jj
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammar.jj
+END
+DynamicSerDeConstMapContents.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConstMapContents.java
+END
+DynamicSerDeSenumDefList.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeSenumDefList.java
+END
+DynamicSerDeCommaOrSemicolon.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeCommaOrSemicolon.java
+END
+TokenMgrError.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/TokenMgrError.java
+END
+DynamicSerDeExtends.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeExtends.java
+END
+SimpleCharStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/SimpleCharStream.java
+END
+DynamicSerDeTypeBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeBase.java
+END
+DynamicSerDeTypeList.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeList.java
+END
+DynamicSerDeAsync.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeAsync.java
+END
+thrift_grammar.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammar.java
+END
+DynamicSerDeEnumDefList.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeEnumDefList.java
+END
+DynamicSerDeConstValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConstValue.java
+END
+thrift_grammar.jjt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/thrift_grammar.jjt
+END
+DynamicSerDeStruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeStruct.java
+END
+DynamicSerDeFunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1152338/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeFunction.java
+END
+DynamicSerDeConst.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeConst.java
+END
+DynamicSerDeHeader.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeHeader.java
+END
+DynamicSerDeUnflagArgs.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeUnflagArgs.java
+END
+DynamicSerDeTypeSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/dynamic_type/DynamicSerDeTypeSet.java
+END

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/test/queries/positive
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/test/queries/positive/.gitignore
+END

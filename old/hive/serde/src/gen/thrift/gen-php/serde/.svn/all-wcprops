@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-php/serde
+END
+serde_constants.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-php/serde/serde_constants.php
+END
+serde_types.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-php/serde/serde_types.php
+END

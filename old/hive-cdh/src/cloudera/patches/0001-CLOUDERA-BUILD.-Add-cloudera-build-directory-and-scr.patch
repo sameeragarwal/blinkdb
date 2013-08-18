@@ -1,0 +1,382 @@
+From d39f9106622a0b711f78eda671f6a07de5732fa3 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Wed, 16 Feb 2011 15:32:03 -0800
+Subject: [PATCH 01/51] CLOUDERA-BUILD. Add cloudera build directory and scripts.
+
+---
+ cloudera/do-release-build |   17 +++++
+ cloudera/hive-config.sh   |   49 +++++++++++++++
+ cloudera/hive-site.xml    |   32 ++++++++++
+ cloudera/hive.1           |   88 +++++++++++++++++++++++++++
+ cloudera/install_hive.sh  |  145 +++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 331 insertions(+), 0 deletions(-)
+ create mode 100644 cloudera/do-release-build
+ create mode 100644 cloudera/hive-config.sh
+ create mode 100644 cloudera/hive-site.xml
+ create mode 100644 cloudera/hive.1
+ create mode 100644 cloudera/install_hive.sh
+
+diff --git a/cloudera/do-release-build b/cloudera/do-release-build
+new file mode 100644
+index 0000000..c84b9e2
+--- /dev/null
++++ b/cloudera/do-release-build
+@@ -0,0 +1,17 @@
++#!/bin/bash
++# Copyright (c) 2009 Cloudera, inc
++#
++# Performs a release build
++
++set -e
++
++# Do the build
++BIN_DIR=$(readlink -f $(dirname $0))
++RELEASE_DIR=$BIN_DIR/..
++
++cd $RELEASE_DIR
++
++mkdir -p build/.ivy
++ant $EXTRA_ANT_FLAGS \
++  -propertyfile cloudera/build.properties \
++  tar
+diff --git a/cloudera/hive-config.sh b/cloudera/hive-config.sh
+new file mode 100644
+index 0000000..b375080
+--- /dev/null
++++ b/cloudera/hive-config.sh
+@@ -0,0 +1,49 @@
++# Licensed to the Apache Software Foundation (ASF) under one or more
++# contributor license agreements.  See the NOTICE file distributed with
++# this work for additional information regarding copyright ownership.
++# The ASF licenses this file to You under the Apache License, Version 2.0
++# (the "License"); you may not use this file except in compliance with
++# the License.  You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++#
++# processes --config option from command line
++#
++
++# the root of the Hadoop installation
++export HIVE_HOME=@HIVE_HOME@
++export HIVE_LIB=$HIVE_HOME/lib
++
++#check to see if the conf dir is given as an optional argument
++while [ $# -gt 0 ]; do    # Until you run out of parameters . . .
++  case "$1" in
++    --config)
++        shift
++        confdir=$1
++        shift
++        HIVE_CONF_DIR=$confdir
++        ;;
++    --auxpath)
++        shift
++        HIVE_AUX_JARS_PATH=$1
++        shift
++        ;;
++    *)
++        break;
++        ;;
++  esac
++done
++
++
++# Allow alternate conf dir location.
++HIVE_CONF_DIR="${HIVE_CONF_DIR:-@HIVE_CONF@}"
++
++export HIVE_CONF_DIR=$HIVE_CONF_DIR
++export HIVE_AUX_JARS_PATH=$HIVE_AUX_JARS_PATH
+diff --git a/cloudera/hive-site.xml b/cloudera/hive-site.xml
+new file mode 100644
+index 0000000..e9525c2
+--- /dev/null
++++ b/cloudera/hive-site.xml
+@@ -0,0 +1,32 @@
++<?xml version="1.0"?>
++<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
++
++<configuration>
++
++<!-- Hive Configuration can either be stored in this file or in the hadoop configuration files  -->
++<!-- that are implied by Hadoop setup variables.                                                -->
++<!-- Aside from Hadoop setup variables - this file is provided as a convenience so that Hive    -->
++<!-- users do not have to edit hadoop configuration files (that may be managed as a centralized -->
++<!-- resource).                                                                                 -->
++
++<!-- Hive Execution Parameters -->
++
++<property>
++  <name>javax.jdo.option.ConnectionURL</name>
++  <value>jdbc:derby:;databaseName=/var/lib/hive/metastore/metastore_db;create=true</value>
++  <description>JDBC connect string for a JDBC metastore</description>
++</property>
++
++<property>
++  <name>javax.jdo.option.ConnectionDriverName</name>
++  <value>org.apache.derby.jdbc.EmbeddedDriver</value>
++  <description>Driver class name for a JDBC metastore</description>
++</property>
++
++<property>
++  <name>hive.hwi.war.file</name>
++  <value>/usr/lib/hive/lib/hive-hwi-0.7.0-CDH3B4-SNAPSHOT.war</value>
++  <description>This is the WAR file with the jsp content for Hive Web Interface</description>
++</property>
++
++</configuration>
+diff --git a/cloudera/hive.1 b/cloudera/hive.1
+new file mode 100644
+index 0000000..1b4ba10
+--- /dev/null
++++ b/cloudera/hive.1
+@@ -0,0 +1,88 @@
++.\" Process this file with
++.\" groff -man -Tascii hive.1
++.\"
++.TH hive 1 "October 2010 " Linux "User Manuals"
++
++.SH NAME
++Hive \- Data warehouse infrastructure built atop Hadoop.
++
++.SH SYNOPSIS
++
++.B hive
++[OPTIONS] --service \fISERVICE\fR [PARAMETERS]
++
++.SH DESCRIPTION
++
++Hive is a data warehouse system for Hadoop that facilitates easy data
++summarization, ad-hoc querying and analysis of large datasets stored
++in Hadoop compatible file systems. Hive provides a mechanism to put
++structure on this data and query the data using a SQL-like language
++called HiveQL. At the same time this language also allows traditional
++map/reduce programmers to plug in their custom mappers and reducers
++when it is inconvenient or inefficient to express this logic in
++HiveQL.
++
++Please note that Hadoop is a batch processing system and Hadoop jobs
++tend to have high latency and incur substantial overheads in job
++submission and scheduling. Consequently the average latency for Hive
++queries is generally very high (minutes) even when data sets involved
++are very small (say a few hundred megabytes). As a result it cannot be
++compared with systems such as Oracle where analyses are conducted on a
++significantly smaller amount of data but the analyses proceed much
++more iteratively with the response times between iterations being less
++than a few minutes. Hive aims to provide acceptable (but not optimal)
++latency for interactive data browsing, queries over small data sets or
++test queries.
++
++Hive is not designed for online transaction processing and does not
++support real-time queries or row level insert/updates. It is best used
++for batch jobs over large sets of immutable data (like web logs). What
++Hive values most are scalability (scale out with more machines added
++dynamically to the Hadoop cluster), extensibility (with MapReduce
++framework and UDF/UDAF/UDTF), fault-tolerance, and loose-coupling with
++its input formats.
++
++For more information about Hive, see http://hive.apache.org.
++
++\fISERVICE\fR may be one of the following:
++  cli           The Hive shell, the default service
++  hiveserver    Start the Hive server
++  hwi           Hive web interface
++  jar           Run a jar that uses Hadoop and Hive APIs
++  lineage       Output lineage info for a query
++  metastore     Start the Hive metastore
++
++To list available parameters for a service:
++.B hive
++--service \fISERVICE\fR --help
++
++.SH OPTIONS
++
++.IP "--auxpath"
++Auxillary jars
++
++.IP "--config"
++Hive configuration directory
++
++.IP "--service"
++Starts specific service/component. cli is default
++
++.IP "-hiveconf <x>=<y>"
++Sets Hive configuration property "x" equal to "y".
++
++.SH ENVIRONMENT
++
++.IP HIVE_OPT
++Extra Java runtime options.
++
++.IP HADOOP_HOME
++Optionally, the Hadoop home to run with.
++
++.IP HIVE_AUX_JARS_PATH
++Auxillary JARs, overridden by --auxpath command line argument.
++
++.IP HIVE_CONF_DIR
++Alternate location for Hive configuration directory.
++
++.SH COPYRIGHT
++Copyright (C) 2010 The Apache Software Foundation. All rights reserved.
+diff --git a/cloudera/install_hive.sh b/cloudera/install_hive.sh
+new file mode 100644
+index 0000000..c93b0c6
+--- /dev/null
++++ b/cloudera/install_hive.sh
+@@ -0,0 +1,145 @@
++#!/bin/sh
++# Copyright 2009 Cloudera, inc.
++
++usage() {
++  echo "
++usage: $0 <options>
++  Required not-so-options:
++     --cloudera-source-dir=DIR   path to cloudera distribution files
++     --build-dir=DIR             path to hive/build/dist
++     --prefix=PREFIX             path to install into
++
++  Optional options:
++     --doc-dir=DIR               path to install docs into [/usr/share/doc/hive]
++     --lib-dir=DIR               path to install hive home [/usr/lib/hive]
++     --installed-lib-dir=DIR     path where lib-dir will end up on target system
++     --bin-dir=DIR               path to install bins [/usr/bin]
++     --examples-dir=DIR          path to install examples [doc-dir/examples]
++     ... [ see source for more similar options ]
++  "
++  exit 1
++}
++
++OPTS=$(getopt \
++  -n $0 \
++  -o '' \
++  -l 'cloudera-source-dir:' \
++  -l 'prefix:' \
++  -l 'doc-dir:' \
++  -l 'lib-dir:' \
++  -l 'installed-lib-dir:' \
++  -l 'bin-dir:' \
++  -l 'examples-dir:' \
++  -l 'python-dir:' \
++  -l 'build-dir:' -- "$@")
++
++if [ $? != 0 ] ; then
++    usage
++fi
++
++eval set -- "$OPTS"
++while true ; do
++    case "$1" in
++        --cloudera-source-dir)
++        CLOUDERA_SOURCE_DIR=$2 ; shift 2
++        ;;
++        --prefix)
++        PREFIX=$2 ; shift 2
++        ;;
++        --build-dir)
++        BUILD_DIR=$2 ; shift 2
++        ;;
++        --doc-dir)
++        DOC_DIR=$2 ; shift 2
++        ;;
++        --lib-dir)
++        LIB_DIR=$2 ; shift 2
++        ;;
++        --installed-lib-dir)
++        INSTALLED_LIB_DIR=$2 ; shift 2
++        ;;
++        --bin-dir)
++        BIN_DIR=$2 ; shift 2
++        ;;
++        --examples-dir)
++        EXAMPLES_DIR=$2 ; shift 2
++        ;;
++        --python-dir)
++        PYTHON_DIR=$2 ; shift 2
++        ;;
++        --)
++        shift ; break
++        ;;
++        *)
++        echo "Unknown option: $1"
++        usage
++        exit 1
++        ;;
++    esac
++done
++
++for var in CLOUDERA_SOURCE_DIR PREFIX BUILD_DIR ; do
++  if [ -z "$(eval "echo \$$var")" ]; then
++    echo Missing param: $var
++    usage
++  fi
++done
++
++MAN_DIR=$PREFIX/usr/share/man/man1
++DOC_DIR=${DOC_DIR:-$PREFIX/usr/share/doc/hive}
++LIB_DIR=${LIB_DIR:-$PREFIX/usr/lib/hive}
++INSTALLED_LIB_DIR=${INSTALLED_LIB_DIR:-/usr/lib/hive}
++EXAMPLES_DIR=${EXAMPLES_DIR:-$DOC_DIR/examples}
++BIN_DIR=${BIN_DIR:-$PREFIX/usr/bin}
++PYTHON_DIR=${PYTHON_DIR:-$LIB_DIR/lib/py}
++CONF_DIR=/etc/hive
++CONF_DIST_DIR=/etc/hive/conf.dist
++
++# First we'll move everything into lib
++install -d -m 0755 ${LIB_DIR}
++(cd ${BUILD_DIR} && tar -cf - .)|(cd ${LIB_DIR} && tar -xf -)
++
++for thing in conf README.txt examples lib/py;
++do
++  rm -rf ${LIB_DIR}/$thing
++done
++
++install -d -m 0755 ${BIN_DIR}
++for file in hive
++do
++  wrapper=$BIN_DIR/$file
++  cat >>$wrapper <<EOF
++#!/bin/sh
++
++export HADOOP_HOME=\${HADOOP_HOME:-/usr/lib/hadoop}
++export HIVE_HOME=$INSTALLED_LIB_DIR
++exec $INSTALLED_LIB_DIR/bin/$file "\$@"
++EOF
++  chmod 755 $wrapper
++done
++
++# Config
++install -d -m 0755 ${PREFIX}${CONF_DIST_DIR}
++(cd ${BUILD_DIR}/conf && tar -cf - .)|(cd ${PREFIX}${CONF_DIST_DIR} && tar -xf -)
++cp $CLOUDERA_SOURCE_DIR/hive-site.xml ${PREFIX}${CONF_DIST_DIR}
++
++ln -s ${CONF_DIR}/conf $LIB_DIR/conf
++
++install -d -m 0755 $MAN_DIR
++gzip -c $CLOUDERA_SOURCE_DIR/hive.1 > $MAN_DIR/hive.1.gz
++
++# Docs
++install -d -m 0755 ${DOC_DIR}
++cp ${BUILD_DIR}/README.txt ${DOC_DIR}
++
++# Examples
++install -d -m 0755 ${EXAMPLES_DIR}
++cp -a ${BUILD_DIR}/examples/* ${EXAMPLES_DIR}
++
++# Python libs
++install -d -m 0755 ${PYTHON_DIR}
++(cd $BUILD_DIR/lib/py && tar cf - .) | (cd ${PYTHON_DIR} && tar xf -)
++chmod 755 ${PYTHON_DIR}/hive_metastore/*-remote
++
++# Dir for Metastore DB
++install -d -m 1777 $PREFIX/var/lib/hive/metastore/
+-- 
+1.7.0.4
+

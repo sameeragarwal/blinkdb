@@ -1,0 +1,26 @@
+From 191785e5c8e8e5e87ed2652a43177101283f944f Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew@cloudera.com>
+Date: Tue, 19 Apr 2011 11:04:22 -0700
+Subject: [PATCH 29/51] CLOUDERA-BUILD. With fix for not getting source/javadocs, we end up not getting the hbase tests jar as well,
+ and that's needed. This fix makes sure we get it.
+
+---
+ ql/ivy.xml |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/ql/ivy.xml b/ql/ivy.xml
+index e80d3d6..49879c4 100644
+--- a/ql/ivy.xml
++++ b/ql/ivy.xml
+@@ -31,7 +31,7 @@
+         <dependency org="org.apache.hbase" name="hbase" rev="${hbase.version}"
+                     transitive="false">
+           <artifact name="hbase" type="jar"/>
+-          <artifact name="hbase" type="test-jar" ext="jar"
++          <artifact name="hbase" type="jar"
+                     m:classifier="tests"/>
+         </dependency>
+         <dependency org="org.apache.zookeeper" name="zookeeper"
+-- 
+1.7.0.4
+

@@ -1,0 +1,22 @@
+<projectDescription>
+  <name>commons-math</name>
+  <comment>The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+      <arguments>
+        <dictionary>
+          <key>LaunchConfigHandle</key>
+          <value>&lt;project&gt;/.externalToolBuilders/Maven_Ant_Builder.launch</value>
+        </dictionary>
+      </arguments>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

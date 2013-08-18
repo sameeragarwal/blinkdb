@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1066892/hive/trunk/hbase-handler/src/test/org/apache/hadoop/hive/hbase
+END
+HBaseQTestUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/test/org/apache/hadoop/hive/hbase/HBaseQTestUtil.java
+END
+HBaseTestSetup.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1066892/hive/trunk/hbase-handler/src/test/org/apache/hadoop/hive/hbase/HBaseTestSetup.java
+END
+TestHBaseSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1065920/hive/trunk/hbase-handler/src/test/org/apache/hadoop/hive/hbase/TestHBaseSerDe.java
+END
+TestLazyHBaseObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/hbase-handler/src/test/org/apache/hadoop/hive/hbase/TestLazyHBaseObject.java
+END

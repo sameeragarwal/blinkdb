@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/dynamic_type
+END
+TestDynamicSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/dynamic_type/TestDynamicSerDe.java
+END

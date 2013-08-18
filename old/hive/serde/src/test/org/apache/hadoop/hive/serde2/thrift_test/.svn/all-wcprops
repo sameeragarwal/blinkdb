@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/thrift_test
+END
+CreateSequenceFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/test/org/apache/hadoop/hive/serde2/thrift_test/CreateSequenceFile.java
+END

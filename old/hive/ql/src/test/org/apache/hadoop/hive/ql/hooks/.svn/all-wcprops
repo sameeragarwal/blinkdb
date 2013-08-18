@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1173504/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks
+END
+CheckQueryPropertiesHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1173504/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/CheckQueryPropertiesHook.java
+END
+VerifyIsLocalModeHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1151175/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/VerifyIsLocalModeHook.java
+END
+VerifyContentSummaryCacheHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1083981/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/VerifyContentSummaryCacheHook.java
+END
+EnforceReadOnlyTables.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1084403/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/EnforceReadOnlyTables.java
+END
+PostExecutePrinter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1083981/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/PostExecutePrinter.java
+END
+PreExecutePrinter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1083981/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/PreExecutePrinter.java
+END
+MapJoinCounterHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/hooks/MapJoinCounterHook.java
+END

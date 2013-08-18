@@ -1,0 +1,117 @@
+PREHOOK: query: CREATE TABLE set_bucketing_test (key INT, value STRING) CLUSTERED BY (key) INTO 10 BUCKETS
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE set_bucketing_test (key INT, value STRING) CLUSTERED BY (key) INTO 10 BUCKETS
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@set_bucketing_test
+PREHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+POSTHOOK: type: DESCTABLE
+key	int	
+value	string	
+	 	 
+Detailed Table Information	Table(tableName:set_bucketing_test, dbName:default, owner:heyongqiang, createTime:1290068480, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:int, comment:null), FieldSchema(name:value, type:string, comment:null)], location:pfile:/Users/heyongqiang/Documents/workspace/Hive-2/build/ql/test/data/warehouse/set_bucketing_test, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:10, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[key], sortCols:[], parameters:{}), partitionKeys:[], parameters:{transient_lastDdlTime=1290068480}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+PREHOOK: query: ALTER TABLE set_bucketing_test NOT CLUSTERED
+PREHOOK: type: ALTERTABLE_CLUSTER_SORT
+PREHOOK: Input: default@set_bucketing_test
+PREHOOK: Output: default@set_bucketing_test
+POSTHOOK: query: ALTER TABLE set_bucketing_test NOT CLUSTERED
+POSTHOOK: type: ALTERTABLE_CLUSTER_SORT
+POSTHOOK: Input: default@set_bucketing_test
+POSTHOOK: Output: default@set_bucketing_test
+PREHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+POSTHOOK: type: DESCTABLE
+key	int	
+value	string	
+	 	 
+Detailed Table Information	Table(tableName:set_bucketing_test, dbName:default, owner:heyongqiang, createTime:1290068480, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:int, comment:null), FieldSchema(name:value, type:string, comment:null)], location:pfile:/Users/heyongqiang/Documents/workspace/Hive-2/build/ql/test/data/warehouse/set_bucketing_test, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}), partitionKeys:[], parameters:{last_modified_by=heyongqiang, last_modified_time=1290068480, transient_lastDdlTime=1290068480}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+PREHOOK: query: -- Cleanup
+DROP TABLE set_bucketing_test
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@set_bucketing_test
+PREHOOK: Output: default@set_bucketing_test
+POSTHOOK: query: -- Cleanup
+DROP TABLE set_bucketing_test
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@set_bucketing_test
+POSTHOOK: Output: default@set_bucketing_test
+PREHOOK: query: SHOW TABLES
+PREHOOK: type: SHOWTABLES
+POSTHOOK: query: SHOW TABLES
+POSTHOOK: type: SHOWTABLES
+src
+src1
+src_json
+src_sequencefile
+src_thrift
+srcbucket
+srcbucket2
+srcpart
+PREHOOK: query: -- with non-default Database
+
+CREATE DATABASE alter4_db
+PREHOOK: type: CREATEDATABASE
+POSTHOOK: query: -- with non-default Database
+
+CREATE DATABASE alter4_db
+POSTHOOK: type: CREATEDATABASE
+PREHOOK: query: USE alter4_db
+PREHOOK: type: SWITCHDATABASE
+POSTHOOK: query: USE alter4_db
+POSTHOOK: type: SWITCHDATABASE
+PREHOOK: query: SHOW TABLES
+PREHOOK: type: SHOWTABLES
+POSTHOOK: query: SHOW TABLES
+POSTHOOK: type: SHOWTABLES
+PREHOOK: query: CREATE TABLE set_bucketing_test (key INT, value STRING) CLUSTERED BY (key) INTO 10 BUCKETS
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE set_bucketing_test (key INT, value STRING) CLUSTERED BY (key) INTO 10 BUCKETS
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: alter4_db@set_bucketing_test
+PREHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+POSTHOOK: type: DESCTABLE
+key	int	
+value	string	
+	 	 
+Detailed Table Information	Table(tableName:set_bucketing_test, dbName:alter4_db, owner:heyongqiang, createTime:1290068481, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:int, comment:null), FieldSchema(name:value, type:string, comment:null)], location:pfile:/Users/heyongqiang/Documents/workspace/Hive-2/build/ql/test/data/warehouse/alter4_db.db/set_bucketing_test, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:10, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[key], sortCols:[], parameters:{}), partitionKeys:[], parameters:{transient_lastDdlTime=1290068481}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+PREHOOK: query: ALTER TABLE set_bucketing_test NOT CLUSTERED
+PREHOOK: type: ALTERTABLE_CLUSTER_SORT
+PREHOOK: Input: alter4_db@set_bucketing_test
+PREHOOK: Output: alter4_db@set_bucketing_test
+POSTHOOK: query: ALTER TABLE set_bucketing_test NOT CLUSTERED
+POSTHOOK: type: ALTERTABLE_CLUSTER_SORT
+POSTHOOK: Input: alter4_db@set_bucketing_test
+POSTHOOK: Output: alter4_db@set_bucketing_test
+PREHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE EXTENDED set_bucketing_test
+POSTHOOK: type: DESCTABLE
+key	int	
+value	string	
+	 	 
+Detailed Table Information	Table(tableName:set_bucketing_test, dbName:alter4_db, owner:heyongqiang, createTime:1290068481, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:int, comment:null), FieldSchema(name:value, type:string, comment:null)], location:pfile:/Users/heyongqiang/Documents/workspace/Hive-2/build/ql/test/data/warehouse/alter4_db.db/set_bucketing_test, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}), partitionKeys:[], parameters:{last_modified_by=heyongqiang, last_modified_time=1290068481, transient_lastDdlTime=1290068481}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+PREHOOK: query: DROP TABLE set_bucketing_test
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: alter4_db@set_bucketing_test
+PREHOOK: Output: alter4_db@set_bucketing_test
+POSTHOOK: query: DROP TABLE set_bucketing_test
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: alter4_db@set_bucketing_test
+POSTHOOK: Output: alter4_db@set_bucketing_test
+PREHOOK: query: USE default
+PREHOOK: type: SWITCHDATABASE
+POSTHOOK: query: USE default
+POSTHOOK: type: SWITCHDATABASE
+PREHOOK: query: DROP DATABASE alter4_db
+PREHOOK: type: DROPDATABASE
+POSTHOOK: query: DROP DATABASE alter4_db
+POSTHOOK: type: DROPDATABASE
+PREHOOK: query: SHOW DATABASES
+PREHOOK: type: SHOWDATABASES
+POSTHOOK: query: SHOW DATABASES
+POSTHOOK: type: SHOWDATABASES
+default

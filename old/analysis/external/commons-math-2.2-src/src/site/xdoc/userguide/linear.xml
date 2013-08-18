@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 783702 $ $Date: 2009-06-11 10:54:02 +0200 (jeu. 11 juin 2009) $ -->
+<document url="linear.html">
+
+  <properties>
+    <title>The Commons Math User Guide - Linear Algebra</title>
+  </properties>
+
+  <body>
+    <section name="3 Linear Algebra">
+      <subsection name="3.1 Overview" href="overview">
+        <p>
+           Linear algebra support in commons-math provides operations on real matrices
+           (both dense and sparse matrices are supported) and vectors. It features basic
+           operations (addition, subtraction ...) and decomposition algorithms that can
+           be used to solve linear systems either in exact sense and in least squares sense.
+        </p>
+      </subsection>
+      <subsection name="3.2 Real matrices" href="real_matrices">
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/linear/RealMatrix.html">
+          RealMatrix</a> interface represents a matrix with real numbers as 
+          entries.  The following basic matrix operations are supported:
+          <ul>
+          <li>Matrix addition, subtraction, multiplication</li>
+          <li>Scalar addition and multiplication</li>
+          <li>transpose</li>
+          <li>Norm and Trace</li>
+          <li>Operation on a vector</li>
+          </ul>   
+        </p>
+        <p>
+         Example:
+         <source>
+// Create a real matrix with two rows and three columns
+double[][] matrixData = { {1d,2d,3d}, {2d,5d,3d}};
+RealMatrix m = new Array2DRowRealMatrix(matrixData);
+
+// One more with three rows, two columns
+double[][] matrixData2 = { {1d,2d}, {2d,5d}, {1d, 7d}};
+RealMatrix n = new Array2DRowRealMatrix(matrixData2);
+
+// Note: The constructor copies  the input double[][] array.
+
+// Now multiply m by n
+RealMatrix p = m.multiply(n);
+System.out.println(p.getRowDimension());    // 2
+System.out.println(p.getColumnDimension()); // 2
+
+// Invert p, using LU decomposition
+RealMatrix pInverse = new LUDecompositionImpl(p).getSolver().getInverse();
+         </source>
+        </p>
+        <p>
+        The three main implementations of the interface are <a
+        href="../apidocs/org/apache/commons/math/linear/Array2DRowRealMatrix.html">
+        Array2DRowRealMatrix</a> and <a
+        href="../apidocs/org/apache/commons/math/linear/BlockRealMatrix.html">
+        BlockRealMatrix</a> for dense matrices (the second one being more suited to
+        dimensions above 50 or 100) and <a
+        href="../apidocs/org/apache/commons/math/linear/SparseRealMatrix.html">
+        SparseRealMatrix</a> for sparse matrices.
+        </p>
+      </subsection>
+      <subsection name="3.3 Real vectors" href="real_vectors">
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/linear/RealVector.html">
+          RealVector</a> interface represents a vector with real numbers as 
+          entries.  The following basic matrix operations are supported:
+          <ul>
+          <li>Vector addition, subtraction</li>
+          <li>Element by element multiplication, division</li>
+          <li>Scalar addition, subtraction, multiplication, division and power</li>
+          <li>Mapping of mathematical functions (cos, sin ...)</li>
+          <li>Dot product, outer product</li>
+          <li>Distance and norm according to norms L1, L2 and Linf</li>
+          </ul>
+        </p>
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/linear/RealVectorFormat.html">
+          RealVectorFormat</a> class handles input/output of vectors in a customizable
+          textual format.
+        </p>
+      </subsection>
+      <subsection name="3.4 Solving linear systems" href="solve">
+        <p>
+          The <code>solve()</code> methods of the <a
+          href="../apidocs/org/apache/commons/math/linear/DecompositionSolver.html">DecompositionSolver</a>
+          interface support solving linear systems of equations of the form AX=B, either
+          in linear sense or in least square sense. A <code>RealMatrix</code> instance is
+          used to represent the coefficient matrix of the system. Solving the system is a
+          two phases process: first the coefficient matrix is decomposed in some way and
+          then a solver built from the decomposition solves the system. This allows to
+          compute the decomposition and build the solver only once if several systems have
+          to be solved with the same coefficient matrix.
+        </p>
+        <p>
+          For example, to solve the linear system
+          <pre>
+           2x + 3y - 2z = 1
+           -x + 7y + 6x = -2
+           4x - 3y - 5z = 1
+          </pre>
+          Start by decomposing the coefficient matrix A (in this case using LU decomposition)
+          and build a solver
+          <source>
+RealMatrix coefficients =
+    new Array2DRowRealMatrix(new double[][] { { 2, 3, -2 }, { -1, 7, 6 }, { 4, -3, -5 } },
+                       false);
+DecompositionSolver solver = new LUDecompositionImpl(coefficients).getSolver();
+          </source>
+          Next create a <code>RealVector</code> array to represent the constant
+          vector B and use <code>solve(RealVector)</code> to solve the system
+          <source>
+RealVector constants = new RealVectorImpl(new double[] { 1, -2, 1 }, false);
+RealVector solution = solver.solve(constants);
+          </source>
+          The <code>solution</code> vector will contain values for x
+          (<code>solution.getEntry(0)</code>), y (<code>solution.getEntry(1)</code>), 
+          and z (<code>solution.getEntry(2)</code>) that solve the system.
+        </p>
+        <p>
+          Each type of decomposition has its specific semantics and constraints on
+          the coefficient matrix as shown in the following table. For algorithms that
+          solve AX=B in least squares sense the value returned for X is such that the
+          residual AX-B has minimal norm. If an exact solution exist (i.e. if for some
+          X the residual AX-B is exactly 0), then this exact solution is also the solution
+          in least square sense. This implies that algorithms suited for least squares
+          problems can also be used to solve exact problems, but the reverse is not true. 
+        </p>
+        <p>
+          <table border="1" align="center">
+          <tr BGCOLOR="#CCCCFF"><td colspan="2"><font size="+2">Decomposition algorithms</font></td></tr>
+          <tr BGCOLOR="#EEEEFF"><font size="+1"><td>Name</td><td>coefficients matrix</td><td>problem type</td></font></tr>
+          <tr><td><a href="../apidocs/org/apache/commons/math/linear/LUDecomposition.html">LU</a></td><td>square</td><td>exact solution only</td></tr>
+          <tr><td><a href="../apidocs/org/apache/commons/math/linear/CholeskyDecomposition.html">Cholesky</a></td><td>symmetric positive definite</td><td>exact solution only</td></tr>
+          <tr><td><a href="../apidocs/org/apache/commons/math/linear/QRDecomposition.html">QR</a></td><td>any</td><td>least squares solution</td></tr>
+          <tr><td><a href="../apidocs/org/apache/commons/math/linear/EigenDecomposition.html">eigen decomposition</a></td><td>square</td><td>exact solution only</td></tr>
+          <tr><td><a href="../apidocs/org/apache/commons/math/linear/SingularValueDecomposition.html">SVD</a></td><td>any</td><td>least squares solution</td></tr>
+          </table>
+        </p>
+        <p>
+          It is possible to use a simple array of double instead of a <code>RealVector</code>.
+          In this case, the solution will be provided also as an array of double.
+        </p>
+        <p>
+          It is possible to solve multiple systems with the same coefficient matrix 
+          in one method call.  To do this, create a matrix whose column vectors correspond 
+          to the constant vectors for the systems to be solved and use <code>solve(RealMatrix),</code>
+          which returns a matrix with column vectors representing the solutions.
+        </p>
+      </subsection>
+      <subsection name="3.5 Eigenvalues/eigenvectors and singular values/singular vectors" href="eigen">
+        <p>
+          Decomposition algorithms may be used for themselves and not only for linear system solving.
+          This is of prime interest with eigen decomposition and singular value decomposition.
+        </p>
+        <p>
+          The <code>getEigenvalue()</code>, <code>getEigenvalues()</code>, <code>getEigenVector()</code>,
+          <code>getV()</code>, <code>getD()</code> and <code>getVT()</code> methods of the
+          <code>EigenDecomposition</code> interface support solving eigenproblems of the form
+          AX = lambda X where lambda is a real scalar.
+        </p>
+        <p>The <code>getSingularValues()</code>, <code>getU()</code>, <code>getS()</code> and
+        <code>getV()</code> methods of the <code>SingularValueDecomposition</code> interface
+        allow to solve singular values problems of the form AXi = lambda Yi where lambda is a
+        real scalar, and where the Xi and Yi vectors form orthogonal bases of their respective
+        vector spaces (which may have different dimensions).
+        </p>
+      </subsection>
+      <subsection name="3.6 Non-real fields (complex, fractions ...)" href="field">
+        <p>
+          In addition to the real field, matrices and vectors using non-real <a
+          href="../apidocs/org/apache/commons/math/FieldElement.html">field elements</a> can be used.
+          The fields already supported by the library are:
+          <ul>
+            <li><a href="../apidocs/org/apache/commons/math/complex/Complex.html">Complex</a></li>
+            <li><a href="../apidocs/org/apache/commons/math/fraction/Fraction.html">Fraction</a></li>
+            <li><a href="../apidocs/org/apache/commons/math/fraction/BigFraction.html">BigFraction</a></li>
+            <li><a href="../apidocs/org/apache/commons/math/util/BigReal.html">BigReal</a></li>
+          </ul>
+        </p>
+      </subsection>
+    </section>
+  </body>
+</document>

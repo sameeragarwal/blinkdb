@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/security
+END
+DummyAuthenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1072517/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/security/DummyAuthenticator.java
+END

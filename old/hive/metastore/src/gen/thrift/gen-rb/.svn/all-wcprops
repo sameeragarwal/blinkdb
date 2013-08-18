@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-rb
+END
+thrift_hive_metastore.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-rb/thrift_hive_metastore.rb
+END
+hive_metastore_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-rb/hive_metastore_types.rb
+END
+hive_metastore_constants.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1165207/hive/trunk/metastore/src/gen/thrift/gen-rb/hive_metastore_constants.rb
+END

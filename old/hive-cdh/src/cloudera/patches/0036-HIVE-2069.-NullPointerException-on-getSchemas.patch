@@ -1,0 +1,68 @@
+From 937bc5bd37450d366440ee2035352d23f5f77d31 Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Fri, 1 Jul 2011 17:13:58 -0700
+Subject: [PATCH 36/51] HIVE-2069. NullPointerException on getSchemas
+
+Reason: Bug
+Author: Bennie Schut
+Ref: CDH-3310
+---
+ .../hadoop/hive/jdbc/HiveMetaDataResultSet.java    |   18 +++++++++++++++---
+ .../apache/hadoop/hive/jdbc/TestJdbcDriver.java    |   12 +++++++++++-
+ 2 files changed, 26 insertions(+), 4 deletions(-)
+
+diff --git a/jdbc/src/java/org/apache/hadoop/hive/jdbc/HiveMetaDataResultSet.java b/jdbc/src/java/org/apache/hadoop/hive/jdbc/HiveMetaDataResultSet.java
+index 6c296a0..9f7ae42 100644
+--- a/jdbc/src/java/org/apache/hadoop/hive/jdbc/HiveMetaDataResultSet.java
++++ b/jdbc/src/java/org/apache/hadoop/hive/jdbc/HiveMetaDataResultSet.java
+@@ -29,9 +29,21 @@ public abstract class HiveMetaDataResultSet<M> extends HiveBaseResultSet {
+   public HiveMetaDataResultSet(final List<String> columnNames
+           , final List<String> columnTypes
+           , final List<M> data) throws SQLException {
+-    this.data = new ArrayList<M>(data);
+-    this.columnNames = new ArrayList<String>(columnNames);
+-    this.columnTypes = new ArrayList<String>(columnTypes);
++    if (data!=null) {
++      this.data = new ArrayList<M>(data);
++    } else {
++      this.data =  new ArrayList<M>();
++    }
++    if (columnNames!=null) {
++      this.columnNames = new ArrayList<String>(columnNames);
++    } else {
++      this.columnNames =  new ArrayList<String>();
++    }
++    if (columnTypes!=null) {
++      this.columnTypes = new ArrayList<String>(columnTypes);
++    } else {
++      this.columnTypes =  new ArrayList<String>();
++    }
+   }
+ 
+   @Override
+diff --git a/jdbc/src/test/org/apache/hadoop/hive/jdbc/TestJdbcDriver.java b/jdbc/src/test/org/apache/hadoop/hive/jdbc/TestJdbcDriver.java
+index 52f3f4f..bdccf92 100644
+--- a/jdbc/src/test/org/apache/hadoop/hive/jdbc/TestJdbcDriver.java
++++ b/jdbc/src/test/org/apache/hadoop/hive/jdbc/TestJdbcDriver.java
+@@ -577,7 +577,17 @@ public class TestJdbcDriver extends TestCase {
+       cnt++;
+     }
+     rs.close();
+-    assertEquals("Incorrect schema count", 1, cnt);
++    assertEquals("Incorrect catalog count", 1, cnt);
++  }
++
++  public void testMetaDataGetSchemas() throws SQLException {
++    ResultSet rs = (ResultSet)con.getMetaData().getSchemas();
++    int cnt = 0;
++    while (rs.next()) {
++      cnt++;
++    }
++    rs.close();
++    assertEquals("Incorrect schema count", 0, cnt);
+   }
+ 
+   public void testMetaDataGetTableTypes() throws SQLException {
+-- 
+1.7.0.4
+

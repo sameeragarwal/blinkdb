@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+   
+         http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 937893 $ $Date: 2010-04-25 23:42:47 +0200 (dim. 25 avril 2010) $ -->
+<document url="fraction.html">
+  <properties>
+    <title>The Commons Math User Guide - Fractions</title>
+  </properties>
+  <body>
+    <section name="9 Fractions">
+      <subsection name="9.1 Overview" href="overview">
+        <p>
+          The fraction packages provides a fraction number type as well as
+          fraction number formatting.
+        </p>
+      </subsection>
+      <subsection name="9.2 Fraction Numbers" href="fraction">
+        <p>
+          <a href="../apidocs/org/apache/commons/math/fraction/Fraction.html">
+          Fraction</a> and <a href="../apidocs/org/apache/commons/math/fraction/BigFraction.html">
+          BigFraction</a> provide fraction number type that forms the basis for
+          the fraction functionality found in Commons-Math. The former one can be
+          used for fractions whose numerators and denominators are small enough
+          to fit in an int (taking care of intermediate values) while the second
+          class should be used when there is a risk the numerator and denominator
+          grow very large.
+        </p>
+        <p>
+          A fraction number, can be built from two integer arguments representing numerator
+          and denominator or from a double which will be approximated:
+          <source>Fraction f = new Fraction(1, 3); // 1 / 3
+Fraction g = new Fraction(0.25); // 1 / 4</source>
+        </p>
+        <p>
+          Of special note with fraction construction, when a fraction is created it is always reduced to lowest terms.
+        </p>
+        <p>
+          The <code>Fraction</code> class provides many unary and binary
+          fraction operations.  These operations provide the means to add,
+          subtract, multiple and, divide fractions along with other functions similar to the real number functions found in
+          <code>java.math.BigDecimal</code>:
+          <source>Fraction lhs = new Fraction(1, 3);
+Fraction rhs = new Fraction(2, 5);
+
+Fraction answer = lhs.add(rhs);     // add two fractions
+        answer = lhs.subtract(rhs); // subtract two fractions
+        answer = lhs.abs();         // absolute value
+        answer = lhs.reciprocal();  // reciprocal of lhs</source>
+        </p>
+        <p>
+          Like fraction construction, for each of the fraction functions, the resulting fraction is reduced to lowest terms.
+        </p>
+      </subsection>
+      <subsection name="9.3 Fraction Formatting and Parsing" href="formatting">
+        <p>
+          <code>Fraction</code> instances can be converted to and from strings
+          using the<a href="../apidocs/org/apache/commons/math/fraction/FractionFormat.html">
+          FractionFormat</a> class. <code>FractionFormat</code> is a
+          <code>java.text.Format</code> extension and, as such, is used like other
+          formatting objects (e.g. <code>java.text.SimpleDateFormat</code>):
+          <source>FractionFormat format = new FractionFormat(); // default format
+Fraction f = new Fraction(2, 4);
+String s = format.format(f); // s contains "1 / 2", note the reduced fraction</source>
+        </p>
+        <p>
+          To customize the formatting output, one or two
+          <code>java.text.NumberFormat</code> instances can be used to construct
+          a <code>FractionFormat</code>.  These number formats control the
+          formatting of the numerator and denominator of the fraction:
+          <source>NumberFormat nf = NumberFormat.getInstance(Locale.FRANCE);
+// create fraction format with custom number format
+// when one number format is used, both numerator and
+// denominator are formatted the same
+FractionFormat format = new FractionFormat(nf);
+Fraction f = new Fraction(2000, 3333);
+String s = format.format(c); // s contains "2.000 / 3.333"
+
+NumberFormat nf2 = NumberFormat.getInstance(Locale.US);
+// create fraction format with custom number formats
+format = new FractionFormat(nf, nf2);
+s = format.format(f); // s contains "2.000 / 3,333"</source>
+        </p>
+        <p>
+          Formatting's inverse operation, parsing, can also be performed by
+          <code>FractionFormat</code>.  To parse a fraction from a string,
+          simply call the <code>parse</code> method:
+          <source>FractionFormat ff = new FractionFormat();
+Fraction f = ff.parse("-10 / 21");</source>
+        </p>
+      </subsection>
+    </section>
+  </body>
+</document>

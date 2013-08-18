@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-rb
+END
+serde_constants.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/gen/thrift/gen-rb/serde_constants.rb
+END
+serde_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1165207/hive/trunk/serde/src/gen/thrift/gen-rb/serde_types.rb
+END

@@ -1,0 +1,53 @@
+From e894fffbb34615c4b1ce0d247fe8d93e38ebc871 Mon Sep 17 00:00:00 2001
+From: Andrew Bayer <andrew.bayer@gmail.com>
+Date: Tue, 8 Mar 2011 12:51:48 -0800
+Subject: [PATCH 20/51] CLOUDERA-BUILD. Changing releases repo to point to staging area.
+
+---
+ cloudera-pom.xml                 |    2 +-
+ cloudera/maven-packaging/pom.xml |    2 +-
+ ivy/ivysettings.xml              |    2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/cloudera-pom.xml b/cloudera-pom.xml
+index 57090e5..9b9e017 100644
+--- a/cloudera-pom.xml
++++ b/cloudera-pom.xml
+@@ -66,7 +66,7 @@
+       <repositories>
+         <repository>
+           <id>cdh.releases.repo</id>
+-          <url>https://repository.cloudera.com/content/repositories/releases</url>
++          <url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
+           <name>CDH Releases Repository</name>
+           <snapshots>
+             <enabled>false</enabled>
+diff --git a/cloudera/maven-packaging/pom.xml b/cloudera/maven-packaging/pom.xml
+index f4d1196..e6400e8 100644
+--- a/cloudera/maven-packaging/pom.xml
++++ b/cloudera/maven-packaging/pom.xml
+@@ -38,7 +38,7 @@
+   <repositories>
+     <repository>
+       <id>cdh.releases.repo</id>
+-      <url>https://repository.cloudera.com/content/repositories/releases</url>
++      <url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
+       <name>CDH Releases Repository</name>
+       <snapshots>
+         <enabled>false</enabled>
+diff --git a/ivy/ivysettings.xml b/ivy/ivysettings.xml
+index cf58735..73a7e28 100644
+--- a/ivy/ivysettings.xml
++++ b/ivy/ivysettings.xml
+@@ -48,7 +48,7 @@
+              m2compatible="true"
+              checkmodified="true"/>
+     <ibiblio name="cloudera-releases" m2compatible="true"
+-             root="https://repository.cloudera.com/content/repositories/releases" checkmodified="true"/>
++             root="https://repository.cloudera.com/content/groups/cdh-releases-rcs" checkmodified="true"/>
+     <ibiblio name="cloudera-snapshots" m2compatible="true"
+              root="https://repository.cloudera.com/content/repositories/snapshots" checkmodified="true"/>
+ 
+-- 
+1.7.0.4
+

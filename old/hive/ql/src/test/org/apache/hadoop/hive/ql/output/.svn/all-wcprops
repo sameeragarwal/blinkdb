@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/output
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/test/org/apache/hadoop/hive/ql/output/.gitignore
+END

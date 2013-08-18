@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1027721/hive/trunk/shims/src/0.20/java/org/apache/hadoop/fs
+END
+ProxyLocalFileSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/shims/src/0.20/java/org/apache/hadoop/fs/ProxyLocalFileSystem.java
+END
+ProxyFileSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1027721/hive/trunk/shims/src/0.20/java/org/apache/hadoop/fs/ProxyFileSystem.java
+END

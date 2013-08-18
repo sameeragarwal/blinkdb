@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<!-- $Revision: 923339 $ $Date: 2010-03-15 18:04:53 +0100 (lun. 15 mars 2010) $ -->
+<document>
+
+ <properties>
+  <title>Commons-Math: The Apache Commons Mathematics Library</title>
+ </properties>
+
+ <body>
+
+  <section name="Commons-Math: The Apache Commons Mathematics Library" href="summary">
+   <p>
+    Commons Math is a library of lightweight, self-contained
+    mathematics and statistics components addressing the most common
+    problems not available in the Java programming language or Commons
+    Lang.
+   </p>
+   <p>
+    Guiding principles:
+    <ol>
+     <li>
+      Real-world application use cases determine development
+      priority.
+     </li>
+     <li>
+      This package emphasizes small, easily integrated components
+      rather than large libraries with complex dependencies and
+      configurations.
+     </li>
+     <li>
+      All algorithms are fully documented and follow generally
+      accepted best practices.
+     </li>
+     <li>
+      In situations where multiple standard algorithms exist, a
+      Strategy pattern is used to support multiple
+      implementations.
+     </li>
+     <li>
+      Limited dependencies. No external dependencies beyond Commons
+      components and the core Java platform (at least Java 1.3 up to
+      version 1.2 of the library, at least Java 5 starting with version
+      2.0 of the library).
+     </li>
+    </ol>
+   </p>
+  </section>
+  <section name="Download Math">
+   <subsection name="Releases">
+    <p>
+      Download the 
+      <a href="http://commons.apache.org/math/download_math.cgi">
+      Latest Release</a> of Commons Math.
+    </p>
+   </subsection>
+   <!--
+   <subsection name="Nightly Builds">
+    <p>
+     <a href="http://people.apache.org/builds/commons/nightly/commons-math/">
+     Nightly builds</a> are built once a day from the current SVN HEAD.
+     This is (nearly) the latest code and so should be treated with
+     caution!
+    </p>
+   </subsection>
+   -->
+  </section>
+ </body>
+</document>

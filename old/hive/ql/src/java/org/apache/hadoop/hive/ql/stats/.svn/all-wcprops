@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1172869/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats
+END
+StatsAggregator.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats/StatsAggregator.java
+END
+StatsFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1062655/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats/StatsFactory.java
+END
+StatsSetupConst.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats/StatsSetupConst.java
+END
+ClientStatsPublisher.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1171917/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats/ClientStatsPublisher.java
+END
+StatsPublisher.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1131106/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/stats/StatsPublisher.java
+END

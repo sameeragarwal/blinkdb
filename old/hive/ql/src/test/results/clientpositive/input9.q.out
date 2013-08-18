@@ -1,0 +1,116 @@
+PREHOOK: query: CREATE TABLE dest1(value STRING, key INT) STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE dest1(value STRING, key INT) STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@dest1
+PREHOOK: query: EXPLAIN
+FROM src1
+INSERT OVERWRITE TABLE dest1 SELECT NULL, src1.key where NULL = NULL
+PREHOOK: type: QUERY
+POSTHOOK: query: EXPLAIN
+FROM src1
+INSERT OVERWRITE TABLE dest1 SELECT NULL, src1.key where NULL = NULL
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME src1))) (TOK_INSERT (TOK_DESTINATION (TOK_TAB (TOK_TABNAME dest1))) (TOK_SELECT (TOK_SELEXPR TOK_NULL) (TOK_SELEXPR (. (TOK_TABLE_OR_COL src1) key))) (TOK_WHERE (= TOK_NULL TOK_NULL))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-5 depends on stages: Stage-1 , consists of Stage-4, Stage-3
+  Stage-4
+  Stage-0 depends on stages: Stage-4, Stage-3
+  Stage-2 depends on stages: Stage-0
+  Stage-3
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        src1 
+          TableScan
+            alias: src1
+            Filter Operator
+              predicate:
+                  expr: (null = null)
+                  type: boolean
+              Select Operator
+                expressions:
+                      expr: null
+                      type: string
+                      expr: key
+                      type: string
+                outputColumnNames: _col0, _col1
+                Select Operator
+                  expressions:
+                        expr: _col0
+                        type: void
+                        expr: UDFToInteger(_col1)
+                        type: int
+                  outputColumnNames: _col0, _col1
+                  File Output Operator
+                    compressed: false
+                    GlobalTableId: 1
+                    table:
+                        input format: org.apache.hadoop.mapred.TextInputFormat
+                        output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                        serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                        name: default.dest1
+
+  Stage: Stage-5
+    Conditional Operator
+
+  Stage: Stage-4
+    Move Operator
+      files:
+          hdfs directory: true
+          destination: pfile:/data/users/sdong/www/open-source-hive1/build/ql/scratchdir/hive_2011-02-10_15-58-35_240_8915528420901914098/-ext-10000
+
+  Stage: Stage-0
+    Move Operator
+      tables:
+          replace: true
+          table:
+              input format: org.apache.hadoop.mapred.TextInputFormat
+              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+              name: default.dest1
+
+  Stage: Stage-2
+    Stats-Aggr Operator
+
+  Stage: Stage-3
+    Map Reduce
+      Alias -> Map Operator Tree:
+        pfile:/data/users/sdong/www/open-source-hive1/build/ql/scratchdir/hive_2011-02-10_15-58-35_240_8915528420901914098/-ext-10002 
+            File Output Operator
+              compressed: false
+              GlobalTableId: 0
+              table:
+                  input format: org.apache.hadoop.mapred.TextInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                  serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                  name: default.dest1
+
+
+PREHOOK: query: FROM src1
+INSERT OVERWRITE TABLE dest1 SELECT NULL, src1.key where NULL = NULL
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src1
+PREHOOK: Output: default@dest1
+POSTHOOK: query: FROM src1
+INSERT OVERWRITE TABLE dest1 SELECT NULL, src1.key where NULL = NULL
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src1
+POSTHOOK: Output: default@dest1
+POSTHOOK: Lineage: dest1.key EXPRESSION [(src1)src1.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: dest1.value SIMPLE []
+PREHOOK: query: SELECT dest1.* FROM dest1
+PREHOOK: type: QUERY
+PREHOOK: Input: default@dest1
+PREHOOK: Output: file:/tmp/sdong/hive_2011-02-10_15-58-40_807_2941373510292718148/-mr-10000
+POSTHOOK: query: SELECT dest1.* FROM dest1
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@dest1
+POSTHOOK: Output: file:/tmp/sdong/hive_2011-02-10_15-58-40_807_2941373510292718148/-mr-10000
+POSTHOOK: Lineage: dest1.key EXPRESSION [(src1)src1.FieldSchema(name:key, type:string, comment:default), ]
+POSTHOOK: Lineage: dest1.value SIMPLE []

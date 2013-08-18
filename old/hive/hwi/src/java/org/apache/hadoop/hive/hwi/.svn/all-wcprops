@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1149311/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi
+END
+HWIContextListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWIContextListener.java
+END
+HWIException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWIException.java
+END
+HWISessionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWISessionManager.java
+END
+HWIAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWIAuth.java
+END
+HWISessionItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1149311/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWISessionItem.java
+END
+HWIServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/java/org/apache/hadoop/hive/hwi/HWIServer.java
+END

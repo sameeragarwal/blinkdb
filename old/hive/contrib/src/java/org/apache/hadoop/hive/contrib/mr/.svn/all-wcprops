@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/mr
+END
+Output.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/mr/Output.java
+END
+Mapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/mr/Mapper.java
+END
+Reducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/mr/Reducer.java
+END
+GenericMR.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/mr/GenericMR.java
+END

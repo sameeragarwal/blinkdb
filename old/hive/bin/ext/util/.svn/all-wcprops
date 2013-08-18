@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/util
+END
+execHiveCmd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1071352/hive/trunk/bin/ext/util/execHiveCmd.sh
+END

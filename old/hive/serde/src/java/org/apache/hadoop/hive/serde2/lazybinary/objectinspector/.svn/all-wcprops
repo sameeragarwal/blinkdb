@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1157224/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/objectinspector
+END
+LazyBinaryMapObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/objectinspector/LazyBinaryMapObjectInspector.java
+END
+LazyBinaryStructObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/1157224/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/objectinspector/LazyBinaryStructObjectInspector.java
+END
+LazyBinaryObjectInspectorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/repos/asf/!svn/ver/1157224/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/objectinspector/LazyBinaryObjectInspectorFactory.java
+END
+LazyBinaryListObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazybinary/objectinspector/LazyBinaryListObjectInspector.java
+END

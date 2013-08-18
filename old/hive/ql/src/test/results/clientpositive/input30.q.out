@@ -1,0 +1,111 @@
+PREHOOK: query: create table dest30(a int)
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table dest30(a int)
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@dest30
+PREHOOK: query: create table tst_dest30(a int)
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table tst_dest30(a int)
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@tst_dest30
+PREHOOK: query: explain 
+insert overwrite table dest30
+select count(1) from src
+PREHOOK: type: QUERY
+POSTHOOK: query: explain 
+insert overwrite table dest30
+select count(1) from src
+POSTHOOK: type: QUERY
+ABSTRACT SYNTAX TREE:
+  (TOK_QUERY (TOK_FROM (TOK_TABREF (TOK_TABNAME src))) (TOK_INSERT (TOK_DESTINATION (TOK_TAB (TOK_TABNAME dest30))) (TOK_SELECT (TOK_SELEXPR (TOK_FUNCTION count 1)))))
+
+STAGE DEPENDENCIES:
+  Stage-1 is a root stage
+  Stage-0 depends on stages: Stage-1
+  Stage-2 depends on stages: Stage-0
+
+STAGE PLANS:
+  Stage: Stage-1
+    Map Reduce
+      Alias -> Map Operator Tree:
+        src 
+          TableScan
+            alias: src
+            Filter Operator
+              predicate:
+                  expr: (((hash(rand(460476415)) & 2147483647) % 32) = 0)
+                  type: boolean
+              Select Operator
+                Group By Operator
+                  aggregations:
+                        expr: count(1)
+                  bucketGroup: false
+                  mode: hash
+                  outputColumnNames: _col0
+                  Reduce Output Operator
+                    sort order: 
+                    tag: -1
+                    value expressions:
+                          expr: _col0
+                          type: bigint
+      Reduce Operator Tree:
+        Group By Operator
+          aggregations:
+                expr: count(VALUE._col0)
+          bucketGroup: false
+          mode: mergepartial
+          outputColumnNames: _col0
+          Select Operator
+            expressions:
+                  expr: _col0
+                  type: bigint
+            outputColumnNames: _col0
+            Select Operator
+              expressions:
+                    expr: UDFToInteger(_col0)
+                    type: int
+              outputColumnNames: _col0
+              File Output Operator
+                compressed: false
+                GlobalTableId: 1
+                table:
+                    input format: org.apache.hadoop.mapred.TextInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+                    serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    name: default.tst_dest30
+
+  Stage: Stage-0
+    Move Operator
+      tables:
+          replace: true
+          table:
+              input format: org.apache.hadoop.mapred.TextInputFormat
+              output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+              serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+              name: default.tst_dest30
+
+  Stage: Stage-2
+    Stats-Aggr Operator
+
+
+PREHOOK: query: insert overwrite table dest30
+select count(1) from src
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src
+PREHOOK: Output: default@tst_dest30
+POSTHOOK: query: insert overwrite table dest30
+select count(1) from src
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src
+POSTHOOK: Output: default@tst_dest30
+POSTHOOK: Lineage: tst_dest30.a EXPRESSION [(src)src.null, ]
+PREHOOK: query: select * from tst_dest30
+PREHOOK: type: QUERY
+PREHOOK: Input: default@tst_dest30
+PREHOOK: Output: file:/tmp/sdong/hive_2011-02-10_15-55-14_824_7555560565228029700/-mr-10000
+POSTHOOK: query: select * from tst_dest30
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@tst_dest30
+POSTHOOK: Output: file:/tmp/sdong/hive_2011-02-10_15-55-14_824_7555560565228029700/-mr-10000
+POSTHOOK: Lineage: tst_dest30.a EXPRESSION [(src)src.null, ]
+18

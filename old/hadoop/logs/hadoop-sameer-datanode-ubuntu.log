@@ -1,0 +1,89 @@
+2011-10-07 00:02:40,756 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 24 msec to generate and 28 msecs for RPC and NN processing
+2011-10-07 01:02:43,005 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 4 msecs for RPC and NN processing
+2011-10-07 02:02:41,231 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 3 msec to generate and 6 msecs for RPC and NN processing
+2011-10-07 03:02:40,312 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 4 msecs for RPC and NN processing
+2011-10-07 15:08:29,870 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:08:29,918 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting DataNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:08:30,256 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-07 15:08:30,272 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-07 15:08:30,277 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-07 15:08:30,277 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: DataNode metrics system started
+2011-10-07 15:08:30,560 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-07 15:08:30,570 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-07 15:08:31,920 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-07 15:08:32,934 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-07 15:08:33,935 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-07 15:08:34,936 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-07 15:08:35,938 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-07 15:08:36,939 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-07 15:08:37,940 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-07 15:08:38,941 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-07 15:08:39,943 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-07 15:08:40,945 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-07 15:08:40,951 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-07 15:08:42,952 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-07 15:08:43,954 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-07 15:08:44,956 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-07 15:08:45,957 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-07 15:08:46,958 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-07 15:08:47,958 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-07 15:08:48,959 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-07 15:08:49,071 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down DataNode at ubuntu/127.0.1.1
+************************************************************/
+2011-10-07 15:09:13,810 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:09:13,826 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting DataNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:09:13,995 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-07 15:09:14,006 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-07 15:09:14,007 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-07 15:09:14,007 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: DataNode metrics system started
+2011-10-07 15:09:14,205 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-07 15:09:14,208 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-07 15:09:18,438 INFO org.apache.hadoop.hdfs.server.common.Storage: Storage directory /tmp/hadoop-sameer/dfs/data is not formatted.
+2011-10-07 15:09:18,439 INFO org.apache.hadoop.hdfs.server.common.Storage: Formatting ...
+2011-10-07 15:09:18,594 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Registered FSDatasetStatusMBean
+2011-10-07 15:09:18,607 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Opened info server at 50010
+2011-10-07 15:09:18,610 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Balancing bandwith is 1048576 bytes/s
+2011-10-07 15:09:23,743 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-07 15:09:23,853 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-07 15:09:23,859 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50075
+2011-10-07 15:09:23,859 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50075 webServer.getConnectors()[0].getLocalPort() returned 50075
+2011-10-07 15:09:23,859 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50075
+2011-10-07 15:09:23,859 INFO org.mortbay.log: jetty-6.1.26
+2011-10-07 15:09:24,242 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50075
+2011-10-07 15:09:24,247 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-07 15:09:24,248 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source DataNode registered.
+2011-10-07 15:09:29,307 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-07 15:09:29,310 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort50020 registered.
+2011-10-07 15:09:29,310 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort50020 registered.
+2011-10-07 15:09:29,312 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: dnRegistration = DatanodeRegistration(ubuntu:50010, storageID=, infoPort=50075, ipcPort=50020)
+2011-10-07 15:09:32,734 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: New storage id DS-1601956865-127.0.1.1-50010-1318025372713 is assigned to data-node 127.0.0.1:50010
+2011-10-07 15:09:32,735 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: DatanodeRegistration(127.0.0.1:50010, storageID=DS-1601956865-127.0.1.1-50010-1318025372713, infoPort=50075, ipcPort=50020)In DataNode.run, data = FSDataset{dirpath='/tmp/hadoop-sameer/dfs/data/current'}
+2011-10-07 15:09:32,741 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2011-10-07 15:09:32,743 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 50020: starting
+2011-10-07 15:09:32,743 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 50020: starting
+2011-10-07 15:09:32,744 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 50020: starting
+2011-10-07 15:09:32,744 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: using BLOCKREPORT_INTERVAL of 3600000msec Initial delay: 0msec
+2011-10-07 15:09:32,751 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 50020: starting
+2011-10-07 15:09:32,768 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 0 blocks took 0 msec to generate and 9 msecs for RPC and NN processing
+2011-10-07 15:09:32,775 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Starting Periodic block scanner.
+2011-10-07 15:09:32,891 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: Receiving block blk_1722427738024249725_1002 src: /127.0.0.1:59365 dest: /127.0.0.1:50010
+2011-10-07 15:09:32,920 INFO org.apache.hadoop.hdfs.server.datanode.DataNode.clienttrace: src: /127.0.0.1:59365, dest: /127.0.0.1:50010, bytes: 4, op: HDFS_WRITE, cliID: DFSClient_-986569166, offset: 0, srvID: DS-1601956865-127.0.1.1-50010-1318025372713, blockid: blk_1722427738024249725_1002, duration: 445917
+2011-10-07 15:09:32,921 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: PacketResponder 0 for block blk_1722427738024249725_1002 terminating
+2011-10-07 15:11:11,895 INFO org.apache.hadoop.hdfs.server.datanode.DataBlockScanner: Verification succeeded for blk_1722427738024249725_1002
+2011-10-07 16:00:54,852 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: BlockReport of 1 blocks took 2 msec to generate and 24 msecs for RPC and NN processing

@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io
+END
+BucketizedHiveInputSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/BucketizedHiveInputSplit.java
+END
+HiveContextAwareRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveContextAwareRecordReader.java
+END
+RCFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1166922/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/RCFile.java
+END
+HiveKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveKey.java
+END
+HiveNullValueSequenceFileOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveNullValueSequenceFileOutputFormat.java
+END
+IOPrepareCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/IOPrepareCache.java
+END
+HiveSequenceFileOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveSequenceFileOutputFormat.java
+END
+FlatFileInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/FlatFileInputFormat.java
+END
+CombineHiveInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1150928/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/CombineHiveInputFormat.java
+END
+SymlinkTextInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1130427/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/SymlinkTextInputFormat.java
+END
+HiveFileFormatUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1176010/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveFileFormatUtils.java
+END
+RCFileRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1038439/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/RCFileRecordReader.java
+END
+ReworkMapredInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1096907/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/ReworkMapredInputFormat.java
+END
+IgnoreKeyTextOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/IgnoreKeyTextOutputFormat.java
+END
+InputFormatChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/InputFormatChecker.java
+END
+RCFileOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1149047/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/RCFileOutputFormat.java
+END
+CodecPool.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/CodecPool.java
+END
+HiveIgnoreKeyTextOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveIgnoreKeyTextOutputFormat.java
+END
+CombineHiveRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1038439/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/CombineHiveRecordReader.java
+END
+SymbolicInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1096907/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/SymbolicInputFormat.java
+END
+IOContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1096397/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/IOContext.java
+END
+HivePartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HivePartitioner.java
+END
+HiveRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1130427/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveRecordReader.java
+END
+ContentSummaryInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1069611/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/ContentSummaryInputFormat.java
+END
+DefaultHivePartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/DefaultHivePartitioner.java
+END
+HiveInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1130427/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveInputFormat.java
+END
+HiveOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveOutputFormat.java
+END
+SequenceFileInputFormatChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1084119/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/SequenceFileInputFormatChecker.java
+END
+BucketizedHiveRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1130427/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/BucketizedHiveRecordReader.java
+END
+HiveBinaryOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/HiveBinaryOutputFormat.java
+END
+NonSyncDataInputBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/NonSyncDataInputBuffer.java
+END
+NonSyncDataOutputBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/NonSyncDataOutputBuffer.java
+END
+RCFileInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1148921/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/RCFileInputFormat.java
+END
+BucketizedHiveInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/io/BucketizedHiveInputFormat.java
+END

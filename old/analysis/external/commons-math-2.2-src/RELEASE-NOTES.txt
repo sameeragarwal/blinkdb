@@ -1,0 +1,157 @@
+                        
+
+              Apache Commons Math 2.2 RELEASE NOTES
+
+This is primarily a maintenance release, but it also includes new features and enhancements.
+
+Users of version 2.1 are encouraged to upgrade to 2.2, as this release includes some important bug fixes.
+
+See the detailed list of changes below for full description of all bug fixes and enhancements.
+
+This release contains some minor compatibility breaks with version 2.1 in some internal classes but none
+ of them are in APIs likely to be accessed by user code:
+ the MessagesResources_fr class has been removed (replaced by a properties file);
+ the arguments of the EventState.reinitializeBegin method have changed;
+ some protected fields which already had public accessors in AbstractStepInterpolator have been replaced.
+
+There is a behavior change that users of the multiple regression classes should be aware of. In version
+2.1, there was no way to estimate models without intercept terms, and, while this was not clear from
+the documentation, design (X) matrices needed to include initial unitary columns.  In 2.2, initial 
+unitary columns are not necessary and whether or not models include intercept terms is configurable.
+See the change log and javadoc for the classes in org.apache.commons.math.stat.regression for details.
+
+The major new features are:
+ a new FastMath class, both faster, more accurate and with a few additional functions than StrictMath and Math;
+ a new package for floating point arbitrary precision computing, including high level functions like exponential, sine, square root ...;
+ new linear and tricubic interpolators;
+ a new Gaussian curve fitter;
+ a new erfc function;
+ characteristic support for distributions;
+ a set of new Well Equidistributed Long-period Linear (WELL) random generators.
+
+Changes in this version include:
+
+New features:
+o MATH-364:  Added complementary error function, erfc. Thanks to Christian Winter. 
+o MATH-385:  Added characteristic support to distributions, including methods to return numerical
+        estimates of the mean and variance and upper and lower bounds of support. In version 2.2,
+        methods returning distribution characteristics have been added only to the implementation
+        classes.  In version 3, supporting methods have been added to the abstract base classes
+        and distribution interfaces. 
+o MATH-440:  Created "MathUserException" class to convey cause of failure between
+        layers of user code separated by a layer of Commons-Math code. 
+o MATH-419:  Added new random number generators from the Well Equidistributed Long-period Linear (WELL). 
+o MATH-412:  Added the dfp library providing arbitrary precision floating point computation in the spirit of
+        IEEE 854-1987 (not exactly as it uses base 1000 instead of base 10). In addition to finite numbers,
+        infinities and NaNs are available (but there are no subnormals). All IEEE 854-1987 rounding modes and
+        signaling flags are supported. The available operations are +, -, *, / and the available functions
+        are sqrt, sin, cos, tan, asin, acos, atan, exp, log. Thanks to Bill Rossi. 
+o MATH-375:  Added faster and more accurate version of traditional mathematical functions in a FastMath
+        class intended to be a drop-in replacement for java.util.Math at source-level. Some functions
+        still directly delegates to Math but this will improve with time. Some functions like exp
+        may be twice as fast (even 3 times faster on some processors). Sine, cosine or power functions
+        show typical speedups of 1.5 times faster or more. Thanks to Bill Rossi. 
+o MATH-400:  Added support for Gaussian curve fitting. Thanks to J. Lewis Muir. 
+o MATH-388:  Added a feature allowing error estimation to be computed only on a subset of
+        Ordinary Differential Equations, considered as the main set, the remaining equations
+        being considered only as an extension set that should not influence the ODE integration
+        algorithm 
+o MATH-379:  Created "MultidimensionalCounter" class. 
+o MATH-378:  Implementation of linear interpolation. Thanks to Matthew Rowles. 
+o MATH-370:  Added new "equalsIncludingNaN" methods that have the same semantics as the old "equals" methods.
+        The semantics of the old methods will be modified (in the next major release) such that
+        NaNs are not considered equal (to be more compliant with IEEE754). 
+o MATH-366:  Implementation of tricubic interpolation. 
+
+Fixed Bugs:
+o MATH-505:  TestUtils is thread-hostile. Deprecate the getters and setters. 
+o MATH-471:  MathUtils.equals(double, double) does not work properly for floats
+        - add equivalent (float, float) methods and basic tests 
+o MATH-467:  Fixed an awkward statement that triggered a false positive warning. 
+o MATH-456:  Modified erf (and erfc) to return extreme values for x with abs(x) > 40.
+        For these arguments, the true value is indistinguishable from an extrema as a double. 
+o MATH-414:  Modified NormalDistributionImpl.cumulativeProbability to return 0 or 1,
+        respectively for values more than 40 standard deviations from the mean.
+        For these values, the actual probability is indistinguishable from 0 or 1
+        as a double.  Top coding improves performance for extreme values and prevents
+        convergence exceptions. 
+o MATH-380:  Deprecated the whole ode.jacobians package. It is clumsy and difficult to use. It will
+        be replaced by a completely rewritten implementation in 3.0, which will be more tightly
+        bound to the top level ode package 
+o MATH-426:  Added a normalization feature to transform samples so they have zero mean and unit standard deviation Thanks to Erik van Ingen. 
+o MATH-429:  Fixed k-means++ to add several strategies to deal with empty clusters that may appear
+        during iterations 
+o MATH-391:  Fixed an error preventing zero length vectors to be built by some constructors 
+o MATH-421:  Fixed an error preventing ODE solvers to be restarted after they have been stopped by a discrete event 
+o MATH-415:  Fixed lost cause in MathRuntimeException.createInternalError. Note that the message is still the default
+        message for internal errors asking to report a bug to commons-math JIRA tracker. In order to retrieve
+        the message from the root cause, one has to get the cause itself by getCause(). 
+o MATH-411:  Modified multiple regression newSample methods to ensure that by default in all cases,
+        regression models are estimated with intercept terms.  Prior to the fix for this issue, 
+        newXSampleData(double[][]), newSampleData(double[], double[][]) and
+        newSampleData(double[], double[][], double[][]) all required columns of "1's" to be inserted
+        into the x[][] arrays to create a model with an intercept term; while newSampleData(double[], int, int)
+        created a model including an intercept term without requiring the unitary column.  All methods have
+        been changed to eliminate the need for users to add unitary columns to specify regression models.
+        Users of OLSMultipleLinearRegression or GLSMultipleLinearRegression versions 2.0 or 2.1 should either
+        verify that their code either does not use the first set of data loading methods above or set the noIntercept
+        property to true on estimated models to get the previous behavior. 
+o MATH-386:  Added R-squared and adjusted R-squared statistics to OLSMultipleLinearRegression. 
+o MATH-392:  Corrected the formula used for Y variance returned by calculateYVariance and associated
+        methods in multiple regression classes (AbstractMultipleLinearRegression,
+        OLSMultipleLinearRegression, GLSMultipleLinearRegression).  These methods previously returned
+        estimates of the variance in the model error term.  New "calulateErrorVariance" methods have
+        been added to compute what was previously returned by calculateYVariance. Thanks to Mark Devaney. 
+o MATH-406:  Bug fixed in Levenberg-Marquardt (handling of weights). 
+o MATH-405:  Bug fixed in Levenberg-Marquardt (consistency of current). 
+o MATH-377:  Bug fixed in chi-square computation in AbstractLeastSquaresOptimizer. 
+o MATH-395:  Fixed several bugs in "BrentOptimizer". 
+o MATH-393:  Fixed inconsistency in return values in "MultiStartUnivariateRealOptimizer". 
+o MATH-382:  Fixed bug in precondition check (method "setMicrosphereElements"). 
+o MATH-361:  Improved localization of error messages. 
+o MATH-376:  Allow multiple optimizations with a default simplex. 
+o MATH-352:  Added a setQRRankingThreshold method to Levenberg-Marquardt optimizer to improve robustness
+        of rank determination. 
+o MATH-362:  Fixed Levenberg-Marquardt optimizer that did not use the vectorial convergence checker.
+        Now this optimizer can use either the general vectorial convergence checker or its own
+        specialized convergence settings. 
+o MATH-371:  Fixed loss of significance error in PersonsCorrelation p-value computation causing p-values
+        smaller than the machine epsilon (~1E-16) to be reported as 0. Thanks to Kevin Childs. 
+o MATH-369:  Fix NullPointerException in BisectionSolver.solve(f, min, max, initial) Thanks to Sasun Pundev. 
+o MATH-368:  Fix spelling of getSparcity [sic] method of OpenMapRealVector 
+o MATH-367:  Fix problem with the default sparseIterator when a RealVector has exactly one non-zero entry Thanks to Albert Huang. 
+
+Changes:
+o MATH-384:  Added a constructor and addValues(double[]) methods allowing DescriptiveStatistics to
+        be initialized with values from a double[] array.  Similarly enhanced 
+        ResizeableDoubleArray. 
+o MATH-448:  Added a getUniqueCount() method to Frequency to return the number of unique
+        values included in the frequency table. Thanks to Patrick Meyer. 
+o MATH-420:  Added toString() override to StatisticalSummaryValues. 
+o MATH-417:  Improved Percentile performance by using a selection algorithm instead of a
+        complete sort, and by allowing caching data array and pivots when several
+        different percentiles are desired 
+o MATH-409:  Made intercept / no intercept configurable in multiple regression classes. By default, regression
+        models are estimated with an intercept term.  When the "noIntercept" property is set to
+        true, regression models are estimated without intercepts. 
+o MATH-361:  Created package "exception" to contain the new exceptions hierarchy.
+        Created package "exception.util": utilities for the exception classes
+        (e.g. managing the localization of error messages).
+        Default policy for dealing with invalid null references: raise a
+        "NullArgumentException" (subclass of "IllegalArgumentException"). 
+o MATH-310:  Added random data generation methods to RandomDataImpl for the remaining distributions in the
+        distributions package. Added a generic nextInversionDeviate method that takes a discrete
+        or continuous distribution as argument and generates a random deviate from the distribution.
+        Also added sampling methods based on the implementations in RandomDataImpl to distributions. 
+o MATH-365:  Deprecated SmoothingBicubicSplineInterpolator and SmoothingBicubicSplineInterpolatorTest.
+        Added BicubicSplineInterpolator and BicubicSplineInterpolatorTest.
+        Added SmoothingPolynomialBicubicSplineInterpolator and SmoothingPolynomialBicubicSplineInterpolatorTest.
+        Added method to clear the list of observations in PolynomialFitter. 
+
+ 
+For complete information on Commons Math, including instructions on how to submit bug reports,
+patches, or suggestions for improvement, see the Apache Commons Math website:
+
+http://commons.apache.org/math/
+
+

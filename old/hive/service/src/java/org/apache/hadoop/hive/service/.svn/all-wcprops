@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1174892/hive/trunk/service/src/java/org/apache/hadoop/hive/service
+END
+HiveServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1174892/hive/trunk/service/src/java/org/apache/hadoop/hive/service/HiveServer.java
+END
+HiveClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/service/src/java/org/apache/hadoop/hive/service/HiveClient.java
+END
+HiveInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/service/src/java/org/apache/hadoop/hive/service/HiveInterface.java
+END

@@ -1,0 +1,60 @@
+From 35e3631376d0fd414c0544b677917137cc28ec6f Mon Sep 17 00:00:00 2001
+From: carl <carl@cloudera.com>
+Date: Wed, 3 Aug 2011 19:03:17 -0700
+Subject: [PATCH 47/51] HIVE-2342. Add archive.cloudera.com/hive-deps as backup for mirrors.facebook.net
+
+Reason: Provides redundancy for build in case mirrors.facebook.net goes down
+Author: Carl Steinbach
+Ref: CDH-3429
+---
+ build.properties    |    4 ++--
+ ivy/ivysettings.xml |    5 +++++
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/build.properties b/build.properties
+index a117382..508207a 100644
+--- a/build.properties
++++ b/build.properties
+@@ -11,7 +11,9 @@ javac.args=
+ javac.args.warnings=
+ 
+ hadoop.version=0.20.1
++hadoop.security.version=${hadoop.version}
+ hadoop.mirror=http://mirror.facebook.net/facebook/hive-deps
++hadoop.mirror2=http://archive.cloudera.com/hive-deps
+ 
+ build.dir.hive=${hive.root}/build
+ build.dir.hadoop=${build.dir.hive}/hadoopcore
+@@ -41,6 +43,4 @@ common.jar=${hadoop.root}/lib/commons-httpclient-3.0.1.jar
+ #
+ datanucleus.repo=http://www.datanucleus.org/downloads/maven2
+ 
+-# URLs pointing to a built tarball of a secure hadoop release
+-hadoop.security.version=${hadoop.version}
+ 
+diff --git a/ivy/ivysettings.xml b/ivy/ivysettings.xml
+index 73a7e28..ec17a3d 100644
+--- a/ivy/ivysettings.xml
++++ b/ivy/ivysettings.xml
+@@ -43,6 +43,10 @@
+       <artifact pattern="${hadoop.mirror}/hadoop/core/[artifact]-[revision]/[artifact]-[revision].[ext]" />
+     </url>
+ 
++    <url name="hadoop-source2">
++      <artifact pattern="${hadoop.mirror2}/hadoop/core/[artifact]-[revision]/[artifact]-[revision].[ext]" />
++    </url>
++
+     <!-- CDH build repo, the pattern attribute handles SNAPSHOT artifacts -->
+     <ibiblio name="reactor-repo" root="${reactor.repo}"
+              m2compatible="true"
+@@ -68,6 +72,7 @@
+     <chain name="default" dual="true" checkmodified="true" changingPattern=".*SNAPSHOT">
+       <resolver ref="reactor-repo"/>
+       <resolver ref="hadoop-source"/>
++      <resolver ref="hadoop-source2"/>
+       <resolver ref="apache-snapshot"/>
+       <resolver ref="maven2"/>
+       <resolver ref="datanucleus-repo"/>
+-- 
+1.7.0.4
+

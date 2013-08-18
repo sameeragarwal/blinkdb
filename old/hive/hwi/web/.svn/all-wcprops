@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/asf/!svn/ver/1159443/hive/trunk/hwi/web
+END
+error_page.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/error_page.jsp
+END
+show_databases.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/show_databases.jsp
+END
+show_table.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/show_table.jsp
+END
+set_processor.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/web/set_processor.jsp
+END
+session_manage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/web/session_manage.jsp
+END
+session_kill.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/session_kill.jsp
+END
+session_remove.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/web/session_remove.jsp
+END
+show_database.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/show_database.jsp
+END
+session_history.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/session_history.jsp
+END
+session_create.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/session_create.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/index.jsp
+END
+diagnostics.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/diagnostics.jsp
+END
+left_navigation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1159443/hive/trunk/hwi/web/left_navigation.jsp
+END
+view_file.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/view_file.jsp
+END
+authorize.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/authorize.jsp
+END
+session_diagnostics.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/session_diagnostics.jsp
+END
+session_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/web/session_list.jsp
+END
+session_result.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/web/session_result.jsp
+END

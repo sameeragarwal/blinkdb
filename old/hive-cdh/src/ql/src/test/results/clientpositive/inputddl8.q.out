@@ -1,0 +1,31 @@
+PREHOOK: query: CREATE TABLE INPUTDDL8 COMMENT 'This is a thrift based table'
+    PARTITIONED BY(ds STRING, country STRING)
+    CLUSTERED BY(aint) SORTED BY(lint) INTO 32 BUCKETS
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.thrift.ThriftDeserializer'
+    WITH SERDEPROPERTIES ('serialization.class' = 'org.apache.hadoop.hive.serde2.thrift.test.Complex',
+                          'serialization.format' = 'com.facebook.thrift.protocol.TBinaryProtocol')
+    STORED AS SEQUENCEFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE INPUTDDL8 COMMENT 'This is a thrift based table'
+    PARTITIONED BY(ds STRING, country STRING)
+    CLUSTERED BY(aint) SORTED BY(lint) INTO 32 BUCKETS
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.thrift.ThriftDeserializer'
+    WITH SERDEPROPERTIES ('serialization.class' = 'org.apache.hadoop.hive.serde2.thrift.test.Complex',
+                          'serialization.format' = 'com.facebook.thrift.protocol.TBinaryProtocol')
+    STORED AS SEQUENCEFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@INPUTDDL8
+PREHOOK: query: DESCRIBE EXTENDED INPUTDDL8
+PREHOOK: type: DESCTABLE
+POSTHOOK: query: DESCRIBE EXTENDED INPUTDDL8
+POSTHOOK: type: DESCTABLE
+aint	int	from deserializer
+astring	string	from deserializer
+lint	array<int>	from deserializer
+lstring	array<string>	from deserializer
+lintstring	array<org.apache.hadoop.hive.serde2.thrift.test.IntString>	from deserializer
+mstringstring	map<string,string>	from deserializer
+ds	string	
+country	string	
+	 	 
+Detailed Table Information	Table(tableName:inputddl8, dbName:default, owner:thiruvel, createTime:1286797863, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[], location:pfile:/home/thiruvel/projects/hive/hive.unsecure/build/ql/test/data/warehouse/inputddl8, inputFormat:org.apache.hadoop.mapred.SequenceFileInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat, compressed:false, numBuckets:32, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.thrift.ThriftDeserializer, parameters:{serialization.class=org.apache.hadoop.hive.serde2.thrift.test.Complex, serialization.format=com.facebook.thrift.protocol.TBinaryProtocol}), bucketCols:[aint], sortCols:[Order(col:lint, order:1)], parameters:{}), partitionKeys:[FieldSchema(name:ds, type:string, comment:null), FieldSchema(name:country, type:string, comment:null)], parameters:{transient_lastDdlTime=1286797863, comment=This is a thrift based table}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	

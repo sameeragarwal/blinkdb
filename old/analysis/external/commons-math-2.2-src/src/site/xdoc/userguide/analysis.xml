@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+  
+<?xml-stylesheet type="text/xsl" href="./xdoc.xsl"?>
+<!-- $Revision: 937545 $ $Date: 2010-04-24 00:33:37 +0200 (sam. 24 avril 2010) $ -->
+<document url="analysis.html">
+  <properties>
+    <title>The Commons Math User Guide - Numerical Analysis</title>
+  </properties>
+  <body>
+    <section name="4 Numerical Analysis">
+      <subsection name="4.1 Overview" href="overview">
+        <p>
+         The analysis package is the parent package for algorithms dealing with
+         real-valued functions of one real variable. It contains dedicated sub-packages
+         providing numerical root-finding, integration, and interpolation. It also
+         contains a polynomials sub-package that considers polynomials with real
+         coefficients as differentiable real functions.
+        </p>
+        <p>
+         Functions interfaces are intended to be implemented by user code to represent
+         their domain problems. The algorithms provided by the library will then operate
+         on these function to find their roots, or integrate them, or ... Functions can
+         be multivariate or univariate, real vectorial or matrix valued, and they can be
+         differentiable or not.
+        </p>
+        <p>
+          Possible future additions may include numerical differentiation.
+        </p>
+      </subsection>
+      <subsection name="4.2 Root-finding" href="rootfinding">
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/analysis/solvers/UnivariateRealSolver.html">
+          UnivariateRealSolver</a> provides the means to find roots of
+          <a href="../apidocs/org/apache/commons/math/analysis/UnivariateRealFunction.html">univariate real-valued functions</a>.
+          A root is the value where the function takes the value 0.  Commons-Math
+          includes implementations of the following root-finding algorithms: <ul>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/BisectionSolver.html">
+          Bisection</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/BrentSolver.html">
+          Brent-Dekker</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/NewtonSolver.html">
+          Newton's Method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/SecantSolver.html">
+          Secant Method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/MullerSolver.html">
+          Muller's Method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/LaguerreSolver.html">
+          Laguerre's Method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/solvers/RidderSolver.html">
+          Ridder's Method</a></li>
+          </ul>      
+        </p>
+        <p>
+          There are numerous non-obvious traps and pitfalls in root finding.
+          First, the usual disclaimers due to the way real world computers
+          calculate values apply.  If the computation of the function provides
+          numerical instabilities, for example due to bit cancellation, the root
+          finding algorithms may behave badly and fail to converge or even
+          return bogus values. There will not necessarily be an indication that
+          the computed root is way off the true value.  Secondly, the root finding
+          problem itself may be inherently ill-conditioned.  There is a
+           "domain of indeterminacy", the interval for which the function has
+          near zero absolute values around the true root,  which may be large.
+          Even worse, small problems like roundoff error may cause the function
+          value to "numerically oscillate" between negative and positive values.
+          This may again result in roots way off the true value, without
+          indication.  There is not much a generic algorithm can do if
+          ill-conditioned problems are met.  A way around this is to transform
+          the problem in order to get a better conditioned function.  Proper 
+          selection of a root-finding algorithm and its configuration parameters
+          requires knowledge of the analytical properties of the function under
+          analysis and numerical analysis techniques.  Users are encouraged
+          to consult a numerical analysis text (or a numerical analyst) when
+          selecting and configuring a solver.
+        </p>
+        <p>
+          In order to use the root-finding features, first a solver object must
+          be created.  It is encouraged that all solver object creation occurs
+          via the <a href="../apidocs/org/apache/commons/math/analysis/solvers/UnivariateRealSolverFactory.html">
+          UnivariateRealSolverFactory</a> class. <code>UnivariateRealSolverFactory</code>
+          is a simple factory used to create all of the solver objects supported by
+          Commons-Math.  
+          The typical usage of <code>UnivariateRealSolverFactory</code> to create a
+          solver object would be:
+        </p>
+        <source>UnivariateRealSolverFactory factory = UnivariateRealSolverFactory.newInstance();
+UnivariateRealSolver solver = factory.newDefaultSolver();</source>
+        <p>
+          The solvers that can be instantiated via the 
+          <code>UnivariateRealSolverFactory</code> are detailed below:
+          <table>
+            <tr><th>Solver</th><th>Factory Method</th><th>Notes on Use</th></tr>
+            <tr><td>Bisection</td><td>newBisectionSolver</td><td><div>Root must be
+                  bracketted.</div><div>Linear, guaranteed convergence</div></td></tr>
+            <tr><td>Brent</td><td>newBrentSolver</td><td><div>Root must be bracketted.</div>
+                <div>Super-linear, guaranteed convergence</div></td></tr>
+            <tr><td>Newton</td><td>newNewtonSolver</td><td><div>Uses single value for
+                  initialization.</div><div>Super-linear, non-guaranteed convergence</div>
+                <div>Function must be differentiable</div></td></tr>
+            <tr><td>Secant</td><td>newSecantSolver</td><td><div>Root must be bracketted.</div>
+                <div>Super-linear, non-guaranteed convergence</div></td></tr>
+            <tr><td>Muller</td><td>newMullerSolver</td><td><div>Root must be bracketted.</div>
+                <div>We restrict ourselves to real valued functions, not complex ones</div>
+            </td></tr>
+            <tr><td>Laguerre</td><td>newLaguerreSolver</td><td><div>Root must be bracketted.</div>
+                <div>Function must be a polynomial</div></td></tr>
+            <tr><td>Ridder</td><td>newRidderSolver</td><td><div>Root must be bracketted.</div>
+                <div></div></td></tr>
+          </table>
+        </p>
+        <p>
+          Using a solver object, roots of functions are easily found using the <code>solve</code>
+          methods.  For a function <code>f</code>, and two domain values, <code>min</code> and
+          <code>max</code>, <code>solve</code> computes a value <code>c</code> such that:
+          <ul>
+            <li><code>f(c) = 0.0</code> (see "function value accuracy")</li>
+            <li><code>min &lt;= c &lt;= max</code></li>
+          </ul>
+        </p>
+        <p>
+          Typical usage:
+        </p>
+        <source>UnivariateRealFunction function = // some user defined function object
+UnivariateRealSolverFactory factory = UnivariateRealSolverFactory.newInstance();
+UnivariateRealSolver solver = factory.newBisectionSolver();
+double c = solver.solve(function, 1.0, 5.0);</source>
+        <p>
+          The <code>BrentSolve</code> uses the Brent-Dekker algorithm which is
+          fast and robust.  This algorithm is recommended for most users and  the 
+          <code>BrentSolver</code> is the default solver provided by the 
+          <code>UnivariateRealSolverFactory</code>.  If there are multiple roots
+          in the interval, or there is a large domain of indeterminacy, the
+          algorithm will converge to a random root in the interval without
+          indication that there are problems.  Interestingly, the examined text
+          book implementations all disagree in details of the convergence
+          criteria.  Also each implementation had problems for one of the test
+          cases, so the expressions had to be fudged further. Don't expect to
+          get exactly the same root values as for other implementations of this
+          algorithm.
+        </p>
+        <p>
+          The <code>SecantSolver</code> uses a variant of the well known secant
+          algorithm.  It may be a bit faster than the Brent solver for a class
+          of well-behaved functions.
+        </p>
+        <p>
+          The <code>BisectionSolver</code> is included for completeness and for
+          establishing a fall back in cases of emergency.  The algorithm is
+          simple, most likely bug free and guaranteed to converge even in very
+          adverse circumstances which might cause other algorithms to
+          malfunction.  The drawback is of course that it is also guaranteed
+          to be slow.
+        </p>
+        <p>
+          The <code>UnivariateRealSolver</code> interface exposes many
+          properties to control the convergence of a solver.  For the most part,
+          these properties should not have to change from their default values
+          to produce good results.  In the circumstances where changing these
+          property values is needed, it is easily done through getter and setter
+          methods on <code>UnivariateRealSolver</code>:
+          <table>
+            <tr><th>Property</th><th>Methods</th><th>Purpose</th></tr>
+            <tr>
+              <td>Absolute accuracy</td>
+              <td>
+                <div>getAbsoluteAccuracy</div>
+                <div>resetAbsoluteAccuracy</div>
+                <div>setAbsoluteAccuracy</div>
+              </td>
+              <td>
+                The Absolute Accuracy is (estimated) maximal difference between
+                the computed root and the true root of the function.  This is
+                what most people think of as "accuracy" intuitively.  The default
+                value is chosen as a sane value for most real world problems,
+                for roots in the range from -100 to +100.  For accurate
+                computation of roots near zero, in the range form -0.0001 to
+                 +0.0001, the value may be decreased.  For computing roots
+                much larger in absolute value than 100, the default absolute
+                accuracy may never be reached because the given relative
+                accuracy is reached first.  
+              </td>
+            </tr>
+              <tr>
+              <td>Relative accuracy</td>
+              <td>
+                <div>getRelativeAccuracy</div>
+                <div>resetRelativeAccuracy</div>
+                <div>setRelativeAccuracy</div>
+              </td>
+              <td>
+                The Relative Accuracy is the maximal difference between the
+                computed root and the true root, divided by the maximum of the
+                absolute values of the numbers. This accuracy measurement is
+                better suited for numerical calculations with computers, due to
+                the way floating point numbers are represented.  The default
+                value is chosen so that algorithms will get a result even for
+                roots with large absolute values, even while it may be
+                impossible to reach the given absolute accuracy.
+              </td>
+            </tr>
+            <tr>
+              <td>Function value accuracy</td>
+              <td>
+                <div>getFunctionValueAccuracy</div>
+                <div>resetFunctionValueAccuracy</div>
+                <div>setFunctionValueAccuracy</div>
+              </td>
+              <td>
+                This value is used by some algorithms in order to prevent
+                numerical instabilities. If the function is evaluated to an
+                absolute value smaller than the Function Value Accuracy, the
+                algorithms assume they hit a root and return the value
+                immediately.  The default value is a "very small value".  If the
+                goal is to get a near zero function value rather than an accurate
+                root, computation may be sped up by setting this value
+                appropriately.
+              </td>
+            </tr>
+            <tr>
+              <td>Maximum iteration count</td>
+              <td>
+                <div>getMaximumIterationCount</div>
+                <div>resetMaximumIterationCount</div>
+                <div>setMaximumIterationCount</div>
+              </td>
+              <td>
+                This is the maximal number of iterations the algorithm will try.
+                If this number is exceeded, non-convergence is assumed and a
+                <code>ConvergenceException</code> exception is thrown.  The
+                default value is 100, which should be plenty, given that a
+                bisection algorithm can't get any more accurate after 52 
+                iterations because of the number of mantissa bits in a double
+                precision floating point number. If a number of ill-conditioned
+                problems is to be solved, this number can be decreased in order
+                to avoid wasting time.
+              </td>
+            </tr>
+          </table>
+        </p>
+      </subsection>
+      <subsection name="4.3 Interpolation" href="interpolation">
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/analysis/interpolation/UnivariateRealInterpolator.html">
+          UnivariateRealInterpolator</a> is used to find a univariate real-valued
+          function <code>f</code> which for a given set of ordered pairs 
+          (<code>x<sub>i</sub></code>,<code>y<sub>i</sub></code>) yields
+          <code>f(x<sub>i</sub>)=y<sub>i</sub></code> to the best accuracy possible. The result
+          is provided as an object implementing the <a
+          href="../apidocs/org/apache/commons/math/analysis/UnivariateRealFunction.html">
+          UnivariateRealFunction</a> interface. It can therefore be evaluated at any point,
+          including point not belonging to the original set.
+          Currently, only an interpolator for generating natural cubic splines and a polynomial
+          interpolator are available.  There is no interpolator factory, mainly because the
+          interpolation algorithm is more determined by the kind of the interpolated function
+          rather than the set of points to interpolate.
+          There aren't currently any accuracy controls either, as interpolation
+          accuracy is in general determined by the algorithm. 
+        </p>
+        <p>Typical usage:</p>
+        <source>double x[] = { 0.0, 1.0, 2.0 };
+double y[] = { 1.0, -1.0, 2.0);
+UnivariateRealInterpolator interpolator = new SplineInterpolator();
+UnivariateRealFunction function = interpolator.interpolate(x, y);
+double interpolationX = 0.5;
+double interpolatedY = function.evaluate(x);
+System.out println("f(" + interpolationX + ") = " + interpolatedY);</source>
+        <p>
+          A natural cubic spline is a function consisting of a polynomial of
+          third degree for each subinterval determined by the x-coordinates of the
+          interpolated points.  A function interpolating <code>N</code>
+          value pairs consists of <code>N-1</code> polynomials. The function
+          is continuous, smooth and can be differentiated twice.  The second
+          derivative is continuous but not smooth.  The x values passed to the
+          interpolator must be ordered in ascending order.  It is not valid to
+          evaluate the function for values outside the range 
+          <code>x<sub>0</sub></code>..<code>x<sub>N</sub></code>.
+        </p>
+        <p>
+          The polynomial function returned by the Neville's algorithm is a single
+          polynomial guaranteed to pass exactly through the interpolation points.
+          The degree of the polynomial is the number of points minus 1 (i.e. the
+          interpolation polynomial for a three points set will be a quadratic
+          polynomial). Despite the fact the interpolating polynomials is a perfect
+          approximation of a function at interpolation points, it may be a loose
+          approximation between the points. Due to <a
+          href="http://en.wikipedia.org/wiki/Runge's_phenomenon">Runge's phenomenom</a>
+          the error can get worse as the degree of the polynomial increases, so
+          adding more points does not always lead to a better interpolation.
+        </p>
+        <p>
+          Loess (or Lowess) interpolation is a robust interpolation useful for
+          smoothing univariate scaterplots. It has been described by William
+          Cleveland in his 1979 seminal paper <a
+          href="http://www.math.tau.ac.il/~yekutiel/MA%20seminar/Cleveland%201979.pdf">Robust
+          Locally Weighted Regression and Smoothing Scatterplots</a>. This kind of
+          interpolation is computationally intensive but robust.
+        </p>
+        <p>
+          Microsphere interpolation is a robust multidimensional interpolation algorithm.
+          It has been described in William Dudziak's <a
+          href="http://www.dudziak.com/microsphere.pdf">MS thesis</a>.
+        </p>
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/analysis/interpolation/BivariateRealGridInterpolator.html">
+          BivariateRealGridInterpolator</a> is used to find a bivariate real-valued
+          function <code>f</code> which for a given set of tuples
+          (<code>x<sub>i</sub></code>,<code>y<sub>j</sub></code>,<code>f<sub>ij</sub></code>)
+          yields <code>f(x<sub>i</sub>,y<sub>j</sub>)=f<sub>ij</sub></code> to the best accuracy
+          possible. The result is provided as an object implementing the
+          <a href="../apidocs/org/apache/commons/math/analysis/BivariateRealFunction.html">
+          BivariateRealFunction</a> interface. It can therefore be evaluated at any point,
+          including a point not belonging to the original set.
+          The arrays <code>x<sub>i</sub></code> and <code>y<sub>j</sub></code> must be
+          sorted in increasing order in order to define a two-dimensional grid.
+        </p>
+        <p>
+          In <a href="http://en.wikipedia.org/wiki/Bicubic_interpolation">bicubic interpolation</a>,
+          the interpolation function is a 3rd-degree polynomial of two variables. The coefficients
+          are computed from the function values sampled on a grid, as well as the values of the
+          partial derivatives of the function at those grid points.
+          From two-dimensional data sampled on a grid, the
+          <a href="../apidocs/org/apache/commons/math/analysis/interpolation/BicubicSplineInterpolator.html">
+          BicubicSplineInterpolator</a> computes a
+          <a href="../apidocs/org/apache/commons/math/analysis/interpolation/BicubicSplineInterpolatingFunction.html">
+          bicubic interpolating function</a>.
+          Prior to computing an interpolating function, the
+          <a href="../apidocs/org/apache/commons/math/analysis/interpolation/SmoothingPolynomialBicubicSplineInterpolator.html">
+          SmoothingPolynomialBicubicSplineInterpolator</a> class performs smoothing of
+          the data by computing the polynomial that best fits each of the one-dimensional
+          curves along each of the coordinate axes.
+        </p>
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/analysis/interpolation/TrivariateRealGridInterpolator.html">
+          TrivariateRealGridInterpolator</a> is used to find a trivariate real-valued
+          function <code>f</code> which for a given set of tuples
+          (<code>x<sub>i</sub></code>,<code>y<sub>j</sub></code>,<code>z<sub>k</sub></code>,
+          <code>f<sub>ijk</sub></code>)
+          yields <code>f(x<sub>i</sub>,y<sub>j</sub>,z<sub>k</sub>)=f<sub>ijk</sub></code>
+          to the best accuracy possible. The result is provided as an object implementing the
+          <a href="../apidocs/org/apache/commons/math/analysis/TrivariateRealFunction.html">
+          TrivariateRealFunction</a> interface. It can therefore be evaluated at any point,
+          including a point not belonging to the original set.
+          The arrays <code>x<sub>i</sub></code>, <code>y<sub>j</sub></code> and
+          <code>z<sub>k</sub></code> must be sorted in increasing order in order to define
+          a three-dimensional grid.
+        </p>
+        <p>
+          In <a href="http://en.wikipedia.org/wiki/Tricubic_interpolation">tricubic interpolation</a>,
+          the interpolation function is a 3rd-degree polynomial of three variables. The coefficients
+          are computed from the function values sampled on a grid, as well as the values of the
+          partial derivatives of the function at those grid points.
+          From three-dimensional data sampled on a grid, the
+          <a href="../apidocs/org/apache/commons/math/analysis/interpolation/TricubicSplineInterpolator.html">
+          TricubicSplineInterpolator</a> computes a
+          <a href="../apidocs/org/apache/commons/math/analysis/interpolation/TricubicSplineInterpolatingFunction.html">
+          tricubic interpolating function</a>.
+        </p>
+      </subsection>
+      <subsection name="4.4 Integration" href="integration">
+        <p>
+          A <a href="../apidocs/org/apache/commons/math/analysis/integration/UnivariateRealIntegrator.html">
+          UnivariateRealIntegrator</a> provides the means to numerically integrate
+          <a href="../apidocs/org/apache/commons/math/analysis/UnivariateRealFunction.html">
+          univariate real-valued functions</a>.
+          Commons-Math includes implementations of the following integration algorithms: <ul>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/integration/RombergIntegrator.html">
+          Romberg's method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/integration/SimpsonIntegrator.html">
+          Simpson's method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/integration/TrapezoidIntegrator.html">
+          trapezoid method</a></li>
+          <li><a href="../apidocs/org/apache/commons/math/analysis/integration/LegendreGaussIntegrator.html">
+          Legendre-Gauss method</a></li>
+          </ul>      
+        </p>
+      </subsection>
+      <subsection name="4.5 Polynomials" href="polynomials">
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/analysis/polynomials/package-summary.html">
+          org.apache.commons.math.analysis.polynomials</a> package provides real
+          coefficients polynomials.
+        </p>
+        <p>
+          The <a href="../apidocs/org/apache/commons/math/analysis/polynomials/PolynomialFunction.html">
+          PolynomialFunction</a> class is the most general one, using traditional
+          coefficients arrays. The
+          <a href="../apidocs/org/apache/commons/math/analysis/polynomials/PolynomialsUtils.html">
+          PolynomialsUtils</a> utility class provides static factory methods to build
+          Chebyshev, Hermite, Lagrange and Legendre polynomials. Coefficients are
+          computed using exact fractions so these factory methods can build polynomials
+          up to any degree.
+        </p>
+      </subsection>
+    </section>
+  </body>
+</document>

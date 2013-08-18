@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization
+END
+PrivilegeRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/PrivilegeRegistry.java
+END
+PrivilegeScope.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/PrivilegeScope.java
+END
+HiveAuthorizationProviderBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/HiveAuthorizationProviderBase.java
+END
+Privilege.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/Privilege.java
+END
+HiveAuthorizationProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/1057999/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/HiveAuthorizationProvider.java
+END
+DefaultHiveAuthorizationProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/asf/!svn/ver/1071529/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/DefaultHiveAuthorizationProvider.java
+END

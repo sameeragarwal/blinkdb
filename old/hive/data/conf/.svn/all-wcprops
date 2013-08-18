@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/asf/!svn/ver/1072517/hive/trunk/data/conf
+END
+hive-log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/data/conf/hive-log4j.properties
+END
+hive-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1072517/hive/trunk/data/conf/hive-site.xml
+END

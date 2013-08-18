@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.    
+-->
+
+<!-- start the processing -->
+    <!-- ====================================================================== -->
+    <!-- GENERATED FILE, DO NOT EDIT, EDIT THE XML FILE IN xdocs INSTEAD! -->
+    <!-- Main Page Section -->
+    <!-- ====================================================================== -->
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+                                                    <meta name="author" value="Hadoop Hive Documentation Team">
+            <meta name="email" value="hive-user@hadoop.apache.org">
+            
+           
+                                    
+                        
+            <title>Hadoop Hive - Hadoop Hive- Variable Substitution</title>
+
+									<link rel="stylesheet" href="../site.css" type="text/css">
+        </head>
+
+        <body>
+
+			
+			<div id="container">
+
+				<div id="header">
+					
+<div id="logo1">
+	<a href="http://hadoop.apache.org/hive/"><img src="../images/hive-logo.jpg" border="0"/></a>
+</div>
+
+
+
+<div id="logo2">
+
+<a href="http://hadoop.apache.org/hive"><img src="../images/hive-logo.jpg" alt="Hadoop Hive" border="0"/></a>
+
+</div>
+
+				</div>
+
+				<div id="menu">
+					
+    <!-- ============================================================ -->
+
+            	<div class="menusection">
+    		<span class="menuheader">Hadoop hive</span>
+			<ul>
+							<li>    <a href="../index.html">General</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Hive Language Manual</span>
+			<ul>
+							<li>    <a href="../language_manual/data-manipulation-statements.html">Data Manipulation Statements</a>
+</li>
+							<li>    <a href="../language_manual/joins.html">Joins</a>
+</li>
+							<li>    <a href="../language_manual/cli.html">Cli</a>
+</li>
+							<li>    <a href="../language_manual/var_substitution.html">Var Substitution</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Developer Guide</span>
+			<ul>
+							<li>    <a href="https://issues.apache.org/jira/browse/HIVE">Issue Tracking (JIRA)</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">User Defined Functions</span>
+			<ul>
+							<li>    <a href="../udf/reflect.html">reflect</a>
+</li>
+						</ul>
+        </div>
+    				</div>
+
+				<div id="body">
+																	<a name="Introduction"></a>
+	<h1>Introduction</h1>
+
+	<div class="subsection">
+														<p>Hive is used for both interactive queries as well as part. The hive variable substitution mechanism was 
+designed to avoid some of the code that was getting baked into the scripting language ontop of hive. For example:</p>
+																			<div class="source">$ a=b
+$ hive -e &quot; describe $a &quot;
+</pre></div>
+																			<p>
+are becoming common place. This is frustrating as hive becomes closely coupled with scripting languages. The hive
+startup time of a couple seconds is non-trivial when doing thousands of manipulations multiple hive -e invocations.</p>
+																			<p>
+Hive Variables combine the set capability you know and love with some limited yet powerful (evil laugh) substitution 
+ability. For example:</p>
+																			<div class="source">$ bin/hive -hiveconf a=b -e 'set a; set hiveconf:a; \
+create table if not exists b (col int); describe ${hiveconf:a}'
+</pre></div>
+																			<p>Results in:</p>
+																			<div class="source">Hive history file=/tmp/edward/hive_job_log_edward_201011240906_1463048967.txt
+a=b
+hiveconf:a=b
+OK
+Time taken: 5.913 seconds
+OK
+col	int	
+Time taken: 0.754 seconds
+</pre></div>
+								</div>
+												<a name="using_variables"></a>
+	<h1>Using variables</h1>
+
+	<div class="subsection">
+														<p>There are three namespaces for variables hiveconf,system, and env. hiveconf variables are set as normal:</p>
+																			<div class="source">set x=myvalue
+</pre></div>
+																			<p>However they are retrieved using</p>
+																			<div class="source">${hiveconf:x}
+</pre></div>
+																			<p>Annotated examples of usage from the test case ql/src/test/queries/clientpositive/set_processor_namespaces.q</p>
+																			<div class="source">set zzz=5;
+--  sets zzz=5
+set zzz;
+
+set system:xxx=5;
+set system:xxx;
+-- sets a system property xxx to 5
+
+set system:yyy=${system:xxx};
+set system:yyy;
+-- sets yyy with value of xxx
+
+set go=${hiveconf:zzz};
+set go;
+-- sets go base on value on zzz
+
+set hive.variable.substitute=false;
+set raw=${hiveconf:zzz};
+set raw;
+-- disable substitution set a value to the literal
+
+set hive.variable.substitute=true;
+
+EXPLAIN SELECT * FROM src where key=${hiveconf:zzz};
+SELECT * FROM src where key=${hiveconf:zzz};
+--use a variable in a query
+
+set a=1;
+set b=a;
+set c=${hiveconf:${hiveconf:b}};
+set c;
+--uses nested variables. 
+
+
+set jar=../lib/derby.jar;
+
+add file ${hiveconf:jar};
+list file;
+delete file ${hiveconf:jar};
+list file;
+</pre></div>
+								</div>
+												<a name="disable"></a>
+	<h1>Disabling</h1>
+
+	<div class="subsection">
+														<p>Variable substitution is on by default. If this causes an issue with an already existing script disable it.</p>
+																			<div class="source">set hive.variable.substitute=false;
+</pre></div>
+								</div>
+									</div>
+
+				<div id="footer">
+					Copyright &#169; 1999-2007, <a href="http://www.apache.org/">The Apache Software Foundation</a>.
+				</div>
+
+			</div>
+
+        </body>
+    </html>
+<!-- end the processing -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

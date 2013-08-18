@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive
+END
+LazyVoidObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyVoidObjectInspector.java
+END
+LazyByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyByteObjectInspector.java
+END
+LazyTimestampObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyTimestampObjectInspector.java
+END
+LazyBinaryObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyBinaryObjectInspector.java
+END
+LazyFloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyFloatObjectInspector.java
+END
+LazyStringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyStringObjectInspector.java
+END
+LazyDoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyDoubleObjectInspector.java
+END
+LazyIntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyIntObjectInspector.java
+END
+AbstractPrimitiveLazyObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/AbstractPrimitiveLazyObjectInspector.java
+END
+LazyBooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyBooleanObjectInspector.java
+END
+LazyLongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyLongObjectInspector.java
+END
+LazyShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyShortObjectInspector.java
+END
+LazyPrimitiveObjectInspectorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/lazy/objectinspector/primitive/LazyPrimitiveObjectInspectorFactory.java
+END

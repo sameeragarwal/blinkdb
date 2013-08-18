@@ -1,0 +1,93 @@
+PREHOOK: query: DROP TABLE covar_tab
+PREHOOK: type: DROPTABLE
+POSTHOOK: query: DROP TABLE covar_tab
+POSTHOOK: type: DROPTABLE
+PREHOOK: query: CREATE TABLE covar_tab (a INT, b INT, c INT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE covar_tab (a INT, b INT, c INT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@covar_tab
+PREHOOK: query: LOAD DATA LOCAL INPATH '../data/files/covar_tab.txt' OVERWRITE
+INTO TABLE covar_tab
+PREHOOK: type: LOAD
+POSTHOOK: query: LOAD DATA LOCAL INPATH '../data/files/covar_tab.txt' OVERWRITE
+INTO TABLE covar_tab
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@covar_tab
+PREHOOK: query: DESCRIBE FUNCTION covar_pop
+PREHOOK: type: DESCFUNCTION
+POSTHOOK: query: DESCRIBE FUNCTION covar_pop
+POSTHOOK: type: DESCFUNCTION
+covar_pop(x,y) - Returns the population covariance of a set of number pairs
+PREHOOK: query: DESCRIBE FUNCTION EXTENDED covar_pop
+PREHOOK: type: DESCFUNCTION
+POSTHOOK: query: DESCRIBE FUNCTION EXTENDED covar_pop
+POSTHOOK: type: DESCFUNCTION
+covar_pop(x,y) - Returns the population covariance of a set of number pairs
+The function takes as arguments any pair of numeric types and returns a double.
+Any pair with a NULL is ignored. If the function is applied to an empty set, NULL
+will be returned. Otherwise, it computes the following:
+   (SUM(x*y)-SUM(x)*SUM(y)/COUNT(x,y))/COUNT(x,y)
+where neither x nor y is null.
+PREHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a < 1
+PREHOOK: type: QUERY
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-35_725_9220435062879687360/-mr-10000
+POSTHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a < 1
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-35_725_9220435062879687360/-mr-10000
+NULL
+PREHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a < 3
+PREHOOK: type: QUERY
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-39_060_5804491211864153160/-mr-10000
+POSTHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a < 3
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-39_060_5804491211864153160/-mr-10000
+NULL
+PREHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a = 3
+PREHOOK: type: QUERY
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-43_110_8178433514900125768/-mr-10000
+POSTHOOK: query: SELECT covar_pop(b, c) FROM covar_tab WHERE a = 3
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-43_110_8178433514900125768/-mr-10000
+0.0
+PREHOOK: query: SELECT a, covar_pop(b, c) FROM covar_tab GROUP BY a ORDER BY a
+PREHOOK: type: QUERY
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-46_833_2681562938221634943/-mr-10000
+POSTHOOK: query: SELECT a, covar_pop(b, c) FROM covar_tab GROUP BY a ORDER BY a
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-46_833_2681562938221634943/-mr-10000
+1	NULL
+2	NULL
+3	0.0
+4	0.0
+5	0.0
+6	0.0
+PREHOOK: query: SELECT covar_pop(b, c) FROM covar_tab
+PREHOOK: type: QUERY
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-54_062_1334234285764687063/-mr-10000
+POSTHOOK: query: SELECT covar_pop(b, c) FROM covar_tab
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: file:/tmp/njain/hive_2010-08-17_01-00-54_062_1334234285764687063/-mr-10000
+3.624999999999999
+PREHOOK: query: DROP TABLE covar_tab
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@covar_tab
+PREHOOK: Output: default@covar_tab
+POSTHOOK: query: DROP TABLE covar_tab
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@covar_tab
+POSTHOOK: Output: default@covar_tab

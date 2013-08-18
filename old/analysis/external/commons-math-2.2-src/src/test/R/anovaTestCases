@@ -1,0 +1,72 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate Binomial distribution tests in
+# org.apache.commons.math.distribution.BinomialDistributionTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+# anova(model) <- anova
+# lm(frame) <- linear model
+#------------------------------------------------------------------------------
+tol <- 1E-12                       # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+options(digits=16)				  # override number of digits displayed
+
+# function to verify anova computations
+
+verifyAnova <- function(frame, expectedP, expectedF, frameName) {
+    a <- anova(lm(frame))
+    p <- a$"Pr(>F)"[1]
+    f <- a$"F value"[1]
+    output <- c("P-value test frame = ", frameName)
+    if (assertEquals(expectedP,p,tol,"P value")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }  
+    output <- c("F-value test frame = ", frameName)
+    if (assertEquals(expectedF,f,tol,"F value")) {
+        displayPadded(output, SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(output, FAILED, WIDTH)
+    }           
+}
+
+#--------------------------------------------------------------------------
+cat("Anova test cases\n")
+classA <- c(93.0, 103.0, 95.0, 101.0, 91.0, 105.0, 96.0, 94.0, 101.0)
+classB <- c(99.0, 92.0, 102.0, 100.0, 102.0, 89.0)
+classC <- c(110.0, 115.0, 111.0, 117.0, 128.0, 117.0)
+
+threeClasses = data.frame(val = c(classA, classB, classC),
+class=c(rep("classA", length(classA)),
+        rep("classB", length(classB)),
+        rep("classC", length(classC))))
+
+verifyAnova(threeClasses,6.959446e-06,  24.67361709460624, "Three classes") 
+
+twoClasses = data.frame(val = c(classA, classB),
+class=c(rep("classA", length(classA)), rep("classB", length(classB))))
+verifyAnova(twoClasses, 0.904212960464, 0.0150579150579, "Two classes")
+
+displayDashes(WIDTH)

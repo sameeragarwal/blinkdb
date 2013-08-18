@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive
+END
+JavaBooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaBooleanObjectInspector.java
+END
+SettableShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableShortObjectInspector.java
+END
+SettableLongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableLongObjectInspector.java
+END
+WritableConstantBooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantBooleanObjectInspector.java
+END
+WritableIntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableIntObjectInspector.java
+END
+AbstractPrimitiveWritableObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/AbstractPrimitiveWritableObjectInspector.java
+END
+SettableByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableByteObjectInspector.java
+END
+SettableTimestampObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableTimestampObjectInspector.java
+END
+SettableFloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableFloatObjectInspector.java
+END
+SettableStringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableStringObjectInspector.java
+END
+WritableVoidObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableVoidObjectInspector.java
+END
+LongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/LongObjectInspector.java
+END
+ShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/ShortObjectInspector.java
+END
+JavaShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaShortObjectInspector.java
+END
+JavaLongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaLongObjectInspector.java
+END
+ByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/ByteObjectInspector.java
+END
+TimestampObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/TimestampObjectInspector.java
+END
+WritableConstantLongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantLongObjectInspector.java
+END
+WritableConstantShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantShortObjectInspector.java
+END
+WritableDoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableDoubleObjectInspector.java
+END
+JavaTimestampObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaTimestampObjectInspector.java
+END
+FloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/FloatObjectInspector.java
+END
+JavaByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaByteObjectInspector.java
+END
+StringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/StringObjectInspector.java
+END
+JavaFloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaFloatObjectInspector.java
+END
+WritableConstantByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantByteObjectInspector.java
+END
+SettableBinaryObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableBinaryObjectInspector.java
+END
+JavaStringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaStringObjectInspector.java
+END
+WritableBooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableBooleanObjectInspector.java
+END
+WritableConstantFloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantFloatObjectInspector.java
+END
+WritableConstantStringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantStringObjectInspector.java
+END
+SettableIntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableIntObjectInspector.java
+END
+BinaryObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/BinaryObjectInspector.java
+END
+JavaBinaryObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaBinaryObjectInspector.java
+END
+PrimitiveObjectInspectorUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/PrimitiveObjectInspectorUtils.java
+END
+WritableLongObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableLongObjectInspector.java
+END
+WritableShortObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableShortObjectInspector.java
+END
+IntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/IntObjectInspector.java
+END
+AbstractPrimitiveObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/AbstractPrimitiveObjectInspector.java
+END
+JavaIntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaIntObjectInspector.java
+END
+WritableByteObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableByteObjectInspector.java
+END
+WritableTimestampObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/asf/!svn/ver/1157222/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableTimestampObjectInspector.java
+END
+SettableDoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableDoubleObjectInspector.java
+END
+AbstractPrimitiveJavaObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/AbstractPrimitiveJavaObjectInspector.java
+END
+WritableConstantIntObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantIntObjectInspector.java
+END
+WritableFloatObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableFloatObjectInspector.java
+END
+PrimitiveObjectInspectorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/PrimitiveObjectInspectorFactory.java
+END
+PrimitiveObjectInspectorConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/PrimitiveObjectInspectorConverter.java
+END
+WritableStringObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableStringObjectInspector.java
+END
+VoidObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/VoidObjectInspector.java
+END
+SettableBooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/SettableBooleanObjectInspector.java
+END
+JavaVoidObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaVoidObjectInspector.java
+END
+WritableConstantVoidObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantVoidObjectInspector.java
+END
+DoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/DoubleObjectInspector.java
+END
+JavaDoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/JavaDoubleObjectInspector.java
+END
+WritableBinaryObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableBinaryObjectInspector.java
+END
+WritableConstantDoubleObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/repos/asf/!svn/ver/1158446/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/WritableConstantDoubleObjectInspector.java
+END
+BooleanObjectInspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/primitive/BooleanObjectInspector.java
+END

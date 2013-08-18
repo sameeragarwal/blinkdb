@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/repos/asf/!svn/ver/1179804/hive/trunk
+END
+NOTICE
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/asf/!svn/ver/1072517/hive/trunk/NOTICE
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/asf/!svn/ver/1159744/hive/trunk/LICENSE
+END
+build-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/asf/!svn/ver/1172927/hive/trunk/build-common.xml
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/asf/!svn/ver/1044070/hive/trunk/.gitignore
+END
+RELEASE_NOTES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1027721/hive/trunk/RELEASE_NOTES.txt
+END
+ivy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/asf/!svn/ver/1124164/hive/trunk/ivy.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/asf/!svn/ver/1163075/hive/trunk/build.properties
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/asf/!svn/ver/1125112/hive/trunk/README.txt
+END
+.checkstyle
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/asf/!svn/ver/1027721/hive/trunk/.checkstyle
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/asf/!svn/ver/1177382/hive/trunk/build.xml
+END

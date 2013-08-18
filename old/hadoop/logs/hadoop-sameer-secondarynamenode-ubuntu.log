@@ -1,0 +1,173 @@
+2011-10-07 00:23:39,647 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 00:23:39,826 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-07 00:23:39,828 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-07 00:23:39,829 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 00:23:39,829 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 00:23:39,829 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 00:23:39,829 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 00:23:40,290 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 00:23:40,290 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 00:23:40,291 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 00:23:40,291 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 00:23:40,291 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 00:23:40,291 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 00:23:40,309 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-07 00:23:40,310 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 00:23:40,311 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-07 00:23:40,311 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 00:23:40,315 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 00:23:40,341 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 00:23:40,394 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317972219000:1317968618965
+2011-10-07 00:23:42,461 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-07 01:23:42,592 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 01:23:42,666 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-07 01:23:42,669 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-07 01:23:42,669 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 01:23:42,670 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 01:23:42,670 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 01:23:42,670 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 01:23:42,871 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 01:23:42,871 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 01:23:42,871 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 01:23:42,871 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 01:23:42,871 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 01:23:42,872 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 01:23:42,878 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-07 01:23:42,879 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 01:23:42,879 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-07 01:23:42,879 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 01:23:42,919 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 01:23:43,530 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 01:23:43,552 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317975822000:1317972220418
+2011-10-07 01:23:43,609 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-07 02:23:43,733 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 02:23:43,887 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-07 02:23:43,904 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-07 02:23:43,904 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 02:23:43,904 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 02:23:43,904 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 02:23:43,904 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 02:23:44,113 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 02:23:44,113 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 02:23:44,113 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 02:23:44,114 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 02:23:44,114 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 02:23:44,114 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 02:23:44,119 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-07 02:23:44,120 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 02:23:44,121 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-07 02:23:44,121 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 02:23:44,127 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 02:23:44,210 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 02:23:44,302 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317979423000:1317975823575
+2011-10-07 02:23:44,880 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-07 03:23:45,641 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 03:23:48,226 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 1016 bytes.
+2011-10-07 03:23:48,279 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2011-10-07 03:23:48,279 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 03:23:48,279 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 03:23:48,279 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 03:23:48,284 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 03:24:57,455 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 03:24:57,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 03:24:57,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 03:24:57,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 03:24:57,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 03:24:57,467 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 03:25:52,362 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 11
+2011-10-07 03:25:52,586 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 03:25:52,586 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-07 03:25:52,591 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 03:25:52,646 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 03:25:54,275 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 1016 saved in 0 seconds.
+2011-10-07 03:25:55,355 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:159473159:0:1317983025000:1317979424325
+2011-10-07 03:25:56,146 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 1016
+2011-10-07 15:08:30,868 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:08:30,965 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:08:37,331 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-07 15:08:38,332 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-07 15:08:39,333 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 2 time(s).
+2011-10-07 15:08:40,334 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 3 time(s).
+2011-10-07 15:08:41,335 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 4 time(s).
+2011-10-07 15:08:42,336 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 5 time(s).
+2011-10-07 15:08:43,338 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 6 time(s).
+2011-10-07 15:08:44,341 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 7 time(s).
+2011-10-07 15:08:45,343 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 8 time(s).
+2011-10-07 15:08:46,344 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 9 time(s).
+2011-10-07 15:08:46,346 INFO org.apache.hadoop.ipc.RPC: Server at localhost/127.0.0.1:54310 not available yet, Zzzzz...
+2011-10-07 15:08:48,348 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 0 time(s).
+2011-10-07 15:08:49,348 INFO org.apache.hadoop.ipc.Client: Retrying connect to server: localhost/127.0.0.1:54310. Already tried 1 time(s).
+2011-10-07 15:08:49,728 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down SecondaryNameNode at ubuntu/127.0.1.1
+************************************************************/
+2011-10-07 15:09:15,260 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-07 15:09:15,274 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-07 15:09:20,673 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Starting web server as: sameer
+2011-10-07 15:09:20,710 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-07 15:09:20,761 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-07 15:09:20,764 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50090
+2011-10-07 15:09:20,765 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50090 webServer.getConnectors()[0].getLocalPort() returned 50090
+2011-10-07 15:09:20,766 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50090
+2011-10-07 15:09:20,766 INFO org.mortbay.log: jetty-6.1.26
+2011-10-07 15:09:20,994 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50090
+2011-10-07 15:09:20,995 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Web server init done
+2011-10-07 15:09:20,995 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Secondary Web-server up at: 0.0.0.0:50090
+2011-10-07 15:09:20,995 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Secondary image servlet up at: 0.0.0.0:50090
+2011-10-07 15:09:20,995 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2011-10-07 15:09:20,995 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :67108864 bytes (65536 KB)
+2011-10-07 15:14:21,212 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 112 bytes.
+2011-10-07 15:14:21,215 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 1129 bytes.
+2011-10-07 15:14:21,217 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 15:14:21,217 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 15:14:21,217 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 15:14:21,217 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 15:14:21,355 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 15:14:21,356 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 15:14:21,356 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 15:14:21,358 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 15:14:21,358 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 15:14:21,364 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 15:14:21,385 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 1
+2011-10-07 15:14:21,386 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 15:14:21,395 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 1129 edits # 17 loaded in 0 seconds.
+2011-10-07 15:14:21,396 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 15:14:21,416 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 826 saved in 0 seconds.
+2011-10-07 15:14:21,447 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 826 saved in 0 seconds.
+2011-10-07 15:14:21,470 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:484119233:0:1318025661000:1318025352714
+2011-10-07 15:14:21,635 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 826
+2011-10-07 16:14:21,767 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 16:14:21,844 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 826 bytes.
+2011-10-07 16:14:21,847 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 100 bytes.
+2011-10-07 16:14:21,848 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-07 16:14:21,848 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-07 16:14:21,848 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-07 16:14:21,848 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-07 16:14:22,147 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-07 16:14:22,148 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-07 16:14:22,148 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-07 16:14:22,148 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-07 16:14:22,148 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-07 16:14:22,148 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-07 16:14:22,162 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 9
+2011-10-07 16:14:22,167 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-07 16:14:22,167 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/namesecondary/current/edits of size 100 edits # 2 loaded in 0 seconds.
+2011-10-07 16:14:22,167 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-07 16:14:22,172 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 920 saved in 0 seconds.
+2011-10-07 16:14:22,205 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 920 saved in 0 seconds.
+2011-10-07 16:14:22,260 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=0.0.0.0&token=-32:484119233:0:1318029261000:1318025661619
+2011-10-07 16:14:22,346 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 920

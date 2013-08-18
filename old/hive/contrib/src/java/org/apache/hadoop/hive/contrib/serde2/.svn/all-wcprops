@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2
+END
+TypedBytesSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2/TypedBytesSerDe.java
+END
+RegexSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1131106/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/serde2/RegexSerDe.java
+END

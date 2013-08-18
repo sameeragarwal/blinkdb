@@ -1,0 +1,419 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/asf/!svn/ver/1170007/hive/trunk/data/files
+END
+string.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/string.txt
+END
+create_nested_type.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/create_nested_type.txt
+END
+null.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/null.txt
+END
+apache.access.2.log
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/apache.access.2.log
+END
+smbbucket_1.rc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_1.rc
+END
+text-en.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/text-en.txt
+END
+smb_bucket_input.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smb_bucket_input.txt
+END
+datatypes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/datatypes.txt
+END
+smbbucket_1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_1.txt
+END
+smbbucket_2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_2.txt
+END
+escapetest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1132778/hive/trunk/data/files/escapetest.txt
+END
+hive_626_count.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/hive_626_count.txt
+END
+smbbucket_3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_3.txt
+END
+lt100.txt.deflate
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/lt100.txt.deflate
+END
+lineitem.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1170007/hive/trunk/data/files/lineitem.txt
+END
+test.dat
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/test.dat
+END
+nullfile.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/nullfile.txt
+END
+kv1.seq
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1.seq
+END
+hive_626_bar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/hive_626_bar.txt
+END
+sample-queryplan.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/sample-queryplan.txt
+END
+TestSerDe.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/TestSerDe.jar
+END
+srcbucket0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket0.txt
+END
+srcbucket1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket1.txt
+END
+symlink1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/symlink1.txt
+END
+symlink2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/symlink2.txt
+END
+kv1_broken.seq
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1_broken.seq
+END
+complex.seq
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/complex.seq
+END
+kv1.val.sorted.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1.val.sorted.txt
+END
+tbl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1170007/hive/trunk/data/files/tbl.txt
+END
+smb_bucket_input.rc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smb_bucket_input.rc
+END
+T1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/T1.txt
+END
+T2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/T2.txt
+END
+smbbucket_3.rc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_3.rc
+END
+T3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/T3.txt
+END
+in1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/in1.txt
+END
+in2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/in2.txt
+END
+in3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/in3.txt
+END
+in4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1028072/hive/trunk/data/files/in4.txt
+END
+test2.dat
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1161516/hive/trunk/data/files/test2.dat
+END
+in5.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1036685/hive/trunk/data/files/in5.txt
+END
+in6.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1036685/hive/trunk/data/files/in6.txt
+END
+in7.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1170005/hive/trunk/data/files/in7.txt
+END
+lt100.sorted.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/lt100.sorted.txt
+END
+kv1kv2.cogroup.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1kv2.cogroup.txt
+END
+kv1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1.txt
+END
+sample-queryplan-in-history.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/sample-queryplan-in-history.txt
+END
+kv2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv2.txt
+END
+kv3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv3.txt
+END
+kv4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv4.txt
+END
+kv1.string-sorted.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1.string-sorted.txt
+END
+kv5.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv5.txt
+END
+kv1_cb.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1_cb.txt
+END
+kv6.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv6.txt
+END
+kv1_cc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/kv1_cc.txt
+END
+union_input.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/union_input.txt
+END
+json.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/json.txt
+END
+empty1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/empty1.txt
+END
+empty2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/empty2.txt
+END
+apache.access.log
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/apache.access.log
+END
+smbbucket_2.rc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/smbbucket_2.rc
+END
+srcbucket20.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket20.txt
+END
+srcbucket21.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket21.txt
+END
+docurl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/docurl.txt
+END
+srcbucket22.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket22.txt
+END
+srcbucket23.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/srcbucket23.txt
+END
+hive_626_foo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/hive_626_foo.txt
+END
+source.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/asf/!svn/ver/1043849/hive/trunk/data/files/source.txt
+END
+lt100.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/lt100.txt
+END
+covar_tab.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1027721/hive/trunk/data/files/covar_tab.txt
+END

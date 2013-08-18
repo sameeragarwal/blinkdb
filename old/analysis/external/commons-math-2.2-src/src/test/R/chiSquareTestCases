@@ -1,0 +1,101 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#------------------------------------------------------------------------------
+# R source file to validate ChiSquare tests in
+# org.apache.commons.math.stat.inference.ChiSquareTestTest
+#
+# To run the test, install R, put this file and testFunctions
+# into the same directory, launch R from this directory and then enter
+# source("<name-of-this-file>")
+#
+# R functions used
+#chisq.test(x, y = NULL, correct = TRUE,
+#           p = rep(1/length(x), length(x)),
+#           simulate.p.value = FALSE, B = 2000)
+#------------------------------------------------------------------------------
+tol <- 1E-9                     # error tolerance for tests
+#------------------------------------------------------------------------------
+# Function definitions
+
+source("testFunctions")           # utility test functions
+
+verifyTable <- function(counts, expectedP, expectedStat, tol, desc) {
+    results <- chisq.test(counts)
+    if (assertEquals(expectedP, results$p.value, tol, "p-value")) {
+        displayPadded(c(desc," p-value test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " p-value test"), FAILED, WIDTH)
+    } 
+    if (assertEquals(expectedStat, results$statistic, tol,
+       "ChiSquare Statistic")) {
+        displayPadded(c(desc, " chi-square statistic test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " chi-square statistic test"), FAILED, WIDTH)
+    } 
+}
+
+verifyHomogeneity <- function(obs, exp, expectedP, expectedStat, 
+  tol, desc) {
+    results <- chisq.test(obs,p=exp,rescale.p=TRUE)
+    chi <- results$statistic
+    p <- results$p.value
+    if (assertEquals(expectedP, p, tol, "p-value")) {
+        displayPadded(c(desc, " p-value test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " p-value test"), FAILED, WIDTH)
+    } 
+    if (assertEquals(expectedStat, chi, tol,
+       "ChiSquare Statistic")) {
+        displayPadded(c(desc, " chi-square statistic test"), SUCCEEDED, WIDTH)
+    } else {
+        displayPadded(c(desc, " chi-square statistic test"), FAILED, WIDTH)
+    }    
+}
+
+cat("ChiSquareTest test cases\n")
+
+observed <- c(10, 9, 11)
+expected <- c(10, 10, 10)
+verifyHomogeneity(observed, expected, 0.904837418036, 0.2, tol,
+   "testChiSquare1")
+
+observed <- c(500, 623, 72, 70, 31)
+expected <- c(485, 541, 82, 61, 37)
+verifyHomogeneity(observed, expected, 0.06051952647453607, 9.023307936427388,
+   tol, "testChiSquare2")
+
+observed <- c(2372383, 584222, 257170, 17750155, 7903832, 489265,
+              209628, 393899)
+expected <- c(3389119.5, 649136.6, 285745.4, 25357364.76, 11291189.78,
+              543628.0, 232921.0, 437665.75)
+verifyHomogeneity(observed, expected, 0, 114875.90421929007, tol,
+   "testChiSquareLargeTestStatistic")
+
+counts <- matrix(c(40, 22, 43, 91, 21, 28, 60, 10, 22), nc = 3);
+verifyTable(counts, 0.000144751460134, 22.709027688, tol, 
+   "testChiSquareIndependence1")
+
+counts <- matrix(c(10, 15, 30, 40, 60, 90), nc = 3);
+verifyTable(counts, 0.918987499852, 0.168965517241, tol,  
+   "testChiSquareIndependence2")
+ 
+counts <- matrix(c(40, 0, 4, 91, 1, 2, 60, 2, 0), nc = 3);
+verifyTable(counts, 0.0462835770603, 9.67444662263, tol,  
+  "testChiSquareZeroCount")
+
+displayDashes(WIDTH)
+            
+

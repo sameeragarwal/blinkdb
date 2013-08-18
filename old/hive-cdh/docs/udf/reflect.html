@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.    
+-->
+
+<!-- start the processing -->
+    <!-- ====================================================================== -->
+    <!-- GENERATED FILE, DO NOT EDIT, EDIT THE XML FILE IN xdocs INSTEAD! -->
+    <!-- Main Page Section -->
+    <!-- ====================================================================== -->
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+                                                    <meta name="author" value="Hadoop Hive Documentation Team">
+            <meta name="email" value="hive-user@hadoop.apache.org">
+            
+           
+                                    
+                        
+            <title>Hadoop Hive - Hadoop Hive- Reflect User Defined Function</title>
+
+									<link rel="stylesheet" href="../site.css" type="text/css">
+        </head>
+
+        <body>
+
+			
+			<div id="container">
+
+				<div id="header">
+					
+<div id="logo1">
+	<a href="http://hadoop.apache.org/hive/"><img src="../images/hive-logo.jpg" border="0"/></a>
+</div>
+
+
+
+<div id="logo2">
+
+<a href="http://hadoop.apache.org/hive"><img src="../images/hive-logo.jpg" alt="Hadoop Hive" border="0"/></a>
+
+</div>
+
+				</div>
+
+				<div id="menu">
+					
+    <!-- ============================================================ -->
+
+            	<div class="menusection">
+    		<span class="menuheader">Hadoop hive</span>
+			<ul>
+							<li>    <a href="../index.html">General</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Hive Language Manual</span>
+			<ul>
+							<li>    <a href="../language_manual/data-manipulation-statements.html">Data Manipulation Statements</a>
+</li>
+							<li>    <a href="../language_manual/joins.html">Joins</a>
+</li>
+							<li>    <a href="../language_manual/cli.html">Cli</a>
+</li>
+							<li>    <a href="../language_manual/var_substitution.html">Var Substitution</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Developer Guide</span>
+			<ul>
+							<li>    <a href="https://issues.apache.org/jira/browse/HIVE">Issue Tracking (JIRA)</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">User Defined Functions</span>
+			<ul>
+							<li>    <a href="../udf/reflect.html">reflect</a>
+</li>
+						</ul>
+        </div>
+    				</div>
+
+				<div id="body">
+																	<a name="reflect"></a>
+	<h1>Reflect (Generic) UDF</h1>
+
+	<div class="subsection">
+														<p>A java class and method often exists to handle the exact function a user would like to use in hive. Rather
+then having to write a wrapper UDF to call this method, the majority of these methods can be called using reflect udf. Reflect uses 
+java reflection to instantiate and call methods of objects, it can also call static functions. The method must return a primative type
+or a type that hive knows how to serialize.
+</p>
+																			<div class="source">SELECT reflect(&quot;java.lang.String&quot;, &quot;valueOf&quot;, 1),
+       reflect(&quot;java.lang.String&quot;, &quot;isEmpty&quot;),
+       reflect(&quot;java.lang.Math&quot;, &quot;max&quot;, 2, 3),
+       reflect(&quot;java.lang.Math&quot;, &quot;min&quot;, 2, 3),
+       reflect(&quot;java.lang.Math&quot;, &quot;round&quot;, 2.5),
+       reflect(&quot;java.lang.Math&quot;, &quot;exp&quot;, 1.0),
+       reflect(&quot;java.lang.Math&quot;, &quot;floor&quot;, 1.9)
+FROM src LIMIT 1;
+
+
+1	true	3	2	3	2.7182818284590455	1.0</pre></div>
+								</div>
+									</div>
+
+				<div id="footer">
+					Copyright &#169; 1999-2007, <a href="http://www.apache.org/">The Apache Software Foundation</a>.
+				</div>
+
+			</div>
+
+        </body>
+    </html>
+<!-- end the processing -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+-Dspark.dfs=hdfs://ec2-107-20-18-201.compute-1.amazonaws.com:9000 -Dspark.kryoserializer.buffer.mb=300 -Dspark.cache.class=spark.SerializingCache -verbose:gc -XX:-PrintGCDetails -XX:+PrintGCTimeStamps

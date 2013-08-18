@@ -1,0 +1,35 @@
+PREHOOK: query: create table dest_sp (cnt int)
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table dest_sp (cnt int)
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@dest_sp
+PREHOOK: query: insert overwrite table dest_sp
+select * from 
+  (select count(1) as cnt from src 
+    union all
+   select count(1) as cnt from srcpart where ds = '2009-08-09'
+  )x
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src
+PREHOOK: Output: default@dest_sp
+POSTHOOK: query: insert overwrite table dest_sp
+select * from 
+  (select count(1) as cnt from src 
+    union all
+   select count(1) as cnt from srcpart where ds = '2009-08-09'
+  )x
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src
+POSTHOOK: Output: default@dest_sp
+POSTHOOK: Lineage: dest_sp.cnt EXPRESSION [(src)src.null, (srcpart)srcpart.null, ]
+PREHOOK: query: select * from dest_sp x order by x.cnt limit 2
+PREHOOK: type: QUERY
+PREHOOK: Input: default@dest_sp
+PREHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-28-55_506_7975559281496695000/10000
+POSTHOOK: query: select * from dest_sp x order by x.cnt limit 2
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@dest_sp
+POSTHOOK: Output: file:/tmp/jssarma/hive_2010-07-21_11-28-55_506_7975559281496695000/10000
+POSTHOOK: Lineage: dest_sp.cnt EXPRESSION [(src)src.null, (srcpart)srcpart.null, ]
+0
+500

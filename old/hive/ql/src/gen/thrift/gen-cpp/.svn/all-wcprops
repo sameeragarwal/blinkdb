@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-cpp
+END
+queryplan_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-cpp/queryplan_constants.h
+END
+queryplan_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-cpp/queryplan_types.cpp
+END
+queryplan_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-cpp/queryplan_types.h
+END
+queryplan_constants.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/asf/!svn/ver/1165207/hive/trunk/ql/src/gen/thrift/gen-cpp/queryplan_constants.cpp
+END

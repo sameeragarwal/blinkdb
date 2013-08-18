@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql
+END
+hive-schema-0.3.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.3.0.mysql.sql
+END
+hive-schema-0.4.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.4.0.mysql.sql
+END
+002-HIVE-1068.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/002-HIVE-1068.mysql.sql
+END
+hive-schema-0.5.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.5.0.mysql.sql
+END
+hive-schema-0.4.1.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.4.1.mysql.sql
+END
+004-HIVE-1364.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/004-HIVE-1364.mysql.sql
+END
+hive-schema-0.6.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.6.0.mysql.sql
+END
+009-HIVE-2215.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1170344/hive/trunk/metastore/scripts/upgrade/mysql/009-HIVE-2215.mysql.sql
+END
+hive-schema-0.7.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.7.0.mysql.sql
+END
+006-HIVE-1823.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/006-HIVE-1823.mysql.sql
+END
+hive-schema-0.8.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.8.0.mysql.sql
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/README
+END
+008-HIVE-2246.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql/008-HIVE-2246.mysql.sql
+END
+007-HIVE-78.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/007-HIVE-78.mysql.sql
+END
+hive-schema-0.9.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql/hive-schema-0.9.0.mysql.sql
+END
+upgrade-0.5.0-to-0.6.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/upgrade-0.5.0-to-0.6.0.mysql.sql
+END
+005-HIVE-417.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/005-HIVE-417.mysql.sql
+END
+upgrade-0.6.0-to-0.7.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/upgrade-0.6.0-to-0.7.0.mysql.sql
+END
+001-HIVE-972.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/001-HIVE-972.mysql.sql
+END
+upgrade-0.7.0-to-0.8.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql/upgrade-0.7.0-to-0.8.0.mysql.sql
+END
+003-HIVE-675.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/mysql/003-HIVE-675.mysql.sql
+END
+upgrade-0.8.0-to-0.9.0.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/mysql/upgrade-0.8.0-to-0.9.0.mysql.sql
+END

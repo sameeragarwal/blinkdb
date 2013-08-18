@@ -1,0 +1,261 @@
+2011-10-06 15:10:51,017 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:10:51,111 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:10:52,090 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-06 15:10:52,137 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-06 15:10:52,143 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-06 15:10:52,143 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system started
+2011-10-06 15:10:52,644 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-06 15:10:52,663 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-06 15:10:52,757 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-06 15:10:52,758 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source NameNode registered.
+2011-10-06 15:10:52,945 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 15:10:52,945 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 15:10:52,945 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 15:10:52,945 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 15:10:53,700 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 15:10:53,700 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 15:10:53,700 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 15:10:53,718 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 15:10:53,718 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 15:10:53,796 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemStateMBean and NameNodeMXBean
+2011-10-06 15:10:53,889 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 15:10:53,907 INFO org.apache.hadoop.hdfs.server.common.Storage: Storage directory /tmp/hadoop-sameer/dfs/name does not exist.
+2011-10-06 15:10:53,913 ERROR org.apache.hadoop.hdfs.server.namenode.FSNamesystem: FSNamesystem initialization failed.
+org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-sameer/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:291)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.loadFSImage(FSDirectory.java:97)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.initialize(FSNamesystem.java:379)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:353)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:254)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1153)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1162)
+2011-10-06 15:10:53,914 ERROR org.apache.hadoop.hdfs.server.namenode.NameNode: org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-sameer/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:291)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.loadFSImage(FSDirectory.java:97)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.initialize(FSNamesystem.java:379)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:353)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:254)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1153)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1162)
+
+2011-10-06 15:10:53,919 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at ubuntu/127.0.1.1
+************************************************************/
+2011-10-06 15:13:25,281 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:13:25,298 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:13:25,458 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-06 15:13:25,470 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-06 15:13:25,471 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-06 15:13:25,471 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system started
+2011-10-06 15:13:25,612 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-06 15:13:25,625 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-06 15:13:25,652 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-06 15:13:25,653 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source NameNode registered.
+2011-10-06 15:13:25,723 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 15:13:25,723 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 15:13:25,723 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 15:13:25,723 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 15:13:26,026 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 15:13:26,026 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 15:13:26,026 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 15:13:26,032 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 15:13:26,032 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 15:13:26,055 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemStateMBean and NameNodeMXBean
+2011-10-06 15:13:26,093 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 15:13:26,099 INFO org.apache.hadoop.hdfs.server.common.Storage: Storage directory /tmp/hadoop-sameer/dfs/name does not exist.
+2011-10-06 15:13:26,101 ERROR org.apache.hadoop.hdfs.server.namenode.FSNamesystem: FSNamesystem initialization failed.
+org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-sameer/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:291)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.loadFSImage(FSDirectory.java:97)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.initialize(FSNamesystem.java:379)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:353)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:254)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1153)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1162)
+2011-10-06 15:13:26,101 ERROR org.apache.hadoop.hdfs.server.namenode.NameNode: org.apache.hadoop.hdfs.server.common.InconsistentFSStateException: Directory /tmp/hadoop-sameer/dfs/name is in an inconsistent state: storage directory does not exist or is not accessible.
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:291)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.loadFSImage(FSDirectory.java:97)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.initialize(FSNamesystem.java:379)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:353)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:254)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:434)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1153)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1162)
+
+2011-10-06 15:13:26,103 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at ubuntu/127.0.1.1
+************************************************************/
+2011-10-06 15:15:36,460 WARN org.apache.hadoop.conf.Configuration: DEPRECATED: hadoop-site.xml found in the classpath. Usage of hadoop-site.xml is deprecated. Instead use core-site.xml, mapred-site.xml and hdfs-site.xml to override properties of core-default.xml, mapred-default.xml and hdfs-default.xml respectively
+2011-10-06 15:15:36,478 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = ubuntu/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = 0.20.204.0
+STARTUP_MSG:   build = git://hrt8n35.cc1.ygridcore.net/ on branch branch-0.20-security-204 -r 65e258bf0813ac2b15bb4c954660eaf9e8fba141; compiled by 'hortonow' on Thu Aug 25 23:35:31 UTC 2011
+************************************************************/
+2011-10-06 15:15:36,637 INFO org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2011-10-06 15:15:36,647 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source MetricsSystem,sub=Stats registered.
+2011-10-06 15:15:36,649 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2011-10-06 15:15:36,649 INFO org.apache.hadoop.metrics2.impl.MetricsSystemImpl: NameNode metrics system started
+2011-10-06 15:15:36,786 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source ugi registered.
+2011-10-06 15:15:36,793 WARN org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Source name ugi already exists!
+2011-10-06 15:15:36,806 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source jvm registered.
+2011-10-06 15:15:36,810 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source NameNode registered.
+2011-10-06 15:15:36,869 INFO org.apache.hadoop.hdfs.util.GSet: VM type       = 32-bit
+2011-10-06 15:15:36,869 INFO org.apache.hadoop.hdfs.util.GSet: 2% max memory = 38.6675 MB
+2011-10-06 15:15:36,869 INFO org.apache.hadoop.hdfs.util.GSet: capacity      = 2^23 = 8388608 entries
+2011-10-06 15:15:36,869 INFO org.apache.hadoop.hdfs.util.GSet: recommended=8388608, actual=8388608
+2011-10-06 15:15:37,069 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=sameer
+2011-10-06 15:15:37,069 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2011-10-06 15:15:37,069 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2011-10-06 15:15:37,073 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: dfs.block.invalidate.limit=100
+2011-10-06 15:15:37,073 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+2011-10-06 15:15:37,087 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Registered FSNamesystemStateMBean and NameNodeMXBean
+2011-10-06 15:15:37,124 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Caching file names occuring more than 10 times 
+2011-10-06 15:15:37,135 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 1
+2011-10-06 15:15:37,139 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2011-10-06 15:15:37,139 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 112 loaded in 0 seconds.
+2011-10-06 15:15:37,139 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadoop-sameer/dfs/name/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2011-10-06 15:15:37,140 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 112 saved in 0 seconds.
+2011-10-06 15:15:37,156 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 112 saved in 0 seconds.
+2011-10-06 15:15:37,188 INFO org.apache.hadoop.hdfs.server.namenode.NameCache: initialized with 0 entries 0 lookups
+2011-10-06 15:15:37,188 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Finished loading FSImage in 126 msecs
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Total number of blocks = 0
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of invalid blocks = 0
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of under-replicated blocks = 0
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of  over-replicated blocks = 0
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.StateChange: STATE* Safe mode termination scan for invalid, over- and under-replicated blocks completed in 57 msec
+2011-10-06 15:15:37,247 INFO org.apache.hadoop.hdfs.StateChange: STATE* Leaving safe mode after 0 secs.
+2011-10-06 15:15:37,248 INFO org.apache.hadoop.hdfs.StateChange: STATE* Network topology has 0 racks and 0 datanodes
+2011-10-06 15:15:37,248 INFO org.apache.hadoop.hdfs.StateChange: STATE* UnderReplicatedBlocks has 0 blocks
+2011-10-06 15:15:37,261 INFO org.apache.hadoop.util.HostsFileReader: Refreshing hosts (include/exclude) list
+2011-10-06 15:15:37,270 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: ReplicateQueue QueueProcessingStatistics: First cycle completed 0 blocks in 1 msec
+2011-10-06 15:15:37,270 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: ReplicateQueue QueueProcessingStatistics: Queue flush completed 0 blocks in 1 msec processing time, 1 msec clock time, 1 cycles
+2011-10-06 15:15:37,270 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: InvalidateQueue QueueProcessingStatistics: First cycle completed 0 blocks in 0 msec
+2011-10-06 15:15:37,270 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: InvalidateQueue QueueProcessingStatistics: Queue flush completed 0 blocks in 0 msec processing time, 0 msec clock time, 1 cycles
+2011-10-06 15:15:37,285 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source FSNamesystemMetrics registered.
+2011-10-06 15:15:37,324 INFO org.apache.hadoop.ipc.Server: Starting SocketReader
+2011-10-06 15:15:37,325 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcDetailedActivityForPort54310 registered.
+2011-10-06 15:15:37,326 INFO org.apache.hadoop.metrics2.impl.MetricsSourceAdapter: MBean for source RpcActivityForPort54310 registered.
+2011-10-06 15:15:37,330 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Namenode up at: localhost/127.0.0.1:54310
+2011-10-06 15:15:42,430 INFO org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2011-10-06 15:15:42,482 INFO org.apache.hadoop.http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+2011-10-06 15:15:42,491 INFO org.apache.hadoop.http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 50070
+2011-10-06 15:15:42,492 INFO org.apache.hadoop.http.HttpServer: listener.getLocalPort() returned 50070 webServer.getConnectors()[0].getLocalPort() returned 50070
+2011-10-06 15:15:42,492 INFO org.apache.hadoop.http.HttpServer: Jetty bound to port 50070
+2011-10-06 15:15:42,492 INFO org.mortbay.log: jetty-6.1.26
+2011-10-06 15:15:42,710 INFO org.mortbay.log: Started SelectChannelConnector@0.0.0.0:50070
+2011-10-06 15:15:42,710 INFO org.apache.hadoop.hdfs.server.namenode.NameNode: Web-server up at: 0.0.0.0:50070
+2011-10-06 15:15:42,711 INFO org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2011-10-06 15:15:42,711 INFO org.apache.hadoop.ipc.Server: IPC Server listener on 54310: starting
+2011-10-06 15:15:42,716 INFO org.apache.hadoop.ipc.Server: IPC Server handler 0 on 54310: starting
+2011-10-06 15:15:42,716 INFO org.apache.hadoop.ipc.Server: IPC Server handler 1 on 54310: starting
+2011-10-06 15:15:42,717 INFO org.apache.hadoop.ipc.Server: IPC Server handler 2 on 54310: starting
+2011-10-06 15:15:42,717 INFO org.apache.hadoop.ipc.Server: IPC Server handler 3 on 54310: starting
+2011-10-06 15:15:42,717 INFO org.apache.hadoop.ipc.Server: IPC Server handler 4 on 54310: starting
+2011-10-06 15:15:42,718 INFO org.apache.hadoop.ipc.Server: IPC Server handler 5 on 54310: starting
+2011-10-06 15:15:42,718 INFO org.apache.hadoop.ipc.Server: IPC Server handler 6 on 54310: starting
+2011-10-06 15:15:42,718 INFO org.apache.hadoop.ipc.Server: IPC Server handler 7 on 54310: starting
+2011-10-06 15:15:42,718 INFO org.apache.hadoop.ipc.Server: IPC Server handler 8 on 54310: starting
+2011-10-06 15:15:42,726 INFO org.apache.hadoop.ipc.Server: IPC Server handler 9 on 54310: starting
+2011-10-06 15:15:46,177 INFO org.apache.hadoop.ipc.Server: IPC Server handler 6 on 54310, call addBlock(/tmp/hadoop-sameer/mapred/system/jobtracker.info, DFSClient_-955675244) from 127.0.0.1:58316: error: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+2011-10-06 15:15:56,222 INFO org.apache.hadoop.ipc.Server: IPC Server handler 3 on 54310, call addBlock(/tmp/hadoop-sameer/mapred/system/jobtracker.info, DFSClient_-955675244) from 127.0.0.1:58316: error: java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+java.io.IOException: File /tmp/hadoop-sameer/mapred/system/jobtracker.info could only be replicated to 0 nodes, instead of 1
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:1416)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(NameNode.java:596)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:523)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1388)
+	at org.apache.hadoop.ipc.Server$Handler$1.run(Server.java:1384)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:416)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1059)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:1382)
+2011-10-06 15:15:57,115 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* NameSystem.registerDatanode: node registration from 127.0.0.1:50010 storage DS-1054981637-127.0.1.1-50010-1317939357101
+2011-10-06 15:15:57,129 INFO org.apache.hadoop.net.NetworkTopology: Adding a new node: /default-rack/127.0.0.1:50010
+2011-10-06 15:15:57,168 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 0, processing time: 1 msecs
+2011-10-06 15:16:06,254 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* NameSystem.allocateBlock: /tmp/hadoop-sameer/mapred/system/jobtracker.info. blk_-6594288471480813649_1003
+2011-10-06 15:16:06,461 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* NameSystem.addStoredBlock: blockMap updated: 127.0.0.1:50010 is added to blk_-6594288471480813649_1003 size 4
+2011-10-06 15:16:06,470 INFO org.apache.hadoop.hdfs.StateChange: DIR* NameSystem.completeFile: file /tmp/hadoop-sameer/mapred/system/jobtracker.info is closed by DFSClient_-955675244
+2011-10-06 15:16:53,348 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 23 Total time for transactions(ms): 1Number of transactions batched in Syncs: 0 Number of syncs: 15 SyncTimes(ms): 69 
+2011-10-06 15:20:43,244 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 15:20:43,245 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 24 Total time for transactions(ms): 2Number of transactions batched in Syncs: 0 Number of syncs: 17 SyncTimes(ms): 73 
+2011-10-06 15:20:43,828 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 15:20:43,829 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 18 
+2011-10-06 16:02:40,285 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 0 msecs
+2011-10-06 16:20:44,721 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 16:20:44,733 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 16:20:50,445 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 16:20:50,445 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 4 
+2011-10-06 17:02:43,023 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 0 msecs
+2011-10-06 17:20:52,306 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 17:20:52,308 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 17:21:43,306 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 17:21:43,306 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 256 
+2011-10-06 18:02:41,050 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 1 msecs
+2011-10-06 18:21:46,653 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 18:21:46,663 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 18:22:23,433 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 18:22:23,434 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 13 
+2011-10-06 19:02:42,496 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 1 msecs
+2011-10-06 19:22:23,836 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 19:22:23,838 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 19:22:34,388 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 19:22:34,389 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 3 
+2011-10-06 20:02:40,727 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 1 msecs
+2011-10-06 20:22:34,611 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 20:22:34,612 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 20:22:35,474 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 20:22:35,474 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 3 
+2011-10-06 21:02:42,014 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 0 msecs
+2011-10-06 21:22:37,531 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 21:22:37,625 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 21:23:28,646 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 21:23:28,646 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 129 
+2011-10-06 22:02:40,487 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 1 msecs
+2011-10-06 22:23:29,560 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 22:23:29,585 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 22:23:31,199 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 22:23:31,199 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 3 
+2011-10-06 23:02:40,652 INFO org.apache.hadoop.hdfs.StateChange: *BLOCK* NameSystem.processReport: from 127.0.0.1:50010, blocks: 1, processing time: 0 msecs
+2011-10-06 23:23:33,232 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll Edit Log from 127.0.0.1
+2011-10-06 23:23:33,234 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 0 SyncTimes(ms): 0 
+2011-10-06 23:23:38,961 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Roll FSImage from 127.0.0.1
+2011-10-06 23:23:38,962 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0Number of transactions batched in Syncs: 0 Number of syncs: 1 SyncTimes(ms): 3 

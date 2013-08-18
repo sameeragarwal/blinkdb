@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/fileformat/base64
+END
+Base64TextInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/fileformat/base64/Base64TextInputFormat.java
+END
+Base64TextOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repos/asf/!svn/ver/1152980/hive/trunk/contrib/src/java/org/apache/hadoop/hive/contrib/fileformat/base64/Base64TextOutputFormat.java
+END

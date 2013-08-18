@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1176713/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr
+END
+HiveLockManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1176713/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLockManager.java
+END
+HiveLockObj.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1080462/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLockObj.java
+END
+HiveLock.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLock.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/package-info.java
+END
+LockException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/LockException.java
+END
+HiveLockMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1080462/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLockMode.java
+END
+HiveLockObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1176713/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLockObject.java
+END
+HiveLockManagerCtx.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/lockmgr/HiveLockManagerCtx.java
+END

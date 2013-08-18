@@ -1,0 +1,1206 @@
+PREHOOK: query: create table smb_bucket_input (key int, value string) stored as rcfile
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table smb_bucket_input (key int, value string) stored as rcfile
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@smb_bucket_input
+PREHOOK: query: load data local inpath '../data/files/smb_bucket_input.rc' into table smb_bucket_input
+PREHOOK: type: LOAD
+PREHOOK: Output: default@smb_bucket_input
+POSTHOOK: query: load data local inpath '../data/files/smb_bucket_input.rc' into table smb_bucket_input
+POSTHOOK: type: LOAD
+POSTHOOK: Output: default@smb_bucket_input
+PREHOOK: query: CREATE TABLE smb_bucket4_1(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE smb_bucket4_1(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@smb_bucket4_1
+PREHOOK: query: CREATE TABLE smb_bucket4_2(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE smb_bucket4_2(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@smb_bucket4_2
+PREHOOK: query: CREATE TABLE smb_bucket4_3(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: CREATE TABLE smb_bucket4_3(key int, value string) CLUSTERED BY (key) SORTED BY (key) INTO 1 BUCKETS
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@smb_bucket4_3
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4 or key=2000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4 or key=2000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=484 or key=3000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=484 or key=3000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-47-03_558_4175460079084168706/-mr-10000
+POSTHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-47-03_558_4175460079084168706/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+4	val_356	NULL	NULL
+NULL	NULL	484	val_169
+2000	val_169	NULL	NULL
+NULL	NULL	3000	val_169
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-47-15_789_5111262345540612249/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-47-15_789_5111262345540612249/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+4	val_356	NULL	NULL
+NULL	NULL	484	val_169
+2000	val_169	NULL	NULL
+NULL	NULL	3000	val_169
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=2000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=2000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=3000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=3000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-48-16_164_1168580802515730007/-mr-10000
+POSTHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-48-16_164_1168580802515730007/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+2000	val_169	NULL	NULL
+NULL	NULL	3000	val_169
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-48-28_252_8624738230326374105/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-48-28_252_8624738230326374105/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+2000	val_169	NULL	NULL
+NULL	NULL	3000	val_169
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-49-28_382_7069852983837639446/-mr-10000
+POSTHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-49-28_382_7069852983837639446/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-49-39_695_7174133393505446308/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-49-39_695_7174133393505446308/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-50-40_667_5622314917525445231/-mr-10000
+POSTHOOK: query: select /*+mapjoin(a)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-50-40_667_5622314917525445231/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+1000	val_1000	1000	val_1000
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-50-52_642_7861389365966780469/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-50-52_642_7861389365966780469/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+1000	val_1000	1000	val_1000
+4000	val_125	NULL	NULL
+NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=1000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_3
+POSTHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=1000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_3
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Input: default@smb_bucket4_3
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-52-18_193_1903408674773789960/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Input: default@smb_bucket4_3
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-52-18_193_1903408674773789960/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+1000	val_1000	1000	val_1000	1000	val_1000
+4000	val_125	NULL	NULL	NULL	NULL
+NULL	NULL	5000	val_125	NULL	NULL
+NULL	NULL	NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=1000 or key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=1000 or key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_3
+POSTHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=1000 or key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_3
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Input: default@smb_bucket4_3
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-53-44_629_5211205824010581943/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Input: default@smb_bucket4_3
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-53-44_629_5211205824010581943/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+1000	val_1000	1000	val_1000	1000	val_1000
+4000	val_125	NULL	NULL	4000	val_125
+NULL	NULL	5000	val_125	NULL	NULL
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_3
+POSTHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_3
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Input: default@smb_bucket4_3
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-55-09_174_6621361197771237756/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Input: default@smb_bucket4_3
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-55-09_174_6621361197771237756/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+4000	val_125	NULL	NULL	4000	val_125
+NULL	NULL	5000	val_125	NULL	NULL
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=00000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=00000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_3
+POSTHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_3
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Input: default@smb_bucket4_3
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-56-33_246_5968187259888530703/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Input: default@smb_bucket4_3
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-56-33_246_5968187259888530703/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+NULL	NULL	4000	val_125	NULL	NULL
+NULL	NULL	NULL	NULL	5000	val_125
+PREHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_1
+POSTHOOK: query: insert overwrite table smb_bucket4_1 select * from smb_bucket_input where key=1000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_1
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=4000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_2
+POSTHOOK: query: insert overwrite table smb_bucket4_2 select * from smb_bucket_input where key=4000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_2
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=5000
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket_input
+PREHOOK: Output: default@smb_bucket4_3
+POSTHOOK: query: insert overwrite table smb_bucket4_3 select * from smb_bucket_input where key=5000
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket_input
+POSTHOOK: Output: default@smb_bucket4_3
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+PREHOOK: type: QUERY
+PREHOOK: Input: default@smb_bucket4_1
+PREHOOK: Input: default@smb_bucket4_2
+PREHOOK: Input: default@smb_bucket4_3
+PREHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-57-57_671_2177289702566695407/-mr-10000
+POSTHOOK: query: select /*+mapjoin(b,c)*/ * from smb_bucket4_1 a full outer join smb_bucket4_2 b on a.key = b.key
+full outer join smb_bucket4_3 c on a.key=c.key
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@smb_bucket4_1
+POSTHOOK: Input: default@smb_bucket4_2
+POSTHOOK: Input: default@smb_bucket4_3
+POSTHOOK: Output: hdfs://localhost.localdomain:37175/data/users/sohanjain/test_builds/hive_2322/hive-trunk/build/ql/scratchdir/hive_2011-08-05_17-57-57_671_2177289702566695407/-mr-10000
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_1.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_2.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.key SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:key, type:int, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: smb_bucket4_3.value SIMPLE [(smb_bucket_input)smb_bucket_input.FieldSchema(name:value, type:string, comment:null), ]
+1000	val_1000	NULL	NULL	NULL	NULL
+NULL	NULL	4000	val_125	NULL	NULL
+NULL	NULL	NULL	NULL	5000	val_125

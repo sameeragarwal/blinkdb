@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/asf/!svn/ver/1130427/hive/trunk/shims/src/common/java/org/apache/hadoop/hive/io
+END
+HiveIOExceptionHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1130427/hive/trunk/shims/src/common/java/org/apache/hadoop/hive/io/HiveIOExceptionHandler.java
+END
+HiveIOExceptionHandlerChain.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1130427/hive/trunk/shims/src/common/java/org/apache/hadoop/hive/io/HiveIOExceptionHandlerChain.java
+END
+HiveIOExceptionNextHandleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/1130427/hive/trunk/shims/src/common/java/org/apache/hadoop/hive/io/HiveIOExceptionNextHandleResult.java
+END
+HiveIOExceptionHandlerUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/1130427/hive/trunk/shims/src/common/java/org/apache/hadoop/hive/io/HiveIOExceptionHandlerUtil.java
+END

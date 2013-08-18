@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport
+END
+TSocket.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport/TSocket.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport/__init__.py
+END
+TTransport.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport/TTransport.py
+END
+THttpClient.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport/THttpClient.py
+END
+TTwisted.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/py/thrift/transport/TTwisted.py
+END

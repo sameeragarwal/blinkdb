@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/asf/!svn/ver/1144418/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift
+END
+TReflectionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/TReflectionUtils.java
+END
+SkippableTProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/SkippableTProtocol.java
+END
+TCTLSeparatedProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1144418/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/TCTLSeparatedProtocol.java
+END
+WriteTextProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/WriteTextProtocol.java
+END
+ThriftDeserializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1131106/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/ThriftDeserializer.java
+END
+ConfigurableTProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/ConfigurableTProtocol.java
+END
+TBinarySortableProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1044070/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/TBinarySortableProtocol.java
+END
+ThriftByteStreamTypedSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/ThriftByteStreamTypedSerDe.java
+END
+WriteNullsProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/thrift/WriteNullsProtocol.java
+END

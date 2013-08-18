@@ -1,0 +1,1221 @@
+PREHOOK: query: create table authorization_part (key int, value string) partitioned by (ds string)
+PREHOOK: type: CREATETABLE
+POSTHOOK: query: create table authorization_part (key int, value string) partitioned by (ds string)
+POSTHOOK: type: CREATETABLE
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: create table src_auth_tmp as select * from src
+PREHOOK: type: CREATETABLE_AS_SELECT
+PREHOOK: Input: default@src
+POSTHOOK: query: create table src_auth_tmp as select * from src
+POSTHOOK: type: CREATETABLE_AS_SELECT
+POSTHOOK: Input: default@src
+POSTHOOK: Output: default@src_auth_tmp
+PREHOOK: query: ALTER TABLE authorization_part SET TBLPROPERTIES ("PARTITION_LEVEL_PRIVILEGE"="TRUE")
+PREHOOK: type: ALTERTABLE_PROPERTIES
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: ALTER TABLE authorization_part SET TBLPROPERTIES ("PARTITION_LEVEL_PRIVILEGE"="TRUE")
+POSTHOOK: type: ALTERTABLE_PROPERTIES
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: -- column grant to user
+grant Create on table authorization_part to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: -- column grant to user
+grant Create on table authorization_part to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: grant Update on table authorization_part to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant Update on table authorization_part to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: grant Drop on table authorization_part to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant Drop on table authorization_part to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: grant select on table src_auth_tmp to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@src_auth_tmp
+POSTHOOK: query: grant select on table src_auth_tmp to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@src_auth_tmp
+PREHOOK: query: show grant user hive_test_user on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421528	
+grantor	hive_test_user	
+PREHOOK: query: alter table authorization_part add partition (ds='2010')
+PREHOOK: type: ALTERTABLE_ADDPARTS
+PREHOOK: Input: default@authorization_part
+POSTHOOK: query: alter table authorization_part add partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_ADDPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+PREHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421529	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421529	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421529	
+grantor	hive_test_user	
+PREHOOK: query: grant select(key) on table authorization_part to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant select(key) on table authorization_part to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+PREHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src_auth_tmp
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src_auth_tmp
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+columnName	key	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421538	
+grantor	hive_test_user	
+PREHOOK: query: show grant user hive_test_user on table authorization_part(key)
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part(key)
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+columnName	key	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421529	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-38-59_579_9136250705865450024/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-38-59_579_9136250705865450024/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select(key) on table authorization_part from user hive_test_user
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: revoke select(key) on table authorization_part from user hive_test_user
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part(key)
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part(key)
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+columnName	key	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421538	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-06_414_560390133847075957/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-06_414_560390133847075957/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select(key) on table authorization_part partition (ds='2010') from user hive_test_user
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: revoke select(key) on table authorization_part partition (ds='2010') from user hive_test_user
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: -- table grant to user
+show grant user hive_test_user on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: -- table grant to user
+show grant user hive_test_user on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421528	
+grantor	hive_test_user	
+PREHOOK: query: alter table authorization_part add partition (ds='2010')
+PREHOOK: type: ALTERTABLE_ADDPARTS
+PREHOOK: Input: default@authorization_part
+POSTHOOK: query: alter table authorization_part add partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_ADDPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421554	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421554	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421554	
+grantor	hive_test_user	
+PREHOOK: query: grant select on table authorization_part to user hive_test_user
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant select on table authorization_part to user hive_test_user
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src_auth_tmp
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src_auth_tmp
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421562	
+grantor	hive_test_user	
+PREHOOK: query: show grant user hive_test_user on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421554	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-22_875_4461438305848325520/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-22_875_4461438305848325520/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select on table authorization_part from user hive_test_user
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: revoke select on table authorization_part from user hive_test_user
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421528	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421528	
+grantor	hive_test_user	
+PREHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Select	
+grantTime	1298421562	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-31_172_2730763491695237413/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-31_172_2730763491695237413/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select on table authorization_part partition (ds='2010') from user hive_test_user
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: revoke select on table authorization_part partition (ds='2010') from user hive_test_user
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant user hive_test_user on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Create	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Update	
+grantTime	1298421562	
+grantor	hive_test_user	
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_user	
+principalType	USER	
+privilege	Drop	
+grantTime	1298421562	
+grantor	hive_test_user	
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: -- column grant to group
+
+show grant group hive_test_group1 on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: -- column grant to group
+
+show grant group hive_test_group1 on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part add partition (ds='2010')
+PREHOOK: type: ALTERTABLE_ADDPARTS
+PREHOOK: Input: default@authorization_part
+POSTHOOK: query: alter table authorization_part add partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_ADDPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: grant select(key) on table authorization_part to group hive_test_group1
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant select(key) on table authorization_part to group hive_test_group1
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src_auth_tmp
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src_auth_tmp
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+columnName	key	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421586	
+grantor	hive_test_user	
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part(key)
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part(key)
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+columnName	key	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421578	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-47_405_492160623430758227/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-47_405_492160623430758227/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select(key) on table authorization_part from group hive_test_group1
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: revoke select(key) on table authorization_part from group hive_test_group1
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part(key)
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part(key)
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+columnName	key	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421586	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-54_409_1462314459309456133/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-39-54_409_1462314459309456133/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select(key) on table authorization_part partition (ds='2010') from group hive_test_group1
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: revoke select(key) on table authorization_part partition (ds='2010') from group hive_test_group1
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part(key) partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: -- table grant to group
+show grant group hive_test_group1 on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: -- table grant to group
+show grant group hive_test_group1 on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part add partition (ds='2010')
+PREHOOK: type: ALTERTABLE_ADDPARTS
+PREHOOK: Input: default@authorization_part
+POSTHOOK: query: alter table authorization_part add partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_ADDPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: grant select on table authorization_part to group hive_test_group1
+PREHOOK: type: GRANT_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: grant select on table authorization_part to group hive_test_group1
+POSTHOOK: type: GRANT_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: alter table authorization_part drop partition (ds='2010')
+PREHOOK: type: ALTERTABLE_DROPPARTS
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: alter table authorization_part drop partition (ds='2010')
+POSTHOOK: type: ALTERTABLE_DROPPARTS
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+PREHOOK: type: QUERY
+PREHOOK: Input: default@src_auth_tmp
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: insert overwrite table authorization_part partition (ds='2010') select key, value from src_auth_tmp
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@src_auth_tmp
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421610	
+grantor	hive_test_user	
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421602	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-40-11_031_3269164437944877270/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-40-11_031_3269164437944877270/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select on table authorization_part from group hive_test_group1
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: revoke select on table authorization_part from group hive_test_group1
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+
+database	default	
+table	authorization_part	
+partition	ds=2010	
+principalName	hive_test_group1	
+principalType	GROUP	
+privilege	Select	
+grantTime	1298421610	
+grantor	hive_test_user	
+PREHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+PREHOOK: type: QUERY
+PREHOOK: Input: default@authorization_part@ds=2010
+PREHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-40-18_093_8161820906432102269/-mr-10000
+POSTHOOK: query: select key from authorization_part where ds='2010' order by key limit 20
+POSTHOOK: type: QUERY
+POSTHOOK: Input: default@authorization_part@ds=2010
+POSTHOOK: Output: file:/var/folders/6g/6grtCwPMEf4sqHUPpy6xQG9ByHg/-Tmp-/heyongqiang/hive_2011-02-22_16-40-18_093_8161820906432102269/-mr-10000
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+0
+0
+0
+2
+4
+5
+5
+5
+8
+9
+10
+11
+12
+12
+15
+15
+17
+18
+18
+19
+PREHOOK: query: revoke select on table authorization_part partition (ds='2010') from group hive_test_group1
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: query: revoke select on table authorization_part partition (ds='2010') from group hive_test_group1
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@authorization_part@ds=2010
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+PREHOOK: type: SHOW_GRANT
+POSTHOOK: query: show grant group hive_test_group1 on table authorization_part partition (ds='2010')
+POSTHOOK: type: SHOW_GRANT
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: revoke select on table src_auth_tmp from user hive_test_user
+PREHOOK: type: REVOKE_PRIVILEGE
+PREHOOK: Output: default@src_auth_tmp
+POSTHOOK: query: revoke select on table src_auth_tmp from user hive_test_user
+POSTHOOK: type: REVOKE_PRIVILEGE
+POSTHOOK: Output: default@src_auth_tmp
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+PREHOOK: query: drop table authorization_part
+PREHOOK: type: DROPTABLE
+PREHOOK: Input: default@authorization_part
+PREHOOK: Output: default@authorization_part
+POSTHOOK: query: drop table authorization_part
+POSTHOOK: type: DROPTABLE
+POSTHOOK: Input: default@authorization_part
+POSTHOOK: Output: default@authorization_part
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).key EXPRESSION [(src_auth_tmp)src_auth_tmp.FieldSchema(name:key, type:string, comment:null), ]
+POSTHOOK: Lineage: authorization_part PARTITION(ds=2010).value SIMPLE [(src_auth_tmp)src_auth_tmp.FieldSchema(name:value, type:string, comment:null), ]

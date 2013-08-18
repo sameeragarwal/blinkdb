@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}newsletter/style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
+<script src="{{ MEDIA_URL }}jquery.form.pack.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="page">
+
+<div class="newsletter">
+    <h1>
+        newsletter
+    </h1>
+    <div class="div-content">
+        Add your email to our newsletter now !
+        <div id="form-newsletter-message"></div>
+        <form action="{% url newsletter_add %}" method="post" class="form-newsletter" id="form-newsletter">
+            <input name="email" type="text" class="form-text" />
+            <input type="submit" value="Add" class="form-submit" />
+        </form>
+    </div>    
+</div>
+
+<script>
+    var disableSubmit = function(val, id){
+        $(id + ' input[type=submit]').attr('disabled', val);
+    };   
+    
+    $('.form-submit').click(function() {
+        var form = $(this).parents("form:first");
+        var id = '#' + form.attr('id');
+        var action = form.attr('action');
+        var form_message = id + '-message';
+        disableSubmit(true, id);
+        $(form_message).removeClass().addClass('loading').html('Adding...').fadeIn();        
+        
+        $(this).parents("form:first").ajaxSubmit({
+            dataType: "json",
+            "success": function(data) {
+                $(form_message).hide();
+                $(form_message).removeClass().addClass(data['type']).html(data['message']).fadeIn('slow');
+                disableSubmit(false, id);
+                if(data['type'] == 'success'){
+                    $(':input', id).not(':button, :submit, :reset, :hidden').val('');
+                }               
+            }
+        });
+        return false;
+    });    
+</script>
+</body>
+</html>

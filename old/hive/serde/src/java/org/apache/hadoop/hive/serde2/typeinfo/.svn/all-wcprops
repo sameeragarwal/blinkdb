@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo
+END
+StructTypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/StructTypeInfo.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/package-info.java
+END
+TypeInfoFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/1179784/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/TypeInfoFactory.java
+END
+PrimitiveTypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/PrimitiveTypeInfo.java
+END
+UnionTypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1072517/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/UnionTypeInfo.java
+END
+ListTypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/ListTypeInfo.java
+END
+MapTypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/MapTypeInfo.java
+END
+TypeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/1027721/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/TypeInfo.java
+END
+TypeInfoUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/1072517/hive/trunk/serde/src/java/org/apache/hadoop/hive/serde2/typeinfo/TypeInfoUtils.java
+END

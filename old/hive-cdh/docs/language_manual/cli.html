@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.    
+-->
+
+<!-- start the processing -->
+    <!-- ====================================================================== -->
+    <!-- GENERATED FILE, DO NOT EDIT, EDIT THE XML FILE IN xdocs INSTEAD! -->
+    <!-- Main Page Section -->
+    <!-- ====================================================================== -->
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+                                                    <meta name="author" value="Hadoop Hive Documentation Team">
+            <meta name="email" value="hive-user@hadoop.apache.org">
+            
+           
+                                    
+                        
+            <title>Hadoop Hive - Hadoop Hive- Command Line Interface (CLI)</title>
+
+									<link rel="stylesheet" href="../site.css" type="text/css">
+        </head>
+
+        <body>
+
+			
+			<div id="container">
+
+				<div id="header">
+					
+<div id="logo1">
+	<a href="http://hadoop.apache.org/hive/"><img src="../images/hive-logo.jpg" border="0"/></a>
+</div>
+
+
+
+<div id="logo2">
+
+<a href="http://hadoop.apache.org/hive"><img src="../images/hive-logo.jpg" alt="Hadoop Hive" border="0"/></a>
+
+</div>
+
+				</div>
+
+				<div id="menu">
+					
+    <!-- ============================================================ -->
+
+            	<div class="menusection">
+    		<span class="menuheader">Hadoop hive</span>
+			<ul>
+							<li>    <a href="../index.html">General</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Hive Language Manual</span>
+			<ul>
+							<li>    <a href="../language_manual/data-manipulation-statements.html">Data Manipulation Statements</a>
+</li>
+							<li>    <a href="../language_manual/joins.html">Joins</a>
+</li>
+							<li>    <a href="../language_manual/cli.html">Cli</a>
+</li>
+							<li>    <a href="../language_manual/var_substitution.html">Var Substitution</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">Developer Guide</span>
+			<ul>
+							<li>    <a href="https://issues.apache.org/jira/browse/HIVE">Issue Tracking (JIRA)</a>
+</li>
+						</ul>
+        </div>
+        	<div class="menusection">
+    		<span class="menuheader">User Defined Functions</span>
+			<ul>
+							<li>    <a href="../udf/reflect.html">reflect</a>
+</li>
+						</ul>
+        </div>
+    				</div>
+
+				<div id="body">
+																	<a name="command_line_options"></a>
+	<h1>Hive Command line Options</h1>
+
+	<div class="subsection">
+														<p>Usage:</p>
+																			<div class="source">Usage: hive [-hiveconf x=y]* [&lt;-i filename&gt;]* [&lt;-f filename&gt;|&lt;-e query-string&gt;] [-S]
+
+  -i &lt;filename&gt;             Initialization Sql from file (executed automatically and silently before any other commands)
+  -e 'quoted query string'  Sql from command line
+  -f &lt;filename&gt;             Sql from file
+  -S                        Silent mode in interactive shell where only data is emitted
+  -hiveconf x=y             Use this to set hive/hadoop configuration variables. 
+  
+   -e and -f cannot be specified together. In the absence of these options, interactive shell is started.  However, -i can be used with any other options.
+
+   To see this usage help, run hive -h
+</pre></div>
+																			<ul>
+			<li>
+						Example of running a Query from the command line
+
+													<div class="source">$HIVE_HOME/bin/hive -e 'select a.col from tab1 a'
+   </pre></div>
+										
+
+			</li>
+			<li>
+						Example of setting hive configuration variables 
+
+													<div class="source">$HIVE_HOME/bin/hive -e 'select a.col from tab1 a' -hiveconf hive.exec.scratchdir=/home/my/hive_scratch  -hiveconf mapred.reduce.tasks=32
+   </pre></div>
+										
+
+			</li>
+			<li>
+						Example of dumping data out from a query into a file using silent mode 
+
+													<div class="source">$HIVE_HOME/bin/hive -S -e 'select a.col from tab1 a' &gt; a.txt
+</pre></div>
+										
+
+			</li>
+			<li>
+						Example of running a script non-interactively
+
+													<div class="source">$HIVE_HOME/bin/hive -f /home/my/hive-script.sql
+</pre></div>
+										
+
+			</li>
+			<li>
+						Example of running an initialization script before entering interactive mode 
+
+													<div class="source">$HIVE_HOME/bin/hive -i /home/my/hive-init.sql
+</pre></div>
+										
+
+			</li>
+	</ul>
+								</div>
+												<a name="hiverc"></a>
+	<h1>hiverc file </h1>
+
+	<div class="subsection">
+														<p>
+The cli when invoked without the -i option will attempt to load HIVE_HOME/bin/.hiverc and $HOME/.hiverc as initialization files.
+</p>
+								</div>
+												<a name="hive_interactive_shell_commands"></a>
+	<h1>Hive interactive shell commands</h1>
+
+	<div class="subsection">
+														<table>
+                        <tr>
+                        <td colspan="" rowspan="">
+											<b>Command</b>
+					</td>
+                                <td colspan="" rowspan="">
+											<b>Description</b>
+					</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						quit
+			</td>
+                                <td colspan="" rowspan="">
+						Use quit or exit to leave the interactive shell.
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						set key=value
+			</td>
+                                <td colspan="" rowspan="">
+						Use this to set value of particular configuration variable. One thing to note here is that if you misspell the variable name, cli will not show an error.
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						set
+			</td>
+                                <td colspan="" rowspan="">
+						This will print a list of configuration variables that are overridden by user or hive.
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						set -v 
+			</td>
+                                <td colspan="" rowspan="">
+						This will print all hadoop and hive configuration variables.
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						add FILE [file] [file]*
+			</td>
+                                <td colspan="" rowspan="">
+						Adds a file to the list of resources
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						list FILE
+			</td>
+                                <td colspan="" rowspan="">
+						list all the files added to the distributed cache
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						list FILE [file]*
+			</td>
+                                <td colspan="" rowspan="">
+						Check if given resources are already added to distributed cache
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						! [cmd]
+			</td>
+                                <td colspan="" rowspan="">
+						Executes a shell command from the hive shell
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						dfs [dfs cmd]
+			</td>
+                                <td colspan="" rowspan="">
+						Executes a dfs command from the hive shell
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						[query]
+			</td>
+                                <td colspan="" rowspan="">
+						Executes a hive query and prints results to standard out
+			</td>
+            </tr>
+                                <tr>
+                        <td colspan="" rowspan="">
+						source FILE
+			</td>
+                                <td colspan="" rowspan="">
+						Used to execute a script file inside the CLI.
+			</td>
+            </tr>
+            </table>
+																			<div class="source">  hive&gt; set  mapred.reduce.tasks=32;
+  hive&gt; set;
+  hive&gt; select a.* from tab1;
+  hive&gt; !ls;
+  hive&gt; dfs -ls;
+</pre></div>
+								</div>
+												<a name="logging"></a>
+	<h1>Logging</h1>
+
+	<div class="subsection">
+														<p>
+Hive uses log4j for logging. These logs are not emitted to the standard output by default but are instead captured to a log file specified by Hive's log4j properties file. By default Hive will use <i>hive-log4j.default</i> in the <i>conf/</i> directory of the hive installation which writes out logs to <i>/tmp/$USER/hive.log</i> and uses the <i>WARN</i> level.
+</p>
+																			<p>
+It is often desirable to emit the logs to the standard output and/or change the logging level for debugging purposes. These can be done from the command line as follows: </p>
+																			<div class="source">$HIVE_HOME/bin/hive -hiveconf hive.root.logger=INFO,console </pre></div>
+																			<p>
+<i>hive.root.logger</i> specifies the logging level as well as the log destination. Specifying console as the target sends the logs to the standard error (instead of the log file).
+</p>
+								</div>
+												<a name="Hive Resources"></a>
+	<h1>Hive Resources</h1>
+
+	<div class="subsection">
+														<p>
+Hive can manage the addition of resources to a session where those resources need to be made available at query execution time. Any locally accessible file can be added to the session. Once a file is added to a session, hive query can refer to this file by its name (in map/reduce/transform clauses) and this file is available locally at execution time on the entire hadoop cluster. Hive uses Hadoop's Distributed Cache to distribute the added files to all the machines in the cluster at query execution time.</p>
+																			<div class="source">   ADD { FILE[S] | JAR[S] | ARCHIVE[S] } &lt;filepath1&gt; [&lt;filepath2&gt;]*
+   LIST { FILE[S] | JAR[S] | ARCHIVE[S] } [&lt;filepath1&gt; &lt;filepath2&gt; ..]
+   DELETE { FILE[S] | JAR[S] | ARCHIVE[S] } [&lt;filepath1&gt; &lt;filepath2&gt; ..] </pre></div>
+																			<ul>
+			<li>
+						FILE resources are just added to the distributed cache. Typically, this might be something like a transform script to be executed.
+			</li>
+			<li>
+						JAR resources are also added to the Java classpath. This is required in order to reference objects they contain such as UDF's. 
+			</li>
+			<li>
+						ARCHIVE resources are automatically unarchived as part of distributing them.  
+			</li>
+	</ul>
+																			<p>Example</p>
+																			<div class="source">hive&gt; add FILE /tmp/tt.py;
+hive&gt; list FILES;
+/tmp/tt.py
+hive&gt; from networks a  MAP a.networkid USING 'python tt.py' as nn where a.ds = '2009-01-04' limit  10; </pre></div>
+																			<p>It is not neccessary to add files to the session if the files used in a transform script are already available on all machines in the hadoop cluster using the same path name. For example: </p>
+																			<ul>
+			<li>
+						... MAP a.networkid USING 'wc -l' ...: here wc is an executable available on all machines
+			</li>
+			<li>
+						... MAP a.networkid USING '/home/nfsserv1/hadoopscripts/tt.py' ...: here tt.py may be accessible via a nfs mount point that's configured identically on all the cluster nodes. 
+			</li>
+	</ul>
+								</div>
+									</div>
+
+				<div id="footer">
+					Copyright &#169; 1999-2007, <a href="http://www.apache.org/">The Apache Software Foundation</a>.
+				</div>
+
+			</div>
+
+        </body>
+    </html>
+<!-- end the processing -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

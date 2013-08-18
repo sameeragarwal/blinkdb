@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1156928/hive/trunk/contrib/src/test/results/clientnegative
+END
+serde_regex.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/1073623/hive/trunk/contrib/src/test/results/clientnegative/serde_regex.q.out
+END
+url_hook.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1078906/hive/trunk/contrib/src/test/results/clientnegative/url_hook.q.out
+END
+udtf_explode2.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1027721/hive/trunk/contrib/src/test/results/clientnegative/udtf_explode2.q.out
+END
+case_with_row_sequence.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/1156928/hive/trunk/contrib/src/test/results/clientnegative/case_with_row_sequence.q.out
+END
+invalid_row_sequence.q.out
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1074393/hive/trunk/contrib/src/test/results/clientnegative/invalid_row_sequence.q.out
+END

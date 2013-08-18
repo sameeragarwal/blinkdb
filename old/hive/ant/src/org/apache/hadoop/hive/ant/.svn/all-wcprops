@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/asf/!svn/ver/1081934/hive/trunk/ant/src/org/apache/hadoop/hive/ant
+END
+GetVersionPref.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1027721/hive/trunk/ant/src/org/apache/hadoop/hive/ant/GetVersionPref.java
+END
+antlib.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1027721/hive/trunk/ant/src/org/apache/hadoop/hive/ant/antlib.xml
+END
+QTestGenTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/1081934/hive/trunk/ant/src/org/apache/hadoop/hive/ant/QTestGenTask.java
+END

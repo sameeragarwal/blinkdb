@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/test/org/apache/hadoop/hive/hwi
+END
+TestHWISessionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/1027721/hive/trunk/hwi/src/test/org/apache/hadoop/hive/hwi/TestHWISessionManager.java
+END
+TestHWIServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/asf/!svn/ver/1072517/hive/trunk/hwi/src/test/org/apache/hadoop/hive/hwi/TestHWIServer.java
+END

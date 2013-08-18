@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/derby
+END
+hive-schema-0.3.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.3.0.derby.sql
+END
+hive-schema-0.4.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.4.0.derby.sql
+END
+002-HIVE-1068.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/002-HIVE-1068.derby.sql
+END
+hive-schema-0.5.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.5.0.derby.sql
+END
+hive-schema-0.4.1.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.4.1.derby.sql
+END
+004-HIVE-1364.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/004-HIVE-1364.derby.sql
+END
+hive-schema-0.6.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.6.0.derby.sql
+END
+009-HIVE-2215.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1170344/hive/trunk/metastore/scripts/upgrade/derby/009-HIVE-2215.derby.sql
+END
+006-HIVE-1823.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/006-HIVE-1823.derby.sql
+END
+hive-schema-0.7.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1135862/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.7.0.derby.sql
+END
+hive-schema-0.8.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.8.0.derby.sql
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/README
+END
+008-HIVE-2246.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/asf/!svn/ver/1155573/hive/trunk/metastore/scripts/upgrade/derby/008-HIVE-2246.derby.sql
+END
+007-HIVE-78.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/007-HIVE-78.derby.sql
+END
+hive-schema-0.9.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/derby/hive-schema-0.9.0.derby.sql
+END
+008-REVERT-HIVE-2246.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/asf/!svn/ver/1155573/hive/trunk/metastore/scripts/upgrade/derby/008-REVERT-HIVE-2246.derby.sql
+END
+upgrade-0.5.0-to-0.6.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/upgrade-0.5.0-to-0.6.0.derby.sql
+END
+005-HIVE-417.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/005-HIVE-417.derby.sql
+END
+upgrade-0.6.0-to-0.7.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/upgrade-0.6.0-to-0.7.0.derby.sql
+END
+001-HIVE-972.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/001-HIVE-972.derby.sql
+END
+upgrade-0.7.0-to-0.8.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/derby/upgrade-0.7.0-to-0.8.0.derby.sql
+END
+003-HIVE-675.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1083139/hive/trunk/metastore/scripts/upgrade/derby/003-HIVE-675.derby.sql
+END
+upgrade-0.8.0-to-0.9.0.derby.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1175028/hive/trunk/metastore/scripts/upgrade/derby/upgrade-0.8.0-to-0.9.0.derby.sql
+END

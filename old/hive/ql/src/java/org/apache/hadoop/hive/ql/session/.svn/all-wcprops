@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/asf/!svn/ver/1164319/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/session
+END
+SessionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1164319/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/session/SessionState.java
+END
+LineageState.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/1027721/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/session/LineageState.java
+END
+CreateTableAutomaticGrant.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1064256/hive/trunk/ql/src/java/org/apache/hadoop/hive/ql/session/CreateTableAutomaticGrant.java
+END

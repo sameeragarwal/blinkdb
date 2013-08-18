@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport
+END
+TNullTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TNullTransport.php
+END
+TSocket.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TSocket.php
+END
+TFramedTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TFramedTransport.php
+END
+TTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TTransport.php
+END
+THttpClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/THttpClient.php
+END
+TBufferedTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TBufferedTransport.php
+END
+TMemoryBuffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TMemoryBuffer.php
+END
+TSocketPool.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TSocketPool.php
+END
+TPhpStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1027721/hive/trunk/service/lib/php/transport/TPhpStream.php
+END

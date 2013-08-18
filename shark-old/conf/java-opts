@@ -1,1 +1,0 @@
--Dspark.dfs=hdfs://ec2-107-20-126-74.compute-1.amazonaws.com:9000 -Dspark.cache.class=spark.BoundedMemoryCache -XX:-PrintGCDetails -XX:+PrintGCTimeStamps

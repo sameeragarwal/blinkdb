@@ -1,43 +1,0 @@
-10
-
-dir
-1180251
-http://svn.apache.org/repos/asf/hive/trunk/metastore/src/gen/thrift
-http://svn.apache.org/repos/asf
-
-
-
-2011-09-05T08:47:02.418497Z
-1165207
-amareshwari
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13f79535-47bb-0310-9956-ffa450edef68
-
-gen-py
-dir
-
-gen-cpp
-dir
-
-gen-rb
-dir
-
-gen-javabean
-dir
-
-gen-php
-dir
-

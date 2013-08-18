@@ -1,8 +1,0 @@
-customerid 
-dt 
-endedflag 
-dt country 
-country endedflag 
-dt customerid 
-customerid endedflag 
-dt endedflag 

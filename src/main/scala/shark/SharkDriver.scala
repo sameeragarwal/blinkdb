@@ -185,9 +185,20 @@ private[shark] class SharkDriver(conf: HiveConf) extends Driver(conf) with LogHe
         logError(errorMessage + "\n" +
             "Please use set blinkdb.dataset.size=<rows> to set Sample Size")
       }
-      
-      val Array(str1, str2) = _cmd.split(')')
-      _cmd = str1 + " , " + sampleSize + " , "+ datasetSize + " ) " + str2
+
+      var cmd_splits = _cmd.split(')')
+      var cmd_temp = ""
+      for ( x <- cmd_splits ) {
+        if ( x contains "approx" ) {
+          cmd_temp = cmd_temp + x +  " , " + sampleSize + " , " + datasetSize + " ) "
+        } else if ( x contains "(" ) {
+            cmd_temp = cmd_temp + x + " ) "
+        } else {
+            cmd_temp = cmd_temp + x
+        }
+      }
+
+      _cmd = cmd_temp
     }
     
     logInfo(_cmd)

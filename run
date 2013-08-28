@@ -11,8 +11,8 @@ FWDIR="$(cd `dirname $0`; pwd)"
 export SHARK_HOME="$FWDIR"
 
 # Load environment variables from conf/shark-env.sh, if it exists
-if [ -e $SHARK_HOME/conf/shark-env.sh ] ; then
-  . $SHARK_HOME/conf/shark-env.sh
+if [ -e $SHARK_HOME/conf/blinkdb-env.sh ] ; then
+  . $SHARK_HOME/conf/blinkdb-env.sh
 fi
 
 if [ "x$SCALA_HOME" == "x" ] ; then

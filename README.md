@@ -13,7 +13,6 @@ VAR and STDEV).
 #### BlinkDB requires:
 * Scala 2.9.3
 * Spark 0.8.x
-* OpenJDK 7 or Oracle HotSpot JDK 7 or Oracle HotSpot JDK 6u23+
 
 ### For current documentation, see the [BlinkDB Wiki](https://github.com/sameeragarwal/blinkdb/wiki).
 ### For more information about the BlinkDB Project, see the [BlinkDB Website](http://blinkdb.cs.berkeley.edu).

@@ -17,10 +17,16 @@
 
 package shark.api;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.sql.Timestamp;
+
+import scala.reflect.ClassTag;
+import scala.reflect.ClassTag$;
 
 import org.apache.hadoop.hive.serde.Constants;
+import shark.Utils$;
 
 /**
  * List of data types defined in Shark APIs.
@@ -30,19 +36,38 @@ public class DataTypes {
   // This list of types are defined in a Java class for better interoperability with Shark's
   // Java APIs.
   // Primitive types:
-  public static final DataType BOOLEAN = new DataType("boolean", Constants.BOOLEAN_TYPE_NAME, true);
-  public static final DataType TINYINT = new DataType("tinyint", Constants.TINYINT_TYPE_NAME, true);
-  public static final DataType SMALLINT =
-      new DataType("smallint", Constants.SMALLINT_TYPE_NAME, true);
-  public static final DataType INT = new DataType("int", Constants.INT_TYPE_NAME, true);
-  public static final DataType BIGINT = new DataType("bigint", Constants.BIGINT_TYPE_NAME, true);
-  public static final DataType FLOAT = new DataType("float", Constants.FLOAT_TYPE_NAME, true);
-  public static final DataType DOUBLE = new DataType("double", Constants.DOUBLE_TYPE_NAME, true);
-  public static final DataType STRING = new DataType("string", Constants.STRING_TYPE_NAME, true);
-  public static final DataType TIMESTAMP =
-      new DataType("timestamp", Constants.TIMESTAMP_TYPE_NAME, true);
-  public static final DataType DATE = new DataType("date", Constants.DATE_TYPE_NAME, true);
-  public static final DataType BINARY = new DataType("binary", Constants.BINARY_TYPE_NAME, true);
+  public static final DataType BOOLEAN = new DataType(
+      "boolean", Constants.BOOLEAN_TYPE_NAME, true);
+
+  public static final DataType TINYINT = new DataType(
+      "tinyint", Constants.TINYINT_TYPE_NAME, true);
+
+  public static final DataType SMALLINT = new DataType(
+      "smallint", Constants.SMALLINT_TYPE_NAME, true);
+
+  public static final DataType INT = new DataType(
+      "int", Constants.INT_TYPE_NAME, true);
+
+  public static final DataType BIGINT = new DataType(
+      "bigint", Constants.BIGINT_TYPE_NAME, true);
+
+  public static final DataType FLOAT = new DataType(
+      "float", Constants.FLOAT_TYPE_NAME, true);
+
+  public static final DataType DOUBLE = new DataType(
+      "double", Constants.DOUBLE_TYPE_NAME, true);
+
+  public static final DataType STRING = new DataType(
+      "string", Constants.STRING_TYPE_NAME, true);
+
+  public static final DataType TIMESTAMP = new DataType(
+      "timestamp", Constants.TIMESTAMP_TYPE_NAME, true);
+
+  public static final DataType DATE = new DataType(
+      "date", Constants.DATE_TYPE_NAME, true);
+
+  public static final DataType BINARY = new DataType(
+      "binary", Constants.BINARY_TYPE_NAME, true);
 
   // Complex types:
   // TODO: handle complex types.
@@ -81,5 +106,32 @@ public class DataTypes {
     } else {
       return type;
     }
+  }
+
+  public static DataType fromClassTag(ClassTag<?> m) throws UnknownDataTypeException {
+    if (m.equals(ClassTag$.MODULE$.Boolean()) || m.equals(ClassTags$.MODULE$.jBoolean())) {
+        return INT;
+    } else if (m.equals(ClassTag$.MODULE$.Byte()) || m.equals(ClassTags$.MODULE$.jByte())){
+        return TINYINT;
+    } else if (m.equals(ClassTag$.MODULE$.Short()) || m.equals(ClassTags$.MODULE$.jShort())) {
+        return SMALLINT;
+    } else if (m.equals(ClassTag$.MODULE$.Int()) || m.equals(ClassTags$.MODULE$.jInt())) {
+        return INT;
+    } else if (m.equals(ClassTag$.MODULE$.Long()) || m.equals(ClassTags$.MODULE$.jLong())) {
+        return BIGINT;
+    } else if (m.equals(ClassTag$.MODULE$.Float()) || m.equals(ClassTags$.MODULE$.jFloat())) {
+        return FLOAT;
+    } else if (m.equals(ClassTag$.MODULE$.Double()) || m.equals(ClassTags$.MODULE$.jDouble())) {
+        return DOUBLE;
+    } else if (m.equals(ClassTag$.MODULE$.apply(String.class))) {
+        return STRING;
+    } else if (m.equals(ClassTag$.MODULE$.apply(Timestamp.class))) {
+        return TIMESTAMP;
+    } else if (m.equals(ClassTag$.MODULE$.apply(Date.class))) {
+        return DATE;
+    } else {
+        throw new UnknownDataTypeException(m.toString());
+    }
+    // TODO: binary data type.
   }
 }

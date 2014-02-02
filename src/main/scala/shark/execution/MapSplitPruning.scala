@@ -17,20 +17,18 @@
 
 package org.apache.hadoop.hive.ql.exec
 
-import java.sql.Timestamp
-
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPOr
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPAnd
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqual
+import org.apache.hadoop.hive.serde2.objectinspector.{MapSplitPruningHelper, StructField}
+import org.apache.hadoop.hive.serde2.objectinspector.UnionStructObjectInspector.MyField
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDFBaseCompare
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDFBetween
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPGreaterThan
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPLessThan
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFIn
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPAnd
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqual
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqualOrGreaterThan
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqualOrLessThan
-import org.apache.hadoop.hive.ql.udf.generic.GenericUDFIn
-import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector
-import org.apache.hadoop.io.Text
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPGreaterThan
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPLessThan
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPOr
 
 import shark.memstore2.ColumnarStructObjectInspector.IDStructField
 import shark.memstore2.TablePartitionStats
@@ -57,13 +55,23 @@ object MapSplitPruning {
           e.genericUDF match {
             case _: GenericUDFOPAnd => test(s, e.children(0)) && test(s, e.children(1))
             case _: GenericUDFOPOr => test(s, e.children(0)) || test(s, e.children(1))
-            case _: GenericUDFBetween => 
-              testBetweenPredicate(s, e.children(0).asInstanceOf[ExprNodeConstantEvaluator],
-                e.children(1).asInstanceOf[ExprNodeColumnEvaluator],
-                e.children(2).asInstanceOf[ExprNodeConstantEvaluator],
-                e.children(3).asInstanceOf[ExprNodeConstantEvaluator])
+            case _: GenericUDFBetween =>
+              val col = e.children(1)
+              if (col.isInstanceOf[ExprNodeColumnEvaluator]) {
+                testBetweenPredicate(s, e.children(0).asInstanceOf[ExprNodeConstantEvaluator],
+                  col.asInstanceOf[ExprNodeColumnEvaluator],
+                  e.children(2).asInstanceOf[ExprNodeConstantEvaluator],
+                  e.children(3).asInstanceOf[ExprNodeConstantEvaluator])
+              } else {
+                //cannot prune function based evaluators in general.
+                true
+              }
+
             case _: GenericUDFIn =>
-              testInPredicate(s, e.children(0).asInstanceOf[ExprNodeColumnEvaluator], e.children.drop(1))
+              testInPredicate(
+                s,
+                e.children(0).asInstanceOf[ExprNodeColumnEvaluator],
+                e.children.drop(1))
             case udf: GenericUDFBaseCompare =>
               testComparisonPredicate(s, udf, e.children(0), e.children(1))
             case _ => true
@@ -79,7 +87,7 @@ object MapSplitPruning {
     columnEval: ExprNodeColumnEvaluator,
     expEvals: Array[ExprNodeEvaluator]): Boolean = {
 
-    val field = columnEval.field.asInstanceOf[IDStructField]
+    val field = getIDStructField(columnEval.field)
     val columnStats = s.stats(field.fieldID)
 
     if (columnStats != null) {
@@ -93,28 +101,29 @@ object MapSplitPruning {
       true
     }
   }
-  
+
   def testBetweenPredicate(
     s: TablePartitionStats,
     invertEval: ExprNodeConstantEvaluator,
     columnEval: ExprNodeColumnEvaluator,
     leftEval: ExprNodeConstantEvaluator,
     rightEval: ExprNodeConstantEvaluator): Boolean = {
-    
-    val field = columnEval.field.asInstanceOf[IDStructField]
+
+    val field = getIDStructField(columnEval.field)
     val columnStats = s.stats(field.fieldID)
     val leftValue: Object = leftEval.expr.getValue
     val rightValue: Object = rightEval.expr.getValue
     val invertValue: Boolean = invertEval.expr.getValue.asInstanceOf[Boolean]
-    
+
     if (columnStats != null) {
-       val exists = (columnStats :>< (leftValue , rightValue))
-       if (invertValue) !exists else exists
-      } else {
-        // If there is no stats on the column, don't prune.
-        true
-      }
+      val exists = (columnStats :>< (leftValue , rightValue))
+      if (invertValue) !exists else exists
+    } else {
+      // If there is no stats on the column, don't prune.
+      true
+    }
   }
+
   /**
    * Test whether we should keep the split as a candidate given the comparison
    * predicate. Return true if the split should be kept as a candidate, false if
@@ -128,24 +137,28 @@ object MapSplitPruning {
 
     // Try to get the column evaluator.
     val columnEval: ExprNodeColumnEvaluator =
-      if (left.isInstanceOf[ExprNodeColumnEvaluator])
+      if (left.isInstanceOf[ExprNodeColumnEvaluator]) {
         left.asInstanceOf[ExprNodeColumnEvaluator]
-      else if (right.isInstanceOf[ExprNodeColumnEvaluator])
+      } else if (right.isInstanceOf[ExprNodeColumnEvaluator]) {
         right.asInstanceOf[ExprNodeColumnEvaluator]
-      else null
+      } else {
+        null
+      }
 
     // Try to get the constant value.
     val constEval: ExprNodeConstantEvaluator =
-      if (left.isInstanceOf[ExprNodeConstantEvaluator])
+      if (left.isInstanceOf[ExprNodeConstantEvaluator]) {
         left.asInstanceOf[ExprNodeConstantEvaluator]
-      else if (right.isInstanceOf[ExprNodeConstantEvaluator])
+      } else if (right.isInstanceOf[ExprNodeConstantEvaluator]) {
         right.asInstanceOf[ExprNodeConstantEvaluator]
-      else null
+      } else {
+        null
+      }
 
     if (columnEval != null && constEval != null) {
       // We can prune the partition only if it is a predicate of form
       //  column op const, where op is <, >, =, <=, >=, !=.
-      val field = columnEval.field.asInstanceOf[IDStructField]
+      val field = getIDStructField(columnEval.field)
       val value: Object = constEval.expr.getValue
       val columnStats = s.stats(field.fieldID)
 
@@ -165,6 +178,19 @@ object MapSplitPruning {
     } else {
       // If the predicate is not of type column op value, don't prune.
       true
+    }
+  }
+
+  private def getIDStructField(field: StructField): IDStructField = field match {
+    case myField: MyField => {
+      // For partitioned tables, the ColumnarStruct's IDStructFields are enclosed inside
+      // the Hive UnionStructObjectInspector's MyField objects.
+      MapSplitPruningHelper.getStructFieldFromUnionOIField(myField)
+        .asInstanceOf[IDStructField]
+    }
+    case idStructField: IDStructField => idStructField
+    case otherFieldType: Any => {
+      throw new Exception("Unrecognized StructField: " + otherFieldType)
     }
   }
 }

@@ -17,7 +17,6 @@
 
 package shark.memstore2
 
-import java.nio.ByteBuffer
 import java.util.BitSet
 import shark.memstore2.column.ColumnIterator
 
@@ -45,13 +44,13 @@ class TablePartitionIterator(
 
   private var _position: Long = 0
 
-  def hasNext(): Boolean = _position < numRows
+  def hasNext: Boolean = _position < numRows
 
   def next(): ColumnarStruct = {
     _position += 1
     var i = columnUsed.nextSetBit(0)
     while (i > -1) {
-      columnIterators(i).next
+      columnIterators(i).next()
       i = columnUsed.nextSetBit(i + 1)
     }
     _struct

@@ -17,28 +17,50 @@
 
 package shark.memstore2
 
+import shark.LogHelper
 
-object CacheType extends Enumeration {
 
+/*
+ * Enumerations and static helper functions for caches supported by Shark.
+ */
+object CacheType extends Enumeration with LogHelper {
+
+  /*
+   * The CacheTypes:
+   * - MEMORY: Stored in memory and on disk (i.e., cache is write-through). Persistent across Shark
+   *           sessions. By default, all such tables are reloaded into memory on restart.
+   * - MEMORY_ONLY: Stored only in memory and dropped at the end of each Shark session.
+   * - TACHYON: A distributed storage system that manages an in-memory cache for sharing files and
+                RDDs across cluster frameworks.
+   * - NONE: Stored on disk (e.g., HDFS) and managed by Hive.
+   */
   type CacheType = Value
-  val none, heap, tachyon = Value
+  val MEMORY, MEMORY_ONLY, TACHYON, NONE = Value
 
-  def shouldCache(c: CacheType): Boolean = (c != none)
+  def shouldCache(c: CacheType): Boolean = (c != NONE)
 
   /** Get the cache type object from a string representation. */
   def fromString(name: String): CacheType = {
-    if (name == null || name == "") {
-      none
+    if (name == null || name == "" || name.toLowerCase == "false") {
+      NONE
     } else if (name.toLowerCase == "true") {
-      heap
+      MEMORY
     } else {
       try {
-        withName(name.toLowerCase)
+        if (name.toUpperCase == "HEAP") {
+          // Interpret 'HEAP' as 'MEMORY' to ensure backwards compatibility with Shark 0.8.0.
+          logWarning("The 'HEAP' cache type name is deprecated. Use 'MEMORY' instead.")
+          MEMORY
+        } else {
+          // Try to use Scala's Enumeration::withName() to interpret 'name'.
+          withName(name.toUpperCase)
+        }
       } catch {
         case e: java.util.NoSuchElementException => throw new InvalidCacheTypeException(name)
       }
     }
   }
 
-  class InvalidCacheTypeException(name: String) extends Exception("Invalid cache type " + name)
+  class InvalidCacheTypeException(name: String)
+    extends Exception("Invalid string representation of cache type: '%s'".format(name))
 }

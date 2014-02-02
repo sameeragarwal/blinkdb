@@ -17,30 +17,23 @@
 
 package shark.execution
 
-import java.util.{HashMap => JavaHashMap, List => JavaList}
+import java.util.{HashMap => JavaHashMap, List => JavaList, ArrayList =>JavaArrayList}
 
-import scala.collection.mutable.ArrayBuffer
-import scala.collection.JavaConversions._
-import scala.reflect.BeanProperty
+import scala.beans.BeanProperty
+import scala.reflect.ClassTag
 
-import org.apache.hadoop.hive.conf.HiveConf
 import org.apache.hadoop.hive.ql.exec.ExprNodeEvaluator
-import org.apache.hadoop.hive.ql.exec.{CommonJoinOperator => HiveCommonJoinOperator}
 import org.apache.hadoop.hive.ql.exec.{JoinUtil => HiveJoinUtil}
-import org.apache.hadoop.hive.ql.plan.{ExprNodeDesc, JoinCondDesc, JoinDesc, TableDesc}
-import org.apache.hadoop.hive.serde2.Deserializer
+import org.apache.hadoop.hive.ql.plan.{JoinCondDesc, JoinDesc}
 import org.apache.hadoop.hive.serde2.objectinspector.{ObjectInspector, PrimitiveObjectInspector}
-
-import org.apache.spark.rdd.{RDD, UnionRDD}
-import org.apache.spark.SparkContext.rddToPairRDDFunctions
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory
 
 import shark.SharkConfVars
 
 
-abstract class CommonJoinOperator[JOINDESCTYPE <: JoinDesc, T <: HiveCommonJoinOperator[JOINDESCTYPE]]
-  extends NaryOperator[T] {
+abstract class CommonJoinOperator[T <: JoinDesc] extends NaryOperator[T] {
 
-  @BeanProperty var conf: JOINDESCTYPE = _
+  @BeanProperty var conf: T = _
   // Order in which the results should be output.
   @BeanProperty var order: Array[java.lang.Byte] = _
   // condn determines join property (left, right, outer joins).
@@ -62,8 +55,11 @@ abstract class CommonJoinOperator[JOINDESCTYPE <: JoinDesc, T <: HiveCommonJoinO
   @transient var noOuterJoin: Boolean = _
 
   override def initializeOnMaster() {
-    conf = hiveOp.getConf()
-
+    super.initializeOnMaster()
+    conf = desc
+    // TODO currently remove the join filter
+    conf.getFilters().clear()
+    
     order = conf.getTagOrder()
     joinConditions = conf.getConds()
     numTables = parentOperators.size
@@ -91,10 +87,23 @@ abstract class CommonJoinOperator[JOINDESCTYPE <: JoinDesc, T <: HiveCommonJoinO
     joinValuesStandardObjectInspectors = HiveJoinUtil.getStandardObjectInspectors(
       joinValuesObjectInspectors, CommonJoinOperator.NOTSKIPBIGTABLE)
   }
+  
+  // copied from the org.apache.hadoop.hive.ql.exec.CommonJoinOperator
+  override def outputObjectInspector() = {
+    var structFieldObjectInspectors = new JavaArrayList[ObjectInspector]()
+    for (alias <- order) {
+      var oiList = joinValuesStandardObjectInspectors.get(alias)
+      structFieldObjectInspectors.addAll(oiList)
+    }
+
+    ObjectInspectorFactory.getStandardStructObjectInspector(
+      conf.getOutputColumnNames(),
+      structFieldObjectInspectors)
+  }
 }
 
 
-class CartesianProduct[T >: Null : ClassManifest](val numTables: Int) {
+class CartesianProduct[T >: Null : ClassTag](val numTables: Int) {
 
   val SINGLE_NULL_LIST = Seq[T](null)
   val EMPTY_LIST = Seq[T]()
@@ -202,6 +211,9 @@ object CommonJoinOperator {
    */
   def isFiltered(row: Any, filters: JavaList[ExprNodeEvaluator], ois: JavaList[ObjectInspector])
   : Boolean = {
+    // if no filter, then will not be filtered
+    if (filters == null || ois == null) return false
+    
     var ret: java.lang.Boolean = false
     var j = 0
     while (j < filters.size) {
@@ -209,7 +221,7 @@ object CommonJoinOperator {
       ret = ois.get(j).asInstanceOf[PrimitiveObjectInspector].getPrimitiveJavaObject(
         condition).asInstanceOf[java.lang.Boolean]
       if (ret == null || !ret) {
-        return true;
+        return true
       }
       j += 1
     }

@@ -17,6 +17,8 @@
 
 package org.apache.spark
 
+import scala.language.existentials
+
 import java.io.{ObjectOutputStream, IOException}
 import java.util.{HashMap => JHashMap}
 
@@ -49,12 +51,15 @@ case class NarrowCoGroupSplitDep(
 
 case class ShuffleCoGroupSplitDep(shuffleId: Int) extends CoGroupSplitDep
 
+// equals not implemented style error
+// scalastyle:off
 class CoGroupPartition(idx: Int, val deps: Seq[CoGroupSplitDep])
   extends Partition with Serializable {
 
   override val index: Int = idx
   override def hashCode(): Int = idx
 }
+// scalastyle:on
 
 class CoGroupAggregator
   extends Aggregator[Any, Any, ArrayBuffer[Any]](
@@ -72,10 +77,10 @@ class CoGroupedRDD[K](@transient var rdds: Seq[RDD[(_, _)]], part: Partitioner)
   override def getDependencies: Seq[Dependency[_]] = {
     rdds.map { rdd =>
       if (rdd.partitioner == Some(part)) {
-        logInfo("Adding one-to-one dependency with " + rdd)
+        logDebug("Adding one-to-one dependency with " + rdd)
         new OneToOneDependency(rdd)
       } else {
-        logInfo("Adding shuffle dependency with " + rdd)
+        logDebug("Adding shuffle dependency with " + rdd)
         new ShuffleDependency[Any, Any](rdd, part, SharkEnv.shuffleSerializerName)
       }
     }
@@ -112,7 +117,7 @@ class CoGroupedRDD[K](@transient var rdds: Seq[RDD[(_, _)]], part: Partitioner)
       }
       values
     }
-    val serializer = SparkEnv.get.serializerManager.get(SharkEnv.shuffleSerializerName)
+    val serializer = SparkEnv.get.serializerManager.get(SharkEnv.shuffleSerializerName, SparkEnv.get.conf)
     for ((dep, depNum) <- split.deps.zipWithIndex) dep match {
       case NarrowCoGroupSplitDep(rdd, itsSplitIndex, itsSplit) => {
         // Read them from the parent
@@ -122,11 +127,11 @@ class CoGroupedRDD[K](@transient var rdds: Seq[RDD[(_, _)]], part: Partitioner)
         // Read map outputs of shuffle
         def mergePair(pair: (K, Any)) { getSeq(pair._1)(depNum) += pair._2 }
         val fetcher = SparkEnv.get.shuffleFetcher
-        fetcher.fetch[(K, Seq[Any])](shuffleId, split.index, context.taskMetrics, serializer)
+        fetcher.fetch[(K, Seq[Any])](shuffleId, split.index, context, serializer)
           .foreach(mergePair)
       }
     }
-    map.iterator
+    new InterruptibleIterator(context, map.iterator)
   }
 
   override def clearDependencies() {

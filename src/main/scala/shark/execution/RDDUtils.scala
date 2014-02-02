@@ -18,12 +18,12 @@
 package shark.execution
 
 import scala.collection.JavaConversions
+import scala.reflect.ClassTag
 
 import com.google.common.collect.{Ordering => GOrdering}
 
 import org.apache.spark.{HashPartitioner, Partitioner, RangePartitioner}
 import org.apache.spark.rdd.{RDD, ShuffledRDD, UnionRDD}
-import org.apache.spark.storage.StorageLevel
 
 import shark.SharkEnv
 
@@ -34,26 +34,46 @@ import shark.SharkEnv
  */
 object RDDUtils {
 
-  def getStorageLevelOfCachedTable(rdd: RDD[_]): StorageLevel = {
+  /**
+   * Returns a UnionRDD using both RDD arguments. Any UnionRDD argument is "flattened", in that
+   * its parent sequence of RDDs is directly passed to the UnionRDD returned.
+   */
+  def unionAndFlatten[T: ClassTag](
+    rdd: RDD[T],
+    otherRdd: RDD[T]): UnionRDD[T] = {
+    val otherRdds: Seq[RDD[T]] = otherRdd match {
+      case otherUnionRdd: UnionRDD[_] => otherUnionRdd.rdds
+      case _ => Seq(otherRdd)
+    }
+    val rdds: Seq[RDD[T]] = rdd match {
+      case unionRdd: UnionRDD[_] => unionRdd.rdds
+      case _ => Seq(rdd)
+    }
+    new UnionRDD(rdd.context, rdds ++ otherRdds)
+  }
+
+  def unpersistRDD(rdd: RDD[_]): RDD[_] = {
     rdd match {
-      case u: UnionRDD[_] => u.rdds.foldLeft(rdd.getStorageLevel) {
-        (s, r) => {
-          if (s == StorageLevel.NONE) {
-            getStorageLevelOfCachedTable(r)
-          } else {
-            s
-          }
+      case u: UnionRDD[_] => {
+        // Usually, a UnionRDD will not be persisted to avoid data duplication.
+        u.unpersist()
+        // unpersist() all parent RDDs that compose the UnionRDD. Don't propagate past the parents,
+        // since a grandparent of the UnionRDD might have multiple child RDDs (i.e., the sibling of
+        // the UnionRDD's parent is persisted in memory).
+        u.rdds.map {
+          r => r.unpersist()
         }
       }
-      case _ => rdd.getStorageLevel
+      case r => r.unpersist()
     }
+    return rdd
   }
 
   /**
    * Repartition an RDD using the given partitioner. This is similar to Spark's partitionBy,
    * except we use the Shark shuffle serializer.
    */
-  def repartition[K: ClassManifest, V: ClassManifest](rdd: RDD[(K, V)], part: Partitioner)
+  def repartition[K: ClassTag, V: ClassTag](rdd: RDD[(K, V)], part: Partitioner)
     : RDD[(K, V)] =
   {
     new ShuffledRDD[K, V, (K, V)](rdd, part).setSerializer(SharkEnv.shuffleSerializerName)
@@ -63,7 +83,7 @@ object RDDUtils {
    * Sort the RDD by key. This is similar to Spark's sortByKey, except that we use
    * the Shark shuffle serializer.
    */
-  def sortByKey[K <: Comparable[K]: ClassManifest, V: ClassManifest](rdd: RDD[(K, V)])
+  def sortByKey[K <: Comparable[K]: ClassTag, V: ClassTag](rdd: RDD[(K, V)])
     : RDD[(K, V)] =
   {
     val part = new RangePartitioner(rdd.partitions.length, rdd)
@@ -72,13 +92,13 @@ object RDDUtils {
     shuffled.mapPartitions(iter => {
       val buf = iter.toArray
       buf.sortWith((x, y) => x._1.compareTo(y._1) < 0).iterator
-    }, true)
+    }, preservesPartitioning = true)
   }
 
   /**
    * Return an RDD containing the top K (K smallest key) from the given RDD.
    */
-  def topK[K <: Comparable[K]: ClassManifest, V: ClassManifest](rdd: RDD[(K, V)], k: Int)
+  def topK[K <: Comparable[K]: ClassTag, V: ClassTag](rdd: RDD[(K, V)], k: Int)
     : RDD[(K, V)] =
   {
     // First take top K on each partition.
@@ -90,7 +110,7 @@ object RDDUtils {
   /**
    * Take top K on each partition and return a new RDD.
    */
-  def partitionTopK[K <: Comparable[K]: ClassManifest, V: ClassManifest](
+  def partitionTopK[K <: Comparable[K]: ClassTag, V: ClassTag](
     rdd: RDD[(K, V)], k: Int): RDD[(K, V)] = {
     rdd.mapPartitions(iter => topK(iter, k))
   }
@@ -98,7 +118,7 @@ object RDDUtils {
   /**
    * Return top K elements out of an iterator.
    */
-  private def topK[K <: Comparable[K]: ClassManifest, V: ClassManifest](
+  private def topK[K <: Comparable[K]: ClassTag, V: ClassTag](
     it: Iterator[(K, V)], k: Int): Iterator[(K, V)]  = {
     val ordering = new GOrdering[(K,V)] {
       override def compare(l: (K, V), r: (K, V)) = {

@@ -27,6 +27,7 @@ import org.apache.hadoop.hive.conf.HiveConf
 
 import org.scalatest.FunSuite
 
+import org.apache.spark.SparkConf
 import org.apache.spark.serializer.{JavaSerializer => SparkJavaSerializer}
 
 
@@ -51,20 +52,12 @@ class SerializationSuite extends FunSuite {
     val ois = KryoSerializationWrapper(new ArrayBuffer[ObjectInspector])
     ois.value += oi
 
-    val ser = new SparkJavaSerializer
+    val ser = new SparkJavaSerializer(new SparkConf(loadDefaults = false))
     val bytes = ser.newInstance().serialize(ois)
     val desered = ser.newInstance()
       .deserialize[KryoSerializationWrapper[ArrayBuffer[ObjectInspector]]](bytes)
 
     assert(desered.head.getTypeName() === oi.getTypeName())
-  }
-
-  test("HiveConf serialization test") {
-    val hiveConf = new HiveConf
-    val bytes = HiveConfSerializer.serialize(hiveConf)
-    val deseredConf = HiveConfSerializer.deserialize(bytes)
-
-    assertHiveConfEquals(hiveConf, deseredConf)
   }
 
   test("Java serializing operators") {
@@ -75,7 +68,7 @@ class SerializationSuite extends FunSuite {
     operator.localHiveOp = new org.apache.hadoop.hive.ql.exec.FileSinkOperator
     val opWrapped = OperatorSerializationWrapper(operator)
 
-    val ser = new SparkJavaSerializer
+    val ser = new SparkJavaSerializer(new SparkConf(loadDefaults = false))
     val bytes = ser.newInstance().serialize(opWrapped)
     val desered = ser.newInstance()
       .deserialize[OperatorSerializationWrapper[SharkFileSinkOperator]](bytes)

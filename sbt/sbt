@@ -5,9 +5,9 @@ if [ -e $BLINKDB_CONF_DIR/blinkdb-env.sh ] ; then
    . $BLINKDB_CONF_DIR/blinkdb-env.sh
 fi
 
-if [[ "$@" == *"test"* ]]; then
-  if [ "x$HIVE_DEV_HOME" == "x" ]; then
-    echo "No HIVE_DEV_HOME specified. Required for tests. Please set HIVE_DEV_HOME."
+if [[ "$@" == *"test"* ]] || [[ "$@" == "eclipse" ]]; then
+  if [[ "x$HIVE_DEV_HOME" == "x" ]]; then
+    echo "No HIVE_DEV_HOME specified. Required for tests and eclipse. Please set HIVE_DEV_HOME."
     exit 1
   fi
 fi

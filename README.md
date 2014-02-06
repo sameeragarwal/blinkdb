@@ -1,4 +1,3 @@
-
 ![BlinkDB](http://blinkdb.org/figures/blinkdb-logo-withaffiliations.png)
 #### Queries with Bounded Errors and Bounded Response Times on Very Large Data
 
@@ -11,8 +10,8 @@ HiveQL queries with those aggregates that have statistical closed forms (i.e., A
 VAR and STDEV).
 
 #### BlinkDB requires:
-* Scala 2.9.3
-* Spark 0.8.x
+* Scala 2.10.x
+* Spark 0.9.x
 
 ### For current documentation, see the [BlinkDB Wiki](https://github.com/sameeragarwal/blinkdb/wiki).
 ### For more information about the BlinkDB Project, see the [BlinkDB Website](http://blinkdb.cs.berkeley.edu).

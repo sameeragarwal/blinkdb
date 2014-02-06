@@ -27,7 +27,7 @@ import org.apache.hadoop.hive.ql.plan.SampleDesc
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector
 
 
-class SamplingOperator extends UnaryOperator[HiveSamplingOperator] {
+class SamplingOperator extends UnaryOperator[SampleDesc] {
 
   @transient var probability: Double = _
   @transient var conditionEvaluator: ExprNodeEvaluator = _
@@ -36,13 +36,12 @@ class SamplingOperator extends UnaryOperator[HiveSamplingOperator] {
   @BeanProperty var conf: SampleDesc = _
 
   override def initializeOnMaster() {
-    conf = hiveOp.getConf()
+    conf = desc
   }
 
   override def initializeOnSlave() {
     try {
       probability = conf.getProbability();
-      logInfo("Samping with Probability: " + probability);
     } catch {
       case e: Throwable => throw new HiveException(e)
     }
